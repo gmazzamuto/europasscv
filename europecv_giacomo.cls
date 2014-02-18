@@ -255,6 +255,8 @@
   \AtEndOfPackage{\renewcommand*\ecvtitle{}}%
 }
 
+\newcommand{\ecvcoloredtitle}{\fontspec{Arial} \textcolor{highlightcolor}{\ecvtitle}}
+
 % Europass logo
 \DeclareOption{logo}{%
 \providecommand*\draweuropasslogo{%
@@ -554,7 +556,7 @@
 \newlength\ecv@logooffset
 \newcommand*{\ecvLogoWidth}[1]{\setlength\ecv@logowidth{#1}}
 \newcommand*{\ecvLogoOffset}[1]{\setlength\ecv@logooffset{#1}}
-\ecvLogoWidth{2.30cm}
+\ecvLogoWidth{4.487cm}
 \ecvLogoOffset{1cm}
 %\typeout{logo width=\the\ecv@logowidth}
 %\typeout{logo offset=\the\ecv@logooffset}
@@ -577,13 +579,7 @@
   \ecv@hrule
   \ifx\@empty\draweuropasslogo\else
     % Any better way of achieving the same result?!?
-    \vskip-\ecv@logooffset\draweuropasslogo\hfill\phantom{.}& \tabularnewline
-  \fi
-  \ifx\@empty\ecvtitle\else
-     \ifx\@empty\draweuropasslogo
-       & \tabularnewline[-.5em]
-     \fi
-     \ecvtitle &\tabularnewline
+    \vskip-\ecv@logooffset\draweuropasslogo\hfill\phantom{.}& \ecvcoloredtitle \tabularnewline
   \fi
   \ifx\@empty\draweuropeflag\else
      & \tabularnewline
@@ -594,6 +590,7 @@
 
 \definecolor{rulecolor}{HTML}{398dc9}
 \definecolor{sectioncolor}{HTML}{0e4194}
+\definecolor{highlightcolor}{HTML}{1593cb}
 
 \newcommand*{\getlength}[2]{%
    \pgfmathsetmacro#1{#2}
