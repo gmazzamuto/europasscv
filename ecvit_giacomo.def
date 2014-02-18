@@ -1,0 +1,39 @@
+%!TEX encoding = UTF-8 Unicode
+%
+% Translation completed on 2006/01/11
+\ProvidesFile{ecvit_giacomo.def}[europecv Italian definitions (Giacomo)]
+% Personal information
+\def\ecv@infosectionkey{\ecv@utf{Informazioni personali}}
+\def\ecv@namekey{\ecv@utf{Nome e cognome}}
+\def\ecv@addresskey{\ecv@utf{Indirizzo}}
+\def\ecv@telkey{\ecv@utf{Telefono}}
+\def\ecv@mobilekey{\ecv@utf{Cellulare}}
+\def\ecv@faxkey{\ecv@utf{Fax}}
+\def\ecv@emailkey{\ecv@utf{E-mail}}
+\def\ecv@nationalitykey{\ecv@utf{Nazionalit\`a}}
+\def\ecv@birthkey{\ecv@utf{Data di nascita}}
+\def\ecv@genderkey{\ecv@utf{Sesso}}
+% Footer
+\def\ecv@pagekey{\ecv@utf{Pagina}}
+\def\ecv@cvofkey{\ecv@utf{Curriculum vit\ae\ di}}
+% Language table
+\def\ecv@mothertonguekey{\ecv@utf{Madrelingua}}
+\def\ecv@assesskey{\ecv@utf{Autovalutazione}}
+\def\ecv@levelkey{\ecv@utf{Livello europeo}}
+\def\ecv@understandkey{\ecv@utf{Comprensione}}
+\def\ecv@speakkey{\ecv@utf{Parlato}}
+\def\ecv@writekey{\ecv@utf{Scritto}}
+\def\ecv@listenkey{\ecv@utf{Ascolto}}
+\def\ecv@readkey{\ecv@utf{Lettura}}
+\def\ecv@interactkey{\ecv@utf{Interazione orale}}
+\def\ecv@productkey{\ecv@utf{Produzione orale}}
+\def\ecv@langfooterkey{\ecv@utf{Quadro comune europeo di riferimento per le lingue}}
+\def\ecv@cefbasickey{\ecv@utf{Utente elementare}}
+\def\ecv@cefindepkey{\ecv@utf{Utente autonomo}}
+\def\ecv@cefprofkey{\ecv@utf{Utente avanzato}}
+
+\renewcommand*{\ecvtitle}{\ecv@utf{%
+\Large\textbf{C\ecv@kern u\ecv@kern r\ecv@kern r\ecv@kern
+i\ecv@kern c\ecv@kern u\ecv@kern l\ecv@kern u\ecv@kern m \ecv@kern V\ecv@kern
+i\ecv@kern t\ecv@kern a\ecv@kern e}\\[5pt]
+\Large\textbf{E\ecv@kern u\ecv@kern r\ecv@kern o\ecv@kern p\ecv@kern a\ecv@kern s\ecv@kern s}}}
