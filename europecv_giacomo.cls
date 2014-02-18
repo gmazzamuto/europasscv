@@ -398,9 +398,7 @@
 \ifx\@empty\ecvdrawpicture\else
    &\ecv@beforepic\ecvdrawpicture\ecv@afterpic\tabularnewline
 \fi
-{\large\par\textbf{\ecv@infosectionkey}} & \tabularnewline
-& \tabularnewline
-\ecv@namekey & \large\textbf{\ecv@name}\tabularnewline[5pt]
+\ecvsectionWithoutRuler{\ecv@infosectionkey}{\large{\fontspec{Arial} \ecv@name}}
 \ifx\@empty\ecv@address\else
 \ecv@addresskey     &\ecv@address   \tabularnewline[5pt]
 \fi
@@ -597,13 +595,17 @@
 }
 
 \newcommand{\ecvsection}[2][10pt]{%
-  {
-  \par\textcolor{sectioncolor}{\uppercase{#2}} } \vspace{#1} &
+  \par\textcolor{sectioncolor}{\small \fontspec{Arial} \expandafter\MakeUppercase{\expandafter{#2}}}  \vspace{#1} &
   \setlength{\TPHorizModule}{1pt}\setlength{\TPVertModule}{1pt}
   \getlength{\rightScalarWidth}{\ecv@rightcolwidth}
   
   \textcolor{rulecolor}{\noindent\makebox[\linewidth]{\rule{\ecv@rightcolwidth}{1pt}}  \begin{textblock}{7}[1,1](\rightScalarWidth,0) \makebox{\rule{7pt}{7pt}} \end{textblock}
 }
+  \tabularnewline\nopagebreak
+}
+
+\newcommand{\ecvsectionWithoutRuler}[2]{%
+  \par\textcolor{sectioncolor}{\small \fontspec{Arial} \expandafter\MakeUppercase{\expandafter{#1}}}  & \parbox[b]{\ecv@rightcolwidth}{\par{#2}} 
   \tabularnewline\nopagebreak
 }
           
