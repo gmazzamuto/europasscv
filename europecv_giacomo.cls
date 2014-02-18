@@ -593,6 +593,7 @@
 {\end{longtable}}
 
 \definecolor{rulecolor}{HTML}{398dc9}
+\definecolor{sectioncolor}{HTML}{0e4194}
 
 \newcommand*{\getlength}[2]{%
    \pgfmathsetmacro#1{#2}
@@ -600,7 +601,7 @@
 
 \newcommand{\ecvsection}[2][10pt]{%
   {
-  \large{\par\textbf{#2}} } \vspace{#1} & 
+  \par\textcolor{sectioncolor}{\uppercase{#2}} } \vspace{#1} &
   \setlength{\TPHorizModule}{1pt}\setlength{\TPVertModule}{1pt}
   \getlength{\rightScalarWidth}{\ecv@rightcolwidth}
   
@@ -615,3 +616,5 @@
 \newcommand\@ecvitem[3][2.8pt]{%
   \if@ecvitemstar \ecvbullet\ \fi #2\vspace{#1} &\setlength{\parskip}{\smallskipamount}\setlength{\parindent}{0pt}#3
     \vspace{#1}\tabularnewline}
+
+\ecvRuleWidth{0pt}
