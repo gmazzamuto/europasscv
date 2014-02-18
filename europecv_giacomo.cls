@@ -202,7 +202,6 @@
   }%
 }
 
-
 % Input encodings
 \DeclareOption{ascii}{\AtEndOfClass{\inputencoding{ascii}}}
 \DeclareOption{latin1}{\AtEndOfClass{\inputencoding{latin1}}}
@@ -255,7 +254,8 @@
   \AtEndOfPackage{\renewcommand*\ecvtitle{}}%
 }
 
-\newcommand{\ecvcoloredtitle}{\fontfamily{phv}\fontseries{m}\selectfont \textcolor{highlightcolor}{\ecvtitle}}
+\newcommand{\ecvcurrvitae}{Curriculum vitae}
+\newcommand{\ecvcoloredtitle}{\fontfamily{phv}\fontseries{m}\selectfont \textcolor{ecvhighlightcolor}{\ecvcurrvitae}}
 
 % Europass logo
 \DeclareOption{logo}{%
@@ -344,17 +344,17 @@
 \fancyfoot{}
 \fancyfoot[L]{\begin{minipage}{\ecv@leftcolwidth}
 \begin{flushleft}
-\footnotesize\textcolor{highlightcolor}{\fontfamily{phv}\fontseries{m}\selectfont\ecv@lfoot}\end{flushleft}
+\footnotesize\textcolor{ecvhighlightcolor}{\fontfamily{phv}\fontseries{m}\selectfont\ecv@lfoot}\end{flushleft}
 \end{minipage}
 }
 \fancyfoot[C]{\begin{minipage}{\ecv@rightcolwidth}
 \begin{center}
-\footnotesize\textcolor{highlightcolor}{\fontfamily{phv}\fontseries{m}\selectfont\ecv@cfoot}\end{center}
+\footnotesize\textcolor{ecvhighlightcolor}{\fontfamily{phv}\fontseries{m}\selectfont\ecv@cfoot}\end{center}
 \end{minipage}
 }
 \fancyfoot[R]{\begin{minipage}{\ecv@rightcolwidth}
 \begin{flushright}
-\footnotesize\textcolor{highlightcolor}{\fontfamily{phv}\fontseries{m}\selectfont\ecv@page}\end{flushright}
+\footnotesize\textcolor{ecvhighlightcolor}{\fontfamily{phv}\fontseries{m}\selectfont\ecv@page}\end{flushright}
 \end{minipage}}
 
 \fancypagestyle{ecvfancy}{
@@ -372,7 +372,7 @@
 
 \fancyhead[R]{\begin{minipage}{0.2\textwidth}
 \begin{flushright}
-\textcolor{highlightcolor}{\fontfamily{phv}\fontseries{m}\selectfont \ecv@name}\end{flushright}
+\textcolor{ecvhighlightcolor}{\fontfamily{phv}\fontseries{m}\selectfont \ecv@name}\end{flushright}
 \end{minipage}
 }
 }
@@ -435,7 +435,7 @@
 \ecvpicture{}
 
 \providecommand{\ecvpersonalinfo}[1][-15pt]{%
-\textcolor{sectioncolor}{\small \fontfamily{phv}\fontseries{m}\selectfont \expandafter\MakeUppercase{\expandafter{\ecv@infosectionkey}}} & {
+\textcolor{ecvsectioncolor}{\small \fontfamily{phv}\fontseries{m}\selectfont \expandafter\MakeUppercase{\expandafter{\ecv@infosectionkey}}} & {
 \begin{doublespacing}
 \begin{tabu} to 0.99\ecv@rightcolwidth {@{}X[0.7,l,p]  X[0.3,r,p]}
 {
@@ -460,7 +460,7 @@
  \raisebox{-2\lineskip}{\includegraphics[width=0.4cm]{website_icon.pdf}} {\fontfamily{phv}\fontseries{m}\selectfont \setul{.5pt}{.4pt}\href{\ecv@homepage}{ \ul{\ecv@homepage}}}\newline
 \fi
 \ifx\@empty\ecv@birth\else
-{\fontfamily{phv}\fontseries{m}\selectfont \textcolor{highlightcolor}{\ecv@birthkey} \ecv@birth \ifx\@empty\ecv@nationality\else\textcolor{highlightcolor}{~| \ecv@nationalitykey}~\ecv@nationality\newline\fi }
+{\fontfamily{phv}\fontseries{m}\selectfont \textcolor{ecvhighlightcolor}{\ecv@birthkey} \ecv@birth \ifx\@empty\ecv@nationality\else\textcolor{ecvhighlightcolor}{~| \ecv@nationalitykey}~\ecv@nationality\newline\fi }
 \fi
 \ifx\@empty\ecv@gender\else
 \ecv@genderkey  \ecv@gender
@@ -473,7 +473,7 @@
 
 % Spoken language information
 \newcommand*\ecvmothertongue[2][0pt]{%
-\textcolor{sectioncolor}{\ecv@mothertonguekey} & #2\tabularnewline[#1]
+\textcolor{ecvsectioncolor}{\ecv@mothertonguekey} & #2\tabularnewline[#1]
 }
 
 \newlength\ecv@langparwidth
@@ -481,17 +481,17 @@
 \newcommand*\ecvlanguageheader{%
 \vspace{0.18cm}
 \renewcommand{\arraystretch}{1.5}
-\textcolor{sectioncolor}{\ecv@otherlanguageskey}
+\textcolor{ecvsectioncolor}{\ecv@otherlanguageskey}
 &
 \renewcommand{\arraystretch}{1.5}
 {
-\begin{tabu} to \linewidth {|X[0.4,c,m]  |[0.04cm tablebordercolor] X[0.4,c,m] |[0.04cm tablebordercolor] X[0.8,c,m]  |[0.04cm tablebordercolor] X[0.8,c,m] |[0.04cm tablebordercolor] X[0.8,c,m]}
-% \begin{tabu} to \linewidth {|X[0.8,c,m]  |[0.04cm tablebordercolor] X[0.8,c,m] |[0.04cm tablebordercolor] X[1,c,m]  |[0.04cm tablebordercolor] X[1,c,m] |[0.04cm tablebordercolor] X[1.5,c,m]}
-\tabucline[0.04cm tablebordercolor]-
-\multicolumn2{|c|[0.04cm tablebordercolor]}{\textcolor{sectioncolor}{\expandafter\MakeUppercase{\expandafter{\ecv@understandkey}}}}&\multicolumn2{|c|[0.04cm tablebordercolor]}{\textcolor{sectioncolor}{\expandafter\MakeUppercase{\expandafter{\ecv@speakkey}}}}&\multicolumn1{|c|}{\textcolor{sectioncolor}{\expandafter\MakeUppercase{\expandafter{\ecv@writekey}}}}\tabularnewline\cline{1-3}
-\tabucline[0.04cm tablebordercolor]-
-\multicolumn1{c|[0.04cm tablebordercolor]}{\textcolor{sectioncolor}{\ecv@listenkey}}&\multicolumn1{c|[0.04cm tablebordercolor]}{\textcolor{sectioncolor}{\ecv@readkey}} &\multicolumn1{c|[0.04cm tablebordercolor]}{\textcolor{sectioncolor}{\ecv@interactkey}}&\multicolumn1{c|[0.04cm tablebordercolor]}{\textcolor{sectioncolor}{\ecv@productkey}}&\multicolumn1{c}{}\tabularnewline\cline{1-4}
-\tabucline[0.04cm tablebordercolor]-
+\begin{tabu} to \linewidth {|X[0.4,c,m]  |[0.04cm ecvtablebordercolor] X[0.4,c,m] |[0.04cm ecvtablebordercolor] X[0.8,c,m]  |[0.04cm ecvtablebordercolor] X[0.8,c,m] |[0.04cm ecvtablebordercolor] X[0.8,c,m]}
+% \begin{tabu} to \linewidth {|X[0.8,c,m]  |[0.04cm ecvtablebordercolor] X[0.8,c,m] |[0.04cm ecvtablebordercolor] X[1,c,m]  |[0.04cm ecvtablebordercolor] X[1,c,m] |[0.04cm ecvtablebordercolor] X[1.5,c,m]}
+\tabucline[0.04cm ecvtablebordercolor]-
+\multicolumn2{|c|[0.04cm ecvtablebordercolor]}{\textcolor{ecvsectioncolor}{\expandafter\MakeUppercase{\expandafter{\ecv@understandkey}}}}&\multicolumn2{|c|[0.04cm ecvtablebordercolor]}{\textcolor{ecvsectioncolor}{\expandafter\MakeUppercase{\expandafter{\ecv@speakkey}}}}&\multicolumn1{|c|}{\textcolor{ecvsectioncolor}{\expandafter\MakeUppercase{\expandafter{\ecv@writekey}}}}\tabularnewline\cline{1-3}
+\tabucline[0.04cm ecvtablebordercolor]-
+\multicolumn1{c|[0.04cm ecvtablebordercolor]}{\textcolor{ecvsectioncolor}{\ecv@listenkey}}&\multicolumn1{c|[0.04cm ecvtablebordercolor]}{\textcolor{ecvsectioncolor}{\ecv@readkey}} &\multicolumn1{c|[0.04cm ecvtablebordercolor]}{\textcolor{ecvsectioncolor}{\ecv@interactkey}}&\multicolumn1{c|[0.04cm ecvtablebordercolor]}{\textcolor{ecvsectioncolor}{\ecv@productkey}}&\multicolumn1{c}{}\tabularnewline\cline{1-4}
+\tabucline[0.04cm ecvtablebordercolor]-
 \tabuphantomline
 \end{tabu}
 }
@@ -504,10 +504,10 @@
 \renewcommand{\arraystretch}{1.5}
 \vspace{-\baselineskip} \vspace*{-0.02cm}
 {
-\begin{tabu} to \linewidth {|X[0.4,c,m]  |[0.04cm tablebordercolor] X[0.4,c,m] |[0.04cm tablebordercolor] X[0.8,c,m]  |[0.04cm tablebordercolor] X[0.8,c,m] |[0.04cm tablebordercolor] X[0.8,c,m]}
-% \begin{tabu} to \linewidth {|X[0.8,c,m]  |[0.04cm tablebordercolor] X[0.8,c,m] |[0.04cm tablebordercolor] X[1,c,m]  |[0.04cm tablebordercolor] X[1,c,m] |[0.04cm tablebordercolor] X[1.5,c,m]}
+\begin{tabu} to \linewidth {|X[0.4,c,m]  |[0.04cm ecvtablebordercolor] X[0.4,c,m] |[0.04cm ecvtablebordercolor] X[0.8,c,m]  |[0.04cm ecvtablebordercolor] X[0.8,c,m] |[0.04cm ecvtablebordercolor] X[0.8,c,m]}
+% \begin{tabu} to \linewidth {|X[0.8,c,m]  |[0.04cm ecvtablebordercolor] X[0.8,c,m] |[0.04cm ecvtablebordercolor] X[1,c,m]  |[0.04cm ecvtablebordercolor] X[1,c,m] |[0.04cm ecvtablebordercolor] X[1.5,c,m]}
 \multicolumn1{c}{#3}&\multicolumn1{c}{#4} &\multicolumn1{c}{#5}&\multicolumn1{c}{#6}&\multicolumn1{c}{#7}\tabularnewline\cline{1-4}
-\tabucline[#8 tablebordercolor]-
+\tabucline[#8 ecvtablebordercolor]-
 \tabuphantomline
 \end{tabu}}
 \tabularnewline[-\arrayrulewidth]
@@ -516,7 +516,7 @@
 \newcommand*\ecvlanguage[7][0pt]{\ecvlangrow[#1]{#2}{#3}{#4}{#5}{#6}{#7}{0.02cm}}
 \newcommand*\ecvlastlanguage[7][0pt]{\ecvlangrow[#1]{#2}{#3}{#4}{#5}{#6}{#7}{0.04cm}}
 
-\newcommand*\ecvlanguagefooter[1][0pt]{& \textcolor{sectioncolor}{\ecv@langshortdesckey} \tabularnewline &\setul{.5pt}{.4pt}\href{\ecv@langlinkkey}{\ul{\mbox{\textcolor{langlinkcolor}{\ecv@langfooterkey}}}} \vspace{#1}\tabularnewline}
+\newcommand*\ecvlanguagefooter[1][0pt]{& \textcolor{ecvsectioncolor}{\ecv@langshortdesckey} \tabularnewline &\setul{.5pt}{.4pt}\href{\ecv@langlinkkey}{\ul{\mbox{\textcolor{ecvlanglinkcolor}{\ecv@langfooterkey}}}} \vspace{#1}\tabularnewline}
 
 % See the Common European Framework of Reference for Languages:
 % http://www.coe.int/T/E/Cultural_Co-operation/education/Languages/Language_Policy/Common_Framework_of_Reference/default.asp
@@ -603,12 +603,6 @@
     \raisebox{-0.3\height}{\draweuropasslogo} & \ecvcoloredtitle \vspace{0.5cm} \tabularnewline
   \fi
 }
-
-\definecolor{rulecolor}{HTML}{398dc9}
-\definecolor{sectioncolor}{HTML}{0e4194}
-\definecolor{highlightcolor}{HTML}{1593cb}
-\definecolor{tablebordercolor}{HTML}{c6c6c6}
-\definecolor{langlinkcolor}{HTML}{000080}
 {
 \end{longtabu}}
 
@@ -617,17 +611,17 @@
 }
 
 \newcommand{\ecvsection}[2][10pt]{%
-  \par\textcolor{sectioncolor}{\small \fontfamily{phv}\fontseries{m}\selectfont \expandafter\MakeUppercase{\expandafter{#2}}}  \vspace{#1} &
+  \par\textcolor{ecvsectioncolor}{\small \fontfamily{phv}\fontseries{m}\selectfont \expandafter\MakeUppercase{\expandafter{#2}}}  \vspace{#1} &
   \setlength{\TPHorizModule}{1pt}\setlength{\TPVertModule}{1pt}
   \getlength{\rightScalarWidth}{\ecv@rightcolwidth}
   
-  \textcolor{rulecolor}{\noindent\makebox[\linewidth]{\rule{\ecv@rightcolwidth}{1pt}}  \begin{textblock}{7}[1,1](\rightScalarWidth,0) \makebox{\rule{7pt}{7pt}} \end{textblock}
+  \textcolor{ecvrulecolor}{\noindent\makebox[\linewidth]{\rule{\ecv@rightcolwidth}{1pt}}  \begin{textblock}{7}[1,1](\rightScalarWidth,0) \makebox{\rule{7pt}{7pt}} \end{textblock}
 }
   \tabularnewline\nopagebreak
 }
 
 \newcommand{\ecvsectionWithoutRuler}[2]{%
-  \textcolor{sectioncolor}{\small \fontfamily{phv}\fontseries{m}\selectfont \expandafter\MakeUppercase{\expandafter{#1}}}  & \parbox[b]{\ecv@rightcolwidth}{#2}
+  \textcolor{ecvsectioncolor}{\small \fontfamily{phv}\fontseries{m}\selectfont \expandafter\MakeUppercase{\expandafter{#1}}}  & \parbox[b]{\ecv@rightcolwidth}{#2}
   \tabularnewline\nopagebreak
 }
           
@@ -640,9 +634,17 @@
     \vspace{#1}\tabularnewline}
 
 \newcommand\ecvtitle[3][2.8pt]{%
-  \if@ecvitemstar \ecvbullet\ \fi \large{\fontfamily{phv}\fontseries{m}\selectfont\textcolor{sectioncolor}{#2}}\vspace{#1} &\setlength{\parskip}{\smallskipamount}\setlength{\parindent}{0pt}\large{\fontfamily{phv}\fontseries{m}\selectfont\textcolor{sectioncolor}{#3}}
+  \large{\fontfamily{phv}\fontseries{m}\selectfont\textcolor{ecvsectioncolor}{#2}}\vspace{#1} &\setlength{\parskip}{\smallskipamount}\setlength{\parindent}{0pt}\large{\fontfamily{phv}\fontseries{m}\selectfont\textcolor{ecvsectioncolor}{#3}}
 \vspace{#1}\tabularnewline}
 
-\newcommand\ecvblueitem[3][2.8pt]{\ecvitem[#1]{\textcolor{sectioncolor}{#2}}{#3}}
+\newcommand\ecvblueitem[3][2.8pt]{\ecvitem[#1]{\textcolor{ecvsectioncolor}{#2}}{#3}}
 
 \ecvRuleWidth{0pt}
+
+% colors
+\definecolor{ecvrulecolor}{HTML}{398dc9}
+\definecolor{ecvsectioncolor}{HTML}{0e4194}
+\definecolor{ecvhighlightcolor}{HTML}{1593cb}
+\definecolor{ecvtablebordercolor}{HTML}{c6c6c6}
+\definecolor{ecvlanglinkcolor}{HTML}{000080}
+\definecolor{ecvtextcolor}{HTML}{3e3a38}
