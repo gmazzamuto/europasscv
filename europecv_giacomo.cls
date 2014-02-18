@@ -255,7 +255,7 @@
   \AtEndOfPackage{\renewcommand*\ecvtitle{}}%
 }
 
-\newcommand{\ecvcoloredtitle}{\fontspec{Liberation Sans} \textcolor{highlightcolor}{\ecvtitle}}
+\newcommand{\ecvcoloredtitle}{\fontfamily{phv}\fontseries{m}\selectfont \textcolor{highlightcolor}{\ecvtitle}}
 
 % Europass logo
 \DeclareOption{logo}{%
@@ -307,8 +307,8 @@
 \ProcessOptions\relax
 
 \LoadClass{article}
-\RequirePackage{ucs}
-% \RequirePackage[utf8x]{inputenc}
+% \RequirePackage{ucs}
+\RequirePackage[utf8x]{inputenc}
 \RequirePackage{array}
 \RequirePackage{longtable}
 \RequirePackage{fancyhdr} % For page numbering
@@ -344,17 +344,17 @@
 \fancyfoot{}
 \fancyfoot[L]{\begin{minipage}{\ecv@leftcolwidth}
 \begin{flushleft}
-\footnotesize\textcolor{highlightcolor}{\fontspec{Liberation Sans}\ecv@lfoot}\end{flushleft}
+\footnotesize\textcolor{highlightcolor}{\fontfamily{phv}\fontseries{m}\selectfont\ecv@lfoot}\end{flushleft}
 \end{minipage}
 }
 \fancyfoot[C]{\begin{minipage}{\ecv@rightcolwidth}
 \begin{center}
-\footnotesize\textcolor{highlightcolor}{\fontspec{Liberation Sans}\ecv@cfoot}\end{center}
+\footnotesize\textcolor{highlightcolor}{\fontfamily{phv}\fontseries{m}\selectfont\ecv@cfoot}\end{center}
 \end{minipage}
 }
 \fancyfoot[R]{\begin{minipage}{\ecv@rightcolwidth}
 \begin{flushright}
-\footnotesize\textcolor{highlightcolor}{\fontspec{Liberation Sans}\ecv@page}\end{flushright}
+\footnotesize\textcolor{highlightcolor}{\fontfamily{phv}\fontseries{m}\selectfont\ecv@page}\end{flushright}
 \end{minipage}}
 
 \fancypagestyle{ecvfancy}{
@@ -372,7 +372,7 @@
 
 \fancyhead[R]{\begin{minipage}{0.2\textwidth}
 \begin{flushright}
-\textcolor{highlightcolor}{\fontspec{Liberation Sans} \ecv@name}\end{flushright}
+\textcolor{highlightcolor}{\fontfamily{phv}\fontseries{m}\selectfont \ecv@name}\end{flushright}
 \end{minipage}
 }
 }
@@ -435,32 +435,32 @@
 \ecvpicture{}
 
 \providecommand{\ecvpersonalinfo}[1][-15pt]{%
-\textcolor{sectioncolor}{\small \fontspec{Liberation Sans} \expandafter\MakeUppercase{\expandafter{\ecv@infosectionkey}}} & {
+\textcolor{sectioncolor}{\small \fontfamily{phv}\fontseries{m}\selectfont \expandafter\MakeUppercase{\expandafter{\ecv@infosectionkey}}} & {
 \begin{doublespacing}
 \begin{tabu} to 0.99\ecv@rightcolwidth {@{}X[0.7,l,p]  X[0.3,r,p]}
 {
-\Large{\fontspec{Liberation Sans} \ecv@name}} \newline
+\Large{\fontfamily{phv}\fontseries{m}\selectfont \ecv@name}} \newline
 \ifx\@empty\ecv@address\else
-\raisebox{-2\lineskip}{\includegraphics[width=0.4cm]{address_icon.pdf}}\hspace{0.2mm} {\fontspec{Liberation Sans} \ecv@address} \newline
+\raisebox{-2\lineskip}{\includegraphics[width=0.4cm]{address_icon.pdf}}\hspace{0.2mm} {\fontfamily{phv}\fontseries{m}\selectfont \ecv@address} \newline
 \fi
 \ifx\@empty\ecv@mobile
   \ifx\@empty\ecv@telephone\else
-  \raisebox{-2\lineskip}{\includegraphics[width=0.4cm]{telephone_icon.pdf}}\hspace{0.2mm} {\fontspec{Liberation Sans} \ecv@telephone}\newline
+  \raisebox{-2\lineskip}{\includegraphics[width=0.4cm]{telephone_icon.pdf}}\hspace{0.2mm} {\fontfamily{phv}\fontseries{m}\selectfont \ecv@telephone}\newline
   \fi
 \else
- \raisebox{-2\lineskip}{\includegraphics[width=0.4cm]{mobile_icon.pdf}}\hspace{0.2mm} {\fontspec{Liberation Sans} \ecv@mobile} \quad \ifx\@empty\ecv@telephone\else \raisebox{-2\lineskip}{\includegraphics[width=0.4cm]{telephone_icon.pdf}}\hspace{0.2mm} {\fontspec{Liberation Sans} \ecv@telephone\newline}\fi
+ \raisebox{-2\lineskip}{\includegraphics[width=0.4cm]{mobile_icon.pdf}}\hspace{0.2mm} {\fontfamily{phv}\fontseries{m}\selectfont \ecv@mobile} \quad \ifx\@empty\ecv@telephone\else \raisebox{-2\lineskip}{\includegraphics[width=0.4cm]{telephone_icon.pdf}}\hspace{0.2mm} {\fontfamily{phv}\fontseries{m}\selectfont \ecv@telephone\newline}\fi
 \fi
 \ifx\@empty\ecv@fax\else
 \ecv@faxkey \ecv@fax 
 \fi
 \ifx\@empty\ecv@email\else
- \raisebox{-2\lineskip}{\includegraphics[width=0.4cm]{mail_icon.pdf}} \hspace{0.2mm} {\fontspec{Liberation Sans} \ecv@email}\newline
+ \raisebox{-2\lineskip}{\includegraphics[width=0.4cm]{mail_icon.pdf}} \hspace{0.2mm} {\fontfamily{phv}\fontseries{m}\selectfont \ecv@email}\newline
 \fi
 \ifx\@empty\ecv@homepage\else
- \raisebox{-2\lineskip}{\includegraphics[width=0.4cm]{website_icon.pdf}} {\fontspec{Liberation Sans} \setul{.5pt}{.4pt}\href{\ecv@homepage}{ \ul{\ecv@homepage}}}\newline
+ \raisebox{-2\lineskip}{\includegraphics[width=0.4cm]{website_icon.pdf}} {\fontfamily{phv}\fontseries{m}\selectfont \setul{.5pt}{.4pt}\href{\ecv@homepage}{ \ul{\ecv@homepage}}}\newline
 \fi
 \ifx\@empty\ecv@birth\else
-{\fontspec{Liberation Sans} \textcolor{highlightcolor}{\ecv@birthkey} \ecv@birth \ifx\@empty\ecv@nationality\else\textcolor{highlightcolor}{~| \ecv@nationalitykey}~\ecv@nationality\newline\fi }
+{\fontfamily{phv}\fontseries{m}\selectfont \textcolor{highlightcolor}{\ecv@birthkey} \ecv@birth \ifx\@empty\ecv@nationality\else\textcolor{highlightcolor}{~| \ecv@nationalitykey}~\ecv@nationality\newline\fi }
 \fi
 \ifx\@empty\ecv@gender\else
 \ecv@genderkey  \ecv@gender
@@ -593,7 +593,8 @@
 \vspace*{-2.5cm}
 \enlargethispage{2.5cm}
 \addtolength{\ecv@rightcolwidth}{-\ecv@colsep}
-\setmainfont[Ligatures=TeX,ItalicFont={Liberation Sans Narrow Italic}]{Liberation Sans Narrow}
+
+\fontfamily{phv}\fontseries{mc}\selectfont
 % \color{ecvtextcolor}
 \begin{longtabu} to \textwidth {@{}>{\raggedleft}p{\ecv@leftcolwidth}@{}|@{\extracolsep{\ecv@colsep}}p{\ecv@rightcolwidth}@{}}
   \ifx\@empty\draweuropasslogo
@@ -616,7 +617,7 @@
 }
 
 \newcommand{\ecvsection}[2][10pt]{%
-  \par\textcolor{sectioncolor}{\small \fontspec{Liberation Sans} \expandafter\MakeUppercase{\expandafter{#2}}}  \vspace{#1} &
+  \par\textcolor{sectioncolor}{\small \fontfamily{phv}\fontseries{m}\selectfont \expandafter\MakeUppercase{\expandafter{#2}}}  \vspace{#1} &
   \setlength{\TPHorizModule}{1pt}\setlength{\TPVertModule}{1pt}
   \getlength{\rightScalarWidth}{\ecv@rightcolwidth}
   
@@ -626,7 +627,7 @@
 }
 
 \newcommand{\ecvsectionWithoutRuler}[2]{%
-  \textcolor{sectioncolor}{\small \fontspec{Liberation Sans} \expandafter\MakeUppercase{\expandafter{#1}}}  & \parbox[b]{\ecv@rightcolwidth}{#2}
+  \textcolor{sectioncolor}{\small \fontfamily{phv}\fontseries{m}\selectfont \expandafter\MakeUppercase{\expandafter{#1}}}  & \parbox[b]{\ecv@rightcolwidth}{#2}
   \tabularnewline\nopagebreak
 }
           
@@ -637,9 +638,9 @@
 \newcommand\@ecvitem[3][2.8pt]{%
   \if@ecvitemstar \ecvbullet\ \fi #2\vspace{#1} &\setlength{\parskip}{\smallskipamount}\setlength{\parindent}{0pt}#3
     \vspace{#1}\tabularnewline}
-    
-\newcommand\ecvhighlighteditem[3][2.8pt]{%
-  \if@ecvitemstar \ecvbullet\ \fi \large{\fontspec{Liberation Sans}\textcolor{sectioncolor}{#2}}\vspace{#1} &\setlength{\parskip}{\smallskipamount}\setlength{\parindent}{0pt}\large{\fontspec{Liberation Sans}\textcolor{sectioncolor}{#3}}
+
+\newcommand\ecvtitle[3][2.8pt]{%
+  \if@ecvitemstar \ecvbullet\ \fi \large{\fontfamily{phv}\fontseries{m}\selectfont\textcolor{sectioncolor}{#2}}\vspace{#1} &\setlength{\parskip}{\smallskipamount}\setlength{\parindent}{0pt}\large{\fontfamily{phv}\fontseries{m}\selectfont\textcolor{sectioncolor}{#3}}
 \vspace{#1}\tabularnewline}
 
 \newcommand\ecvblueitem[3][2.8pt]{\ecvitem[#1]{\textcolor{sectioncolor}{#2}}{#3}}
