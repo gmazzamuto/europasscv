@@ -35,5 +35,5 @@
 \def\ecv@cefindepkey{\ecv@utf{Utente autonomo}}
 \def\ecv@cefprofkey{\ecv@utf{Utente avanzato}}
 
-\renewcommand*{\ecvtitle}{\ecv@utf{%
+\renewcommand*{\ecvcurrvitae}{\ecv@utf{%
 Curriculum Vitae}}

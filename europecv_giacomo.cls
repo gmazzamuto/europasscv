@@ -248,11 +248,6 @@
   \renewcommand{\seriesdefault}{mc} % Narrow
   \renewcommand{\bfdefault}{bc}  % Boldface narrow
 }
-% No title
-% This must come *after* language definitions
-\DeclareOption{notitle}{%
-  \AtEndOfPackage{\renewcommand*\ecvtitle{}}%
-}
 
 \newcommand{\ecvcurrvitae}{Curriculum vitae}
 \newcommand{\ecvcoloredtitle}{\fontfamily{phv}\fontseries{m}\selectfont \textcolor{ecvhighlightcolor}{\ecvcurrvitae}}
