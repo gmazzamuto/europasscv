@@ -260,6 +260,7 @@
 % Europass logo
 \DeclareOption{logo}{%
 \providecommand*\draweuropasslogo{%
+   \hspace*{0.5cm}
    \includegraphics[width=\ecv@logowidth]{europasslogo}}
 }
 \DeclareOption{nologo}{\renewcommand*\draweuropasslogo{}}
@@ -394,11 +395,12 @@
 \ecvpicture{}
 
 \providecommand{\ecvpersonalinfo}[1][0pt]{%
-& \tabularnewline
+& \vspace{0.5cm} \tabularnewline
 \ifx\@empty\ecvdrawpicture\else
    &\ecv@beforepic\ecvdrawpicture\ecv@afterpic\tabularnewline
 \fi
 \ecvsectionWithoutRuler{\ecv@infosectionkey}{\large{\fontspec{Arial} \ecv@name}}
+\ecvitem{}{}
 \ifx\@empty\ecv@address\else
 \ecv@addresskey     &\ecv@address   \tabularnewline[5pt]
 \fi
@@ -555,8 +557,7 @@
 \newcommand*{\ecvLogoWidth}[1]{\setlength\ecv@logowidth{#1}}
 \newcommand*{\ecvLogoOffset}[1]{\setlength\ecv@logooffset{#1}}
 \ecvLogoWidth{4.487cm}
-\ecvLogoOffset{1cm}
-%\typeout{logo width=\the\ecv@logowidth}
+\ecvLogoOffset{0.8cm}%\typeout{logo width=\the\ecv@logowidth}
 %\typeout{logo offset=\the\ecv@logooffset}
 
 % Text bullet
