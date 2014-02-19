@@ -315,6 +315,8 @@
 \RequirePackage[dvipsnames]{xcolor}
 \RequirePackage{textpos}
 \RequirePackage{pgf}
+\RequirePackage{url}
+\RequirePackage{soul}
 
 \def\ecv@totpages{}
 \newcommand*{\ecvpage}[1]{\def\ecv@page{#1}}
@@ -389,6 +391,7 @@
 \ecvtelephone{}
 \ecvfax{}
 \ecvemail{}
+\ecvhomepage{}
 \ecvnationality{}
 \ecvdateofbirth{}
 \ecvgender{}
@@ -402,24 +405,28 @@
 \ecvsectionWithoutRuler{\ecv@infosectionkey}{\large{\fontspec{Arial} \ecv@name}}
 \ecvitem{}{}
 \ifx\@empty\ecv@address\else
-\ecv@addresskey     &\ecv@address   \tabularnewline[5pt]
+&\raisebox{-2\lineskip}{\includegraphics[width=0.4cm]{address_icon.pdf}}\hspace{2mm} {\fontspec{Arial} \ecv@address}   \tabularnewline[5pt]
 \fi
-\ifx\@empty\ecv@telephone\else
-\ecv@telkey         &\ecv@telephone
- \ifx\@empty\ecv@mobile\else\qquad\ecv@mobilekey: \ecv@mobile\fi
+\ifx\@empty\ecv@mobile
+  \ifx\@empty\ecv@telephone\else
+  &   \raisebox{-2\lineskip}{\includegraphics[width=0.4cm]{phone_icon.pdf}}\hspace{1mm} {\fontspec{Arial} \ecv@telephone} \tabularnewline[5pt]
+  \fi
+\else
+ &\raisebox{-2\lineskip}{\includegraphics[width=0.4cm]{mobile_icon.pdf}}\hspace{2mm} {\fontspec{Arial} \ecv@mobile} \quad \ifx\@empty\ecv@telephone\else \raisebox{-2\lineskip}{\includegraphics[width=0.4cm]{phone_icon.pdf}}\hspace{2mm} {\fontspec{Arial} \ecv@telephone}\fi
 \tabularnewline[5pt]
 \fi
 \ifx\@empty\ecv@fax\else
 \ecv@faxkey         &\ecv@fax \tabularnewline[5pt]
 \fi
 \ifx\@empty\ecv@email\else
-\ecv@emailkey       &\ecv@email \tabularnewline[5pt]
+ &\raisebox{-2\lineskip}{\includegraphics[width=0.4cm]{mail_icon.pdf}} \hspace{0.2mm} {\fontspec{Arial} \ecv@email} \tabularnewline[5pt]
 \fi
-\ifx\@empty\ecv@nationality\else
-\ecv@nationalitykey & \ecv@nationality \tabularnewline[5pt]
+\ifx\@empty\ecv@homepage\else
+ &\raisebox{-2\lineskip}{\includegraphics[width=0.4cm]{website_icon.pdf}} {\fontspec{Arial} \setul{.5pt}{.4pt}\href{\ecv@homepage}{ \ul{\ecv@homepage}}} \tabularnewline[5pt]
 \fi
+
 \ifx\@empty\ecv@birth\else
-\ecv@birthkey       & \ecv@birth \tabularnewline
+& {\fontspec{Arial} \textcolor{highlightcolor}{\ecv@birthkey} \ecv@birth \ifx\@empty\ecv@nationality\else\textcolor{highlightcolor}{~| \ecv@nationalitykey}~\ecv@nationality\fi }\tabularnewline
 \fi
 \ifx\@empty\ecv@gender\else
 \ecv@genderkey      & \ecv@gender \tabularnewline
