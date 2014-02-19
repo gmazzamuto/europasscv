@@ -508,7 +508,8 @@
   }
 \fi
 
-\newcommand*\ecvlanguagefooter[2][0pt]{\ecvitem[#1]{}{\quad\footnotesize{${}^{\mbox{\tiny#2}}$\textit{\ecv@langfooterkey}}}}
+\definecolor{langlinkcolor}{HTML}{000080}
+\newcommand*\ecvlanguagefooter[1][0pt]{& \textcolor{sectioncolor}{\ecv@langshortdesckey} \tabularnewline &\setul{.5pt}{.4pt}\href{\ecv@langlinkkey}{\ul{\mbox{\textcolor{langlinkcolor}{\ecv@langfooterkey}}}} \vspace{#1}\tabularnewline}
 
 % See the Common European Framework of Reference for Languages:
 % http://www.coe.int/T/E/Cultural_Co-operation/education/Languages/Language_Policy/Common_Framework_of_Reference/default.asp

@@ -28,7 +28,9 @@
 \def\ecv@readkey{\ecv@utf{Lettura}}
 \def\ecv@interactkey{\ecv@utf{Interazione}}
 \def\ecv@productkey{\ecv@utf{Produzione orale}}
+\def\ecv@langshortdesckey{\ecv@utf{Livelli: A1/A2: Livello base - B1/B2: Livello intermedio - C1/C2: Livello avanzato}}
 \def\ecv@langfooterkey{\ecv@utf{Quadro comune europeo di riferimento per le lingue}}
+\def\ecv@langlinkkey{\ecv@utf{http://europass.cedefop.europa.eu/it/resources/european-language-levels-cefr}}
 \def\ecv@cefbasickey{\ecv@utf{Utente elementare}}
 \def\ecv@cefindepkey{\ecv@utf{Utente autonomo}}
 \def\ecv@cefprofkey{\ecv@utf{Utente avanzato}}
