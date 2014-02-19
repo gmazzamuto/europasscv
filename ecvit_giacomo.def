@@ -18,14 +18,15 @@
 \def\ecv@cvofkey{\ecv@utf{Curriculum vit\ae\ di}}
 % Language table
 \def\ecv@mothertonguekey{\ecv@utf{Lingua madre}}
+\def\ecv@otherlanguageskey{\ecv@utf{Altre lingue}}
 \def\ecv@assesskey{\ecv@utf{Autovalutazione}}
 \def\ecv@levelkey{\ecv@utf{Livello europeo}}
 \def\ecv@understandkey{\ecv@utf{Comprensione}}
 \def\ecv@speakkey{\ecv@utf{Parlato}}
-\def\ecv@writekey{\ecv@utf{Scritto}}
+\def\ecv@writekey{\ecv@utf{Produzione scritta}}
 \def\ecv@listenkey{\ecv@utf{Ascolto}}
 \def\ecv@readkey{\ecv@utf{Lettura}}
-\def\ecv@interactkey{\ecv@utf{Interazione orale}}
+\def\ecv@interactkey{\ecv@utf{Interazione}}
 \def\ecv@productkey{\ecv@utf{Produzione orale}}
 \def\ecv@langfooterkey{\ecv@utf{Quadro comune europeo di riferimento per le lingue}}
 \def\ecv@cefbasickey{\ecv@utf{Utente elementare}}

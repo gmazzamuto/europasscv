@@ -317,6 +317,7 @@
 \RequirePackage{pgf}
 \RequirePackage{url}
 \RequirePackage{soul}
+\RequirePackage{tabu}
 
 \def\ecv@totpages{}
 \newcommand*{\ecvpage}[1]{\def\ecv@page{#1}}
@@ -438,35 +439,47 @@
 \newcommand*\ecvmothertongue[2][0pt]{%
 \textcolor{sectioncolor}{\ecv@mothertonguekey} & #2\tabularnewline[#1]
 }
+
 \newlength\ecv@langparwidth
 
 \ifx\ecv@booktabs\undefined % Use table conforming to EU model
-  \newcommand*\ecvlanguageheader[1]{%
-  {\large\textit{\ecv@assesskey}}\\ \textit{\ecv@levelkey}${}^{\mbox{\scriptsize#1}}$&
-  \setlength\extrarowheight{0pt}
-\renewcommand{\arraystretch}{1.5}
-  \begin{tabular}[t]{|m{\ecv@langparwidth}|m{\ecv@langparwidth}|m{\ecv@langparwidth}|m{\ecv@langparwidth}|m{\ecv@langparwidth}|}
-  \firsthline
-  \multicolumn{2}{|c|}{\textbf{\ecv@understandkey}}&\multicolumn{2}{c|}{\textbf{\ecv@speakkey}}&\centering\textbf{\ecv@writekey}\tabularnewline\cline{1-4}
-  \centering{\ecv@listenkey}   & \centering {\ecv@readkey} &\centering {\ecv@interactkey} &\centering {\ecv@productkey} & \tabularnewline
-  %\lasthline
-  \hline
-  \end{tabular} \tabularnewline[-\arrayrulewidth]
+  \newcommand*\ecvlanguageheader{%
+  \renewcommand{\arraystretch}{1.5}
+  \par \noindent \textcolor{sectioncolor}{\ecv@otherlanguageskey}
+  &
+  \renewcommand{\arraystretch}{1.5}
+  {\par \noindent
+  \begin{tabu} to \linewidth {|X[0.6,c,m]  |[0.04cm tablebordercolor] X[0.6,c,m] |[0.04cm tablebordercolor] X[0.8,c,m]  |[0.04cm tablebordercolor] X[0.8,c,m] |[0.04cm tablebordercolor] X[1.2,c,m]}
+  \tabucline[0.04cm tablebordercolor]-
+  \multicolumn2{|c|[0.04cm tablebordercolor]}{\textcolor{sectioncolor}{\expandafter\MakeUppercase{\expandafter{\ecv@understandkey}}}}&\multicolumn2{|c|[0.04cm tablebordercolor]}{\textcolor{sectioncolor}{\expandafter\MakeUppercase{\expandafter{\ecv@speakkey}}}}&\multicolumn1{|c|}{\textcolor{sectioncolor}{\expandafter\MakeUppercase{\expandafter{\ecv@writekey}}}}\tabularnewline\cline{1-3}
+  \tabucline[0.04cm tablebordercolor]-
+  \multicolumn1{c|[0.04cm tablebordercolor]}{\textcolor{sectioncolor}{\ecv@listenkey}}&\multicolumn1{c|[0.04cm tablebordercolor]}{\textcolor{sectioncolor}{\ecv@readkey}} &\multicolumn1{c|[0.04cm tablebordercolor]}{\textcolor{sectioncolor}{\ecv@interactkey}}&\multicolumn1{c|[0.04cm tablebordercolor]}{\textcolor{sectioncolor}{\ecv@productkey}}&\multicolumn1{c}{}\tabularnewline\cline{1-4}
+  \tabucline[0.04cm tablebordercolor]-
+  \tabuphantomline
+  \end{tabu}
   }
-  \newcommand*\ecvlanguage[7][0pt]{
-  {\textbf{#2}} &
-  \setlength\extrarowheight{0pt}
-\renewcommand{\arraystretch}{1.5}
-  \begin{tabular}{|m{\ecv@langparwidth}|m{\ecv@langparwidth}|m{\ecv@langparwidth}|m{\ecv@langparwidth}|m{\ecv@langparwidth}|}
-  \hline
-   #3 & #4 & #5 & #6 & #7 \tabularnewline
-  \hline
-  \end{tabular}\vspace{#1}
   \tabularnewline[-\arrayrulewidth]
   }
-  \newcommand*\ecvlastlanguage[7][0pt]{\ecvlanguage[#1]{#2}{#3}{#4}{#5}{#6}{#7}}
+  
+  
+  \newcommand*\ecvlangrow[8][0pt]{
+  \vspace{-\baselineskip} \par \noindent {#2} & 
+ \renewcommand{\arraystretch}{1.5}
+ \vspace{-\baselineskip} \par
+   {\begin{tabu} to \linewidth {|X[0.6,c,m]  |[0.04cm tablebordercolor] X[0.6,c,m] |[0.04cm tablebordercolor] X[0.8,c,m]  |[0.04cm tablebordercolor] X[0.8,c,m] |[0.04cm tablebordercolor] X[1.2,c,m]}
+  \multicolumn1{c}{#3}&\multicolumn1{c}{#4} &\multicolumn1{c}{#5}&\multicolumn1{c}{#6}&\multicolumn1{c}{#7}\tabularnewline\cline{1-4}
+  \tabucline[#8 tablebordercolor]-
+  \tabuphantomline
+  \end{tabu}}
+  \tabularnewline[-\arrayrulewidth]
+  }
+  
+  \newcommand*\ecvlanguage[7][0pt]{\ecvlangrow[#1]{#2}{#3}{#4}{#5}{#6}{#7}{0.02cm}}
+  \newcommand*\ecvlastlanguage[7][0pt]{\ecvlangrow[#1]{#2}{#3}{#4}{#5}{#6}{#7}{0.04cm}}
+
+  
 \else % Use booktabs
-  \newcommand*\ecvlanguageheader[1]{%
+  \newcommand*\ecvlanguageheader{%
   {\large\textit{\ecv@assesskey}}\\ \textit{\ecv@levelkey}${}^{\mbox{\scriptsize#1}}$&
   \setlength\extrarowheight{0pt}
   \begin{tabular}[t]{m{\ecv@langparwidth}m{\ecv@langparwidth}m{\ecv@langparwidth}m{\ecv@langparwidth}m{\ecv@langparwidth}}
@@ -516,12 +529,12 @@
   }
 \fi
 
-\newcommand*\ecvAOne{\ecvCEF{A1}{\ecv@cefbasickey}}
-\newcommand*\ecvATwo{\ecvCEF{A2}{\ecv@cefbasickey}}
-\newcommand*\ecvBOne{\ecvCEF{B1}{\ecv@cefindepkey}}
-\newcommand*\ecvBTwo{\ecvCEF{B2}{\ecv@cefindepkey}}
-\newcommand*\ecvCOne{\ecvCEF{C1}{\ecv@cefprofkey}}
-\newcommand*\ecvCTwo{\ecvCEF{C2}{\ecv@cefprofkey}}
+\newcommand*\ecvAOne{A1}
+\newcommand*\ecvATwo{A2}
+\newcommand*\ecvBOne{B1}
+\newcommand*\ecvBTwo{B2}
+\newcommand*\ecvCOne{C1}
+\newcommand*\ecvCTwo{C2}
 
 \def\ecv@kern{\kern0.5pt}
 %\def\ecv@kern{}
@@ -581,7 +594,7 @@
   \addtolength{\ecv@langparwidth}{-2\tabcolsep}
   \addtolength{\ecv@langparwidth}{-2\arrayrulewidth}
 % Begin
-\begin{longtable}[l]{@{}>{\raggedleft}p{\ecv@leftcolwidth}@{\hspace{\ecv@colsep}}|@{\extracolsep{\ecv@colsep}}p{\ecv@rightcolwidth}@{}}
+\begin{longtable}[l]{@{}>{\raggedleft}p{\ecv@leftcolwidth}@{}|@{\extracolsep{\ecv@colsep}}p{\ecv@rightcolwidth}@{}}
   \ecv@hrule
   \ifx\@empty\draweuropasslogo\else
     % Any better way of achieving the same result?!?
@@ -597,6 +610,7 @@
 \definecolor{rulecolor}{HTML}{398dc9}
 \definecolor{sectioncolor}{HTML}{0e4194}
 \definecolor{highlightcolor}{HTML}{1593cb}
+\definecolor{tablebordercolor}{HTML}{c6c6c6}
 
 \newcommand*{\getlength}[2]{%
    \pgfmathsetmacro#1{#2}
