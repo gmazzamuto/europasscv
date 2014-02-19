@@ -323,14 +323,12 @@
 \newcommand*{\ecvpage}[1]{\def\ecv@page{#1}}
 \ecvpage{\ecv@pagekey~\thepage\ecv@totpages}
 
-% Page number
 \def\ecv@lfoot{%
-  \footnotesize\textrm{\ecv@page~-~\ecv@cvofkey}\\
-  \textrm{\ecv@footername}
+  \footnotesize\textrm{\@date}
 }
 
 % Right Footnote to be shown on every page
-\newcommand\ecvfootnote[1]{\def\ecv@rfoot{#1}}
+\newcommand\ecvfootnote[1]{\def\ecv@cfoot{#1}}
 \ecvfootnote{}
 
 \AtBeginDocument{%
@@ -342,11 +340,17 @@
 \fancyhead{}
 \fancyfoot{}
 \fancyfoot[L]{\begin{minipage}{\ecv@leftcolwidth}
-\begin{flushright}\footnotesize\ecv@lfoot\end{flushright}%
+\begin{flushleft}\footnotesize\textcolor{highlightcolor}{\ecv@lfoot}\end{flushleft}%
+\end{minipage}
+}
+\fancyfoot[C]{\begin{minipage}{\ecv@rightcolwidth}
+\begin{center}
+\footnotesize\textcolor{highlightcolor}{\ecv@cfoot}\end{center}
 \end{minipage}
 }
 \fancyfoot[R]{\begin{minipage}{\ecv@rightcolwidth}
-\footnotesize\ecv@rfoot
+\begin{flushright}
+\footnotesize\textcolor{highlightcolor}{\ecv@page}\end{flushright}
 \end{minipage}}
 \renewcommand{\headrulewidth}{0pt}%
 } % End \AtBeginDocument
