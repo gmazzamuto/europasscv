@@ -623,5 +623,8 @@
 \newcommand\@ecvitem[3][2.8pt]{%
   \if@ecvitemstar \ecvbullet\ \fi #2\vspace{#1} &\setlength{\parskip}{\smallskipamount}\setlength{\parindent}{0pt}#3
     \vspace{#1}\tabularnewline}
+\newcommand\ecvhighlighteditem[3][2.8pt]{%
+  \if@ecvitemstar \ecvbullet\ \fi \large{\fontspec{Arial}\textcolor{sectioncolor}{#2}}\vspace{#1} &\setlength{\parskip}{\smallskipamount}\setlength{\parindent}{0pt}\large{\fontspec{Arial}\textcolor{sectioncolor}{#3}}
+\vspace{#1}\tabularnewline}
 
 \ecvRuleWidth{0pt}
