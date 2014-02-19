@@ -17,7 +17,7 @@
 \def\ecv@pagekey{\ecv@utf{Pagina}}
 \def\ecv@cvofkey{\ecv@utf{Curriculum vit\ae\ di}}
 % Language table
-\def\ecv@mothertonguekey{\ecv@utf{Madrelingua}}
+\def\ecv@mothertonguekey{\ecv@utf{Lingua madre}}
 \def\ecv@assesskey{\ecv@utf{Autovalutazione}}
 \def\ecv@levelkey{\ecv@utf{Livello europeo}}
 \def\ecv@understandkey{\ecv@utf{Comprensione}}

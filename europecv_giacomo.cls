@@ -436,7 +436,7 @@
 
 % Spoken language information
 \newcommand*\ecvmothertongue[2][0pt]{%
-{\large\ecv@mothertonguekey} & \large\textbf{#2}\tabularnewline[#1]
+\textcolor{sectioncolor}{\ecv@mothertonguekey} & #2\tabularnewline[#1]
 }
 \newlength\ecv@langparwidth
 
