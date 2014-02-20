@@ -441,9 +441,9 @@
 & {\fontspec{Arial} \textcolor{highlightcolor}{\ecv@birthkey} \ecv@birth \ifx\@empty\ecv@nationality\else\textcolor{highlightcolor}{~| \ecv@nationalitykey}~\ecv@nationality\fi }\tabularnewline
 \fi
 \ifx\@empty\ecv@gender\else
-\ecv@genderkey      & \ecv@gender \tabularnewline
+\ecv@genderkey      & \ecv@gender
 \fi
-\vspace{#1}
+\vspace{#1}\tabularnewline
 }
 
 % Spoken language information
