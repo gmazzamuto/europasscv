@@ -460,7 +460,7 @@
   &
   \renewcommand{\arraystretch}{1.5}
   {\par \noindent
-  \begin{tabu} to \linewidth {|X[0.6,c,m]  |[0.04cm tablebordercolor] X[0.6,c,m] |[0.04cm tablebordercolor] X[0.8,c,m]  |[0.04cm tablebordercolor] X[0.8,c,m] |[0.04cm tablebordercolor] X[1.2,c,m]}
+  \begin{tabu} to \linewidth {|X[0.4,c,m]  |[0.04cm tablebordercolor] X[0.4,c,m] |[0.04cm tablebordercolor] X[0.8,c,m]  |[0.04cm tablebordercolor] X[0.8,c,m] |[0.04cm tablebordercolor] X[1,c,m]}
   \tabucline[0.04cm tablebordercolor]-
   \multicolumn2{|c|[0.04cm tablebordercolor]}{\textcolor{sectioncolor}{\expandafter\MakeUppercase{\expandafter{\ecv@understandkey}}}}&\multicolumn2{|c|[0.04cm tablebordercolor]}{\textcolor{sectioncolor}{\expandafter\MakeUppercase{\expandafter{\ecv@speakkey}}}}&\multicolumn1{|c|}{\textcolor{sectioncolor}{\expandafter\MakeUppercase{\expandafter{\ecv@writekey}}}}\tabularnewline\cline{1-3}
   \tabucline[0.04cm tablebordercolor]-
@@ -476,8 +476,8 @@
   \newcommand*\ecvlangrow[8][0pt]{
   \vspace{-\baselineskip} \par \noindent {#2} & 
  \renewcommand{\arraystretch}{1.5}
- \vspace{-\baselineskip} \par
-   {\begin{tabu} to \linewidth {|X[0.6,c,m]  |[0.04cm tablebordercolor] X[0.6,c,m] |[0.04cm tablebordercolor] X[0.8,c,m]  |[0.04cm tablebordercolor] X[0.8,c,m] |[0.04cm tablebordercolor] X[1.2,c,m]}
+ \vspace{-\baselineskip} \par\noindent
+   {\begin{tabu} to \linewidth {|X[0.4,c,m]  |[0.04cm tablebordercolor] X[0.4,c,m] |[0.04cm tablebordercolor] X[0.8,c,m]  |[0.04cm tablebordercolor] X[0.8,c,m] |[0.04cm tablebordercolor] X[1,c,m]}
   \multicolumn1{c}{#3}&\multicolumn1{c}{#4} &\multicolumn1{c}{#5}&\multicolumn1{c}{#6}&\multicolumn1{c}{#7}\tabularnewline\cline{1-4}
   \tabucline[#8 tablebordercolor]-
   \tabuphantomline
@@ -652,5 +652,7 @@
 \newcommand\ecvhighlighteditem[3][2.8pt]{%
   \if@ecvitemstar \ecvbullet\ \fi \large{\fontspec{Arial}\textcolor{sectioncolor}{#2}}\vspace{#1} &\setlength{\parskip}{\smallskipamount}\setlength{\parindent}{0pt}\large{\fontspec{Arial}\textcolor{sectioncolor}{#3}}
 \vspace{#1}\tabularnewline}
+
+\newcommand\ecvblueitem[3][2.8pt]{\ecvitem[#1]{\textcolor{sectioncolor}{#2}}{#3}}
 
 \ecvRuleWidth{0pt}
