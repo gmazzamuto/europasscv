@@ -337,7 +337,14 @@
 \ecvLeftColumnWidth{\ecv@leftcolwidth}
 % Set layout
 \pagestyle{fancy}
+\setlength{\headheight}{3\baselineskip}
+\setlength{\footskip}{8.4pt}
 \fancyhead{}
+\fancyhead[L]{}
+\fancyhead[R]{\begin{minipage}{\ecv@rightcolwidth}
+\begin{flushright}
+\textcolor{highlightcolor}{\fontspec{Arial} \ecv@name}\end{flushright}
+\end{minipage}}
 \fancyfoot{}
 \fancyfoot[L]{\begin{minipage}{\ecv@leftcolwidth}
 \begin{flushleft}\footnotesize\textcolor{highlightcolor}{\ecv@lfoot}\end{flushleft}%
