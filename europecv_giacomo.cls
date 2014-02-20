@@ -255,7 +255,7 @@
   \AtEndOfPackage{\renewcommand*\ecvtitle{}}%
 }
 
-\newcommand{\ecvcoloredtitle}{\fontspec{Arial} \textcolor{highlightcolor}{\ecvtitle}}
+\newcommand{\ecvcoloredtitle}{\fontspec{Liberation Sans} \textcolor{highlightcolor}{\ecvtitle}}
 
 % Europass logo
 \DeclareOption{logo}{%
@@ -343,7 +343,7 @@
 \fancyhead[L]{}
 \fancyhead[R]{\begin{minipage}{\ecv@rightcolwidth}
 \begin{flushright}
-\textcolor{highlightcolor}{\fontspec{Arial} \ecv@name}\end{flushright}
+\textcolor{highlightcolor}{\fontspec{Liberation Sans} \ecv@name}\end{flushright}
 \end{minipage}}
 \fancyfoot{}
 \fancyfoot[L]{\begin{minipage}{\ecv@leftcolwidth}
@@ -414,31 +414,31 @@
 \ifx\@empty\ecvdrawpicture\else
    &\ecv@beforepic\ecvdrawpicture\ecv@afterpic\tabularnewline
 \fi
-\ecvsectionWithoutRuler{\ecv@infosectionkey}{\large{\fontspec{Arial} \ecv@name}}
+\ecvsectionWithoutRuler{\ecv@infosectionkey}{\large{\fontspec{Liberation Sans} \ecv@name}}
 \ecvitem{}{}
 \ifx\@empty\ecv@address\else
-&\raisebox{-2\lineskip}{\includegraphics[width=0.4cm]{address_icon.pdf}}\hspace{2mm} {\fontspec{Arial} \ecv@address}   \tabularnewline[5pt]
+&\raisebox{-2\lineskip}{\includegraphics[width=0.4cm]{address_icon.pdf}}\hspace{0.2mm} {\fontspec{Liberation Sans} \ecv@address}   \tabularnewline[5pt]
 \fi
 \ifx\@empty\ecv@mobile
   \ifx\@empty\ecv@telephone\else
-  &   \raisebox{-2\lineskip}{\includegraphics[width=0.4cm]{phone_icon.pdf}}\hspace{1mm} {\fontspec{Arial} \ecv@telephone} \tabularnewline[5pt]
+  &   \raisebox{-2\lineskip}{\includegraphics[width=0.4cm]{phone_icon.pdf}}\hspace{0.2mm} {\fontspec{Liberation Sans} \ecv@telephone} \tabularnewline[5pt]
   \fi
 \else
- &\raisebox{-2\lineskip}{\includegraphics[width=0.4cm]{mobile_icon.pdf}}\hspace{2mm} {\fontspec{Arial} \ecv@mobile} \quad \ifx\@empty\ecv@telephone\else \raisebox{-2\lineskip}{\includegraphics[width=0.4cm]{phone_icon.pdf}}\hspace{2mm} {\fontspec{Arial} \ecv@telephone}\fi
+ &\raisebox{-2\lineskip}{\includegraphics[width=0.4cm]{mobile_icon.pdf}}\hspace{0.2mm} {\fontspec{Liberation Sans} \ecv@mobile} \quad \ifx\@empty\ecv@telephone\else \raisebox{-2\lineskip}{\includegraphics[width=0.4cm]{phone_icon.pdf}}\hspace{0.2mm} {\fontspec{Liberation Sans} \ecv@telephone}\fi
 \tabularnewline[5pt]
 \fi
 \ifx\@empty\ecv@fax\else
 \ecv@faxkey         &\ecv@fax \tabularnewline[5pt]
 \fi
 \ifx\@empty\ecv@email\else
- &\raisebox{-2\lineskip}{\includegraphics[width=0.4cm]{mail_icon.pdf}} \hspace{0.2mm} {\fontspec{Arial} \ecv@email} \tabularnewline[5pt]
+ &\raisebox{-2\lineskip}{\includegraphics[width=0.4cm]{mail_icon.pdf}} \hspace{0.2mm} {\fontspec{Liberation Sans} \ecv@email} \tabularnewline[5pt]
 \fi
 \ifx\@empty\ecv@homepage\else
- &\raisebox{-2\lineskip}{\includegraphics[width=0.4cm]{website_icon.pdf}} {\fontspec{Arial} \setul{.5pt}{.4pt}\href{\ecv@homepage}{ \ul{\ecv@homepage}}} \tabularnewline[5pt]
+ &\raisebox{-2\lineskip}{\includegraphics[width=0.4cm]{website_icon.pdf}} {\fontspec{Liberation Sans} \setul{.5pt}{.4pt}\href{\ecv@homepage}{ \ul{\ecv@homepage}}} \tabularnewline[5pt]
 \fi
 
 \ifx\@empty\ecv@birth\else
-& {\fontspec{Arial} \textcolor{highlightcolor}{\ecv@birthkey} \ecv@birth \ifx\@empty\ecv@nationality\else\textcolor{highlightcolor}{~| \ecv@nationalitykey}~\ecv@nationality\fi }\tabularnewline
+& {\fontspec{Liberation Sans} \textcolor{highlightcolor}{\ecv@birthkey} \ecv@birth \ifx\@empty\ecv@nationality\else\textcolor{highlightcolor}{~| \ecv@nationalitykey}~\ecv@nationality\fi }\tabularnewline
 \fi
 \ifx\@empty\ecv@gender\else
 \ecv@genderkey      & \ecv@gender
@@ -629,7 +629,7 @@
 }
 
 \newcommand{\ecvsection}[2][10pt]{%
-  \par\textcolor{sectioncolor}{\small \fontspec{Arial} \expandafter\MakeUppercase{\expandafter{#2}}}  \vspace{#1} &
+  \par\textcolor{sectioncolor}{\small \fontspec{Liberation Sans} \expandafter\MakeUppercase{\expandafter{#2}}}  \vspace{#1} &
   \setlength{\TPHorizModule}{1pt}\setlength{\TPVertModule}{1pt}
   \getlength{\rightScalarWidth}{\ecv@rightcolwidth}
   
@@ -639,7 +639,7 @@
 }
 
 \newcommand{\ecvsectionWithoutRuler}[2]{%
-  \par\textcolor{sectioncolor}{\small \fontspec{Arial} \expandafter\MakeUppercase{\expandafter{#1}}}  & \parbox[b]{\ecv@rightcolwidth}{\par{#2}} 
+  \par\textcolor{sectioncolor}{\small \fontspec{Liberation Sans} \expandafter\MakeUppercase{\expandafter{#1}}}  & \parbox[b]{\ecv@rightcolwidth}{\par{#2}} 
   \tabularnewline\nopagebreak
 }
           
@@ -650,7 +650,7 @@
   \if@ecvitemstar \ecvbullet\ \fi #2\vspace{#1} &\setlength{\parskip}{\smallskipamount}\setlength{\parindent}{0pt}#3
     \vspace{#1}\tabularnewline}
 \newcommand\ecvhighlighteditem[3][2.8pt]{%
-  \if@ecvitemstar \ecvbullet\ \fi \large{\fontspec{Arial}\textcolor{sectioncolor}{#2}}\vspace{#1} &\setlength{\parskip}{\smallskipamount}\setlength{\parindent}{0pt}\large{\fontspec{Arial}\textcolor{sectioncolor}{#3}}
+  \if@ecvitemstar \ecvbullet\ \fi \large{\fontspec{Liberation Sans}\textcolor{sectioncolor}{#2}}\vspace{#1} &\setlength{\parskip}{\smallskipamount}\setlength{\parindent}{0pt}\large{\fontspec{Liberation Sans}\textcolor{sectioncolor}{#3}}
 \vspace{#1}\tabularnewline}
 
 \newcommand\ecvblueitem[3][2.8pt]{\ecvitem[#1]{\textcolor{sectioncolor}{#2}}{#3}}
