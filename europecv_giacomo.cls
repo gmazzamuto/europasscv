@@ -259,9 +259,8 @@
 
 % Europass logo
 \DeclareOption{logo}{%
-\providecommand*\draweuropasslogo{%
-   \hspace*{0.5cm}
-   \includegraphics[width=\ecv@logowidth]{europasslogo}}
+\providecommand*\draweuropasslogo[1][\ecv@logowidth]{%
+   \includegraphics[width=#1]{europasslogo}}
 }
 \DeclareOption{nologo}{\renewcommand*\draweuropasslogo{}}
 
@@ -318,6 +317,7 @@
 \RequirePackage{url}
 \RequirePackage{soul}
 \RequirePackage{tabu}
+\RequirePackage[a4paper, body={19cm,24cm}, vratio={1:1}]{geometry}
 
 \def\ecv@totpages{}
 \newcommand*{\ecvpage}[1]{\def\ecv@page{#1}}
@@ -336,29 +336,49 @@
 % are correctly defined
 \ecvLeftColumnWidth{\ecv@leftcolwidth}
 % Set layout
-\pagestyle{fancy}
-\setlength{\headheight}{3\baselineskip}
-\setlength{\footskip}{8.4pt}
-\fancyhead{}
-\fancyhead[L]{}
-\fancyhead[R]{\begin{minipage}{\ecv@rightcolwidth}
-\begin{flushright}
-\textcolor{highlightcolor}{\fontspec{Liberation Sans} \ecv@name}\end{flushright}
-\end{minipage}}
+
 \fancyfoot{}
 \fancyfoot[L]{\begin{minipage}{\ecv@leftcolwidth}
-\begin{flushleft}\footnotesize\textcolor{highlightcolor}{\ecv@lfoot}\end{flushleft}%
+\begin{flushleft}\footnotesize\textcolor{highlightcolor}{\fontspec{Liberation Sans}\ecv@lfoot}\end{flushleft}%
 \end{minipage}
 }
 \fancyfoot[C]{\begin{minipage}{\ecv@rightcolwidth}
 \begin{center}
-\footnotesize\textcolor{highlightcolor}{\ecv@cfoot}\end{center}
+\footnotesize\textcolor{highlightcolor}{\fontspec{Liberation Sans}\ecv@cfoot}\end{center}
 \end{minipage}
 }
 \fancyfoot[R]{\begin{minipage}{\ecv@rightcolwidth}
 \begin{flushright}
-\footnotesize\textcolor{highlightcolor}{\ecv@page}\end{flushright}
+\footnotesize\textcolor{highlightcolor}{\fontspec{Liberation Sans}\ecv@page}\end{flushright}
 \end{minipage}}
+
+\fancypagestyle{ecvfancy}{
+\setlength{\headheight}{13.5pt}
+% \setlength{\footskip}{8.4pt}
+\fancyhead{}
+\fancyhead[L]{
+  \ifx\@empty\draweuropasslogo\else
+    \begin{minipage}[c]{\ecv@leftcolwidth}
+    \hspace{.5cm} \raisebox{-13pt}[0pt][0pt]{\draweuropasslogo[0.6\ecv@logowidth]}
+    \end{minipage}
+  \fi
+ \begin{minipage}[c]{\ecv@rightcolwidth}\hspace{1mm}\ecvcoloredtitle \end{minipage}
+}
+
+\fancyhead[R]{\begin{minipage}{0.5\ecv@rightcolwidth}
+\begin{flushright}
+\vspace{2mm}\textcolor{highlightcolor}{\fontspec{Liberation Sans} \ecv@name}\end{flushright}
+\end{minipage}
+}
+}
+
+\fancypagestyle{first}{
+\fancyhead[R]{}
+\fancyhead[L]{}
+}
+
+\thispagestyle{first}
+\pagestyle{ecvfancy}
 \renewcommand{\headrulewidth}{0pt}%
 } % End \AtBeginDocument
 
@@ -410,7 +430,6 @@
 \ecvpicture{}
 
 \providecommand{\ecvpersonalinfo}[1][0pt]{%
-& \vspace{0.5cm} \tabularnewline
 \ifx\@empty\ecvdrawpicture\else
    &\ecv@beforepic\ecvdrawpicture\ecv@afterpic\tabularnewline
 \fi
@@ -573,7 +592,7 @@
 \newcommand*{\ecvWithHorRule}{\def\ecv@hrule{\cline{1-1}}}
 % Initialization
 \ecvRuleWidth{\arrayrulewidth}
-\setlength\ecv@colsep{12pt}
+\setlength\ecv@colsep{14pt}
 \setlength\ecv@leftcolwidth{50mm} % Default left column width
 \ecvExtraRowHeight{0pt}
 \ecvWithHorRule
@@ -608,13 +627,23 @@
 % Begin
 \begin{longtable}[l]{@{}>{\raggedleft}p{\ecv@leftcolwidth}@{}|@{\extracolsep{\ecv@colsep}}p{\ecv@rightcolwidth}@{}}
   \ecv@hrule
-  \ifx\@empty\draweuropasslogo\else
-    % Any better way of achieving the same result?!?
-    \vskip-\ecv@logooffset\draweuropasslogo\hfill\phantom{.}& \ecvcoloredtitle \tabularnewline
+  \ifx\@empty\draweuropasslogo
+     & \ecvcoloredtitle \tabularnewline
+  \else
+   \begin{minipage}[c]{\ecv@leftcolwidth}
+    \setlength{\TPHorizModule}{1pt}\setlength{\TPVertModule}{1pt}
+    \hspace{.5cm} \raisebox{30pt}[0pt][0pt]{\draweuropasslogo}
+    \end{minipage}
+   & \begin{minipage}{\ecv@rightcolwidth}
+    \begin{textblock}{50}[0,0](0,-0.9)
+     \ecvcoloredtitle
+    \end{textblock}
+    \end{minipage}
+  \tabularnewline
   \fi
   \ifx\@empty\draweuropeflag\else
-     & \tabularnewline
-     \draweuropeflag& \tabularnewline
+    & \tabularnewline
+    \draweuropeflag& \tabularnewline
   \fi
 }
 {\end{longtable}}
