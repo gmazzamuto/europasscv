@@ -479,7 +479,7 @@
 &
 \renewcommand{\arraystretch}{1.5}
 {\par \noindent
-\begin{tabu} to \linewidth {|X[0.4,c,m]  |[0.04cm tablebordercolor] X[0.4,c,m] |[0.04cm tablebordercolor] X[0.8,c,m]  |[0.04cm tablebordercolor] X[0.8,c,m] |[0.04cm tablebordercolor] X[1,c,m]}
+\begin{tabu} to \linewidth {|X[0.4,c,m]  |[0.04cm tablebordercolor] X[0.4,c,m] |[0.04cm tablebordercolor] X[0.8,c,m]  |[0.04cm tablebordercolor] X[0.8,c,m] |[0.04cm tablebordercolor] X[0.8,c,m]}
 \tabucline[0.04cm tablebordercolor]-
 \multicolumn2{|c|[0.04cm tablebordercolor]}{\textcolor{sectioncolor}{\expandafter\MakeUppercase{\expandafter{\ecv@understandkey}}}}&\multicolumn2{|c|[0.04cm tablebordercolor]}{\textcolor{sectioncolor}{\expandafter\MakeUppercase{\expandafter{\ecv@speakkey}}}}&\multicolumn1{|c|}{\textcolor{sectioncolor}{\expandafter\MakeUppercase{\expandafter{\ecv@writekey}}}}\tabularnewline\cline{1-3}
 \tabucline[0.04cm tablebordercolor]-
@@ -496,7 +496,7 @@
 \vspace{-\baselineskip} \par \noindent {#2} & 
 \renewcommand{\arraystretch}{1.5}
 \vspace{-\baselineskip} \par\noindent
-{\begin{tabu} to \linewidth {|X[0.4,c,m]  |[0.04cm tablebordercolor] X[0.4,c,m] |[0.04cm tablebordercolor] X[0.8,c,m]  |[0.04cm tablebordercolor] X[0.8,c,m] |[0.04cm tablebordercolor] X[1,c,m]}
+{\begin{tabu} to \linewidth {|X[0.4,c,m]  |[0.04cm tablebordercolor] X[0.4,c,m] |[0.04cm tablebordercolor] X[0.8,c,m]  |[0.04cm tablebordercolor] X[0.8,c,m] |[0.04cm tablebordercolor] X[0.8,c,m]}
 \multicolumn1{c}{#3}&\multicolumn1{c}{#4} &\multicolumn1{c}{#5}&\multicolumn1{c}{#6}&\multicolumn1{c}{#7}\tabularnewline\cline{1-4}
 \tabucline[#8 tablebordercolor]-
 \tabuphantomline
@@ -507,7 +507,6 @@
 \newcommand*\ecvlanguage[7][0pt]{\ecvlangrow[#1]{#2}{#3}{#4}{#5}{#6}{#7}{0.02cm}}
 \newcommand*\ecvlastlanguage[7][0pt]{\ecvlangrow[#1]{#2}{#3}{#4}{#5}{#6}{#7}{0.04cm}}
 
-\definecolor{langlinkcolor}{HTML}{000080}
 \newcommand*\ecvlanguagefooter[1][0pt]{& \textcolor{sectioncolor}{\ecv@langshortdesckey} \tabularnewline &\setul{.5pt}{.4pt}\href{\ecv@langlinkkey}{\ul{\mbox{\textcolor{langlinkcolor}{\ecv@langfooterkey}}}} \vspace{#1}\tabularnewline}
 
 % See the Common European Framework of Reference for Languages:
@@ -612,6 +611,7 @@
 \definecolor{sectioncolor}{HTML}{0e4194}
 \definecolor{highlightcolor}{HTML}{1593cb}
 \definecolor{tablebordercolor}{HTML}{c6c6c6}
+\definecolor{langlinkcolor}{HTML}{000080}
 
 \newcommand*{\getlength}[2]{%
    \pgfmathsetmacro#1{#2}
