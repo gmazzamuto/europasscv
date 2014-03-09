@@ -9,12 +9,12 @@
    xmlns="http://www.w3.org/2000/svg"
    xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
-   width="64px"
-   height="64px"
+   width="48"
+   height="48"
    id="svg4707"
    version="1.1"
    inkscape:version="0.48.3.1 r9886"
-   sodipodi:docname="Nuovo documento 13">
+   sodipodi:docname="mail_icon.svg">
   <defs
      id="defs4709" />
   <sodipodi:namedview
@@ -24,9 +24,9 @@
      borderopacity="1.0"
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
-     inkscape:zoom="12.9375"
-     inkscape:cx="32"
-     inkscape:cy="32"
+     inkscape:zoom="3.234375"
+     inkscape:cx="17.252374"
+     inkscape:cy="21.324611"
      inkscape:current-layer="layer1"
      showgrid="true"
      inkscape:document-units="px"
@@ -44,39 +44,32 @@
         <dc:format>image/svg+xml</dc:format>
         <dc:type
            rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
-        <dc:title></dc:title>
+        <dc:title />
       </cc:Work>
     </rdf:RDF>
   </metadata>
   <g
      id="layer1"
      inkscape:label="Layer 1"
-     inkscape:groupmode="layer">
+     inkscape:groupmode="layer"
+     transform="translate(0,-16)">
     <g
-       id="g4728"
-       transform="matrix(5.2223813,0,0,5.2223813,-92.387623,-120.87334)">
-      <path
-         sodipodi:nodetypes="cccccc"
-         inkscape:connector-curvature="0"
-         id="path4685"
-         d="m 18.583706,33.427697 10.58076,0 -3.67378,-3.35876 -1.61001,1.42382 -1.85937,-1.5 z"
-         style="fill:#1593cb;fill-opacity:1;stroke:none" />
-      <path
-         sodipodi:nodetypes="cccc"
-         inkscape:connector-curvature="0"
-         id="path4687"
-         d="m 18.583706,25.117757 5.29697,5.21875 5.28379,-5.15625 z"
-         style="fill:#1593cb;fill-opacity:1;stroke:none" />
+       id="g3148"
+       transform="matrix(1.4528376,0,0,1.4528376,-1026.7786,-283.20833)">
+      <rect
+         ry="2.2695923"
+         rx="2.2695923"
+         y="211.79582"
+         x="708.01251"
+         height="21.358349"
+         width="30.49398"
+         id="rect5933"
+         style="color:#000000;fill:#1494cc;fill-opacity:1;stroke:none;stroke-width:1;marker:none;visibility:visible;display:inline;overflow:visible;enable-background:accumulate" />
       <path
          inkscape:connector-curvature="0"
-         id="path4689"
-         d="m 26.115056,29.305257 3.65625,3.625 -0.0313,-7.3125 z"
-         style="fill:#1593cb;fill-opacity:1;stroke:none" />
-      <path
-         style="fill:#1593cb;fill-opacity:1;stroke:none"
-         d="m 21.521306,29.305257 -3.65625,3.625 0.0313,-7.3125 z"
-         id="path4691"
-         inkscape:connector-curvature="0" />
+         id="rect5935"
+         d="m 707.98603,211.76381 0,1.17188 9.45313,9.45312 -9.45313,9.53125 0,1.25 1.5625,0 9.29688,-9.375 2.89062,2.89063 c 0.8011,0.8011 2.16765,0.8011 2.96875,0 l 2.89063,-2.89063 9.29687,9.375 1.64063,0 0,-1.17187 -9.53125,-9.60938 9.53125,-9.53125 0,-1.09375 -1.79688,0 -13.4375,13.4375 c -0.042,0.042 -0.11425,0.042 -0.15625,0 l -13.4375,-13.4375 -1.71875,0 z"
+         style="font-size:medium;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-indent:0;text-align:start;text-decoration:none;line-height:normal;letter-spacing:normal;word-spacing:normal;text-transform:none;direction:ltr;block-progression:tb;writing-mode:lr-tb;text-anchor:start;baseline-shift:baseline;color:#000000;fill:#ffffff;fill-opacity:1;stroke:none;stroke-width:0.80000007;marker:none;visibility:visible;display:inline;overflow:visible;enable-background:accumulate;font-family:Sans;-inkscape-font-specification:Sans" />
     </g>
   </g>
 </svg>

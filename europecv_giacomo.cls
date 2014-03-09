@@ -440,10 +440,10 @@
 \fi
 \ifx\@empty\ecv@mobile
   \ifx\@empty\ecv@telephone\else
-  &   \raisebox{-2\lineskip}{\includegraphics[width=0.4cm]{phone_icon.pdf}}\hspace{0.2mm} {\fontspec{Liberation Sans} \ecv@telephone} \tabularnewline[5pt]
+  &   \raisebox{-2\lineskip}{\includegraphics[width=0.4cm]{telephone_icon.pdf}}\hspace{0.2mm} {\fontspec{Liberation Sans} \ecv@telephone} \tabularnewline[5pt]
   \fi
 \else
- &\raisebox{-2\lineskip}{\includegraphics[width=0.4cm]{mobile_icon.pdf}}\hspace{0.2mm} {\fontspec{Liberation Sans} \ecv@mobile} \quad \ifx\@empty\ecv@telephone\else \raisebox{-2\lineskip}{\includegraphics[width=0.4cm]{phone_icon.pdf}}\hspace{0.2mm} {\fontspec{Liberation Sans} \ecv@telephone}\fi
+ &\raisebox{-2\lineskip}{\includegraphics[width=0.4cm]{mobile_icon.pdf}}\hspace{0.2mm} {\fontspec{Liberation Sans} \ecv@mobile} \quad \ifx\@empty\ecv@telephone\else \raisebox{-2\lineskip}{\includegraphics[width=0.4cm]{telephone_icon.pdf}}\hspace{0.2mm} {\fontspec{Liberation Sans} \ecv@telephone}\fi
 \tabularnewline[5pt]
 \fi
 \ifx\@empty\ecv@fax\else
