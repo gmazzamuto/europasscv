@@ -319,13 +319,14 @@
 \RequirePackage{soul}
 \RequirePackage{tabu}
 \RequirePackage[a4paper, body={19cm,24cm}, vratio={1:1}]{geometry}
+\RequirePackage{setspace}
 
 \def\ecv@totpages{}
 \newcommand*{\ecvpage}[1]{\def\ecv@page{#1}}
 \ecvpage{\ecv@pagekey~\thepage\ecv@totpages}
 
 \def\ecv@lfoot{%
-  \footnotesize\textrm{\@date}
+  \footnotesize{\@date}
 }
 
 % Right Footnote to be shown on every page
@@ -335,12 +336,15 @@
 \AtBeginDocument{%
 % Ensure that \ecv@leftcolwidth and \ecv@rightcolwidth
 % are correctly defined
-\ecvLeftColumnWidth{\ecv@leftcolwidth}
+\ecvLeftColumnWidth{55mm}
+\ecvColSep{10pt}
+
 % Set layout
 
 \fancyfoot{}
 \fancyfoot[L]{\begin{minipage}{\ecv@leftcolwidth}
-\begin{flushleft}\footnotesize\textcolor{highlightcolor}{\fontspec{Liberation Sans}\ecv@lfoot}\end{flushleft}%
+\begin{flushleft}
+\footnotesize\textcolor{highlightcolor}{\fontspec{Liberation Sans}\ecv@lfoot}\end{flushleft}
 \end{minipage}
 }
 \fancyfoot[C]{\begin{minipage}{\ecv@rightcolwidth}
@@ -360,15 +364,15 @@
 \fancyhead[L]{
   \ifx\@empty\draweuropasslogo\else
     \begin{minipage}[c]{\ecv@leftcolwidth}
-    \hspace{.5cm} \raisebox{-13pt}[0pt][0pt]{\draweuropasslogo[0.6\ecv@logowidth]}
+    \raisebox{-10pt}[0pt][0pt]{\draweuropasslogo[0.6\ecv@logowidth]}
     \end{minipage}
   \fi
- \begin{minipage}[c]{\ecv@rightcolwidth}\hspace{1mm}\ecvcoloredtitle \end{minipage}
+ \begin{minipage}[c]{0.5\textwidth}\hspace{2.5mm}\ecvcoloredtitle \end{minipage}
 }
 
-\fancyhead[R]{\begin{minipage}{0.5\ecv@rightcolwidth}
+\fancyhead[R]{\begin{minipage}{0.2\textwidth}
 \begin{flushright}
-\vspace{2mm}\textcolor{highlightcolor}{\fontspec{Liberation Sans} \ecv@name}\end{flushright}
+\textcolor{highlightcolor}{\fontspec{Liberation Sans} \ecv@name}\end{flushright}
 \end{minipage}
 }
 }
@@ -415,7 +419,7 @@
 % or \ecvafterpicture
 \newcommand*{\ecvspace}[1]{\tabularnewline[#1] &}
 \ecvbeforepicture{\raggedleft}
-\ecvafterpicture{}
+\ecvafterpicture{10pt}
 \ecvfirstname{}
 \ecvlastname{}
 \ecvname{\ecv@lastname\ \ecv@firstname}
@@ -474,12 +478,14 @@
 \newlength\ecv@langparwidth
 
 \newcommand*\ecvlanguageheader{%
+\vspace{0.18cm}
 \renewcommand{\arraystretch}{1.5}
-\par \noindent \textcolor{sectioncolor}{\ecv@otherlanguageskey}
+\textcolor{sectioncolor}{\ecv@otherlanguageskey}
 &
 \renewcommand{\arraystretch}{1.5}
-{\par \noindent
+{
 \begin{tabu} to \linewidth {|X[0.4,c,m]  |[0.04cm tablebordercolor] X[0.4,c,m] |[0.04cm tablebordercolor] X[0.8,c,m]  |[0.04cm tablebordercolor] X[0.8,c,m] |[0.04cm tablebordercolor] X[0.8,c,m]}
+% \begin{tabu} to \linewidth {|X[0.8,c,m]  |[0.04cm tablebordercolor] X[0.8,c,m] |[0.04cm tablebordercolor] X[1,c,m]  |[0.04cm tablebordercolor] X[1,c,m] |[0.04cm tablebordercolor] X[1.5,c,m]}
 \tabucline[0.04cm tablebordercolor]-
 \multicolumn2{|c|[0.04cm tablebordercolor]}{\textcolor{sectioncolor}{\expandafter\MakeUppercase{\expandafter{\ecv@understandkey}}}}&\multicolumn2{|c|[0.04cm tablebordercolor]}{\textcolor{sectioncolor}{\expandafter\MakeUppercase{\expandafter{\ecv@speakkey}}}}&\multicolumn1{|c|}{\textcolor{sectioncolor}{\expandafter\MakeUppercase{\expandafter{\ecv@writekey}}}}\tabularnewline\cline{1-3}
 \tabucline[0.04cm tablebordercolor]-
@@ -493,10 +499,12 @@
   
   
 \newcommand*\ecvlangrow[8][0pt]{
-\vspace{-\baselineskip} \par \noindent {#2} & 
+#2 & 
 \renewcommand{\arraystretch}{1.5}
-\vspace{-\baselineskip} \par\noindent
-{\begin{tabu} to \linewidth {|X[0.4,c,m]  |[0.04cm tablebordercolor] X[0.4,c,m] |[0.04cm tablebordercolor] X[0.8,c,m]  |[0.04cm tablebordercolor] X[0.8,c,m] |[0.04cm tablebordercolor] X[0.8,c,m]}
+\vspace{-\baselineskip} \vspace*{-0.02cm} \par\noindent
+{
+\begin{tabu} to \linewidth {|X[0.4,c,m]  |[0.04cm tablebordercolor] X[0.4,c,m] |[0.04cm tablebordercolor] X[0.8,c,m]  |[0.04cm tablebordercolor] X[0.8,c,m] |[0.04cm tablebordercolor] X[0.8,c,m]}
+% \begin{tabu} to \linewidth {|X[0.8,c,m]  |[0.04cm tablebordercolor] X[0.8,c,m] |[0.04cm tablebordercolor] X[1,c,m]  |[0.04cm tablebordercolor] X[1,c,m] |[0.04cm tablebordercolor] X[1.5,c,m]}
 \multicolumn1{c}{#3}&\multicolumn1{c}{#4} &\multicolumn1{c}{#5}&\multicolumn1{c}{#6}&\multicolumn1{c}{#7}\tabularnewline\cline{1-4}
 \tabucline[#8 tablebordercolor]-
 \tabuphantomline
@@ -536,22 +544,19 @@
 \newlength\ecv@extrarowheight
 \newcommand*{\ecvRuleWidth}[1]{\setlength\ecv@rulewidth{#1}}
 \newcommand*{\ecvColSep}[1]{%
-  \addtolength{\ecv@leftcolwidth}{\ecv@colsep}
-  \addtolength{\ecv@rightcolwidth}{\ecv@colsep}
   \setlength\ecv@colsep{#1}
   \addtolength{\ecv@leftcolwidth}{-\ecv@colsep}
-  \addtolength{\ecv@rightcolwidth}{-\ecv@colsep}}
+  }
 \newcommand*{\ecvLeftColumnWidth}[1]{\setlength\ecv@leftcolwidth{#1}%
              \setlength{\ecv@rightcolwidth}{\textwidth}
             \addtolength{\ecv@rightcolwidth}{-\ecv@leftcolwidth}
-            \addtolength{\ecv@rightcolwidth}{-2\ecv@colsep}
             \addtolength{\ecv@rightcolwidth}{-\ecv@rulewidth}}
 \newcommand*{\ecvExtraRowHeight}[1]{\setlength\ecv@extrarowheight{#1}}
 \newcommand*{\ecvNoHorRule}{\def\ecv@hrule{}}
 \newcommand*{\ecvWithHorRule}{\def\ecv@hrule{\cline{1-1}}}
+
 % Initialization
 \ecvRuleWidth{\arrayrulewidth}
-\setlength\ecv@colsep{14pt}
 \setlength\ecv@leftcolwidth{50mm} % Default left column width
 \ecvExtraRowHeight{0pt}
 \ecvWithHorRule
@@ -584,34 +589,26 @@
   \addtolength{\ecv@langparwidth}{-2\tabcolsep}
   \addtolength{\ecv@langparwidth}{-2\arrayrulewidth}
 % Begin
-\begin{longtable}[l]{@{}>{\raggedleft}p{\ecv@leftcolwidth}@{}|@{\extracolsep{\ecv@colsep}}p{\ecv@rightcolwidth}@{}}
-  \ecv@hrule
+\vspace*{-2.5cm}
+\enlargethispage{2.5cm}
+\addtolength{\ecv@rightcolwidth}{-\ecv@colsep}
+\setmainfont[Ligatures=TeX,ItalicFont={Liberation Sans Narrow Italic}]{Liberation Sans Narrow}
+% \color{ecvtextcolor}
+\begin{longtabu} to \textwidth {@{}>{\raggedleft}p{\ecv@leftcolwidth}@{}|@{\extracolsep{\ecv@colsep}}p{\ecv@rightcolwidth}@{}}
   \ifx\@empty\draweuropasslogo
-     & \ecvcoloredtitle \tabularnewline
+     & \ecvcoloredtitle \vspace{0.5cm} \tabularnewline
   \else
-   \begin{minipage}[c]{\ecv@leftcolwidth}
-    \setlength{\TPHorizModule}{1pt}\setlength{\TPVertModule}{1pt}
-    \hspace{.5cm} \raisebox{30pt}[0pt][0pt]{\draweuropasslogo}
-    \end{minipage}
-   & \begin{minipage}{\ecv@rightcolwidth}
-    \begin{textblock}{50}[0,0](0,-0.9)
-     \ecvcoloredtitle
-    \end{textblock}
-    \end{minipage}
-  \tabularnewline
-  \fi
-  \ifx\@empty\draweuropeflag\else
-    & \tabularnewline
-    \draweuropeflag& \tabularnewline
+    \raisebox{-0.3\height}{\draweuropasslogo} & \ecvcoloredtitle \vspace{0.5cm} \tabularnewline
   \fi
 }
-{\end{longtable}}
 
 \definecolor{rulecolor}{HTML}{398dc9}
 \definecolor{sectioncolor}{HTML}{0e4194}
 \definecolor{highlightcolor}{HTML}{1593cb}
 \definecolor{tablebordercolor}{HTML}{c6c6c6}
 \definecolor{langlinkcolor}{HTML}{000080}
+{
+\end{longtabu}}
 
 \newcommand*{\getlength}[2]{%
    \pgfmathsetmacro#1{#2}
@@ -628,16 +625,18 @@
 }
 
 \newcommand{\ecvsectionWithoutRuler}[2]{%
-  \par\textcolor{sectioncolor}{\small \fontspec{Liberation Sans} \expandafter\MakeUppercase{\expandafter{#1}}}  & \parbox[b]{\ecv@rightcolwidth}{\par{#2}} 
+  \textcolor{sectioncolor}{\small \fontspec{Liberation Sans} \expandafter\MakeUppercase{\expandafter{#1}}}  & \parbox[b]{\ecv@rightcolwidth}{#2}
   \tabularnewline\nopagebreak
 }
           
 \newif\if@ecvitemstar
 \newcommand\ecvitem{\@ifstar{\@ecvitemstartrue \@ecvitem}%
   {\@ecvitemstarfalse\@ecvitem}}
+  
 \newcommand\@ecvitem[3][2.8pt]{%
   \if@ecvitemstar \ecvbullet\ \fi #2\vspace{#1} &\setlength{\parskip}{\smallskipamount}\setlength{\parindent}{0pt}#3
     \vspace{#1}\tabularnewline}
+    
 \newcommand\ecvhighlighteditem[3][2.8pt]{%
   \if@ecvitemstar \ecvbullet\ \fi \large{\fontspec{Liberation Sans}\textcolor{sectioncolor}{#2}}\vspace{#1} &\setlength{\parskip}{\smallskipamount}\setlength{\parindent}{0pt}\large{\fontspec{Liberation Sans}\textcolor{sectioncolor}{#3}}
 \vspace{#1}\tabularnewline}
