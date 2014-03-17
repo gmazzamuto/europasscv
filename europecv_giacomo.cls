@@ -434,40 +434,41 @@
 \ecvgender{}
 \ecvpicture{}
 
-\providecommand{\ecvpersonalinfo}[1][0pt]{%
-\ifx\@empty\ecvdrawpicture\else
-   &\ecv@beforepic\ecvdrawpicture\ecv@afterpic\tabularnewline
-\fi
-\ecvsectionWithoutRuler{\ecv@infosectionkey}{\large{\fontspec{Liberation Sans} \ecv@name}}
-\ecvitem{}{}
+\providecommand{\ecvpersonalinfo}[1][-15pt]{%
+\textcolor{sectioncolor}{\small \fontspec{Liberation Sans} \expandafter\MakeUppercase{\expandafter{\ecv@infosectionkey}}} & {
+\begin{doublespacing}
+\begin{tabu} to 0.99\ecv@rightcolwidth {@{}X[0.7,l,p]  X[0.3,r,p]}
+{
+\Large{\fontspec{Liberation Sans} \ecv@name}} \newline
 \ifx\@empty\ecv@address\else
-&\raisebox{-2\lineskip}{\includegraphics[width=0.4cm]{address_icon.pdf}}\hspace{0.2mm} {\fontspec{Liberation Sans} \ecv@address}   \tabularnewline[5pt]
+\raisebox{-2\lineskip}{\includegraphics[width=0.4cm]{address_icon.pdf}}\hspace{0.2mm} {\fontspec{Liberation Sans} \ecv@address} \newline
 \fi
 \ifx\@empty\ecv@mobile
   \ifx\@empty\ecv@telephone\else
-  &   \raisebox{-2\lineskip}{\includegraphics[width=0.4cm]{telephone_icon.pdf}}\hspace{0.2mm} {\fontspec{Liberation Sans} \ecv@telephone} \tabularnewline[5pt]
+  \raisebox{-2\lineskip}{\includegraphics[width=0.4cm]{telephone_icon.pdf}}\hspace{0.2mm} {\fontspec{Liberation Sans} \ecv@telephone}\newline
   \fi
 \else
- &\raisebox{-2\lineskip}{\includegraphics[width=0.4cm]{mobile_icon.pdf}}\hspace{0.2mm} {\fontspec{Liberation Sans} \ecv@mobile} \quad \ifx\@empty\ecv@telephone\else \raisebox{-2\lineskip}{\includegraphics[width=0.4cm]{telephone_icon.pdf}}\hspace{0.2mm} {\fontspec{Liberation Sans} \ecv@telephone}\fi
-\tabularnewline[5pt]
+ \raisebox{-2\lineskip}{\includegraphics[width=0.4cm]{mobile_icon.pdf}}\hspace{0.2mm} {\fontspec{Liberation Sans} \ecv@mobile} \quad \ifx\@empty\ecv@telephone\else \raisebox{-2\lineskip}{\includegraphics[width=0.4cm]{telephone_icon.pdf}}\hspace{0.2mm} {\fontspec{Liberation Sans} \ecv@telephone\newline}\fi
 \fi
 \ifx\@empty\ecv@fax\else
-\ecv@faxkey         &\ecv@fax \tabularnewline[5pt]
+\ecv@faxkey \ecv@fax 
 \fi
 \ifx\@empty\ecv@email\else
- &\raisebox{-2\lineskip}{\includegraphics[width=0.4cm]{mail_icon.pdf}} \hspace{0.2mm} {\fontspec{Liberation Sans} \ecv@email} \tabularnewline[5pt]
+ \raisebox{-2\lineskip}{\includegraphics[width=0.4cm]{mail_icon.pdf}} \hspace{0.2mm} {\fontspec{Liberation Sans} \ecv@email}\newline
 \fi
 \ifx\@empty\ecv@homepage\else
- &\raisebox{-2\lineskip}{\includegraphics[width=0.4cm]{website_icon.pdf}} {\fontspec{Liberation Sans} \setul{.5pt}{.4pt}\href{\ecv@homepage}{ \ul{\ecv@homepage}}} \tabularnewline[5pt]
+ \raisebox{-2\lineskip}{\includegraphics[width=0.4cm]{website_icon.pdf}} {\fontspec{Liberation Sans} \setul{.5pt}{.4pt}\href{\ecv@homepage}{ \ul{\ecv@homepage}}}\newline
 \fi
-
 \ifx\@empty\ecv@birth\else
-& {\fontspec{Liberation Sans} \textcolor{highlightcolor}{\ecv@birthkey} \ecv@birth \ifx\@empty\ecv@nationality\else\textcolor{highlightcolor}{~| \ecv@nationalitykey}~\ecv@nationality\fi }\tabularnewline
+{\fontspec{Liberation Sans} \textcolor{highlightcolor}{\ecv@birthkey} \ecv@birth \ifx\@empty\ecv@nationality\else\textcolor{highlightcolor}{~| \ecv@nationalitykey}~\ecv@nationality\newline\fi }
 \fi
 \ifx\@empty\ecv@gender\else
-\ecv@genderkey      & \ecv@gender
+\ecv@genderkey  \ecv@gender
 \fi
-\vspace{#1}\tabularnewline
+
+& 
+\raisebox{-0.8\height}{\ecvdrawpicture}\vspace*{\ecv@afterpic}
+\end{tabu}\end{doublespacing}\vspace{#1}}\tabularnewline
 }
 
 % Spoken language information
@@ -501,7 +502,7 @@
 \newcommand*\ecvlangrow[8][0pt]{
 #2 & 
 \renewcommand{\arraystretch}{1.5}
-\vspace{-\baselineskip} \vspace*{-0.02cm} \par\noindent
+\vspace{-\baselineskip} \vspace*{-0.02cm}
 {
 \begin{tabu} to \linewidth {|X[0.4,c,m]  |[0.04cm tablebordercolor] X[0.4,c,m] |[0.04cm tablebordercolor] X[0.8,c,m]  |[0.04cm tablebordercolor] X[0.8,c,m] |[0.04cm tablebordercolor] X[0.8,c,m]}
 % \begin{tabu} to \linewidth {|X[0.8,c,m]  |[0.04cm tablebordercolor] X[0.8,c,m] |[0.04cm tablebordercolor] X[1,c,m]  |[0.04cm tablebordercolor] X[1,c,m] |[0.04cm tablebordercolor] X[1.5,c,m]}
