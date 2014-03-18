@@ -34,6 +34,7 @@
 \def\ecv@cefbasickey{\ecv@utf{Utente elementare}}
 \def\ecv@cefindepkey{\ecv@utf{Utente autonomo}}
 \def\ecv@cefprofkey{\ecv@utf{Utente avanzato}}
+\def\ecv@europeanunionkey{\ecv@utf{Unione Europea}}
 
 \def\ecv@langcola{0.8}
 \def\ecv@langcolb{0.8}

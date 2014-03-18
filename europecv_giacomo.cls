@@ -320,6 +320,7 @@
 \RequirePackage{tabu}
 \RequirePackage{setspace}
 \RequirePackage{geometry}
+\RequirePackage{textcomp} % For copyright symbol
 
 \def\ecv@totpages{}
 \newcommand*{\ecvpage}[1]{\def\ecv@page{#1}}
@@ -331,7 +332,8 @@
 
 % Right Footnote to be shown on every page
 \newcommand\ecvfootnote[1]{\def\ecv@cfoot{#1}}
-\ecvfootnote{}
+\ecvfootnote{\textcopyright~\ecv@europeanunionkey, 2002-2013 | http://europass.cedefop.europa.eu }
+
 
 \AtBeginDocument{%
 % Ensure that \ecv@leftcolwidth and \ecv@rightcolwidth
