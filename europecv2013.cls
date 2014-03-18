@@ -624,7 +624,7 @@
     \vspace{#1}\tabularnewline}
 
 \newcommand\ecvtitle[3][2.8pt]{%
-  \large{\fontfamily{phv}\fontseries{m}\selectfont\textcolor{ecvsectioncolor}{#2}}\vspace{#1} &\setlength{\parskip}{\smallskipamount}\setlength{\parindent}{0pt}\large{\fontfamily{phv}\fontseries{m}\selectfont\textcolor{ecvsectioncolor}{#3}}
+  \fontfamily{phv}\fontseries{m}\selectfont\textcolor{ecvsectioncolor}{#2}\vspace{#1} &\setlength{\parskip}{\smallskipamount}\setlength{\parindent}{0pt}\large{\fontfamily{phv}\fontseries{m}\selectfont\textcolor{ecvsectioncolor}{#3}}
 \vspace{#1}\tabularnewline}
 
 \newcommand\ecvblueitem[3][2.8pt]{\ecvitem[#1]{\textcolor{ecvsectioncolor}{#2}}{#3}}
