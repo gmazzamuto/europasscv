@@ -233,9 +233,9 @@
   \renewcommand{\rmdefault}{ma1} % (this font is NOT installed by default!)
   \renewcommand{\sfdefault}{ma1}
 }
+
 \DeclareOption{narrow}{
-  \renewcommand{\seriesdefault}{mc} % Narrow
-  \renewcommand{\bfdefault}{bc}  % Boldface narrow
+ \def\ecv@narrow{}
 }
 
 \def\ecv@currvitaekey{}
@@ -584,8 +584,7 @@
 \enlargethispage{2.5cm}
 \fi
 \addtolength{\ecv@rightcolwidth}{-\ecv@colsep}
-
-\fontfamily{phv}\fontseries{mc}\selectfont
+\fontfamily{phv} \ifx\@empty\ecv@narrow \fontseries{mc} \else \fontseries{m} \fi \selectfont
 % \color{ecvtextcolor}
 \begin{longtabu} to \textwidth {@{}>{\raggedleft}p{\ecv@leftcolwidth}@{}|@{\extracolsep{\ecv@colsep}}p{\ecv@rightcolwidth}@{}}
   \ifx\@empty\draweuropasslogo
