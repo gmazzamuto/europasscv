@@ -1,0 +1,98 @@
+\documentclass[a4paper,12pt,nodocument,nologo,notitle]{europecv2013}
+\usepackage[T1]{fontenc}
+\usepackage[utf8x]{inputenc}
+\usepackage{color}
+\usepackage[dvipsnames]{xcolor}
+\usepackage{tabu}
+\usepackage{tikz}
+
+% \usepackage{showframe}
+
+\author{\small Giacomo Mazzamuto}
+\title{\small Documentation of the \LaTeX\ class\\
+		\Large \textbf{\texttt{europecv2013.cls}}\\
+		\small \vspace{0.2cm} Version 0.1, 2014-03-01
+}
+\date{}
+
+\newcommand{\bs}{\textbackslash}
+
+\begin{document}
+
+\maketitle
+
+\begin{abstract}
+This paper describes how to use europecv2013.cls, a \LaTeX\ document class for typesetting a curriculum vitae according to the Europass initiative of the European Commission, 2013 version. This is an unofficial implementation of that format.
+
+\end{abstract}
+
+\section{Introduction}
+
+\section{Requirements and installation}
+\section{Differences with europecv}
+\section{Usage}
+\subsection{Class options}
+\subsection{Personal information}
+\ecvname{Name Surname}
+\ecvdateofbirth{1 January 1970}
+\ecvtelephone[(+555) 555 555]{(+555) 555 555}
+\ecvemail{myemailaddress@email.com}
+\ecvaddress{rue Wiertz, B-1047 Brussels}
+
+\begin{minipage}{20cm}
+\begin{europecv}
+\ecvpersonalinfo
+\end{europecv}
+\end{minipage}
+
+
+\subsection{Sectioning and item commands}
+Use these simple commands to add items and sections to your cv:\\
+\begin{minipage}{\textwidth}
+\begin{europecv}
+ \ecvsection{ecvsection}
+ \ecvtitle{}{ecvtitle}
+ \ecvitem{}{ecvitem}
+ \ecvblueitem{left text}{ecvblueitem}
+\end{europecv}
+\end{minipage}
+
+\begin{description}
+\item[\texttt{\bs ecvsection[vspace]\{title\}}] Starts a new section.
+\item[\texttt{\bs ecvitem[vspace]\{left\}\{right\}}] Puts left text on the left part and right text on the right part.
+\item[\texttt{\bs ecvtitle[vspace]\{left\}\{right\}}] As before, but..
+\item[\texttt{\bs ecvblueitem[vspace]\{left\}\{right\}}]
+\end{description}
+
+Sectioning commands must be used inside the \texttt{europecv} environment, and text within the environment should be typeset only inside a sectioning command. All of them have an optional argument that specifies how much vertical space to leave \emph{before} that command. Note that this is different in the old \texttt{europecv} class, where the optional argument was used to specified the space left after an item.
+
+\subsection{Defined colors}
+The following colors are defined in the package:
+{%
+
+\newcommand{\colpic}[1]{\tikz \draw[fill=#1,ultra thick,#1] (0,0) rectangle (0.5,0.5);}
+\newcommand{\colrow}[1]{\texttt{#1} & \colpic{#1} & \extractcolorspecs{#1}{\model}{\mycolor}%
+    \convertcolorspec{\model}{\mycolor}{HTML}\tmp\texttt{\tmp}}
+    
+\renewcommand{\arraystretch}{1.5}
+\newcommand{\mc}[2]{\multicolumn{#1}{#2}}
+\begin{center}
+\begin{tabu} {X[1,r,m] X[0.2,c,m] X[1,l,m]}
+color name & sample & HTML code\\
+\hline
+\colrow{ecvrulecolor}\\
+\colrow{ecvsectioncolor}\\
+\colrow{ecvhighlightcolor}\\
+\colrow{ecvtablebordercolor}\\
+\colrow{ecvlanglinkcolor}\\
+\colrow{ecvtextcolor}\\
+\tabuphantomline
+\end{tabu}
+\end{center}
+}%
+You can use these colors wherever you want in your document like this
+\begin{verbatim}
+\textcolor{colorname}{ Some text }
+\end{verbatim} 
+
+\end{document}
