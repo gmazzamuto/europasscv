@@ -296,6 +296,7 @@
   \AtEndOfPackage{\RequirePackage{booktabs}}
   \def\ecv@booktabs{}
 }
+
 % Pass all other options (a4paper, 10pt, draft, openbib, etc...) to article
 \DeclareOption*{%
   \PassOptionsToClass{\CurrentOption}{article}%
@@ -472,93 +473,52 @@
 
 \newlength\ecv@langparwidth
 
-\ifx\ecv@booktabs\undefined % Use table conforming to EU model
-  \newcommand*\ecvlanguageheader{%
-  \renewcommand{\arraystretch}{1.5}
-  \par \noindent \textcolor{sectioncolor}{\ecv@otherlanguageskey}
-  &
-  \renewcommand{\arraystretch}{1.5}
-  {\par \noindent
-  \begin{tabu} to \linewidth {|X[0.4,c,m]  |[0.04cm tablebordercolor] X[0.4,c,m] |[0.04cm tablebordercolor] X[0.8,c,m]  |[0.04cm tablebordercolor] X[0.8,c,m] |[0.04cm tablebordercolor] X[1,c,m]}
-  \tabucline[0.04cm tablebordercolor]-
-  \multicolumn2{|c|[0.04cm tablebordercolor]}{\textcolor{sectioncolor}{\expandafter\MakeUppercase{\expandafter{\ecv@understandkey}}}}&\multicolumn2{|c|[0.04cm tablebordercolor]}{\textcolor{sectioncolor}{\expandafter\MakeUppercase{\expandafter{\ecv@speakkey}}}}&\multicolumn1{|c|}{\textcolor{sectioncolor}{\expandafter\MakeUppercase{\expandafter{\ecv@writekey}}}}\tabularnewline\cline{1-3}
-  \tabucline[0.04cm tablebordercolor]-
-  \multicolumn1{c|[0.04cm tablebordercolor]}{\textcolor{sectioncolor}{\ecv@listenkey}}&\multicolumn1{c|[0.04cm tablebordercolor]}{\textcolor{sectioncolor}{\ecv@readkey}} &\multicolumn1{c|[0.04cm tablebordercolor]}{\textcolor{sectioncolor}{\ecv@interactkey}}&\multicolumn1{c|[0.04cm tablebordercolor]}{\textcolor{sectioncolor}{\ecv@productkey}}&\multicolumn1{c}{}\tabularnewline\cline{1-4}
-  \tabucline[0.04cm tablebordercolor]-
-  \tabuphantomline
-  \end{tabu}
-  }
-  \tabularnewline[-\arrayrulewidth]
-  }
+\newcommand*\ecvlanguageheader{%
+\renewcommand{\arraystretch}{1.5}
+\par \noindent \textcolor{sectioncolor}{\ecv@otherlanguageskey}
+&
+\renewcommand{\arraystretch}{1.5}
+{\par \noindent
+\begin{tabu} to \linewidth {|X[0.4,c,m]  |[0.04cm tablebordercolor] X[0.4,c,m] |[0.04cm tablebordercolor] X[0.8,c,m]  |[0.04cm tablebordercolor] X[0.8,c,m] |[0.04cm tablebordercolor] X[1,c,m]}
+\tabucline[0.04cm tablebordercolor]-
+\multicolumn2{|c|[0.04cm tablebordercolor]}{\textcolor{sectioncolor}{\expandafter\MakeUppercase{\expandafter{\ecv@understandkey}}}}&\multicolumn2{|c|[0.04cm tablebordercolor]}{\textcolor{sectioncolor}{\expandafter\MakeUppercase{\expandafter{\ecv@speakkey}}}}&\multicolumn1{|c|}{\textcolor{sectioncolor}{\expandafter\MakeUppercase{\expandafter{\ecv@writekey}}}}\tabularnewline\cline{1-3}
+\tabucline[0.04cm tablebordercolor]-
+\multicolumn1{c|[0.04cm tablebordercolor]}{\textcolor{sectioncolor}{\ecv@listenkey}}&\multicolumn1{c|[0.04cm tablebordercolor]}{\textcolor{sectioncolor}{\ecv@readkey}} &\multicolumn1{c|[0.04cm tablebordercolor]}{\textcolor{sectioncolor}{\ecv@interactkey}}&\multicolumn1{c|[0.04cm tablebordercolor]}{\textcolor{sectioncolor}{\ecv@productkey}}&\multicolumn1{c}{}\tabularnewline\cline{1-4}
+\tabucline[0.04cm tablebordercolor]-
+\tabuphantomline
+\end{tabu}
+}
+\tabularnewline[-\arrayrulewidth]
+}
   
   
-  \newcommand*\ecvlangrow[8][0pt]{
-  \vspace{-\baselineskip} \par \noindent {#2} & 
- \renewcommand{\arraystretch}{1.5}
- \vspace{-\baselineskip} \par\noindent
-   {\begin{tabu} to \linewidth {|X[0.4,c,m]  |[0.04cm tablebordercolor] X[0.4,c,m] |[0.04cm tablebordercolor] X[0.8,c,m]  |[0.04cm tablebordercolor] X[0.8,c,m] |[0.04cm tablebordercolor] X[1,c,m]}
-  \multicolumn1{c}{#3}&\multicolumn1{c}{#4} &\multicolumn1{c}{#5}&\multicolumn1{c}{#6}&\multicolumn1{c}{#7}\tabularnewline\cline{1-4}
-  \tabucline[#8 tablebordercolor]-
-  \tabuphantomline
-  \end{tabu}}
-  \tabularnewline[-\arrayrulewidth]
-  }
-  
-  \newcommand*\ecvlanguage[7][0pt]{\ecvlangrow[#1]{#2}{#3}{#4}{#5}{#6}{#7}{0.02cm}}
-  \newcommand*\ecvlastlanguage[7][0pt]{\ecvlangrow[#1]{#2}{#3}{#4}{#5}{#6}{#7}{0.04cm}}
+\newcommand*\ecvlangrow[8][0pt]{
+\vspace{-\baselineskip} \par \noindent {#2} & 
+\renewcommand{\arraystretch}{1.5}
+\vspace{-\baselineskip} \par\noindent
+{\begin{tabu} to \linewidth {|X[0.4,c,m]  |[0.04cm tablebordercolor] X[0.4,c,m] |[0.04cm tablebordercolor] X[0.8,c,m]  |[0.04cm tablebordercolor] X[0.8,c,m] |[0.04cm tablebordercolor] X[1,c,m]}
+\multicolumn1{c}{#3}&\multicolumn1{c}{#4} &\multicolumn1{c}{#5}&\multicolumn1{c}{#6}&\multicolumn1{c}{#7}\tabularnewline\cline{1-4}
+\tabucline[#8 tablebordercolor]-
+\tabuphantomline
+\end{tabu}}
+\tabularnewline[-\arrayrulewidth]
+}
 
-  
-\else % Use booktabs
-  \newcommand*\ecvlanguageheader{%
-  {\large\textit{\ecv@assesskey}}\\ \textit{\ecv@levelkey}${}^{\mbox{\scriptsize#1}}$&
-  \setlength\extrarowheight{0pt}
-  \begin{tabular}[t]{m{\ecv@langparwidth}m{\ecv@langparwidth}m{\ecv@langparwidth}m{\ecv@langparwidth}m{\ecv@langparwidth}}
-  \toprule
-  \multicolumn{2}{c}{\textbf{\ecv@understandkey}}&\multicolumn{2}{c}{\textbf{\ecv@speakkey}}&\centering\textbf{\ecv@writekey}\tabularnewline
-  \centering\small{\ecv@listenkey}   & \centering \small{\ecv@readkey} &\centering \small{\ecv@interactkey} &\centering \small{\ecv@productkey} & \tabularnewline
-  \midrule
-  \end{tabular}\vspace{2\arrayrulewidth}\tabularnewline
-  }
-  \newcommand*\ecvlanguage[7][0pt]{
-  {\textbf{#2}} &
-  \setlength\extrarowheight{10pt}
-%   \setlength\tabcolsep{1mm}
-  \begin{tabular}{m{\ecv@langparwidth}m{\ecv@langparwidth}m{\ecv@langparwidth}m{\ecv@langparwidth}m{\ecv@langparwidth}}
-   #3 & #4 & #5 & #6 & #7\tabularnewline \midrule
-  \end{tabular}\vspace{#1}
-  \tabularnewline
-  }
-  \newcommand*\ecvlastlanguage[7][0pt]{
-  {\textbf{#2}} &
-  \setlength\extrarowheight{0pt}
-  \begin{tabular}{m{\ecv@langparwidth}m{\ecv@langparwidth}m{\ecv@langparwidth}m{\ecv@langparwidth}m{\ecv@langparwidth}}
-   #3 & #4 & #5 & #6 & #7\tabularnewline \bottomrule
-  \end{tabular}\vspace{#1}
-  \tabularnewline
-  }
-\fi
+\newcommand*\ecvlanguage[7][0pt]{\ecvlangrow[#1]{#2}{#3}{#4}{#5}{#6}{#7}{0.02cm}}
+\newcommand*\ecvlastlanguage[7][0pt]{\ecvlangrow[#1]{#2}{#3}{#4}{#5}{#6}{#7}{0.04cm}}
 
 \definecolor{langlinkcolor}{HTML}{000080}
 \newcommand*\ecvlanguagefooter[1][0pt]{& \textcolor{sectioncolor}{\ecv@langshortdesckey} \tabularnewline &\setul{.5pt}{.4pt}\href{\ecv@langlinkkey}{\ul{\mbox{\textcolor{langlinkcolor}{\ecv@langfooterkey}}}} \vspace{#1}\tabularnewline}
 
 % See the Common European Framework of Reference for Languages:
 % http://www.coe.int/T/E/Cultural_Co-operation/education/Languages/Language_Policy/Common_Framework_of_Reference/default.asp
-\ifx\ecv@booktabs\undefined % Use table conforming to EU model
-  \newcommand*\ecvCEF[2]{%
+\newcommand*\ecvCEF[2]{%
 %   \setlength\tabcolsep{1mm}
 
-  \begin{tabular}{@{}>{}m{.2\ecv@langparwidth}@{\hspace{1mm}}>{\centering}m{.74\ecv@langparwidth}@{}}
+\begin{tabular}{@{}>{}m{.2\ecv@langparwidth}@{\hspace{1mm}}>{\centering}m{.74\ecv@langparwidth}@{}}
 #1 & \small{#2}\tabularnewline
-  \end{tabular}
-  }
-\else
-  \newcommand*\ecvCEF[2]{%
-  %\setlength\tabcolsep{1mm}
-  \begin{tabular}{@{}>{\footnotesize}p{.2\ecv@langparwidth}@{\hspace{1mm}}>{\footnotesize\centering}p{.74\ecv@langparwidth}@{}}
-#1 & #2\tabularnewline
-  \end{tabular}
-  }
-\fi
+\end{tabular}
+}
 
 \newcommand*\ecvAOne{A1}
 \newcommand*\ecvATwo{A2}
