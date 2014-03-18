@@ -1,7 +1,7 @@
 %!TEX encoding = UTF-8 Unicode
 %
-% Translation completed
-\ProvidesFile{ecven_giacomo.def}[europecv English definitions]
+%
+\ProvidesFile{ecven.def}[europecv English definitions]
 % Personal information
 \def\ecv@infosectionkey{\ecv@utf{Personal information}}
 \def\ecv@namekey{\ecv@utf{Surname / First name}}
@@ -42,5 +42,3 @@
 \def\ecv@langcold{0.8}
 \def\ecv@langcole{0.8}
 
-\renewcommand*{\ecvcurrvitae}{\ecv@utf{%
-Curriculum Vitae}}

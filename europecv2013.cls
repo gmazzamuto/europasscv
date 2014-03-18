@@ -1,12 +1,13 @@
 %!TEX encoding = UTF-8 Unicode
 %
 % European curriculum vitae class
-% Author: Nicola Vitacolonna (vitacolo@dimi.uniud.it)
+% Author: Giacomo Mazzamuto
+% based on the europecv class by Nicola Vitacolonna (http://ctan.org/pkg/europecv)
 % This material is subject to the LaTeX Project Public License.
 % See  http://www.ctan.org/tex-archive/help/Catalogue/licenses.lppl.html
 % for the details of that license
 \NeedsTeXFormat{LaTeX2e}
-\ProvidesClass{europecv_giacomo}[2006/04/24 (beta) European curriculum vitae class (Giacomo)]
+\ProvidesClass{europecv2013}[2014/04/18 (beta) European curriculum vitae class, 2013 version]
 
 % CV models and instructions:
 %   http://europass.cedefop.eu.int/htm/index.htm
@@ -19,105 +20,93 @@
 \DeclareOption{english}{%
   \AtEndOfPackage{%
     \InputIfFileExists{ecven.def}{}{%
-    \ClassError{europecv}{English definition file 'ecven.def' not found}%
-     {The file should be inside the europecv folder.\MessageBreak
-    Try to re-install the europecv class.}}%
+    \ClassError{europecv2013}{English definition file 'ecven.def' not found}%
+     {The file should be inside the europecv2013 folder.\MessageBreak
+    Try to re-install the europecv2013 class.}}%
   }%
 }
 \DeclareOption{italian}{%
   \AtEndOfPackage{%
     \InputIfFileExists{ecvit.def}{}{%
-    \ClassWarningNoLine{europecv}{Italian definition file 'ecvit.def' not found}}%
-  }%
-}
-\DeclareOption{italiangiacomo}{%
-  \AtEndOfPackage{%
-    \InputIfFileExists{ecvit_giacomo.def}{}{%
-    \ClassWarningNoLine{europecv}{Italian definition file 'ecvit_giacomo.def' not found}}%
-  }%
-}
-\DeclareOption{englishgiacomo}{%
-  \AtEndOfPackage{%
-    \InputIfFileExists{ecven_giacomo.def}{}{%
-    \ClassWarningNoLine{europecv}{English definition file 'ecven_giacomo.def' not found}}%
+    \ClassWarningNoLine{europecv2013}{Italian definition file 'ecvit.def' not found}}%
   }%
 }
 \DeclareOption{spanish}{%
   \AtEndOfPackage{%
     \InputIfFileExists{ecves.def}{}{%
-    \ClassWarningNoLine{europecv}{Spanish definition file 'ecves.def' not found}}%
+    \ClassWarningNoLine{europecv2013}{Spanish definition file 'ecves.def' not found}}%
   }%
 }
 \DeclareOption{french}{%
   \AtEndOfPackage{%
     \InputIfFileExists{ecvfr.def}{}{%
-    \ClassWarningNoLine{europecv}{French definition file 'ecvfr.def' not found}}%
+    \ClassWarningNoLine{europecv2013}{French definition file 'ecvfr.def' not found}}%
   }%
 }
 \DeclareOption{danish}{%
   \AtEndOfPackage{%
     \InputIfFileExists{ecvda.def}{}{%
-    \ClassWarningNoLine{europecv}{Danish definition file 'ecvda.def' not found}}%
+    \ClassWarningNoLine{europecv2013}{Danish definition file 'ecvda.def' not found}}%
   }%
 }
 \DeclareOption{german}{%
   \AtEndOfPackage{%
     \InputIfFileExists{ecvde.def}{}{%
-    \ClassWarningNoLine{europecv}{German definition file 'ecvde.def' not found}}%
+    \ClassWarningNoLine{europecv2013}{German definition file 'ecvde.def' not found}}%
   }%
 }
 \DeclareOption{finnish}{%
   \AtEndOfPackage{%
     \InputIfFileExists{ecvfi.def}{}{%
-    \ClassWarningNoLine{europecv}{Finnish definition file 'ecvfi.def' not found}}%
+    \ClassWarningNoLine{europecv2013}{Finnish definition file 'ecvfi.def' not found}}%
   }%
 }
 \DeclareOption{portuges}{%
   \AtEndOfPackage{%
     \InputIfFileExists{ecvpt.def}{}{%
-    \ClassWarningNoLine{europecv}{Portuguese definition file 'ecvpt.def' not found}}%
+    \ClassWarningNoLine{europecv2013}{Portuguese definition file 'ecvpt.def' not found}}%
   }%
 }
 \DeclareOption{portuguese}{%
   \AtEndOfPackage{%
     \InputIfFileExists{ecvpt.def}{}{%
-    \ClassWarningNoLine{europecv}{Portuguese definition file 'ecvpt.def' not found}}%
+    \ClassWarningNoLine{europecv2013}{Portuguese definition file 'ecvpt.def' not found}}%
   }%
 }
 \DeclareOption{swedish}{%
   \AtEndOfPackage{%
     \InputIfFileExists{ecvsv.def}{}{%
-    \ClassWarningNoLine{europecv}{Swedish definition file 'ecvsv.def' not found}}%
+    \ClassWarningNoLine{europecv2013}{Swedish definition file 'ecvsv.def' not found}}%
   }%
 }
 \DeclareOption{norwegian}{%
   \AtEndOfPackage{%
     \InputIfFileExists{ecvno.def}{}{%
-    \ClassWarningNoLine{europecv}{Norwegian definition file 'ecvno.def' not found}}%
+    \ClassWarningNoLine{europecv2013}{Norwegian definition file 'ecvno.def' not found}}%
   }%
 }
 \DeclareOption{dutch}{%
   \AtEndOfPackage{%
     \InputIfFileExists{ecvnl.def}{}{%
-    \ClassWarningNoLine{europecv}{Dutch definition file 'ecvnl.def' not found}}%
+    \ClassWarningNoLine{europecv2013}{Dutch definition file 'ecvnl.def' not found}}%
   }%
 }
 \DeclareOption{catalan}{%
   \AtEndOfPackage{%
     \InputIfFileExists{ecvca.def}{}{%
-    \ClassWarningNoLine{europecv}{Catalan definition file 'ecvca.def' not found}}%
+    \ClassWarningNoLine{europecv2013}{Catalan definition file 'ecvca.def' not found}}%
   }%
 }
 \DeclareOption{polish}{%
   \AtEndOfPackage{%
     \InputIfFileExists{ecvpl.def}{}{%
-    \ClassWarningNoLine{europecv}{Polish definition file 'ecvpl.def' not found}}%
+    \ClassWarningNoLine{europecv2013}{Polish definition file 'ecvpl.def' not found}}%
   }%
 }
 \DeclareOption{hungarian}{%
   \AtEndOfPackage{%
     \InputIfFileExists{ecvhu.def}{}{%
-    \ClassWarningNoLine{europecv}{Hungarian definition file 'ecvhu.def' not found}}%
+    \ClassWarningNoLine{europecv2013}{Hungarian definition file 'ecvhu.def' not found}}%
     \ecvpage{\thepage\ifx\@empty\ecv@totpages.\else\ecv@totpages\fi~\ecv@pagekey}
     \def\ecv@lfoot{%
   \footnotesize\textrm{\ecv@page~- \textrm{\ecv@footername} \ecv@cvofkey}}%
@@ -126,79 +115,79 @@
 \DeclareOption{estonian}{%
   \AtEndOfPackage{%
     \InputIfFileExists{ecvet.def}{}{%
-    \ClassWarningNoLine{europecv}{Estonian definition file 'ecvet.def' not found}}%
+    \ClassWarningNoLine{europecv2013}{Estonian definition file 'ecvet.def' not found}}%
   }%
 }
 \DeclareOption{icelandic}{%
   \AtEndOfPackage{%
     \InputIfFileExists{ecvis.def}{}{%
-    \ClassWarningNoLine{europecv}{Icelandic definition file 'ecvis.def' not found}}%
+    \ClassWarningNoLine{europecv2013}{Icelandic definition file 'ecvis.def' not found}}%
   }%
 }
 \DeclareOption{lithuanian}{%
   \AtEndOfPackage{%
     \InputIfFileExists{ecvlt.def}{}{%
-    \ClassWarningNoLine{europecv}{Lithuanian definition file 'ecvlt.def' not found}}%
+    \ClassWarningNoLine{europecv2013}{Lithuanian definition file 'ecvlt.def' not found}}%
   }%
 }
 \DeclareOption{czech}{%
   \AtEndOfPackage{%
     \InputIfFileExists{ecvcs.def}{}{%
-    \ClassWarningNoLine{europecv}{Czech definition file 'ecvcs.def' not found}}%
+    \ClassWarningNoLine{europecv2013}{Czech definition file 'ecvcs.def' not found}}%
   }%
 }
 \DeclareOption{slovak}{%
   \AtEndOfPackage{%
     \InputIfFileExists{ecvsk.def}{}{%
-    \ClassWarningNoLine{europecv}{Slovak definition file 'ecvsk.def' not found}}%
+    \ClassWarningNoLine{europecv2013}{Slovak definition file 'ecvsk.def' not found}}%
   }%
 }
 \DeclareOption{latvian}{%
   \AtEndOfPackage{%
     \InputIfFileExists{ecvlv.def}{}{%
-    \ClassWarningNoLine{europecv}{Latvian definition file 'ecvlv.def' not found}}%
+    \ClassWarningNoLine{europecv2013}{Latvian definition file 'ecvlv.def' not found}}%
   }%
 }
 \DeclareOption{slovenian}{%
   \AtEndOfPackage{%
     \InputIfFileExists{ecvsl.def}{}{%
-    \ClassWarningNoLine{europecv}{Slovenian definition file 'ecvsl.def' not found}}%
+    \ClassWarningNoLine{europecv2013}{Slovenian definition file 'ecvsl.def' not found}}%
   }%
 }
 \DeclareOption{romanian}{%
   \AtEndOfPackage{%
     \InputIfFileExists{ecvro.def}{}{%
-    \ClassWarningNoLine{europecv}{Romanian definition file 'ecvro.def' not found}}%
+    \ClassWarningNoLine{europecv2013}{Romanian definition file 'ecvro.def' not found}}%
   }%
 }
 \DeclareOption{maltese}{%
   \AtEndOfPackage{%
     \InputIfFileExists{ecvmt.def}{}{%
-    \ClassWarningNoLine{europecv}{Maltese definition file 'ecvmt.def' not found}}%
+    \ClassWarningNoLine{europecv2013}{Maltese definition file 'ecvmt.def' not found}}%
   }%
 }
 \DeclareOption{bulgarian}{%
   \AtEndOfPackage{%
       \InputIfFileExists{ecvbg.def}{}{%
-      \ClassWarningNoLine{europecv}{Bulgarian definition file 'ecvbg.def' not found}}%
+      \ClassWarningNoLine{europecv2013}{Bulgarian definition file 'ecvbg.def' not found}}%
   }%
 }
 \DeclareOption{greek}{%
   \AtEndOfPackage{%
      \InputIfFileExists{ecvgr.def}{}{%
-    \ClassWarningNoLine{europecv}{Greek definition file 'ecvgr.def' not found}}%
+    \ClassWarningNoLine{europecv2013}{Greek definition file 'ecvgr.def' not found}}%
   }%
 }
 \DeclareOption{galician}{%
   \AtEndOfPackage{%
      \InputIfFileExists{ecvgl.def}{}{%
-    \ClassWarningNoLine{europecv}{Galician definition file 'ecvgl.def' not found}}%
+    \ClassWarningNoLine{europecv2013}{Galician definition file 'ecvgl.def' not found}}%
   }%
 }
 \DeclareOption{serbian}{%
   \AtEndOfPackage{%
      \InputIfFileExists{ecvsr.def}{}{%
-    \ClassWarningNoLine{europecv}{Serbian definition file 'ecvsr.def' not found}}%
+    \ClassWarningNoLine{europecv2013}{Serbian definition file 'ecvsr.def' not found}}%
   }%
 }
 
@@ -249,7 +238,8 @@
   \renewcommand{\bfdefault}{bc}  % Boldface narrow
 }
 
-\newcommand{\ecvcurrvitae}{Curriculum vitae}
+\def\ecv@currvitaekey{}
+\newcommand{\ecvcurrvitae}{\ifx\@empty\ecv@currvitaekey Curriculum vitae \else \ecv@currvitaekey \fi}
 \newcommand{\ecvcoloredtitle}{\fontfamily{phv}\fontseries{m}\selectfont \textcolor{ecvhighlightcolor}{\ecvcurrvitae}}
 
 % Europass logo
@@ -286,11 +276,6 @@
   \def\ecv@totpages{~/~\ref{TotPages}}
   %\ecvpage{\ecv@pagekey~\thepage~/~\ref{TotPages}}%
   }%
-}
-
-\DeclareOption{booktabs}{%
-  \AtEndOfPackage{\RequirePackage{booktabs}}
-  \def\ecv@booktabs{}
 }
 
 \DeclareOption{nodocument}{%
