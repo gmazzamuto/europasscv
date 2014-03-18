@@ -1,0 +1,7 @@
+*~
+*.pdf
+*.synctex.gz
+*.aux
+*.log
+*.out
+*.tex.backup
