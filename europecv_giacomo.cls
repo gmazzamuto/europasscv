@@ -489,8 +489,7 @@
 &
 \renewcommand{\arraystretch}{1.5}
 {
-\begin{tabu} to \linewidth {|X[0.4,c,m]  |[0.04cm ecvtablebordercolor] X[0.4,c,m] |[0.04cm ecvtablebordercolor] X[0.8,c,m]  |[0.04cm ecvtablebordercolor] X[0.8,c,m] |[0.04cm ecvtablebordercolor] X[0.8,c,m]}
-% \begin{tabu} to \linewidth {|X[0.8,c,m]  |[0.04cm ecvtablebordercolor] X[0.8,c,m] |[0.04cm ecvtablebordercolor] X[1,c,m]  |[0.04cm ecvtablebordercolor] X[1,c,m] |[0.04cm ecvtablebordercolor] X[1.5,c,m]}
+\begin{tabu} to \linewidth {|X[\ecv@langcola,c,m]  |[0.04cm ecvtablebordercolor] X[\ecv@langcolb,c,m] |[0.04cm ecvtablebordercolor] X[\ecv@langcolc,c,m]  |[0.04cm ecvtablebordercolor] X[\ecv@langcold,c,m] |[0.04cm ecvtablebordercolor] X[\ecv@langcole,c,m]}
 \tabucline[0.04cm ecvtablebordercolor]-
 \multicolumn2{|c|[0.04cm ecvtablebordercolor]}{\textcolor{ecvsectioncolor}{\expandafter\MakeUppercase{\expandafter{\ecv@understandkey}}}}&\multicolumn2{|c|[0.04cm ecvtablebordercolor]}{\textcolor{ecvsectioncolor}{\expandafter\MakeUppercase{\expandafter{\ecv@speakkey}}}}&\multicolumn1{|c|}{\textcolor{ecvsectioncolor}{\expandafter\MakeUppercase{\expandafter{\ecv@writekey}}}}\tabularnewline\cline{1-3}
 \tabucline[0.04cm ecvtablebordercolor]-
@@ -508,8 +507,7 @@
 \renewcommand{\arraystretch}{1.5}
 \vspace{-\baselineskip} \vspace*{-0.02cm}
 {
-\begin{tabu} to \linewidth {|X[0.4,c,m]  |[0.04cm ecvtablebordercolor] X[0.4,c,m] |[0.04cm ecvtablebordercolor] X[0.8,c,m]  |[0.04cm ecvtablebordercolor] X[0.8,c,m] |[0.04cm ecvtablebordercolor] X[0.8,c,m]}
-% \begin{tabu} to \linewidth {|X[0.8,c,m]  |[0.04cm ecvtablebordercolor] X[0.8,c,m] |[0.04cm ecvtablebordercolor] X[1,c,m]  |[0.04cm ecvtablebordercolor] X[1,c,m] |[0.04cm ecvtablebordercolor] X[1.5,c,m]}
+\begin{tabu} to \linewidth {|X[\ecv@langcola,c,m]  |[0.04cm ecvtablebordercolor] X[\ecv@langcolb,c,m] |[0.04cm ecvtablebordercolor] X[\ecv@langcolc,c,m]  |[0.04cm ecvtablebordercolor] X[\ecv@langcold,c,m] |[0.04cm ecvtablebordercolor] X[\ecv@langcole,c,m]}
 \multicolumn1{c}{#3}&\multicolumn1{c}{#4} &\multicolumn1{c}{#5}&\multicolumn1{c}{#6}&\multicolumn1{c}{#7}\tabularnewline\cline{1-4}
 \tabucline[#8 ecvtablebordercolor]-
 \tabuphantomline

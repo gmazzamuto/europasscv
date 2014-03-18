@@ -35,5 +35,11 @@
 \def\ecv@cefindepkey{\ecv@utf{Independent user}}
 \def\ecv@cefprofkey{\ecv@utf{Proficient user}}
 
+\def\ecv@langcola{0.4}
+\def\ecv@langcolb{0.4}
+\def\ecv@langcolc{0.8}
+\def\ecv@langcold{0.8}
+\def\ecv@langcole{0.8}
+
 \renewcommand*{\ecvcurrvitae}{\ecv@utf{%
 Curriculum Vitae}}

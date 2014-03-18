@@ -35,5 +35,11 @@
 \def\ecv@cefindepkey{\ecv@utf{Utente autonomo}}
 \def\ecv@cefprofkey{\ecv@utf{Utente avanzato}}
 
+\def\ecv@langcola{0.8}
+\def\ecv@langcolb{0.8}
+\def\ecv@langcolc{1}
+\def\ecv@langcold{1}
+\def\ecv@langcole{1.5}
+
 \renewcommand*{\ecvcurrvitae}{\ecv@utf{%
 Curriculum Vitae}}
