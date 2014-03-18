@@ -258,6 +258,7 @@
    \includegraphics[width=#1]{europasslogo}}
 }
 \DeclareOption{nologo}{\renewcommand*\draweuropasslogo{}}
+\DeclareOption{notitle}{\def\ecv@notitle{}}
 
 % Flag pictures of the EC can be found at 
 %   http://europa.eu.int/abc/symbols/emblem/index_en.htm
@@ -292,12 +293,16 @@
   \def\ecv@booktabs{}
 }
 
+\DeclareOption{nodocument}{%
+  \def\ecv@nodocument{}
+}
+
 % Pass all other options (a4paper, 10pt, draft, openbib, etc...) to article
 \DeclareOption*{%
   \PassOptionsToClass{\CurrentOption}{article}%
 } 
 
-\ExecuteOptions{english,noflag,logo,hrule} % Default options
+\ExecuteOptions{english,noflag,logo,hrule,totpages} % Default options
 
 \ProcessOptions\relax
 
@@ -313,8 +318,8 @@
 \RequirePackage{url}
 \RequirePackage{soul}
 \RequirePackage{tabu}
-\RequirePackage[a4paper, body={19cm,24cm}, vratio={1:1}]{geometry}
 \RequirePackage{setspace}
+\RequirePackage{geometry}
 
 \def\ecv@totpages{}
 \newcommand*{\ecvpage}[1]{\def\ecv@page{#1}}
@@ -333,6 +338,9 @@
 % are correctly defined
 \ecvLeftColumnWidth{55mm}
 \ecvColSep{10pt}
+
+\ifx\@empty\ecv@nodocument\else
+\newgeometry{body={19cm,22.5cm}, vratio={4:3}}
 
 % Set layout
 
@@ -380,6 +388,7 @@
 \thispagestyle{first}
 \pagestyle{ecvfancy}
 \renewcommand{\headrulewidth}{0pt}%
+\fi
 } % End \AtBeginDocument
 
 % Thanks to Roman Bertle for suggesting the following:
@@ -585,18 +594,23 @@
   \addtolength{\ecv@langparwidth}{-2\tabcolsep}
   \addtolength{\ecv@langparwidth}{-2\arrayrulewidth}
 % Begin
+\ifx\@empty\ecv@nodocument\else
 \vspace*{-2.5cm}
 \enlargethispage{2.5cm}
+\fi
 \addtolength{\ecv@rightcolwidth}{-\ecv@colsep}
 
 \fontfamily{phv}\fontseries{mc}\selectfont
 % \color{ecvtextcolor}
 \begin{longtabu} to \textwidth {@{}>{\raggedleft}p{\ecv@leftcolwidth}@{}|@{\extracolsep{\ecv@colsep}}p{\ecv@rightcolwidth}@{}}
   \ifx\@empty\draweuropasslogo
-     & \ecvcoloredtitle \vspace{0.5cm} \tabularnewline
+    \ifx\@empty\ecv@notitle\else
+      & \ecvcoloredtitle \vspace{0.5cm} \tabularnewline
+    \fi
   \else
-    \raisebox{-0.3\height}{\draweuropasslogo} & \ecvcoloredtitle \vspace{0.5cm} \tabularnewline
+  \raisebox{-0.3\height}{\draweuropasslogo} & \ifx\@empty\ecv@notitle\else \ecvcoloredtitle \vspace{0.5cm} \fi \tabularnewline
   \fi
+  
 }
 {
 \end{longtabu}}
@@ -619,13 +633,9 @@
   \textcolor{ecvsectioncolor}{\small \fontfamily{phv}\fontseries{m}\selectfont \expandafter\MakeUppercase{\expandafter{#1}}}  & \parbox[b]{\ecv@rightcolwidth}{#2}
   \tabularnewline\nopagebreak
 }
-          
-\newif\if@ecvitemstar
-\newcommand\ecvitem{\@ifstar{\@ecvitemstartrue \@ecvitem}%
-  {\@ecvitemstarfalse\@ecvitem}}
-  
-\newcommand\@ecvitem[3][2.8pt]{%
-  \if@ecvitemstar \ecvbullet\ \fi #2\vspace{#1} &\setlength{\parskip}{\smallskipamount}\setlength{\parindent}{0pt}#3
+
+\newcommand\ecvitem[3][2.8pt]{%
+  #2\vspace{#1} &\setlength{\parskip}{\smallskipamount}\setlength{\parindent}{0pt}#3
     \vspace{#1}\tabularnewline}
 
 \newcommand\ecvtitle[3][2.8pt]{%
