@@ -3,8 +3,9 @@
 % European curriculum vitae class
 % Author: Giacomo Mazzamuto
 % based on the europecv class by Nicola Vitacolonna (http://ctan.org/pkg/europecv)
+
 % This material is subject to the LaTeX Project Public License.
-% See  http://www.ctan.org/tex-archive/help/Catalogue/licenses.lppl.html
+% See  http://www.latex-project.org/lppl.txt
 % for the details of that license
 \NeedsTeXFormat{LaTeX2e}
 \ProvidesClass{europecv2013}[2014/04/18 (beta) European curriculum vitae class, 2013 version]
