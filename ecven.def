@@ -40,5 +40,5 @@
 \def\ecv@langcolb{0.4}
 \def\ecv@langcolc{0.8}
 \def\ecv@langcold{0.8}
-\def\ecv@langcole{0.8}
+\def\ecv@langcole{0.4}
 

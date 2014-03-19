@@ -427,7 +427,7 @@
 \ecvpicture{}
 
 \providecommand{\ecvpersonalinfo}[1][-15pt]{%
-\textcolor{ecvsectioncolor}{\small \fontfamily{phv}\fontseries{m}\selectfont \expandafter\MakeUppercase{\expandafter{\ecv@infosectionkey}}} & {
+\par \textcolor{ecvsectioncolor}{\small \fontfamily{phv}\fontseries{m}\selectfont \expandafter\MakeUppercase{\expandafter{\ecv@infosectionkey}}} & {
 \begin{doublespacing}
 \begin{tabu} to 0.99\ecv@rightcolwidth {@{}X[0.7,l,p]  X[0.3,r,p]}
 {
@@ -506,7 +506,8 @@
 \newcommand*\ecvlanguage[7][0pt]{\ecvlangrow[#1]{#2}{#3}{#4}{#5}{#6}{#7}{0.02cm}}
 \newcommand*\ecvlastlanguage[7][0pt]{\ecvlangrow[#1]{#2}{#3}{#4}{#5}{#6}{#7}{0.04cm}}
 
-\newcommand*\ecvlanguagefooter[1][0pt]{& \textcolor{ecvsectioncolor}{\ecv@langshortdesckey} \tabularnewline &\setul{.5pt}{.4pt}\href{\ecv@langlinkkey}{\ul{\mbox{\textcolor{ecvlanglinkcolor}{\ecv@langfooterkey}}}} \vspace{#1}\tabularnewline}
+\newcommand*\ecvlanguagefooter[1][0pt]{& \textcolor{ecvsectioncolor}{\ecv@langshortdesckey} \tabularnewline &\setulcolor{ecvlanglinkcolor}
+\setul{.5pt}{.4pt}\href{\ecv@langlinkkey}{\ul{\mbox{\textcolor{ecvlanglinkcolor}{\ecv@langfooterkey}}}} \vspace{#1}\tabularnewline}
 
 % See the Common European Framework of Reference for Languages:
 % http://www.coe.int/T/E/Cultural_Co-operation/education/Languages/Language_Policy/Common_Framework_of_Reference/default.asp
@@ -605,17 +606,18 @@
 }
 
 \newcommand{\ecvsection}[2][10pt]{%
-  \par\textcolor{ecvsectioncolor}{\small \fontfamily{phv}\fontseries{m}\selectfont \expandafter\MakeUppercase{\expandafter{#2}}}  \vspace{#1} &
+%   \setlength{\parskip}{\smallskipamount}\setlength{\parindent}{0pt}
+  \textcolor{ecvsectioncolor}{\small \fontfamily{phv}\fontseries{m}\selectfont \MakeUppercase{\expandafter{#2}}} \vspace{#1} &
   \setlength{\TPHorizModule}{1pt}\setlength{\TPVertModule}{1pt}
   \getlength{\rightScalarWidth}{\ecv@rightcolwidth}
   
-  \textcolor{ecvrulecolor}{\noindent\makebox[\linewidth]{\rule{\ecv@rightcolwidth}{1pt}}  \begin{textblock}{7}[1,1](\rightScalarWidth,0) \makebox{\rule{7pt}{7pt}} \end{textblock}
-}
+  \textcolor{ecvrulecolor}{\noindent\makebox[\linewidth]{\rule{\ecv@rightcolwidth}{1pt}}  \begin{textblock}{7}[1,1](\rightScalarWidth,0) \makebox{\rule{7pt}{7pt}} \end{textblock}}
   \tabularnewline\nopagebreak
 }
 
 \newcommand{\ecvsectionWithoutRuler}[2]{%
-  \textcolor{ecvsectioncolor}{\small \fontfamily{phv}\fontseries{m}\selectfont \expandafter\MakeUppercase{\expandafter{#1}}}  & \parbox[b]{\ecv@rightcolwidth}{#2}
+  \par
+  \textcolor{ecvsectioncolor}{\small \fontfamily{phv}\fontseries{m}\selectfont \MakeUppercase{\expandafter{#1}}}  & \parbox[b]{\ecv@rightcolwidth}{#2}
   \tabularnewline\nopagebreak
 }
 
