@@ -5,3 +5,6 @@
 *.log
 *.out
 *.tex.backup
+*.kate-swp
+*.bbl
+*.blg
