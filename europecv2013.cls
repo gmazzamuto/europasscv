@@ -621,6 +621,11 @@
   \tabularnewline\nopagebreak
 }
 
+\newcommand{\ecvjobappliedfor}[2][10pt]{
+  \textcolor{ecvsectioncolor}{\small \fontfamily{phv}\fontseries{m}\selectfont \MakeUppercase{\expandafter{\ecv@jobappliedforkey}}} \vspace{#1} &
+  \large \fontfamily{phv}\fontseries{m}\selectfont #2\tabularnewline
+}
+
 \newcommand\ecvitem[3][2.8pt]{%
   #2\vspace{#1} &\setlength{\parskip}{\smallskipamount}\setlength{\parindent}{0pt}#3
     \vspace{#1}\tabularnewline}

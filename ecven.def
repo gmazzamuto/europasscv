@@ -35,6 +35,7 @@
 \def\ecv@cefindepkey{\ecv@utf{Independent user}}
 \def\ecv@cefprofkey{\ecv@utf{Proficient user}}
 \def\ecv@europeanunionkey{\ecv@utf{European Union}}
+\def\ecv@jobappliedforkey{\ecv@utf{Job applied for}}
 
 \def\ecv@langcola{0.4}
 \def\ecv@langcolb{0.4}
