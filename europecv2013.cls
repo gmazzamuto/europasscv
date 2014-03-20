@@ -615,9 +615,18 @@
    \pgfmathsetmacro#1{#2}
 }
 
+
+
+% styles
+\newcommand{\ecvsectionstyle}[1]{\textcolor{ecvsectioncolor}{\small \fontfamily{phv}\fontseries{m}\selectfont \MakeUppercase{\expandafter{#1}}}}
+\newcommand{\ecvbluenormalstyle}[1]{\fontfamily{phv}\fontseries{m}\selectfont\textcolor{ecvsectioncolor}{#1}}
+\newcommand{\ecvtitlestyle}[1]{\large{\ecvbluenormalstyle{#1}}}
+\newcommand{\ecvlargenormalstyle}[1]{\large \fontfamily{phv}\fontseries{m}\selectfont #1}
+
+
+% sectioning commands
 \newcommand{\ecvsection}[2][10pt]{%
-%   \setlength{\parskip}{\smallskipamount}\setlength{\parindent}{0pt}
-  \textcolor{ecvsectioncolor}{\small \fontfamily{phv}\fontseries{m}\selectfont \MakeUppercase{\expandafter{#2}}} \vspace{#1} &
+  \ecvsectionstyle{#2} \vspace{#1} &
   \setlength{\TPHorizModule}{1pt}\setlength{\TPVertModule}{1pt}
   \getlength{\rightScalarWidth}{\ecv@rightcolwidth}
   
@@ -625,24 +634,17 @@
   \tabularnewline\nopagebreak
 }
 
-\newcommand{\ecvsectionWithoutRuler}[2]{%
-  \par
-  \textcolor{ecvsectioncolor}{\small \fontfamily{phv}\fontseries{m}\selectfont \MakeUppercase{\expandafter{#1}}}  & \parbox[b]{\ecv@rightcolwidth}{#2}
-  \tabularnewline\nopagebreak
-}
-
 \newcommand{\ecvjobappliedfor}[2][10pt]{
-  \textcolor{ecvsectioncolor}{\small \fontfamily{phv}\fontseries{m}\selectfont \MakeUppercase{\expandafter{\ecv@jobappliedforkey}}} \vspace{#1} &
-  \large \fontfamily{phv}\fontseries{m}\selectfont #2\tabularnewline
+  \ecvsectionstyle{\ecv@jobappliedforkey} \vspace{#1} & \ecvlargenormalstyle{#2}\tabularnewline
 }
 
 \newcommand\ecvitem[3][2.8pt]{%
-  #2\vspace{#1} &\setlength{\parskip}{\smallskipamount}\setlength{\parindent}{0pt}#3
-    \vspace{#1}\tabularnewline}
+  #2\vspace{#1} & #3 \vspace{#1}\tabularnewline
+}
 
 \newcommand\ecvtitle[3][2.8pt]{%
-  \fontfamily{phv}\fontseries{m}\selectfont\textcolor{ecvsectioncolor}{#2}\vspace{#1} &\setlength{\parskip}{\smallskipamount}\setlength{\parindent}{0pt}\large{\fontfamily{phv}\fontseries{m}\selectfont\textcolor{ecvsectioncolor}{#3}}
-\vspace{#1}\tabularnewline}
+  \ecvbluenormalstyle{#2} & \ecvtitlestyle{#3} \vspace{#1}\tabularnewline
+}
 
 \newcommand\ecvblueitem[3][2.8pt]{\ecvitem[#1]{\textcolor{ecvsectioncolor}{#2}}{#3}}
 
