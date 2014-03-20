@@ -283,6 +283,8 @@
   \def\ecv@nodocument{}
 }
 
+\DeclareOption{debug}{\def\ecv@debugmode{}}
+
 % Pass all other options (a4paper, 10pt, draft, openbib, etc...) to article
 \DeclareOption*{%
   \PassOptionsToClass{\CurrentOption}{article}%
@@ -296,9 +298,10 @@
 % \RequirePackage{ucs}
 \RequirePackage[utf8x]{inputenc}
 \RequirePackage{array}
+\RequirePackage{ctable}
 \RequirePackage{longtable}
 \RequirePackage{fancyhdr} % For page numbering
-\RequirePackage[dvipsnames]{xcolor}
+\RequirePackage{xcolor}
 \RequirePackage{textpos}
 \RequirePackage{pgf}
 \RequirePackage{url}
@@ -307,6 +310,7 @@
 \RequirePackage{setspace}
 \RequirePackage{geometry}
 \RequirePackage{textcomp} % For copyright symbol
+\ifx\@empty\ecv@debugmode \RequirePackage{colortbl} \fi
 
 \def\ecv@totpages{}
 \newcommand*{\ecvpage}[1]{\def\ecv@page{#1}}
@@ -588,6 +592,12 @@
 \addtolength{\ecv@rightcolwidth}{-\ecv@colsep}
 \fontfamily{phv} \ifx\@empty\ecv@narrow \fontseries{mc} \else \fontseries{m} \fi \selectfont
 % \color{ecvtextcolor}
+\ifx\@empty\ecv@debugmode
+\taburowcolors [1] 2 {green!25 .. yellow!50}
+\taburulecolor{blue!25}
+\else
+\taburulecolor{white}
+\fi
 \begin{longtabu} to \textwidth {@{}>{\raggedleft}p{\ecv@leftcolwidth}@{}|@{\extracolsep{\ecv@colsep}}p{\ecv@rightcolwidth}@{}}
   \ifx\@empty\draweuropasslogo
     \ifx\@empty\ecv@notitle\else
