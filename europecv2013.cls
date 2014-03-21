@@ -310,6 +310,8 @@
 \RequirePackage{geometry}
 \RequirePackage{textcomp} % For copyright symbol
 \ifx\@empty\ecv@debugmode \RequirePackage{colortbl} \fi
+\RequirePackage{enumitem}
+
 
 \def\ecv@totpages{}
 \newcommand*{\ecvpage}[1]{\def\ecv@page{#1}}
@@ -609,6 +611,15 @@
 }
 {
 \end{longtabu}}
+
+\newenvironment{ecvitemize}{
+\
+\vspace*{-\baselineskip}
+\begin{itemize}[leftmargin=*,nolistsep]
+}{
+\end{itemize}
+\ \vspace{-0.8\baselineskip}
+}
 
 \newcommand*{\getlength}[2]{%
    \pgfmathsetmacro#1{#2}
