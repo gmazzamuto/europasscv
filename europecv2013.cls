@@ -473,7 +473,7 @@
 
 % Spoken language information
 \newcommand*\ecvmothertongue[2][0pt]{%
-\textcolor{ecvsectioncolor}{\ecv@mothertonguekey} & #2\tabularnewline[#1]
+\ecvblueitem[#1]{\ecv@mothertonguekey}{#2}
 }
 
 \newlength\ecv@langparwidth
@@ -669,7 +669,7 @@
   \ecvitem[#1]{\ecvbluenormalstyle{#2}}{\ecvtitlestyle{#3}}
 }
 
-\newcommand\ecvblueitem[3][0pt]{\ecvitem[#1]{\textcolor{ecvsectioncolor}{#2}}{#3}}
+\newcommand\ecvblueitem[3][\bigskipamount]{\ecvitem[#1]{\textcolor{ecvsectioncolor}{#2}}{#3}}
 
 \newcommand{\ecvjobappliedfor}[2][0pt]{
   \ecvitem[#1]{\ecvsectionstyle{\ecv@jobappliedforkey}}{\ecvlargenormalstyle{#2}}
