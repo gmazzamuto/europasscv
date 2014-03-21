@@ -36,6 +36,7 @@
 \def\ecv@cefprofkey{\ecv@utf{Utente avanzato}}
 \def\ecv@europeanunionkey{\ecv@utf{Unione Europea}}
 \def\ecv@jobappliedforkey{\ecv@utf{Occupazione desiderata}}
+\def\ecv@bsectorkey{\ecv@utf{Settore economico}}
 
 \def\ecv@langcola{0.8}
 \def\ecv@langcolb{0.8}
