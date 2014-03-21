@@ -311,6 +311,7 @@
 \RequirePackage{textcomp} % For copyright symbol
 \ifx\@empty\ecv@debugmode \RequirePackage{colortbl} \fi
 \RequirePackage{enumitem}
+\RequirePackage[hidelinks]{hyperref}
 
 
 \def\ecv@totpages{}
@@ -329,11 +330,11 @@
 \AtBeginDocument{%
 % Ensure that \ecv@leftcolwidth and \ecv@rightcolwidth
 % are correctly defined
-\ecvLeftColumnWidth{55mm}
+\ecvLeftColumnWidth{50mm}
 \ecvColSep{10pt}
 
 \ifx\@empty\ecv@nodocument\else
-\newgeometry{body={19cm,22.5cm}, vratio={4:3}}
+\newgeometry{body={18.5cm,24cm}, vratio={4:3}}
 
 % Set layout
 
@@ -343,9 +344,10 @@
 \footnotesize\textcolor{ecvhighlightcolor}{\fontfamily{phv}\fontseries{m}\selectfont\ecv@lfoot}\end{flushleft}
 \end{minipage}
 }
-\fancyfoot[C]{\begin{minipage}{\ecv@rightcolwidth}
-\begin{center}
-\footnotesize\textcolor{ecvhighlightcolor}{\fontfamily{phv}\fontseries{m}\selectfont\ecv@cfoot}\end{center}
+\fancyfoot[C]{\begin{minipage}{\textwidth}
+\hspace{\ecv@leftcolwidth}
+\hspace{0.5\ecv@colsep}
+\footnotesize\textcolor{ecvhighlightcolor}{\fontfamily{phv}\fontseries{m}\selectfont\ecv@cfoot}
 \end{minipage}
 }
 \fancyfoot[R]{\begin{minipage}{\ecv@rightcolwidth}
@@ -431,8 +433,9 @@
 \ecvgender{}
 \ecvpicture{}
 
-\providecommand{\ecvpersonalinfo}[1][-15pt]{%
-\par \textcolor{ecvsectioncolor}{\small \fontfamily{phv}\fontseries{m}\selectfont \expandafter\MakeUppercase{\expandafter{\ecv@infosectionkey}}} & {
+\providecommand{\ecvpersonalinfo}[1][0pt]{%
+\textcolor{red!25}{\rule{0pt}{30pt}}
+\textcolor{ecvsectioncolor}{\small \fontfamily{phv}\fontseries{m}\selectfont \expandafter\MakeUppercase{\expandafter{\ecv@infosectionkey}}} & {
 \begin{doublespacing}
 \begin{tabu} to 0.99\ecv@rightcolwidth {@{}X[0.7,l,p]  X[0.3,r,p]}
 {
@@ -465,7 +468,7 @@
 
 & 
 \raisebox{-0.8\height}{\ecvdrawpicture}\vspace*{\ecv@afterpic}
-\end{tabu}\end{doublespacing}\vspace{#1}}\tabularnewline
+\end{tabu}\end{doublespacing}}\tabularnewline
 }
 
 % Spoken language information
@@ -511,8 +514,8 @@
 \newcommand*\ecvlanguage[7][0pt]{\ecvlangrow[#1]{#2}{#3}{#4}{#5}{#6}{#7}{0.02cm}}
 \newcommand*\ecvlastlanguage[7][0pt]{\ecvlangrow[#1]{#2}{#3}{#4}{#5}{#6}{#7}{0.04cm}}
 
-\newcommand*\ecvlanguagefooter[1][0pt]{& \textcolor{ecvsectioncolor}{\ecv@langshortdesckey} \tabularnewline &\setulcolor{ecvlanglinkcolor}
-\setul{.5pt}{.4pt}\href{\ecv@langlinkkey}{\ul{\mbox{\textcolor{ecvlanglinkcolor}{\ecv@langfooterkey}}}} \vspace{#1}\tabularnewline}
+\newcommand*{\ecvlanguagefooter}{& \textcolor{ecvsectioncolor}{\ecv@langshortdesckey} \tabularnewline &\setulcolor{ecvlanglinkcolor}
+\setul{.5pt}{.4pt}\href{\ecv@langlinkkey}{\ul{\mbox{\textcolor{ecvlanglinkcolor}{\ecv@langfooterkey}}}} \tabularnewline}
 
 % See the Common European Framework of Reference for Languages:
 % http://www.coe.int/T/E/Cultural_Co-operation/education/Languages/Language_Policy/Common_Framework_of_Reference/default.asp
