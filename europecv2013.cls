@@ -298,7 +298,6 @@
 % \RequirePackage{ucs}
 \RequirePackage[utf8x]{inputenc}
 \RequirePackage{array}
-\RequirePackage{ctable}
 \RequirePackage{longtable}
 \RequirePackage{fancyhdr} % For page numbering
 \RequirePackage{xcolor}
@@ -622,31 +621,49 @@
 \newcommand{\ecvbluenormalstyle}[1]{\fontfamily{phv}\fontseries{m}\selectfont\textcolor{ecvsectioncolor}{#1}}
 \newcommand{\ecvtitlestyle}[1]{\large{\ecvbluenormalstyle{#1}}}
 \newcommand{\ecvlargenormalstyle}[1]{\large \fontfamily{phv}\fontseries{m}\selectfont #1}
+\newcommand{\ecvhighlight}[1]{\textcolor{ecvhighlightcolor}{#1}}
 
 
 % sectioning commands
-\newcommand{\ecvsection}[2][10pt]{%
-  \ecvsectionstyle{#2} \vspace{#1} &
+\newcommand{\ecvsection}[2][\bigskipamount]{%
+  \ecvitem[#1]{\ecvsectionstyle{#2}}
+  {
   \setlength{\TPHorizModule}{1pt}\setlength{\TPVertModule}{1pt}
   \getlength{\rightScalarWidth}{\ecv@rightcolwidth}
   
   \textcolor{ecvrulecolor}{\noindent\makebox[\linewidth]{\rule{\ecv@rightcolwidth}{1pt}}  \begin{textblock}{7}[1,1](\rightScalarWidth,0) \makebox{\rule{7pt}{7pt}} \end{textblock}}
-  \tabularnewline\nopagebreak
+  }
+  \nopagebreak
 }
 
-\newcommand{\ecvjobappliedfor}[2][10pt]{
-  \ecvsectionstyle{\ecv@jobappliedforkey} \vspace{#1} & \ecvlargenormalstyle{#2}\tabularnewline
+\newlength{\ecv@rowheight}
+
+\newcommand\ecvitem[3][0pt]{%
+  \setlength\ecv@rowheight{\baselineskip}
+  \addtolength\ecv@rowheight{-2\lineskip}
+  \addtolength\ecv@rowheight{#1}
+
+  \ifx\@empty\ecv@debugmode
+  \textcolor{red!25}{\rule{10pt}{\ecv@rowheight}}
+  \else
+  \textcolor{white}{\rule{0pt}{\ecv@rowheight}}
+  \fi
+  #2 & #3 \tabularnewline
+} 
+
+\newcommand\ecvtitle[3][2\bigskipamount]{%
+  \ecvitem[#1]{\ecvbluenormalstyle{#2}}{\ecvtitlestyle{#3}}
 }
 
-\newcommand\ecvitem[3][2.8pt]{%
-  #2\vspace{#1} & #3 \vspace{#1}\tabularnewline
+\newcommand\ecvblueitem[3][0pt]{\ecvitem[#1]{\textcolor{ecvsectioncolor}{#2}}{#3}}
+
+\newcommand{\ecvjobappliedfor}[2][0pt]{
+  \ecvitem[#1]{\ecvsectionstyle{\ecv@jobappliedforkey}}{\ecvlargenormalstyle{#2}}
 }
 
-\newcommand\ecvtitle[3][2.8pt]{%
-  \ecvbluenormalstyle{#2} & \ecvtitlestyle{#3} \vspace{#1}\tabularnewline
+\newcommand{\ecvbsector}[2][0pt]{
+  \ecvitem[#1]{}{\ecvhighlight{\ecv@bsectorkey} {#2}}
 }
-
-\newcommand\ecvblueitem[3][2.8pt]{\ecvitem[#1]{\textcolor{ecvsectioncolor}{#2}}{#3}}
 
 \ecvRuleWidth{0pt}
 
