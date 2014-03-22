@@ -416,7 +416,7 @@
 \fi}
 % The following must be used inside \ecvbeforepicture
 % or \ecvafterpicture
-\newcommand*{\ecvspace}[1]{\tabularnewline[#1] &}
+\newcommand*{\ecvspace}[1]{\vspace{#1}\tabularnewline\tabularnewline}
 \ecvbeforepicture{\raggedleft}
 \ecvafterpicture{10pt}
 \ecvfirstname{}
@@ -479,12 +479,13 @@
 \newlength\ecv@langparwidth
 
 \newcommand*\ecvlanguageheader{%
-\vspace{0.18cm}
-\renewcommand{\arraystretch}{1.5}
+\ecvspace{\bigskipamount}
 \textcolor{ecvsectioncolor}{\ecv@otherlanguageskey}
 &
 \renewcommand{\arraystretch}{1.5}
 {
+\vspace{-\baselineskip}
+\vspace{-0.06cm}
 \begin{tabu} to \linewidth {|X[\ecv@langcola,c,m]  |[0.04cm ecvtablebordercolor] X[\ecv@langcolb,c,m] |[0.04cm ecvtablebordercolor] X[\ecv@langcolc,c,m]  |[0.04cm ecvtablebordercolor] X[\ecv@langcold,c,m] |[0.04cm ecvtablebordercolor] X[\ecv@langcole,c,m]}
 \tabucline[0.04cm ecvtablebordercolor]-
 \multicolumn2{|c|[0.04cm ecvtablebordercolor]}{\textcolor{ecvsectioncolor}{\expandafter\MakeUppercase{\expandafter{\ecv@understandkey}}}}&\multicolumn2{|c|[0.04cm ecvtablebordercolor]}{\textcolor{ecvsectioncolor}{\expandafter\MakeUppercase{\expandafter{\ecv@speakkey}}}}&\multicolumn1{|c|}{\textcolor{ecvsectioncolor}{\expandafter\MakeUppercase{\expandafter{\ecv@writekey}}}}\tabularnewline\cline{1-3}
@@ -501,7 +502,7 @@
 \newcommand*\ecvlangrow[8][0pt]{
 #2 & 
 \renewcommand{\arraystretch}{1.5}
-\vspace{-\baselineskip} \vspace*{-0.02cm}
+% \vspace*{0.02cm}
 {
 \begin{tabu} to \linewidth {|X[\ecv@langcola,c,m]  |[0.04cm ecvtablebordercolor] X[\ecv@langcolb,c,m] |[0.04cm ecvtablebordercolor] X[\ecv@langcolc,c,m]  |[0.04cm ecvtablebordercolor] X[\ecv@langcold,c,m] |[0.04cm ecvtablebordercolor] X[\ecv@langcole,c,m]}
 \multicolumn1{c}{#3}&\multicolumn1{c}{#4} &\multicolumn1{c}{#5}&\multicolumn1{c}{#6}&\multicolumn1{c}{#7}\tabularnewline\cline{1-4}
@@ -514,8 +515,11 @@
 \newcommand*\ecvlanguage[7][0pt]{\ecvlangrow[#1]{#2}{#3}{#4}{#5}{#6}{#7}{0.02cm}}
 \newcommand*\ecvlastlanguage[7][0pt]{\ecvlangrow[#1]{#2}{#3}{#4}{#5}{#6}{#7}{0.04cm}}
 
-\newcommand*{\ecvlanguagefooter}{& \textcolor{ecvsectioncolor}{\ecv@langshortdesckey} \tabularnewline &\setulcolor{ecvlanglinkcolor}
-\setul{.5pt}{.4pt}\href{\ecv@langlinkkey}{\ul{\mbox{\textcolor{ecvlanglinkcolor}{\ecv@langfooterkey}}}} \tabularnewline}
+\newcommand*{\ecvlanguagefooter}{
+\ecvitem[\smallskipamount]{}{\textcolor{ecvsectioncolor}{\ecv@langshortdesckey}}
+\ecvitem[\smallskipamount]{}{\setulcolor{ecvlanglinkcolor}\setul{.5pt}{.4pt}\href{\ecv@langlinkkey}{\ul{\mbox{\textcolor{ecvlanglinkcolor}{\ecv@langfooterkey}}}}}
+\renewcommand{\arraystretch}{0}
+}
 
 % See the Common European Framework of Reference for Languages:
 % http://www.coe.int/T/E/Cultural_Co-operation/education/Languages/Language_Policy/Common_Framework_of_Reference/default.asp
@@ -602,6 +606,7 @@
 \else
 \taburulecolor{white}
 \fi
+\renewcommand{\arraystretch}{0}
 \begin{longtabu} to \textwidth {@{}>{\raggedleft}p{\ecv@leftcolwidth}@{}|@{\extracolsep{\ecv@colsep}}p{\ecv@rightcolwidth}@{}}
   \ifx\@empty\draweuropasslogo
     \ifx\@empty\ecv@notitle\else
@@ -617,8 +622,9 @@
 
 \newenvironment{ecvitemize}{
 \
-\vspace*{-\baselineskip}
-\begin{itemize}[leftmargin=*,nolistsep]
+\vspace*{\ecv@itemizeskip}
+\vspace*{-\dp\strutbox}
+\begin{itemize}[leftmargin=*,nolistsep,nosep,topsep=0pt]
 }{
 \end{itemize}
 \ \vspace{-0.8\baselineskip}
@@ -639,7 +645,17 @@
 
 
 % sectioning commands
-\newcommand{\ecvsection}[2][\bigskipamount]{%
+\newlength{\ecv@itemskip}
+\newlength{\ecv@itemizeskip}
+\setlength\ecv@itemskip{\medskipamount}
+
+\newcommand\ecvitem[3][\ecv@itemskip]{%
+  \setlength\ecv@itemizeskip{1ex}
+  \ecvspace{#1}
+  #2 &  #3 \tabularnewline
+} 
+
+\newcommand{\ecvsection}[2][2\bigskipamount]{%
   \ecvitem[#1]{\ecvsectionstyle{#2}}
   {
   \setlength{\TPHorizModule}{1pt}\setlength{\TPVertModule}{1pt}
@@ -650,32 +666,17 @@
   \nopagebreak
 }
 
-\newlength{\ecv@rowheight}
-
-\newcommand\ecvitem[3][0pt]{%
-  \setlength\ecv@rowheight{\baselineskip}
-  \addtolength\ecv@rowheight{-2\lineskip}
-  \addtolength\ecv@rowheight{#1}
-
-  \ifx\@empty\ecv@debugmode
-  \textcolor{red!25}{\rule{10pt}{\ecv@rowheight}}
-  \else
-  \textcolor{white}{\rule{0pt}{\ecv@rowheight}}
-  \fi
-  #2 & #3 \tabularnewline
-} 
-
 \newcommand\ecvtitle[3][2\bigskipamount]{%
-  \ecvitem[#1]{\ecvbluenormalstyle{#2}}{\ecvtitlestyle{#3}}
+  \ecvitem[#1]{\small \ecvbluenormalstyle{#2}}{\ecvtitlestyle{#3}}
 }
 
-\newcommand\ecvblueitem[3][\bigskipamount]{\ecvitem[#1]{\textcolor{ecvsectioncolor}{#2}}{#3}}
+\newcommand\ecvblueitem[3][\bigskipamount]{\ecvitem[#1]{\textcolor{ecvsectioncolor}{#2}}{\setlength\ecv@itemizeskip{-\bigskipamount}\addtolength{\ecv@itemizeskip}{\dp\strutbox} #3}}
 
-\newcommand{\ecvjobappliedfor}[2][0pt]{
+\newcommand{\ecvjobappliedfor}[2][\bigskipamount]{
   \ecvitem[#1]{\ecvsectionstyle{\ecv@jobappliedforkey}}{\ecvlargenormalstyle{#2}}
 }
 
-\newcommand{\ecvbsector}[2][0pt]{
+\newcommand{\ecvbsector}[2][\ecv@itemskip]{
   \ecvitem[#1]{}{\ecvhighlight{\ecv@bsectorkey} {#2}}
 }
 
