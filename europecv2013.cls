@@ -416,7 +416,7 @@
 \fi}
 % The following must be used inside \ecvbeforepicture
 % or \ecvafterpicture
-\newcommand*{\ecvspace}[1]{\vspace{#1}\tabularnewline\tabularnewline}
+\newcommand*{\ecvspace}[1]{\vspace{#1}&\tabularnewline\tabularnewline}
 \ecvbeforepicture{\raggedleft}
 \ecvafterpicture{10pt}
 \ecvfirstname{}
@@ -645,13 +645,17 @@
 
 
 % sectioning commands
+\newif\if@ecvitemskip\@ecvitemskiptrue
 \newlength{\ecv@itemskip}
 \newlength{\ecv@itemizeskip}
 \setlength\ecv@itemskip{\medskipamount}
 
 \newcommand\ecvitem[3][\ecv@itemskip]{%
-  \setlength\ecv@itemizeskip{1ex}
   \ecvspace{#1}
+  \@ecvitemskiptrue
+
+  \setlength\ecv@itemizeskip{1ex}
+
   #2 &  #3 \tabularnewline
 } 
 
@@ -664,13 +668,14 @@
   \textcolor{ecvrulecolor}{\noindent\makebox[\linewidth]{\rule{\ecv@rightcolwidth}{1pt}}  \begin{textblock}{7}[1,1](\rightScalarWidth,0) \makebox{\rule{7pt}{7pt}} \end{textblock}}
   }
   \nopagebreak
+  \@ecvitemskipfalse
 }
 
-\newcommand\ecvtitle[3][2\bigskipamount]{%
+\newcommand\ecvtitle[3][\if@ecvitemskip 2\bigskipamount \else 0pt \fi]{%
   \ecvitem[#1]{\small \ecvbluenormalstyle{#2}}{\ecvtitlestyle{#3}}
 }
 
-\newcommand\ecvblueitem[3][\bigskipamount]{\ecvitem[#1]{\textcolor{ecvsectioncolor}{#2}}{\setlength\ecv@itemizeskip{-\bigskipamount}\addtolength{\ecv@itemizeskip}{\dp\strutbox} #3}}
+\newcommand\ecvblueitem[3][\if@ecvitemskip\bigskipamount\else 0pt \fi]{\ecvitem[#1]{\textcolor{ecvsectioncolor}{#2}}{\setlength\ecv@itemizeskip{-\bigskipamount}\addtolength{\ecv@itemizeskip}{\dp\strutbox} #3}}
 
 \newcommand{\ecvjobappliedfor}[2][\bigskipamount]{
   \ecvitem[#1]{\ecvsectionstyle{\ecv@jobappliedforkey}}{\ecvlargenormalstyle{#2}}
