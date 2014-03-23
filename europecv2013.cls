@@ -302,7 +302,6 @@
 \RequirePackage{longtable}
 \RequirePackage{fancyhdr} % For page numbering
 \RequirePackage{xcolor}
-\RequirePackage{textpos}
 \RequirePackage{pgf}
 \RequirePackage{url}
 \RequirePackage{soul}
@@ -655,11 +654,6 @@
 \ \vspace{-0.8\baselineskip}
 }
 
-\newcommand*{\getlength}[2]{%
-   \pgfmathsetmacro#1{#2}
-}
-
-
 
 % styles
 \newcommand{\ecvsectionstyle}[1]{\textcolor{ecvsectioncolor}{\small \fontfamily{phv}\fontseries{m}\selectfont \MakeUppercase{\expandafter{#1}}}}
@@ -688,15 +682,15 @@
   \end{tabular}
 } 
 
+\newlength{\ecv@sectionrulelength}
+
 \newcommand{\ecvsection}[2][2\bigskipamount]{%
+  \setlength{\ecv@sectionrulelength}{\ecv@rightcolwidth}
+  \addtolength{\ecv@sectionrulelength}{-7pt}
   \ecvitem[#1]{\ecvsectionstyle{#2}}
-  {
-  \setlength{\TPHorizModule}{1pt}\setlength{\TPVertModule}{1pt}
-  \getlength{\rightScalarWidth}{\ecv@rightcolwidth}
-  
-  \textcolor{ecvrulecolor}{\noindent\makebox[\linewidth]{\rule{\ecv@rightcolwidth}{1pt}}  \begin{textblock}{7}[1,1](\rightScalarWidth,0) \makebox{\rule{7pt}{8pt}} \end{textblock}}
-  }
+              {\textcolor{ecvrulecolor}{\noindent\rule{\ecv@sectionrulelength}{1pt}\rule{7pt}{8pt}}}
   \nopagebreak
+  \vspace*{\medskipamount}
   \@ecvitemskipfalse
 }
 
