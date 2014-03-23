@@ -312,6 +312,7 @@
 \RequirePackage[hidelinks]{hyperref}
 \RequirePackage{colortbl}
 \RequirePackage{graphicx}
+\if@ecvdebug \RequirePackage{showframe} \fi
 
 
 \def\ecv@totpages{}
