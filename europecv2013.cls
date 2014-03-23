@@ -417,9 +417,9 @@
 \fi}
 % The following must be used inside \ecvbeforepicture
 % or \ecvafterpicture
-\newcommand*{\ecvspace}[1]{\vspace{#1}&\tabularnewline\tabularnewline}
+\newcommand*{\ecvspace}[1]{\vspace{#1}}
 \ecvbeforepicture{\raggedleft}
-\ecvafterpicture{10pt}
+\ecvafterpicture{0pt}
 \ecvfirstname{}
 \ecvlastname{}
 \ecvname{\ecv@lastname\ \ecv@firstname}
@@ -435,41 +435,44 @@
 \ecvpicture{}
 
 \providecommand{\ecvpersonalinfo}[1][0pt]{%
-\textcolor{red!25}{\rule{0pt}{30pt}}
-\textcolor{ecvsectioncolor}{\small \fontfamily{phv}\fontseries{m}\selectfont \expandafter\MakeUppercase{\expandafter{\ecv@infosectionkey}}} & {
+\ecvitem[#1]{\ecvsectionstyle{\ecv@infosectionkey}}{
 \begin{doublespacing}
-\begin{tabu} to 0.99\ecv@rightcolwidth {@{}X[0.7,l,p]  X[0.3,r,p]}
-{
-\Large{\fontfamily{phv}\fontseries{m}\selectfont \ecv@name}} \newline
+\begin{tabular}[t]{@{}p{0.7\ecv@rightcolwidth}@{}p{0.3\ecv@rightcolwidth}@{}}
+{\ecvLargenormalstyle{\ecv@name}} \newline
 \ifx\@empty\ecv@address\else
-\raisebox{-2\lineskip}{\includegraphics[width=0.4cm]{address_icon.pdf}}\hspace{0.2mm} {\fontfamily{phv}\fontseries{m}\selectfont \ecv@address} \newline
+ \raisebox{-2\lineskip}{\includegraphics[width=0.4cm]{address_icon.pdf}}\hspace{0.2mm} {\fontfamily{phv}\fontseries{m}\selectfont \ecv@address} \newline
 \fi
+\noindent
 \ifx\@empty\ecv@mobile
   \ifx\@empty\ecv@telephone\else
-  \raisebox{-2\lineskip}{\includegraphics[width=0.4cm]{telephone_icon.pdf}}\hspace{0.2mm} {\fontfamily{phv}\fontseries{m}\selectfont \ecv@telephone}\newline
+ \raisebox{-2\lineskip}{\includegraphics[width=0.4cm]{telephone_icon.pdf}}\hspace{0.2mm} {\fontfamily{phv}\fontseries{m}\selectfont \ecv@telephone} \newline
   \fi
 \else
- \raisebox{-2\lineskip}{\includegraphics[width=0.4cm]{mobile_icon.pdf}}\hspace{0.2mm} {\fontfamily{phv}\fontseries{m}\selectfont \ecv@mobile} \quad \ifx\@empty\ecv@telephone\else \raisebox{-2\lineskip}{\includegraphics[width=0.4cm]{telephone_icon.pdf}}\hspace{0.2mm} {\fontfamily{phv}\fontseries{m}\selectfont \ecv@telephone\newline}\fi
+ \raisebox{-2\lineskip}{\includegraphics[width=0.4cm]{mobile_icon.pdf}}\hspace{0.2mm} {\fontfamily{phv}\fontseries{m}\selectfont \ecv@mobile} \quad \ifx\@empty\ecv@telephone\else  \raisebox{-2\lineskip}{\includegraphics[width=0.4cm]{telephone_icon.pdf}}\hspace{0.2mm} {\fontfamily{phv}\fontseries{m}\selectfont \ecv@telephone\ \newline}\fi
 \fi
 \ifx\@empty\ecv@fax\else
 \ecv@faxkey \ecv@fax 
 \fi
 \ifx\@empty\ecv@email\else
- \raisebox{-2\lineskip}{\includegraphics[width=0.4cm]{mail_icon.pdf}} \hspace{0.2mm} {\fontfamily{phv}\fontseries{m}\selectfont \ecv@email}\newline
+ \raisebox{-2\lineskip}{\includegraphics[width=0.4cm]{mail_icon.pdf}} \hspace{0.2mm} {\fontfamily{phv}\fontseries{m}\selectfont \ecv@email} \newline
 \fi
 \ifx\@empty\ecv@homepage\else
- \raisebox{-2\lineskip}{\includegraphics[width=0.4cm]{website_icon.pdf}} {\fontfamily{phv}\fontseries{m}\selectfont \setul{.5pt}{.4pt}\href{\ecv@homepage}{ \ul{\ecv@homepage}}}\newline
+ \raisebox{-2\lineskip}{\includegraphics[width=0.4cm]{website_icon.pdf}} {\fontfamily{phv}\fontseries{m}\selectfont \setul{.5pt}{.4pt}\href{\ecv@homepage}{ \ul{\ecv@homepage}}} \newline
 \fi
+\raisebox{-\medskipamount}{
 \ifx\@empty\ecv@birth\else
 {\fontfamily{phv}\fontseries{m}\selectfont \textcolor{ecvhighlightcolor}{\ecv@birthkey} \ecv@birth \ifx\@empty\ecv@nationality\else\textcolor{ecvhighlightcolor}{~| \ecv@nationalitykey}~\ecv@nationality\newline\fi }
 \fi
 \ifx\@empty\ecv@gender\else
 \ecv@genderkey  \ecv@gender
-\fi
-
+\fi}
 & 
-\raisebox{-0.8\height}{\ecvdrawpicture}\vspace*{\ecv@afterpic}
-\end{tabu}\end{doublespacing}}
+\Large \vspace{-\baselineskip}
+\raisebox{-\height}{\ecvdrawpicture}
+\end{tabular}
+\end{doublespacing}
+}
+\ecvspace{\ecv@afterpic}
 }
 
 % Spoken language information
@@ -653,6 +656,7 @@
 \newcommand{\ecvbluenormalstyle}[1]{\fontfamily{phv}\fontseries{m}\selectfont\textcolor{ecvsectioncolor}{#1}}
 \newcommand{\ecvtitlestyle}[1]{\large{\ecvbluenormalstyle{#1}}}
 \newcommand{\ecvlargenormalstyle}[1]{\large \fontfamily{phv}\fontseries{m}\selectfont #1}
+\newcommand{\ecvLargenormalstyle}[1]{\Large \fontfamily{phv}\fontseries{m}\selectfont #1}
 \newcommand{\ecvhighlight}[1]{\textcolor{ecvhighlightcolor}{#1}}
 
 
@@ -691,7 +695,7 @@
 
 \newcommand\ecvblueitem[3][\if@ecvitemskip\bigskipamount\else 0pt \fi]{\ecvitem[#1]{\textcolor{ecvsectioncolor}{#2}}{\setlength\ecv@itemizeskip{-\bigskipamount}\addtolength{\ecv@itemizeskip}{\dp\strutbox} #3}}
 
-\newcommand{\ecvjobappliedfor}[2][\bigskipamount]{
+\newcommand{\ecvjobappliedfor}[2][\ecv@itemskip]{
   \ecvitem[#1]{\ecvsectionstyle{\ecv@jobappliedforkey}}{\ecvlargenormalstyle{#2}}
 }
 
