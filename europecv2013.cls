@@ -283,7 +283,8 @@
   \def\ecv@nodocument{}
 }
 
-\DeclareOption{debug}{\def\ecv@debugmode{}}
+\newif\if@ecvdebug\@ecvdebugfalse
+\DeclareOption{debug}{\@ecvdebugtrue}
 
 % Pass all other options (a4paper, 10pt, draft, openbib, etc...) to article
 \DeclareOption*{%
@@ -309,9 +310,9 @@
 \RequirePackage{setspace}
 \RequirePackage{geometry}
 \RequirePackage{textcomp} % For copyright symbol
-\ifx\@empty\ecv@debugmode \RequirePackage{colortbl} \fi
 \RequirePackage{enumitem}
 \RequirePackage[hidelinks]{hyperref}
+\if@ecvdebug\RequirePackage{colortbl}\fi
 
 
 \def\ecv@totpages{}
@@ -468,7 +469,7 @@
 
 & 
 \raisebox{-0.8\height}{\ecvdrawpicture}\vspace*{\ecv@afterpic}
-\end{tabu}\end{doublespacing}}\tabularnewline
+\end{tabu}\end{doublespacing}}
 }
 
 % Spoken language information
@@ -546,15 +547,21 @@
 \newlength\ecv@leftcolwidth
 \newlength\ecv@rightcolwidth
 \newlength\ecv@extrarowheight
+\newlength\ecv@leftboxwidth
+\newlength\ecv@rightboxwidth
 \newcommand*{\ecvRuleWidth}[1]{\setlength\ecv@rulewidth{#1}}
 \newcommand*{\ecvColSep}[1]{%
   \setlength\ecv@colsep{#1}
-  \addtolength{\ecv@leftcolwidth}{-\ecv@colsep}
+  \addtolength{\ecv@rightcolwidth}{-\ecv@colsep}
+  \addtolength{\ecv@rightboxwidth}{-\ecv@colsep}
   }
 \newcommand*{\ecvLeftColumnWidth}[1]{\setlength\ecv@leftcolwidth{#1}%
              \setlength{\ecv@rightcolwidth}{\textwidth}
             \addtolength{\ecv@rightcolwidth}{-\ecv@leftcolwidth}
-            \addtolength{\ecv@rightcolwidth}{-\ecv@rulewidth}}
+            \addtolength{\ecv@rightcolwidth}{-\ecv@rulewidth}
+	    \setlength{\ecv@rightboxwidth}{\ecv@rightcolwidth}
+	    \setlength{\ecv@leftboxwidth}{\ecv@leftcolwidth}
+}
 \newcommand*{\ecvExtraRowHeight}[1]{\setlength\ecv@extrarowheight{#1}}
 \newcommand*{\ecvNoHorRule}{\def\ecv@hrule{}}
 \newcommand*{\ecvWithHorRule}{\def\ecv@hrule{\cline{1-1}}}
@@ -584,41 +591,46 @@
                                           
 \newenvironment{europecv}{%
   \ecvLeftColumnWidth{\ecv@leftcolwidth}
+  \ecvColSep{\ecv@colsep}
+  \renewcommand{\tabcolsep}{0pt}
+  \setlength\parindent{0pt}
+  \setlength\baselineskip{0pt}
   \setlength\arrayrulewidth{\ecv@rulewidth}
-  \setlength\extrarowheight{\ecv@extrarowheight}
   \setlength\LTleft{0pt}
   \setlength\LTright{0pt}
+  \setlength{\arrayrulewidth}{0pt}
   % Language table paragraph width
   \setlength\ecv@langparwidth{.199\ecv@rightcolwidth}
   \addtolength{\ecv@langparwidth}{-2\tabcolsep}
   \addtolength{\ecv@langparwidth}{-2\arrayrulewidth}
 % Begin
-\ifx\@empty\ecv@nodocument\else
-\vspace*{-2.5cm}
-\enlargethispage{2.5cm}
-\fi
-\addtolength{\ecv@rightcolwidth}{-\ecv@colsep}
+% \ifx\@empty\ecv@nodocument\else
+% \vspace*{-2.5cm}
+% \enlargethispage{2.5cm}
+% \fi
+% \addtolength{\ecv@rightcolwidth}{-\ecv@colsep}
 \fontfamily{phv} \ifx\@empty\ecv@narrow \fontseries{mc} \else \fontseries{m} \fi \selectfont
-% \color{ecvtextcolor}
-\ifx\@empty\ecv@debugmode
-\taburowcolors [1] 2 {green!25 .. yellow!50}
-\taburulecolor{blue!25}
-\else
-\taburulecolor{white}
-\fi
-\renewcommand{\arraystretch}{0}
-\begin{longtabu} to \textwidth {@{}>{\raggedleft}p{\ecv@leftcolwidth}@{}|@{\extracolsep{\ecv@colsep}}p{\ecv@rightcolwidth}@{}}
-  \ifx\@empty\draweuropasslogo
-    \ifx\@empty\ecv@notitle\else
-      & \ecvcoloredtitle \vspace{0.5cm} \tabularnewline
-    \fi
-  \else
-  \raisebox{-0.3\height}{\draweuropasslogo} & \ifx\@empty\ecv@notitle\else \ecvcoloredtitle \vspace{0.5cm} \fi \tabularnewline
-  \fi
-  
+% % \color{ecvtextcolor}
+% \ifx\@empty\ecv@debugmode
+% \taburowcolors [1] 2 {green!25 .. yellow!50}
+% \taburulecolor{blue!25}
+% \else
+% \taburulecolor{white}
+% \fi
+% \renewcommand{\arraystretch}{0}
+% \begin{longtabu} to \textwidth {@{}>{\raggedleft}p{\ecv@leftcolwidth}@{}|@{\extracolsep{\ecv@colsep}}p{\ecv@rightcolwidth}@{}}
+%   \ifx\@empty\draweuropasslogo
+%     \ifx\@empty\ecv@notitle\else
+%       & \ecvcoloredtitle \vspace{0.5cm} \tabularnewline
+%     \fi
+%   \else
+%   \raisebox{-0.3\height}{\draweuropasslogo} & \ifx\@empty\ecv@notitle\else \ecvcoloredtitle \vspace{0.5cm} \fi \tabularnewline
+%   \fi
+%   
 }
 {
-\end{longtabu}}
+% \end{longtabu}
+}
 
 \newenvironment{ecvitemize}{
 \
@@ -648,15 +660,17 @@
 \newif\if@ecvitemskip\@ecvitemskiptrue
 \newlength{\ecv@itemskip}
 \newlength{\ecv@itemizeskip}
-\setlength\ecv@itemskip{\medskipamount}
+\setlength\ecv@itemskip{0pt}
 
 \newcommand\ecvitem[3][\ecv@itemskip]{%
-  \ecvspace{#1}
+  \vspace{#1}
   \@ecvitemskiptrue
 
   \setlength\ecv@itemizeskip{1ex}
 
-  #2 &  #3 \tabularnewline
+  \begin{tabular}{@{}p{\ecv@leftcolwidth}@{\extracolsep{\ecv@colsep}}p{\ecv@rightcolwidth}@{}}
+  \if@ecvdebug\cellcolor{yellow!25}\fi \raggedleft #2 & \if@ecvdebug\cellcolor{blue!25}\fi #3
+  \end{tabular}
 } 
 
 \newcommand{\ecvsection}[2][2\bigskipamount]{%
@@ -665,7 +679,7 @@
   \setlength{\TPHorizModule}{1pt}\setlength{\TPVertModule}{1pt}
   \getlength{\rightScalarWidth}{\ecv@rightcolwidth}
   
-  \textcolor{ecvrulecolor}{\noindent\makebox[\linewidth]{\rule{\ecv@rightcolwidth}{1pt}}  \begin{textblock}{7}[1,1](\rightScalarWidth,0) \makebox{\rule{7pt}{7pt}} \end{textblock}}
+  \textcolor{ecvrulecolor}{\noindent\makebox[\linewidth]{\rule{\ecv@rightcolwidth}{1pt}}  \begin{textblock}{7}[1,1](\rightScalarWidth,0) \makebox{\rule{7pt}{8pt}} \end{textblock}}
   }
   \nopagebreak
   \@ecvitemskipfalse
