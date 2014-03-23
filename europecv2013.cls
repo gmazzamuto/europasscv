@@ -342,14 +342,9 @@
 \fancyfoot[L]{\begin{minipage}{\ecv@leftcolwidth}
 \begin{flushleft}
 \footnotesize\textcolor{ecvhighlightcolor}{\fontfamily{phv}\fontseries{m}\selectfont\ecv@lfoot}\end{flushleft}
-\end{minipage}
+\end{minipage}\hspace*{\ecv@colsep}\footnotesize\textcolor{ecvhighlightcolor}{\fontfamily{phv}\fontseries{m}\selectfont\ecv@cfoot}
 }
-\fancyfoot[C]{\begin{minipage}{\textwidth}
-\hspace{\ecv@leftcolwidth}
-\hspace{0.5\ecv@colsep}
-\footnotesize\textcolor{ecvhighlightcolor}{\fontfamily{phv}\fontseries{m}\selectfont\ecv@cfoot}
-\end{minipage}
-}
+
 \fancyfoot[R]{\begin{minipage}{\ecv@rightcolwidth}
 \begin{flushright}
 \footnotesize\textcolor{ecvhighlightcolor}{\fontfamily{phv}\fontseries{m}\selectfont\ecv@page}\end{flushright}
@@ -359,25 +354,34 @@
 \setlength{\headheight}{13.5pt}
 % \setlength{\footskip}{8.4pt}
 \fancyhead{}
-\fancyhead[L]{
-  \ifx\@empty\draweuropasslogo\else
-    \begin{minipage}[c]{\ecv@leftcolwidth}
-    \raisebox{-10pt}[0pt][0pt]{\draweuropasslogo[0.6\ecv@logowidth]}
-    \end{minipage}
-  \fi
- \begin{minipage}[c]{0.5\textwidth}\hspace{2.5mm}\ecvcoloredtitle \end{minipage}
-}
-
-\fancyhead[R]{\begin{minipage}{0.2\textwidth}
+ 
+\fancyhead[R]{\begin{minipage}{0.5\textwidth}
 \begin{flushright}
 \textcolor{ecvhighlightcolor}{\fontfamily{phv}\fontseries{m}\selectfont \ecv@name}\end{flushright}
+\end{minipage}
+}
+\newlength{\ecv@headerlogorightspace}
+\setlength{\ecv@headerlogorightspace}{\ecv@leftcolwidth}
+\addtolength{\ecv@headerlogorightspace}{-0.6\ecv@logowidth}
+\addtolength{\ecv@headerlogorightspace}{\ecv@colsep}
+
+\fancyhead[L]{\noindent\begin{minipage}{0.5\textwidth}
+\raisebox{-6pt}[0pt][0pt]{\includegraphics[width=0.6\ecv@logowidth]{europasslogo2013.pdf}}\hspace*{\ecv@headerlogorightspace}\ecvcoloredtitle
 \end{minipage}
 }
 }
 
 \fancypagestyle{first}{
 \fancyhead[R]{}
-\fancyhead[L]{}
+\newlength{\ecv@firstpageheaderlogorightspace}
+\setlength{\ecv@firstpageheaderlogorightspace}{\ecv@leftcolwidth}
+\addtolength{\ecv@firstpageheaderlogorightspace}{-\ecv@logowidth}
+\addtolength{\ecv@firstpageheaderlogorightspace}{\ecv@colsep}
+
+\fancyhead[L]{\noindent\begin{minipage}{0.5\textwidth}
+\raisebox{-10pt}[0pt][0pt]{\includegraphics[width=\ecv@logowidth]{europasslogo2013.pdf}}\hspace*{\ecv@firstpageheaderlogorightspace}\ecvcoloredtitle
+\end{minipage}
+}
 }
 
 \thispagestyle{first}
