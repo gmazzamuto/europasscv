@@ -38,9 +38,9 @@
 \def\ecv@jobappliedforkey{\ecv@utf{Occupazione desiderata}}
 \def\ecv@bsectorkey{\ecv@utf{Settore economico}}
 
-\def\ecv@langcola{0.8}
-\def\ecv@langcolb{0.8}
-\def\ecv@langcolc{1}
-\def\ecv@langcold{1}
-\def\ecv@langcole{1.5}
+\def\ecv@langcola{0.15}
+\def\ecv@langcolb{0.15}
+\def\ecv@langcolc{0.2}
+\def\ecv@langcold{0.2}
+\def\ecv@langcole{0.3}
 
