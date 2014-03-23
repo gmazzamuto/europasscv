@@ -302,7 +302,6 @@
 \RequirePackage{longtable}
 \RequirePackage{fancyhdr} % For page numbering
 \RequirePackage{xcolor}
-\RequirePackage{pgf}
 \RequirePackage{url}
 \RequirePackage{soul}
 \RequirePackage{tabu}
@@ -312,6 +311,7 @@
 \RequirePackage{enumitem}
 \RequirePackage[hidelinks]{hyperref}
 \RequirePackage{colortbl}
+\RequirePackage{graphicx}
 
 
 \def\ecv@totpages{}
