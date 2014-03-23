@@ -670,7 +670,7 @@
   \vspace{#1}
   \@ecvitemskiptrue
 
-  \setlength\ecv@itemizeskip{1ex}
+  \setlength\ecv@itemizeskip{-1ex}\addtolength{\ecv@itemizeskip}{-\dp\strutbox}
 
   \begin{tabular}{@{}p{\ecv@leftcolwidth}@{\extracolsep{\ecv@colsep}}p{\ecv@rightcolwidth}@{}}
   \if@ecvdebug\cellcolor{yellow!25}\fi \raggedleft #2 & \if@ecvdebug\cellcolor{blue!25}\fi #3
