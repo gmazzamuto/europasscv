@@ -666,13 +666,15 @@
 
 
 % sectioning commands
-\newif\if@ecvitemskip\@ecvitemskiptrue
+\newif\if@ecvitemskip\@ecvitemskipfalse
 \newlength{\ecv@itemskip}
 \newlength{\ecv@itemizeskip}
-\setlength\ecv@itemskip{0pt}
+\setlength\ecv@itemskip{2.8pt}
 
 \newcommand\ecvitem[3][\ecv@itemskip]{%
-  \vspace{#1}
+  \if@ecvitemskip
+    \vspace{#1}
+  \fi
   \@ecvitemskiptrue
 
   \setlength\ecv@itemizeskip{-1ex}\addtolength{\ecv@itemizeskip}{-\dp\strutbox}
@@ -694,14 +696,16 @@
   \@ecvitemskipfalse
 }
 
-\newcommand\ecvtitle[3][\if@ecvitemskip 2\bigskipamount \else 0pt \fi]{%
+\newcommand\ecvtitle[3][\if@ecvitemskip 1.5\bigskipamount \else 0pt \fi]{%
   \ecvitem[#1]{\small \ecvbluenormalstyle{#2}}{\ecvtitlestyle{#3}}
 }
 
 \newcommand\ecvblueitem[3][\if@ecvitemskip\bigskipamount\else 0pt \fi]{\ecvitem[#1]{\textcolor{ecvsectioncolor}{#2}}{\setlength\ecv@itemizeskip{-\bigskipamount}\addtolength{\ecv@itemizeskip}{\dp\strutbox} #3}}
 
-\newcommand{\ecvjobappliedfor}[2][\ecv@itemskip]{
+\newcommand{\ecvjobappliedfor}[2][\bigskipamount]{
   \ecvitem[#1]{\ecvsectionstyle{\ecv@jobappliedforkey}}{\ecvlargenormalstyle{#2}}
+  \vspace*{\bigskipamount}
+  \@ecvitemskipfalse
 }
 
 \newcommand{\ecvbsector}[2][\ecv@itemskip]{
