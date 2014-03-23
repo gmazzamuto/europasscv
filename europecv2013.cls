@@ -683,8 +683,8 @@
 
 \newcommand\ecvblueitem[3][\if@ecvitemskip\bigskipamount\else 0pt \fi]{\ecvitem[#1]{\textcolor{ecvsectioncolor}{#2}}{\setlength\ecv@itemizeskip{-\bigskipamount}\addtolength{\ecv@itemizeskip}{\dp\strutbox} #3}}
 
-\newcommand{\ecvjobappliedfor}[2][\bigskipamount]{
-  \ecvitem[#1]{\ecvsectionstyle{\ecv@jobappliedforkey}}{\ecvlargenormalstyle{#2}}
+\newcommand{\ecvbigitem}[3][\bigskipamount]{
+  \ecvitem[#1]{\ecvsectionstyle{#2}}{\ecvlargenormalstyle{#3}}
   \vspace*{\bigskipamount}
   \@ecvitemskipfalse
 }
