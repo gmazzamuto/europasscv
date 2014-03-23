@@ -299,7 +299,6 @@
 % \RequirePackage{ucs}
 \RequirePackage[utf8x]{inputenc}
 \RequirePackage{array}
-\RequirePackage{longtable}
 \RequirePackage{fancyhdr} % For page numbering
 \RequirePackage{xcolor}
 \RequirePackage{url}
@@ -612,40 +611,14 @@
   \setlength\parindent{0pt}
   \setlength\baselineskip{0pt}
   \setlength\arrayrulewidth{\ecv@rulewidth}
-  \setlength\LTleft{0pt}
-  \setlength\LTright{0pt}
   \setlength{\arrayrulewidth}{0pt}
   % Language table paragraph width
   \setlength\ecv@langparwidth{.199\ecv@rightcolwidth}
   \addtolength{\ecv@langparwidth}{-2\tabcolsep}
   \addtolength{\ecv@langparwidth}{-2\arrayrulewidth}
-% Begin
-% \ifx\@empty\ecv@nodocument\else
-% \vspace*{-2.5cm}
-% \enlargethispage{2.5cm}
-% \fi
-% \addtolength{\ecv@rightcolwidth}{-\ecv@colsep}
+
 \fontfamily{phv} \ifx\@empty\ecv@narrow \fontseries{mc} \else \fontseries{m} \fi \selectfont
 % % \color{ecvtextcolor}
-% \ifx\@empty\ecv@debugmode
-% \taburowcolors [1] 2 {green!25 .. yellow!50}
-% \taburulecolor{blue!25}
-% \else
-% \taburulecolor{white}
-% \fi
-% \renewcommand{\arraystretch}{0}
-% \begin{longtabu} to \textwidth {@{}>{\raggedleft}p{\ecv@leftcolwidth}@{}|@{\extracolsep{\ecv@colsep}}p{\ecv@rightcolwidth}@{}}
-%   \ifx\@empty\draweuropasslogo
-%     \ifx\@empty\ecv@notitle\else
-%       & \ecvcoloredtitle \vspace{0.5cm} \tabularnewline
-%     \fi
-%   \else
-%   \raisebox{-0.3\height}{\draweuropasslogo} & \ifx\@empty\ecv@notitle\else \ecvcoloredtitle \vspace{0.5cm} \fi \tabularnewline
-%   \fi
-%   
-}
-{
-% \end{longtabu}
 }
 
 \newenvironment{ecvitemize}{
