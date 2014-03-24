@@ -492,10 +492,10 @@
 \setlength{\ecv@langouterborderwidth}{0.04cm}
 \setlength{\ecv@langinnerborderwidth}{0.02cm}
 
-\providecommand{\ecvlanguageheader}[1][\bigskipamount]{%
+\providecommand{\ecvlanguageheader}[1][0pt]{%
 \setlength{\arrayrulewidth}{\ecv@langouterborderwidth}
 \setlength{\ecv@langrowraise}{\arrayrulewidth}
-\ecvblueitem[#1]{\ecv@otherlanguageskey}{
+\ecvblueitem{\ecv@otherlanguageskey}{
 \renewcommand{\arraystretch}{1.5}
 \setlength{\ecv@langtablewidth}{\ecv@rightcolwidth}
 \addtolength{\ecv@langtablewidth}{-4\arrayrulewidth}
@@ -530,7 +530,6 @@
 
 \newcommand*\ecvlanguage[7][0pt]{\ecvlangrow[#1]{#2}{#3}{#4}{#5}{#6}{#7}{\ecv@langinnerborderwidth}}
 \newcommand*\ecvlastlanguage[7][0pt]{\ecvlangrow[#1]{#2}{#3}{#4}{#5}{#6}{#7}{\ecv@langouterborderwidth}}
-
 
 \newcommand*{\ecvlanguagefooter}[1][0pt]{
 \ecvitem[0pt]{}{\textcolor{ecvsectioncolor}{\ecv@langshortdesckey}}
@@ -675,11 +674,14 @@
 \newlength{\ecv@itemizeskip}
 \setlength\ecv@itemskip{2.8pt}
 
+\newif\if@ecvlastitemwassection\@ecvlastitemwassectionfalse
+
 \newcommand\ecvitem[3][\ecv@itemskip]{%
   \if@ecvitemskip
     \vspace{#1}
   \fi
   \@ecvitemskiptrue
+  \@ecvlastitemwassectionfalse
 
   \setlength\ecv@itemizeskip{-1ex}\addtolength{\ecv@itemizeskip}{-\dp\strutbox}
 
@@ -696,8 +698,9 @@
   \ecvitem[#1]{\ecvsectionstyle{#2}}
               {\textcolor{ecvrulecolor}{\noindent\rule{\ecv@sectionrulelength}{1pt}\rule{7pt}{8pt}}}
   \nopagebreak
-  \vspace*{\medskipamount}
   \@ecvitemskipfalse
+  \@ecvlastitemwassectiontrue
+  \vspace*{\medskipamount}
 }
 
 \newcommand\ecvtitle[3][\if@ecvitemskip 1.5\bigskipamount \else 0pt \fi]{%
