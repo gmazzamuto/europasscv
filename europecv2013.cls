@@ -312,7 +312,7 @@
 \RequirePackage{textcomp} % For copyright symbol
 \RequirePackage{enumitem}
 \RequirePackage[hidelinks]{hyperref}
-\if@ecvdebug\RequirePackage{colortbl}\fi
+\RequirePackage{colortbl}
 
 
 \def\ecv@totpages{}
@@ -481,47 +481,57 @@
 }
 
 \newlength\ecv@langparwidth
+\newlength\ecv@langtablewidth %excluding vertical rules
+\newlength\ecv@langrowraise
+\newlength\ecv@langouterborderwidth
+\newlength\ecv@langinnerborderwidth
 
-\newcommand*\ecvlanguageheader{%
-\ecvspace{\bigskipamount}
-\textcolor{ecvsectioncolor}{\ecv@otherlanguageskey}
-&
+\setlength{\ecv@langouterborderwidth}{0.04cm}
+\setlength{\ecv@langinnerborderwidth}{0.02cm}
+
+\providecommand{\ecvlanguageheader}[1][\bigskipamount]{%
+\setlength{\arrayrulewidth}{\ecv@langouterborderwidth}
+\setlength{\ecv@langrowraise}{\arrayrulewidth}
+\ecvblueitem[#1]{\ecv@otherlanguageskey}{
 \renewcommand{\arraystretch}{1.5}
-{
-\vspace{-\baselineskip}
-\vspace{-0.06cm}
-\begin{tabu} to \linewidth {|X[\ecv@langcola,c,m]  |[0.04cm ecvtablebordercolor] X[\ecv@langcolb,c,m] |[0.04cm ecvtablebordercolor] X[\ecv@langcolc,c,m]  |[0.04cm ecvtablebordercolor] X[\ecv@langcold,c,m] |[0.04cm ecvtablebordercolor] X[\ecv@langcole,c,m]}
-\tabucline[0.04cm ecvtablebordercolor]-
-\multicolumn2{|c|[0.04cm ecvtablebordercolor]}{\textcolor{ecvsectioncolor}{\expandafter\MakeUppercase{\expandafter{\ecv@understandkey}}}}&\multicolumn2{|c|[0.04cm ecvtablebordercolor]}{\textcolor{ecvsectioncolor}{\expandafter\MakeUppercase{\expandafter{\ecv@speakkey}}}}&\multicolumn1{|c|}{\textcolor{ecvsectioncolor}{\expandafter\MakeUppercase{\expandafter{\ecv@writekey}}}}\tabularnewline\cline{1-3}
-\tabucline[0.04cm ecvtablebordercolor]-
-\multicolumn1{c|[0.04cm ecvtablebordercolor]}{\textcolor{ecvsectioncolor}{\ecv@listenkey}}&\multicolumn1{c|[0.04cm ecvtablebordercolor]}{\textcolor{ecvsectioncolor}{\ecv@readkey}} &\multicolumn1{c|[0.04cm ecvtablebordercolor]}{\textcolor{ecvsectioncolor}{\ecv@interactkey}}&\multicolumn1{c|[0.04cm ecvtablebordercolor]}{\textcolor{ecvsectioncolor}{\ecv@productkey}}&\multicolumn1{c}{}\tabularnewline\cline{1-4}
-\tabucline[0.04cm ecvtablebordercolor]-
-\tabuphantomline
-\end{tabu}
+\setlength{\ecv@langtablewidth}{\ecv@rightcolwidth}
+\addtolength{\ecv@langtablewidth}{-4\arrayrulewidth}
+\arrayrulecolor{ecvtablebordercolor}
+\begin{tabular}[t]{p{\ecv@langcola\ecv@langtablewidth}|p{\ecv@langcolb\ecv@langtablewidth}|p{\ecv@langcolc\ecv@langtablewidth}|p{\ecv@langcold\ecv@langtablewidth}|p{\ecv@langcole\ecv@langtablewidth}}
+\firsthline
+\multicolumn{2}{c|}{\ecvsectionstyle{\ecv@understandkey}} & \multicolumn{2}{c|}{\ecvsectionstyle{\ecv@speakkey}} & \centering \ecvsectionstyle{\ecv@writekey}\tabularnewline
+\hline
+\centering \ecvbluestyle{\ecv@listenkey}& \centering \ecvbluestyle{\ecv@readkey} &\centering \ecvbluestyle{\ecv@interactkey}& \centering
+\ecvbluestyle{\ecv@productkey}&\tabularnewline
+\hline
+\end{tabular}
 }
-\tabularnewline[-\arrayrulewidth]
 }
   
   
-\newcommand*\ecvlangrow[8][0pt]{
-#2 & 
-\renewcommand{\arraystretch}{1.5}
-% \vspace*{0.02cm}
-{
-\begin{tabu} to \linewidth {|X[\ecv@langcola,c,m]  |[0.04cm ecvtablebordercolor] X[\ecv@langcolb,c,m] |[0.04cm ecvtablebordercolor] X[\ecv@langcolc,c,m]  |[0.04cm ecvtablebordercolor] X[\ecv@langcold,c,m] |[0.04cm ecvtablebordercolor] X[\ecv@langcole,c,m]}
-\multicolumn1{c}{#3}&\multicolumn1{c}{#4} &\multicolumn1{c}{#5}&\multicolumn1{c}{#6}&\multicolumn1{c}{#7}\tabularnewline\cline{1-4}
-\tabucline[#8 ecvtablebordercolor]-
-\tabuphantomline
-\end{tabu}}
-\tabularnewline[-\arrayrulewidth]
+\newcommand*\ecvlangrow[8][-\dp\strutbox]{
+\vspace*{-\dp\strutbox}
+% \ifx#8\ecv@langouterborderwidth\else \vspace*{-\dp\strutbox}\fi
+\setlength{\arrayrulewidth}{#8}
+\ecvitem[#1]{\raisebox{-\ecv@langrowraise}{#2}}{
+\setlength{\ecv@langtablewidth}{\ecv@rightcolwidth}
+\addtolength{\ecv@langtablewidth}{-4\arrayrulewidth}
+\arrayrulecolor{ecvtablebordercolor}
+\renewcommand{\arraystretch}{1.8}
+\begin{tabular}[t]{p{\ecv@langcola\ecv@rightcolwidth}p{\ecv@langcolb\ecv@rightcolwidth}p{\ecv@langcolc\ecv@rightcolwidth}p{\ecv@langcold\ecv@rightcolwidth}p{\ecv@langcole\ecv@rightcolwidth}}
+\centering{\raisebox{-\arrayrulewidth}{#3}} &\centering{\raisebox{-\arrayrulewidth}{#4}} &\centering{\raisebox{-\arrayrulewidth}{#5}} &\centering{\raisebox{-\arrayrulewidth}{#6}} &\centering{\raisebox{-\arrayrulewidth}{#7}} \tabularnewline
+\hline
+\end{tabular}
+}
 }
 
-\newcommand*\ecvlanguage[7][0pt]{\ecvlangrow[#1]{#2}{#3}{#4}{#5}{#6}{#7}{0.02cm}}
-\newcommand*\ecvlastlanguage[7][0pt]{\ecvlangrow[#1]{#2}{#3}{#4}{#5}{#6}{#7}{0.04cm}}
+\newcommand*\ecvlanguage[7][0pt]{\ecvlangrow[#1]{#2}{#3}{#4}{#5}{#6}{#7}{\ecv@langinnerborderwidth}}
+\newcommand*\ecvlastlanguage[7][0pt]{\ecvlangrow[#1]{#2}{#3}{#4}{#5}{#6}{#7}{\ecv@langouterborderwidth}}
 
-\newcommand*{\ecvlanguagefooter}{
-\ecvitem[\smallskipamount]{}{\textcolor{ecvsectioncolor}{\ecv@langshortdesckey}}
-\ecvitem[\smallskipamount]{}{\setulcolor{ecvlanglinkcolor}\setul{.5pt}{.4pt}\href{\ecv@langlinkkey}{\ul{\mbox{\textcolor{ecvlanglinkcolor}{\ecv@langfooterkey}}}}}
+
+\newcommand*{\ecvlanguagefooter}[1][0pt]{
+\ecvitem[0pt]{}{\textcolor{ecvsectioncolor}{\ecv@langshortdesckey}}
+\ecvitem[0pt]{}{\setulcolor{ecvlanglinkcolor}\setul{.5pt}{.4pt}\href{\ecv@langlinkkey}{\ul{\mbox{\textcolor{ecvlanglinkcolor}{\ecv@langfooterkey}}}}}
 \renewcommand{\arraystretch}{0}
 }
 
@@ -658,6 +668,7 @@
 \newcommand{\ecvlargenormalstyle}[1]{\large \fontfamily{phv}\fontseries{m}\selectfont #1}
 \newcommand{\ecvLargenormalstyle}[1]{\Large \fontfamily{phv}\fontseries{m}\selectfont #1}
 \newcommand{\ecvhighlight}[1]{\textcolor{ecvhighlightcolor}{#1}}
+\newcommand{\ecvbluestyle}[1]{\textcolor{ecvsectioncolor}{#1}}
 
 
 % sectioning commands
