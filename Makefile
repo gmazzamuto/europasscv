@@ -30,7 +30,7 @@ europecv2013.pdf: europecv2013.tex
 class: pictures
 
 distclean:
-	rm -f *~ *.synctex.gz *.aux *.log *.out *.backup
+	rm -f *~ *.synctex.gz *.aux *.log *.out *.backup *.toc
 
 clean: distclean
 	rm -f *.pdf
