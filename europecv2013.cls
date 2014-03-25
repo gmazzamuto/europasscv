@@ -239,6 +239,11 @@
  \def\ecv@narrow{}
 }
 
+\newif\if@ecvsmallfont\@ecvsmallfontfalse
+\DeclareOption{small} {
+  \@ecvsmallfonttrue
+}
+
 \def\ecv@currvitaekey{}
 \newcommand{\ecvcurrvitae}{\ifx\@empty\ecv@currvitaekey Curriculum vitae \else \ecv@currvitaekey \fi}
 \newcommand{\ecvcoloredtitle}{\fontfamily{phv}\fontseries{m}\selectfont \textcolor{ecvhighlightcolor}{\ecvcurrvitae}}
@@ -611,7 +616,6 @@
   \ecvColSep{\ecv@colsep}
   \renewcommand{\tabcolsep}{0pt}
   \setlength\parindent{0pt}
-  \setlength\baselineskip{0pt}
   \setlength\arrayrulewidth{\ecv@rulewidth}
   \setlength{\arrayrulewidth}{0pt}
   % Language table paragraph width
@@ -619,7 +623,10 @@
   \addtolength{\ecv@langparwidth}{-2\tabcolsep}
   \addtolength{\ecv@langparwidth}{-2\arrayrulewidth}
 
-\fontfamily{phv} \ifx\@empty\ecv@narrow \fontseries{mc} \else \fontseries{m} \fi \selectfont
+\fontfamily{phv} \ifx\@empty\ecv@narrow \fontseries{mc} \else \fontseries{m} \fi
+\if@ecvsmallfont \fontsize{9}{10.8} \fi \selectfont
+
+\setlength\baselineskip{0pt}
 % % \color{ecvtextcolor}
 }
 
