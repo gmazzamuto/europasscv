@@ -689,7 +689,7 @@
 
 \newlength{\ecv@sectionrulelength}
 
-\newcommand{\ecvsection}[2][2\bigskipamount]{%
+\newcommand{\ecvsection}[2][1.7\bigskipamount]{%
   \setlength{\ecv@sectionrulelength}{\ecv@rightcolwidth}
   \addtolength{\ecv@sectionrulelength}{-7pt}
   \ecvitem[#1]{\ecvsectionstyle{#2}}
@@ -700,15 +700,15 @@
   \vspace*{\medskipamount}
 }
 
-\newcommand\ecvtitle[3][\if@ecvitemskip 1.5\bigskipamount \else 0pt \fi]{%
+\newcommand\ecvtitle[3][\if@ecvitemskip 1.3\bigskipamount \else 0pt \fi]{%
   \ecvitem[#1]{\small \ecvbluenormalstyle{#2}}{\ecvtitlestyle{#3}}
 }
 
-\newcommand\ecvblueitem[3][\if@ecvitemskip\bigskipamount\else 0pt \fi]{\ecvitem[#1]{\textcolor{ecvsectioncolor}{#2}}{\setlength\ecv@itemizeskip{-\bigskipamount}\addtolength{\ecv@itemizeskip}{\dp\strutbox} #3}}
+\newcommand\ecvblueitem[3][\if@ecvitemskip 1.3\bigskipamount\else 0pt \fi]{\ecvitem[#1]{\textcolor{ecvsectioncolor}{#2}}{\setlength\ecv@itemizeskip{-\bigskipamount}\addtolength{\ecv@itemizeskip}{\dp\strutbox} #3}}
 
 \newcommand{\ecvbigitem}[3][\bigskipamount]{
   \ecvitem[#1]{\ecvsectionstyle{#2}}{\ecvlargenormalstyle{#3}}
-  \vspace*{\bigskipamount}
+  \vspace{\bigskipamount}
   \@ecvitemskipfalse
 }
 
