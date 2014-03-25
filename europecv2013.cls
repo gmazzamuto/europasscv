@@ -532,7 +532,9 @@
 \newcommand*\ecvlastlanguage[7][0pt]{\ecvlangrow[#1]{#2}{#3}{#4}{#5}{#6}{#7}{\ecv@langouterborderwidth}}
 
 \newcommand*{\ecvlanguagefooter}[1][0pt]{
+\nopagebreak[4]
 \ecvitem[0pt]{}{\textcolor{ecvsectioncolor}{\ecv@langshortdesckey}}
+\nopagebreak[4]
 \ecvitem[0pt]{}{\setulcolor{ecvlanglinkcolor}\setul{.5pt}{.4pt}\href{\ecv@langlinkkey}{\ul{\mbox{\textcolor{ecvlanglinkcolor}{\ecv@langfooterkey}}}}}
 \renewcommand{\arraystretch}{0}
 }
