@@ -650,20 +650,34 @@
 \newlength{\ecv@itemizeskip}
 \setlength\ecv@itemskip{2.8pt}
 
+\newlength{\ecv@currentskip}
+
 \newif\if@ecvlastitemwassection\@ecvlastitemwassectionfalse
 
+\newcommand{\ecv@secondarg}{}
+\newcommand{\ecv@thirdarg}{}
+
 \newcommand\ecvitem[3][\ecv@itemskip]{%
+  \renewcommand{\ecv@secondarg}{#2}
+  \renewcommand{\ecv@thirdarg}{#3}
+  \message{^^J==================^^J}
+  \message{[europecv] typesetting ^^J}
+  \message{[europecv] \meaning\ecv@secondarg^^J}
+  \message{[europecv] \meaning\ecv@thirdarg^^J}
+  \message{[europecv] ecvitemskip = \if@ecvitemskip true, skipping \the\ecv@currentskip \else false\fi}
+
   \if@ecvitemskip
-    \vspace{#1}
+    \setlength{\ecv@currentskip}{#1}
+    \vspace{\ecv@currentskip}
   \fi
-  \@ecvitemskiptrue
-  \@ecvlastitemwassectionfalse
 
   \setlength\ecv@itemizeskip{-1ex}\addtolength{\ecv@itemizeskip}{-\dp\strutbox}
 
   \begin{tabular}{@{}p{\ecv@leftcolwidth}@{\extracolsep{\ecv@colsep}}p{\ecv@rightcolwidth}@{}}
   \if@ecvdebug\cellcolor{yellow!25}\fi \raggedleft #2 & \if@ecvdebug\cellcolor{blue!25}\fi #3
   \end{tabular}
+  \@ecvitemskiptrue
+  \@ecvlastitemwassectionfalse
 } 
 
 \newlength{\ecv@sectionrulelength}
