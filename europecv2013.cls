@@ -712,10 +712,6 @@
   \@ecvitemskipfalse
 }
 
-\newcommand{\ecvbsector}[2][\ecv@itemskip]{
-  \ecvitem[#1]{}{\ecvhighlight{\ecv@bsectorkey} {#2}}
-}
-
 \ecvRuleWidth{0pt}
 
 % colors
