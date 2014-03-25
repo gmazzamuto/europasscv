@@ -409,6 +409,9 @@
 \newcommand*{\ecvfax}[1]{\def\ecv@fax{#1}}
 \newcommand*{\ecvemail}[1]{\def\ecv@email{#1}}
 \newcommand*{\ecvhomepage}[1]{\def\ecv@homepage{#1}}
+\def\ecv@im{}
+\newif\if@ecvIMalreadyprovided\@ecvIMalreadyprovidedfalse
+\newcommand*{\ecvim}[2]{\if@ecvIMalreadyprovided \g@addto@macro\ecv@im{\quad} \fi \g@addto@macro\ecv@im{\ecvhighlight{#1} #2} \@ecvIMalreadyprovidedtrue}
 \newcommand*{\ecvnationality}[1]{\def\ecv@nationality{#1}}
 \newcommand*{\ecvdateofbirth}[1]{\def\ecv@birth{#1}}
 \newcommand*{\ecvgender}[1]{\def\ecv@gender{#1}}
@@ -446,6 +449,7 @@
 \ecvitem[#1]{\ecvsectionstyle{\ecv@infosectionkey}}{
 \begin{doublespacing}
 \begin{tabular}[t]{@{}p{0.7\ecv@rightcolwidth}@{}p{0.3\ecv@rightcolwidth}@{}}
+\raggedright
 {\ecvLargenormalstyle{\ecv@name}} \newline
 \ifx\@empty\ecv@address\else
  \raisebox{-2\lineskip}{\includegraphics[width=0.4cm]{address_icon.pdf}}\hspace{0.2mm} {\fontfamily{phv}\fontseries{m}\selectfont \ecv@address} \newline
@@ -465,7 +469,10 @@
  \raisebox{-2\lineskip}{\includegraphics[width=0.4cm]{mail_icon.pdf}} \hspace{0.2mm} {\fontfamily{phv}\fontseries{m}\selectfont \ecv@email} \newline
 \fi
 \ifx\@empty\ecv@homepage\else
- \raisebox{-2\lineskip}{\includegraphics[width=0.4cm]{website_icon.pdf}} {\fontfamily{phv}\fontseries{m}\selectfont \setul{.5pt}{.4pt}\href{\ecv@homepage}{ \ul{\ecv@homepage}}} \newline
+ \raisebox{-2\lineskip}{\includegraphics[width=0.4cm]{website_icon.pdf}} \hspace{0.2mm} {\fontfamily{phv}\fontseries{m}\selectfont \setul{.5pt}{.4pt}\href{\ecv@homepage}{ \ul{\ecv@homepage}}} \newline
+\fi
+\ifx\@empty\ecv@im\else
+   \raisebox{-2\lineskip}{\includegraphics[width=0.4cm]{im_icon.pdf}} \hspace{0.2mm}{\fontfamily{phv}\fontseries{m}\selectfont \ecv@im}
 \fi
 \raisebox{-\medskipamount}{
 \ifx\@empty\ecv@birth\else
