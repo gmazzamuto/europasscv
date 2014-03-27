@@ -696,7 +696,7 @@
 
 \newlength{\ecv@sectionrulelength}
 
-\newcommand{\ecvsection}[2][1.7\bigskipamount]{%
+\newcommand{\ecvsection}[2][1.3\bigskipamount]{%
   \setlength{\ecv@sectionrulelength}{\ecv@rightcolwidth}
   \addtolength{\ecv@sectionrulelength}{-7pt}
   \ecvitem[#1]{\ecvsectionstyle{#2}}
