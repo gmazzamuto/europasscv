@@ -673,13 +673,15 @@
 \newcommand{\ecv@thirdarg}{}
 
 \newcommand\ecvitem[3][\ecv@itemskip]{%
-  \renewcommand{\ecv@secondarg}{#2}
-  \renewcommand{\ecv@thirdarg}{#3}
-  \message{^^J==================^^J}
-  \message{[europecv] typesetting ^^J}
-  \message{[europecv] \meaning\ecv@secondarg^^J}
-  \message{[europecv] \meaning\ecv@thirdarg^^J}
-  \message{[europecv] ecvitemskip = \if@ecvitemskip true, skipping \the\ecv@currentskip \else false\fi}
+  \if@ecvdebug
+    \renewcommand{\ecv@secondarg}{#2}
+    \renewcommand{\ecv@thirdarg}{#3}
+    \message{^^J==================^^J}
+    \message{[europecv] typesetting ^^J}
+    \message{[europecv] \meaning\ecv@secondarg^^J}
+    \message{[europecv] \meaning\ecv@thirdarg^^J}
+    \message{[europecv] ecvitemskip = \if@ecvitemskip true, skipping \the\ecv@currentskip \else false\fi}
+  \fi
 
   \if@ecvitemskip
     \setlength{\ecv@currentskip}{#1}
