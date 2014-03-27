@@ -547,6 +547,7 @@
 \nopagebreak[4]
 \ecvitem[0pt]{}{\textcolor{ecvsectioncolor}{\ecv@langshortdesckey}}
 \nopagebreak[4]
+\vspace*{-\dp\strutbox}
 \ecvitem[0pt]{}{\setulcolor{ecvlanglinkcolor}\setul{.5pt}{.4pt}\href{\ecv@langlinkkey}{\ul{\mbox{\textcolor{ecvlanglinkcolor}{\ecv@langfooterkey}}}}}
 \renewcommand{\arraystretch}{0}
 }
