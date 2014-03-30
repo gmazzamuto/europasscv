@@ -317,6 +317,7 @@
 \RequirePackage{colortbl}
 \RequirePackage{graphicx}
 \if@ecvdebug \RequirePackage{showframe} \fi
+\RequirePackage[T1]{fontenc}
 
 
 \def\ecv@totpages{}
@@ -445,6 +446,8 @@
 \ecvgender{}
 \ecvpicture{}
 
+
+\newif\if@ecvpineedspipe\@ecvpineedspipefalse
 \providecommand{\ecvpersonalinfo}[1][0pt]{%
 \ecvitem[#1]{\ecvsectionstyle{\ecv@infosectionkey}}{
 \begin{doublespacing}
@@ -476,11 +479,14 @@
 \fi
 
 \raisebox{-\medskipamount}{
-  \ifx\@empty\ecv@birth\else
-      {\fontfamily{phv}\fontseries{m}\selectfont \textcolor{ecvhighlightcolor}{\ecv@birthkey} \ecv@birth \ifx\@empty\ecv@nationality\else\textcolor{ecvhighlightcolor}{~| \ecv@nationalitykey}~\ecv@nationality\newline\fi }
-  \fi
   \ifx\@empty\ecv@gender\else
-      \ecv@genderkey  \ecv@gender
+      \fontfamily{phv}\fontseries{m}\selectfont \ecvhighlight{~\if@ecvpineedspipe | \fi \ecv@genderkey} \ecv@gender \@ecvpineedspipetrue
+  \fi
+  \ifx\@empty\ecv@birth\else
+      \fontfamily{phv}\fontseries{m}\selectfont \ecvhighlight{~\if@ecvpineedspipe | \fi\ecv@birthkey} \ecv@birth \@ecvpineedspipetrue
+  \fi
+  \ifx\@empty\ecv@nationality\else
+      \fontfamily{phv}\fontseries{m}\selectfont \ecvhighlight{~\if@ecvpineedspipe | \fi \ecv@nationalitykey}~\ecv@nationality \@ecvpineedspipetrue
   \fi
 }
 & 
