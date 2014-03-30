@@ -4,7 +4,7 @@
 *.aux
 *.log
 *.out
-*.tex.backup
+*.backup
 *.kate-swp
 *.bbl
 *.blg
