@@ -239,9 +239,9 @@
  \def\ecv@narrow{}
 }
 
-\newif\if@ecvsmallfont\@ecvsmallfontfalse
-\DeclareOption{small} {
-  \@ecvsmallfonttrue
+\newif\if@ecbvbigfont\@ecbvbigfontfalse
+\DeclareOption{bigfont} {
+  \@ecbvbigfonttrue
 }
 
 \def\ecv@currvitaekey{}
@@ -634,7 +634,7 @@
   \addtolength{\ecv@langparwidth}{-2\arrayrulewidth}
 
 \fontfamily{phv} \ifx\@empty\ecv@narrow \fontseries{mc} \else \fontseries{m} \fi
-\if@ecvsmallfont \fontsize{9}{10.8} \fi \selectfont
+\if@ecbvbigfont\else \fontsize{9}{10.8} \fi \selectfont
 
 \setlength\baselineskip{0pt}
 % % \color{ecvtextcolor}
