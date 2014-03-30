@@ -338,10 +338,11 @@
 \ecvLeftColumnWidth{50mm}
 \ecvColSep{10pt}
 
-\ifx\@empty\ecv@nodocument\else
-\newgeometry{body={18.5cm,24cm}, vratio={4:3}}
-
 % Set layout
+
+\ifx\@empty\ecv@nodocument\else
+    \newgeometry{body={18.5cm,24cm}, vratio={4:3}}
+\fi
 
 \fancyfoot{}
 \fancyfoot[L]{\begin{minipage}{\ecv@leftcolwidth}
@@ -392,7 +393,6 @@
 \thispagestyle{first}
 \pagestyle{ecvfancy}
 \renewcommand{\headrulewidth}{0pt}%
-\fi
 } % End \AtBeginDocument
 
 % Thanks to Roman Bertle for suggesting the following:
@@ -452,35 +452,37 @@
 \raggedright
 {\ecvLargenormalstyle{\ecv@name}} \newline
 \ifx\@empty\ecv@address\else
- \raisebox{-2\lineskip}{\includegraphics[width=0.4cm]{address_icon.pdf}}\hspace{0.2mm} {\fontfamily{phv}\fontseries{m}\selectfont \ecv@address} \newline
+    \raisebox{-2\lineskip}{\includegraphics[width=0.4cm]{address_icon.pdf}}\hspace{0.2mm} {\fontfamily{phv}\fontseries{m}\selectfont \ecv@address} \newline
 \fi
 \noindent
 \ifx\@empty\ecv@mobile
   \ifx\@empty\ecv@telephone\else
- \raisebox{-2\lineskip}{\includegraphics[width=0.4cm]{telephone_icon.pdf}}\hspace{0.2mm} {\fontfamily{phv}\fontseries{m}\selectfont \ecv@telephone} \newline
+      \raisebox{-2\lineskip}{\includegraphics[width=0.4cm]{telephone_icon.pdf}}\hspace{0.2mm} {\fontfamily{phv}\fontseries{m}\selectfont \ecv@telephone} \newline
   \fi
 \else
- \raisebox{-2\lineskip}{\includegraphics[width=0.4cm]{mobile_icon.pdf}}\hspace{0.2mm} {\fontfamily{phv}\fontseries{m}\selectfont \ecv@mobile} \quad \ifx\@empty\ecv@telephone\else  \raisebox{-2\lineskip}{\includegraphics[width=0.4cm]{telephone_icon.pdf}}\hspace{0.2mm} {\fontfamily{phv}\fontseries{m}\selectfont \ecv@telephone\ \newline}\fi
+  \raisebox{-2\lineskip}{\includegraphics[width=0.4cm]{mobile_icon.pdf}}\hspace{0.2mm} {\fontfamily{phv}\fontseries{m}\selectfont \ecv@mobile} \quad \ifx\@empty\ecv@telephone\else  \raisebox{-2\lineskip}{\includegraphics[width=0.4cm]{telephone_icon.pdf}}\hspace{0.2mm} {\fontfamily{phv}\fontseries{m}\selectfont \ecv@telephone\ \newline}\fi
 \fi
 \ifx\@empty\ecv@fax\else
-\ecv@faxkey \ecv@fax 
+    \ecv@faxkey \ecv@fax 
 \fi
 \ifx\@empty\ecv@email\else
- \raisebox{-2\lineskip}{\includegraphics[width=0.4cm]{mail_icon.pdf}} \hspace{0.2mm} {\fontfamily{phv}\fontseries{m}\selectfont \ecv@email} \newline
+    \raisebox{-2\lineskip}{\includegraphics[width=0.4cm]{mail_icon.pdf}} \hspace{0.2mm} {\fontfamily{phv}\fontseries{m}\selectfont \ecv@email} \newline
 \fi
 \ifx\@empty\ecv@homepage\else
- \raisebox{-2\lineskip}{\includegraphics[width=0.4cm]{website_icon.pdf}} \hspace{0.2mm} {\fontfamily{phv}\fontseries{m}\selectfont \setul{.5pt}{.4pt}\href{\ecv@homepage}{ \ul{\ecv@homepage}}} \newline
+    \raisebox{-2\lineskip}{\includegraphics[width=0.4cm]{website_icon.pdf}} \hspace{0.2mm} {\fontfamily{phv}\fontseries{m}\selectfont \setul{.5pt}{.4pt}\href{\ecv@homepage}{ \ul{\ecv@homepage}}} \newline
 \fi
 \ifx\@empty\ecv@im\else
-   \raisebox{-2\lineskip}{\includegraphics[width=0.4cm]{im_icon.pdf}} \hspace{0.2mm}{\fontfamily{phv}\fontseries{m}\selectfont \ecv@im}
+    \raisebox{-2\lineskip}{\includegraphics[width=0.4cm]{im_icon.pdf}} \hspace{0.2mm}{\fontfamily{phv}\fontseries{m}\selectfont \ecv@im}
 \fi
+
 \raisebox{-\medskipamount}{
-\ifx\@empty\ecv@birth\else
-{\fontfamily{phv}\fontseries{m}\selectfont \textcolor{ecvhighlightcolor}{\ecv@birthkey} \ecv@birth \ifx\@empty\ecv@nationality\else\textcolor{ecvhighlightcolor}{~| \ecv@nationalitykey}~\ecv@nationality\newline\fi }
-\fi
-\ifx\@empty\ecv@gender\else
-\ecv@genderkey  \ecv@gender
-\fi}
+  \ifx\@empty\ecv@birth\else
+      {\fontfamily{phv}\fontseries{m}\selectfont \textcolor{ecvhighlightcolor}{\ecv@birthkey} \ecv@birth \ifx\@empty\ecv@nationality\else\textcolor{ecvhighlightcolor}{~| \ecv@nationalitykey}~\ecv@nationality\newline\fi }
+  \fi
+  \ifx\@empty\ecv@gender\else
+      \ecv@genderkey  \ecv@gender
+  \fi
+}
 & 
 \Large \vspace{-\baselineskip}
 \raisebox{-\height}{\ecvdrawpicture}
