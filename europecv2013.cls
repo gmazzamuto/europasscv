@@ -480,12 +480,15 @@
 
 \raisebox{-\medskipamount}{
   \ifx\@empty\ecv@gender\else
+      \if@ecvpineedspipe\else \hspace{-1ex}\fi
       \fontfamily{phv}\fontseries{m}\selectfont \ecvhighlight{~\if@ecvpineedspipe | \fi \ecv@genderkey} \ecv@gender \@ecvpineedspipetrue
   \fi
   \ifx\@empty\ecv@birth\else
+      \if@ecvpineedspipe\else \hspace{-1ex}\fi
       \fontfamily{phv}\fontseries{m}\selectfont \ecvhighlight{~\if@ecvpineedspipe | \fi\ecv@birthkey} \ecv@birth \@ecvpineedspipetrue
   \fi
   \ifx\@empty\ecv@nationality\else
+      \if@ecvpineedspipe\else \hspace{-1ex}\fi
       \fontfamily{phv}\fontseries{m}\selectfont \ecvhighlight{~\if@ecvpineedspipe | \fi \ecv@nationalitykey}~\ecv@nationality \@ecvpineedspipetrue
   \fi
 }
