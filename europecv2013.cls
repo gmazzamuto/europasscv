@@ -636,7 +636,7 @@
 
 
 % styles
-\newcommand{\ecvsectionstyle}[1]{\textcolor{ecvsectioncolor}{\small \fontfamily{phv}\fontseries{m}\selectfont \MakeUppercase{\expandafter{#1}}}}
+\newcommand{\ecvsectionstyle}[1]{\textcolor{ecvsectioncolor}{\fontfamily{phv}\fontseries{m}\selectfont \MakeUppercase{\expandafter{#1}}}}
 \newcommand{\ecvbluenormalstyle}[1]{\fontfamily{phv}\fontseries{m}\selectfont\textcolor{ecvsectioncolor}{#1}}
 \newcommand{\ecvtitlestyle}[1]{\large{\ecvbluenormalstyle{#1}}}
 \newcommand{\ecvlargenormalstyle}[1]{\large \fontfamily{phv}\fontseries{m}\selectfont #1}
