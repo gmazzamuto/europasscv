@@ -256,26 +256,6 @@
 \DeclareOption{nologo}{\renewcommand*\draweuropasslogo{}}
 \DeclareOption{notitle}{\def\ecv@notitle{}}
 
-% Flag pictures of the EC can be found at 
-%   http://europa.eu.int/abc/symbols/emblem/index_en.htm
-\DeclareOption{noflag}{\providecommand*\draweuropeflag{}}
-\DeclareOption{flagWB}{%
-  \renewcommand*\draweuropeflag{%
-    \includegraphics[width=\ecv@flagwidth]{EuropeFlagWB}}
-}
-\DeclareOption{flagBW}{%
-  \renewcommand*\draweuropeflag{%
-    \includegraphics[width=\ecv@flagwidth]{EuropeFlagBW}}
-}
-\DeclareOption{flagCMYK}{%
-  \renewcommand*\draweuropeflag{%
-    \includegraphics[width=\ecv@flagwidth]{EuropeFlagCMYK}}
-}
-\DeclareOption{flagBlueCMYK}{%
- \renewcommand*\draweuropeflag{%
-   \includegraphics[width=\ecv@flagwidth]{EuropeFlagBlueCMYK}}
-}
-
 % Page numbering
 \DeclareOption{totpages}{%
   \AtEndOfPackage{\RequirePackage{totpages}%
@@ -612,11 +592,6 @@
 \setlength\ecv@leftcolwidth{50mm} % Default left column width
 \ecvExtraRowHeight{0pt}
 \ecvWithHorRule
-
-% Flag size
-\newlength\ecv@flagwidth
-\newcommand*{\ecvFlagWidth}[1]{\setlength\ecv@flagwidth{#1}}
-\ecvFlagWidth{10mm}
 
 % Logo size
 \newlength\ecv@logowidth
