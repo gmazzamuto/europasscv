@@ -249,11 +249,8 @@
 \newcommand{\ecvcoloredtitle}{\fontfamily{phv}\fontseries{m}\selectfont \textcolor{ecvhighlightcolor}{\ecvcurrvitae}}
 
 % Europass logo
-\DeclareOption{logo}{%
-\providecommand*\draweuropasslogo[1][\ecv@logowidth]{%
-   \includegraphics[width=#1]{europasslogo2013.pdf}}
-}
-\DeclareOption{nologo}{\renewcommand*\draweuropasslogo{}}
+\newif\if@ecvlogo\@ecvlogotrue
+\DeclareOption{nologo}{\@ecvlogofalse}
 \DeclareOption{notitle}{\def\ecv@notitle{}}
 
 % Page numbering
@@ -264,8 +261,9 @@
   }%
 }
 
+\newif\if@ecvnodocument\@ecvnodocumentfalse
 \DeclareOption{nodocument}{%
-  \def\ecv@nodocument{}
+  \@ecvnodocumenttrue
 }
 
 \newif\if@ecvdebug\@ecvdebugfalse
@@ -276,7 +274,7 @@
   \PassOptionsToClass{\CurrentOption}{article}%
 } 
 
-\ExecuteOptions{english,noflag,logo,hrule,totpages} % Default options
+\ExecuteOptions{english,hrule,totpages} % Default options
 
 \ProcessOptions\relax
 
@@ -321,10 +319,8 @@
 
 % Set layout
 
-\ifx\@empty\ecv@nodocument\else
+\if@ecvnodocument\else
     \newgeometry{body={18.5cm,24cm}, vratio={4:3}}
-\fi
-
 \fancyfoot{}
 \fancyfoot[L]{\begin{minipage}{\ecv@leftcolwidth}
 \begin{flushleft}
@@ -342,31 +338,40 @@
 % \setlength{\footskip}{8.4pt}
 \fancyhead{}
  
-\fancyhead[R]{\begin{minipage}{0.5\textwidth}
-\begin{flushright}
-\textcolor{ecvhighlightcolor}{\fontfamily{phv}\fontseries{m}\selectfont \ecv@name}\end{flushright}
+\fancyhead[R]{
+% \raisebox{-\dp\strutbox}{
+\begin{minipage}{0.35\textwidth}
+\raggedleft \fontfamily{phv}\fontseries{m}\selectfont \textcolor{ecvhighlightcolor}{\ecv@name}
 \end{minipage}
 }
-\newlength{\ecv@headerlogorightspace}
-\setlength{\ecv@headerlogorightspace}{\ecv@leftcolwidth}
-\addtolength{\ecv@headerlogorightspace}{-0.6\ecv@logowidth}
-\addtolength{\ecv@headerlogorightspace}{\ecv@colsep}
 
-\fancyhead[L]{\noindent\begin{minipage}{0.5\textwidth}
-\raisebox{-6pt}[0pt][0pt]{\includegraphics[width=0.6\ecv@logowidth]{europasslogo2013.pdf}}\hspace*{\ecv@headerlogorightspace}\ecvcoloredtitle
+\newlength{\ecv@headerlogorightspace}
+
+\fancyhead[L]{
+\setlength{\ecv@headerlogotopspace}{\topmargin}
+\addtolength{\ecv@headerlogotopspace}{2pt}
+\noindent
+\begin{minipage}{0.5\textwidth}
+\noindent\makebox[\ecv@leftcolwidth][l]{\noindent\raisebox{\ecv@headerlogotopspace}[0pt][0pt]{\if@ecvlogo\includegraphics[width=0.6\ecv@logowidth]{europasslogo2013.pdf}\fi}}
+\hspace*{\ecv@leftcolwidth}\hspace*{\ecv@colsep}\noindent
+\raisebox{\dp\strutbox}{\ecvcoloredtitle}
 \end{minipage}
 }
 }
+
+\newlength{\ecv@headerlogotopspace}
 
 \fancypagestyle{first}{
 \fancyhead[R]{}
-\newlength{\ecv@firstpageheaderlogorightspace}
-\setlength{\ecv@firstpageheaderlogorightspace}{\ecv@leftcolwidth}
-\addtolength{\ecv@firstpageheaderlogorightspace}{-\ecv@logowidth}
-\addtolength{\ecv@firstpageheaderlogorightspace}{\ecv@colsep}
-
-\fancyhead[L]{\noindent\begin{minipage}{0.5\textwidth}
-\raisebox{-10pt}[0pt][0pt]{\includegraphics[width=\ecv@logowidth]{europasslogo2013.pdf}}\hspace*{\ecv@firstpageheaderlogorightspace}\ecvcoloredtitle
+\fancyhead[L]{
+\setlength{\ecv@headerlogotopspace}{\topmargin}
+\addtolength{\ecv@headerlogotopspace}{-0.5\headheight}
+\addtolength{\ecv@headerlogotopspace}{\dp\strutbox}
+\noindent
+\begin{minipage}{0.5\textwidth}
+\noindent\makebox[\ecv@leftcolwidth][l]{\noindent\raisebox{\ecv@headerlogotopspace}[0pt][0pt]{\if@ecvlogo\includegraphics[width=\ecv@logowidth]{europasslogo2013.pdf}\fi}}
+\hspace*{\ecv@leftcolwidth}\hspace*{\ecv@colsep}\noindent
+\raisebox{\dp\strutbox}{\ecvcoloredtitle}
 \end{minipage}
 }
 }
@@ -374,6 +379,7 @@
 \thispagestyle{first}
 \pagestyle{ecvfancy}
 \renewcommand{\headrulewidth}{0pt}%
+\fi % End \if@ecvnodocument
 } % End \AtBeginDocument
 
 % Thanks to Roman Bertle for suggesting the following:
