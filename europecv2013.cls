@@ -494,47 +494,49 @@
 
 \newlength\ecv@langparwidth
 \newlength\ecv@langtablewidth %excluding vertical rules
-\newlength\ecv@langrowraise
 \newlength\ecv@langouterborderwidth
 \newlength\ecv@langinnerborderwidth
 
 \setlength{\ecv@langouterborderwidth}{0.04cm}
 \setlength{\ecv@langinnerborderwidth}{0.02cm}
 
+
+\newif\if@ecvfirstlangrow\@ecvfirstlangrowfalse
+
 \providecommand{\ecvlanguageheader}[1][0pt]{%
-\setlength{\arrayrulewidth}{\ecv@langouterborderwidth}
-\setlength{\ecv@langrowraise}{\arrayrulewidth}
-\ecvblueitem{\ecv@otherlanguageskey}{
-\renewcommand{\arraystretch}{1.5}
-\setlength{\ecv@langtablewidth}{\ecv@rightcolwidth}
-\addtolength{\ecv@langtablewidth}{-4\arrayrulewidth}
-\arrayrulecolor{ecvtablebordercolor}
-\begin{tabular}[t]{p{\ecv@langcola\ecv@langtablewidth}|p{\ecv@langcolb\ecv@langtablewidth}|p{\ecv@langcolc\ecv@langtablewidth}|p{\ecv@langcold\ecv@langtablewidth}|p{\ecv@langcole\ecv@langtablewidth}}
-\firsthline
-\multicolumn{2}{c|}{\ecvsectionstyle{\ecv@understandkey}} & \multicolumn{2}{c|}{\ecvsectionstyle{\ecv@speakkey}} & \centering \ecvsectionstyle{\ecv@writekey}\tabularnewline
-\hline
-\centering \ecvbluestyle{\ecv@listenkey}& \centering \ecvbluestyle{\ecv@readkey} &\centering \ecvbluestyle{\ecv@interactkey}& \centering
-\ecvbluestyle{\ecv@productkey}&\tabularnewline
-\hline
-\end{tabular}
-}
+  \setlength{\arrayrulewidth}{\ecv@langouterborderwidth}
+  \ecvblueitem{\ecv@otherlanguageskey}{
+    \renewcommand{\arraystretch}{1.5}
+    \setlength{\ecv@langtablewidth}{\ecv@rightcolwidth}
+    \addtolength{\ecv@langtablewidth}{-4\arrayrulewidth}
+    \arrayrulecolor{ecvtablebordercolor}
+    \begin{tabular}[t]{p{\ecv@langcola\ecv@langtablewidth}|p{\ecv@langcolb\ecv@langtablewidth}|p{\ecv@langcolc\ecv@langtablewidth}|p{\ecv@langcold\ecv@langtablewidth}|p{\ecv@langcole\ecv@langtablewidth}}
+      \firsthline
+      \multicolumn{2}{c|}{\ecvsectionstyle{\ecv@understandkey}} & \multicolumn{2}{c|}{\ecvsectionstyle{\ecv@speakkey}} & \centering \ecvsectionstyle{\ecv@writekey}\tabularnewline
+      \hline
+      \centering \ecvbluestyle{\ecv@listenkey}& \centering \ecvbluestyle{\ecv@readkey} &\centering \ecvbluestyle{\ecv@interactkey}& \centering
+      \ecvbluestyle{\ecv@productkey}&\tabularnewline
+      \hline
+    \end{tabular}
+  }
+  \@ecvfirstlangrowtrue
 }
   
   
 \newcommand*\ecvlangrow[8][-\dp\strutbox]{
-\vspace*{-\dp\strutbox}
-% \ifx#8\ecv@langouterborderwidth\else \vspace*{-\dp\strutbox}\fi
-\setlength{\arrayrulewidth}{#8}
-\ecvitem[#1]{\raisebox{-\ecv@langrowraise}{#2}}{
-\setlength{\ecv@langtablewidth}{\ecv@rightcolwidth}
-\addtolength{\ecv@langtablewidth}{-4\arrayrulewidth}
-\arrayrulecolor{ecvtablebordercolor}
-\renewcommand{\arraystretch}{1.8}
-\begin{tabular}[t]{p{\ecv@langcola\ecv@rightcolwidth}p{\ecv@langcolb\ecv@rightcolwidth}p{\ecv@langcolc\ecv@rightcolwidth}p{\ecv@langcold\ecv@rightcolwidth}p{\ecv@langcole\ecv@rightcolwidth}}
-\centering{\raisebox{-\arrayrulewidth}{#3}} &\centering{\raisebox{-\arrayrulewidth}{#4}} &\centering{\raisebox{-\arrayrulewidth}{#5}} &\centering{\raisebox{-\arrayrulewidth}{#6}} &\centering{\raisebox{-\arrayrulewidth}{#7}} \tabularnewline
-\hline
-\end{tabular}
-}
+  \vspace*{-\dp\strutbox}
+  \setlength{\arrayrulewidth}{#8}
+  \ecvitem[#1]{\raisebox{\if@ecvfirstlangrow -\arrayrulewidth \else -0.5\arrayrulewidth \fi}{#2}}{
+    \setlength{\ecv@langtablewidth}{\ecv@rightcolwidth}
+    \addtolength{\ecv@langtablewidth}{-4\arrayrulewidth}
+    \arrayrulecolor{ecvtablebordercolor}
+    \renewcommand{\arraystretch}{1.8}
+    \begin{tabular}[t]{p{\ecv@langcola\ecv@rightcolwidth}p{\ecv@langcolb\ecv@rightcolwidth}p{\ecv@langcolc\ecv@rightcolwidth}p{\ecv@langcold\ecv@rightcolwidth}p{\ecv@langcole\ecv@rightcolwidth}}
+      \centering{\raisebox{-\arrayrulewidth}{#3}} &\centering{\raisebox{-\arrayrulewidth}{#4}} &\centering{\raisebox{-\arrayrulewidth}{#5}} &\centering{\raisebox{-\arrayrulewidth}{#6}} &\centering{\raisebox{-\arrayrulewidth}{#7}} \tabularnewline
+      \hline
+    \end{tabular}
+  }
+  \@ecvfirstlangrowfalse
 }
 
 \newcommand*\ecvlanguage[7][0pt]{\ecvlangrow[#1]{#2}{#3}{#4}{#5}{#6}{#7}{\ecv@langinnerborderwidth}}
@@ -542,10 +544,10 @@
 
 \newcommand*{\ecvlanguagefooter}[1][0pt]{
 \nopagebreak[4]
-\ecvitem[0pt]{}{\textcolor{ecvsectioncolor}{\ecv@langshortdesckey}}
+\ecvitem[0.5\dp\strutbox]{}{\textcolor{ecvsectioncolor}{\ecv@langshortdesckey}}
 \nopagebreak[4]
-\vspace*{-\dp\strutbox}
-\ecvitem[0pt]{}{\setulcolor{ecvlanglinkcolor}\setul{.5pt}{.4pt}\href{\ecv@langlinkkey}{\ul{\mbox{\textcolor{ecvlanglinkcolor}{\ecv@langfooterkey}}}}}
+% \vspace*{-0.5\dp\strutbox}
+\ecvitem[-0.5\dp\strutbox]{}{\setulcolor{ecvlanglinkcolor}\setul{.5pt}{.4pt}\href{\ecv@langlinkkey}{\ul{\mbox{\textcolor{ecvlanglinkcolor}{\ecv@langfooterkey}}}}}
 \renewcommand{\arraystretch}{0}
 }
 
@@ -554,9 +556,9 @@
 \newcommand*\ecvCEF[2]{%
 %   \setlength\tabcolsep{1mm}
 
-\begin{tabular}{@{}>{}m{.2\ecv@langparwidth}@{\hspace{1mm}}>{\centering}m{.74\ecv@langparwidth}@{}}
-#1 & \small{#2}\tabularnewline
-\end{tabular}
+% \begin{tabular}{@{}>{}m{.2\ecv@langparwidth}@{\hspace{1mm}}>{\centering}m{.74\ecv@langparwidth}@{}}
+% #1 & \small{#2}\tabularnewline
+% \end{tabular}
 }
 
 \newcommand*\ecvAOne{A1}
