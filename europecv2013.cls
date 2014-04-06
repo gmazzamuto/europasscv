@@ -244,6 +244,11 @@
   \@ecvbigfonttrue
 }
 
+\def\ecv@textcolor{ecvtextcolor}
+\DeclareOption{black} {
+  \def\ecv@textcolor{black}
+}
+
 \def\ecv@currvitaekey{}
 \newcommand{\ecvcurrvitae}{\ifx\@empty\ecv@currvitaekey Curriculum vitae \else \ecv@currvitaekey \fi}
 \newcommand{\ecvcoloredtitle}{\fontfamily{phv}\fontseries{m}\selectfont \textcolor{ecvhighlightcolor}{\ecvcurrvitae}}
@@ -617,7 +622,7 @@
 \if@ecvbigfont\else \fontsize{9}{10.8} \fi \selectfont
 
 \setlength\baselineskip{0pt}
-% % \color{ecvtextcolor}
+\color{\ecv@textcolor}
 }
 
 \newenvironment{ecvitemize}{
