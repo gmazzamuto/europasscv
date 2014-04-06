@@ -1,8 +1,7 @@
-\documentclass[a4paper,nodocument,nologo,notitle,12pt]{europecv2013}
+\documentclass[a4paper,nodocument,nologo,notitle,black,12pt]{europecv2013}
 \usepackage[T1]{fontenc}
 \usepackage{lmodern}
 \usepackage{tikz}
-\usepackage{url}
 \ifpdf
 \hypersetup{
      colorlinks   = true
@@ -46,7 +45,7 @@ This class tries to be as close as possible to the standard model without sacrif
 The main differences compared to the official model are the use of Helvetica (which should be in any standard \LaTeX\ distribution) instead of Arial, and the use of vector images instead of low-resolution bitmaps.
 
 \section{Tutorial}
-A minimal (empty) curriculum vit\ae\ can be obtained with the following code:
+Let's start with a minimal (empty) curriculum vit\ae:
 \begin{verbatim}
 \documentclass[english,a4paper]{europecv2013}
 \begin{document}
@@ -63,7 +62,9 @@ For a complete list of usable class options see section \ref{sec:classOptions}.
 \ecvname{Name Surname}
 \ecvdateofbirth{1 January 1970}
 \ecvtelephone[(+555) 555 555]{(+555) 555 555}
-\ecvemail{myemailaddress@email.com}
+\hypersetup{urlcolor=black}
+\ecvemail{myemailaddress@gmail.com}
+\ecvhomepage{www.myhomepage.com}
 \ecvaddress{rue Wiertz, B-1047 Brussels}
 
 \hspace*{-6cm}
@@ -92,10 +93,15 @@ Use the following simple commands to add items and sections to your CV:\\
     \ecvbigitem{Job applied for}{ecvbigitem}
 
     \ecvsection{ecvsection}
-    \ecvtitle[0pt]{apr 2012 -- apr 2014}{ecvtitle}
+    \ecvtitle{apr 2012 -- apr 2014}{ecvtitle}
     \ecvitem{}{ecvitem: this is the standard CV item}
     \ecvitem{}{ecvitem with some \ecvhighlight{highlighted} text}
-    \ecvitem{}{ecvitem}
+    \ecvitem{ecvitemize}{
+    \begin{ecvitemize}
+	\item this is a list item
+	\item this is a list item
+    \end{ecvitemize}
+    }
     \ecvblueitem{blue left text}{ecvblueitem}
     \ecvtitlelevel{apr 2012 -- apr 2014}{ecvtitlelevel}{ISCED 6}
     \ecvitem{}{ecvitem}
@@ -103,18 +109,29 @@ Use the following simple commands to add items and sections to your CV:\\
 \end{minipage}
 
 \begin{description}
-\item[\texttt{\bs ecvsection[\textit{vspace}]\{\textit{title}\}}] Starts a new section with the given \textit{title}.
-\item[\texttt{\bs ecvitem[\textit{vspace}]\{\textit{left}\}\{\textit{right}\}}] Puts \textit{left} text on the left part and \textit{right} text on the right part of the page. This is a standard CV item. Note that, in the 2013 version of the Europass CV, text on the left part is much less used than before. Still, it can be sometimes useful to put some text on the left.
+\item[\texttt{\bs ecvsection[\textit{vspace}]\{\textit{title}\}}] Start a new section with the given \textit{title}.
+\item[\texttt{\bs ecvitem[\textit{vspace}]\{\textit{left}\}\{\textit{right}\}}] Put \textit{left} text on the left part and \textit{right} text on the right part of the page. This is a standard CV item. Note that, in the 2013 version of the Europass CV, text on the left part is much less used than before. Still, it can be sometimes useful to put some text on the left.
 \item[\texttt{\bs ecvtitle[\textit{vspace}]\{\textit{left}\}\{\textit{right}\}}] As above, but the text is typeset in blue and with a larger font on the right. This is used to highlight a block in your CV related to a same job or degree, with dates typically going on the left and job description or degree type on the right.
 \item[\texttt{\bs ecvtitlelevel[\textit{vspace}]\{\textit{left}\}\{\textit{right}\}\{\textit{degree level}\}}] Allows to specify a national or international level for the awarded degree.
 \item[\texttt{\bs ecvblueitem[\textit{vspace}]\{\textit{left}\}\{\textit{right}\}}] As a standard CV item, but text on the left is typeset in blue. This is mainly used in the second part of the CV.
-\item[\texttt{\bs ecvbigitem[\textit{vspace}]\{\textit{left}\}\{\textit{right}\}}] As above, but typesets the left text in capital blue letters and the right text in a bigger font. This is rarely used.
+\item[\texttt{\bs ecvbigitem[\textit{vspace}]\{\textit{left}\}\{\textit{right}\}}] As above, but typeset the left text in capital blue letters and the right text in a bigger font. This is rarely used.
 \end{description}
 
 If you want to highlight some text using the highlight color of the Europass CV palette (section \ref{sec:colors}), you may find this convenience command useful:
 \begin{description}
  \item[\texttt{\bs ecvhighlight\{\textit{some text}\}}]
 \end{description}
+
+Finally, if you want to put an itemize list in one CV entry, use the \texttt{ecvitemize} environment for a better alignment with the left text:
+\begin{verbatim}
+\ecvitem{left text}{
+  \begin{ecvitemize}
+    \item this is a list item
+    \item this is a list item
+  \end{ecvitemize}
+}
+\end{verbatim}
+
 
 \subsection{Language skills}
 The language skills table is usually found at the beginning of the ``Personal skills'' section of the Europass CV. The commands needed to typeset the language table are fully highlighted by the following example:
@@ -148,15 +165,16 @@ which is typeset like this:
 \label{sec:classOptions}
 \subsubsection{Appearance options}
 \begin{description}
- \item[nologo] Does not draw the Europass logo.
- \item[notitle] Does not typeset the title ``Curriculum vitae''.
- \item[nodocument] Does not apply the class settings (i.e.\ margins, headers and footers) at \texttt{\bs begin\{document\}}.
+ \item[black] Typeset CV entries in black instead of \texttt{ecvtextcolor} (see \ref{sec:colors}).
+ \item[nodocument] Do not apply the class settings (i.e.\ margins, headers and footers) at \texttt{\bs begin\{document\}}.
+ \item[nologo] Do not draw the Europass logo.
+ \item[notitle] Do not typeset the title ``Curriculum vitae''.
   \end{description}
   
  The following options affect the font used:
 \begin{description}
- \item[narrow] Uses the Condensed Helvetica font instead of Helvetica.
- \item[bigfont] Uses a sligtly bigger font than the one found in the official Europass CV.
+ \item[narrow] Use the Condensed Helvetica font instead of Helvetica.
+ \item[bigfont] Use a sligtly bigger font than the one found in the official Europass CV.
 \end{description}
 \subsubsection{Language options}
 The options hereby described are not related to babel. The choice of the language only affects the appearance of labels appearing e.g.\ in the personal information section, the spoken language table and the footer.
@@ -170,7 +188,7 @@ The following language options are currently supported:
 If you need a different language, you must create a new \texttt{.def} file, and add the corresponding \texttt{\textbackslash DeclareOption} in the class file.
 
 \subsubsection{Debugging}
-If you are editing the class file you may find the option \texttt{debug} useful: if this option is specified, debug messages are be printed on the terminal, the boxes making up the structure of the CV are highlighted with background colors, the package \texttt{showframe} is loaded.
+If you are editing the class file you may find the \texttt{debug} option useful: if this option is specified, debug messages are printed on the terminal, the boxes making up the structure of the CV are highlighted with background colors, and the package \texttt{showframe} is loaded.
 
 \subsection{Color palette}
 \label{sec:colors}
@@ -201,5 +219,5 @@ You can use these colors wherever you want in your document like this
 \begin{verbatim}
 \textcolor{colorname}{ Some text }
 \end{verbatim} 
-There is also a convenience command \texttt{\bs ecvhighlight\{ Some text \}} which typesets text in the \texttt{ecvhighlightcolor}.
+There is also a convenience command \texttt{\bs ecvhighlight\{ Some text \}} which typesets text in \texttt{ecvhighlightcolor}.
 \end{document}
