@@ -339,37 +339,25 @@
 \fancyhead{}
  
 \fancyhead[R]{
-% \raisebox{-\dp\strutbox}{
-\begin{minipage}{0.35\textwidth}
 \raggedleft \fontfamily{phv}\fontseries{m}\selectfont \textcolor{ecvhighlightcolor}{\ecv@name}
-\end{minipage}
 }
 
-\newlength{\ecv@headerlogorightspace}
-
 \fancyhead[L]{
-\setlength{\ecv@headerlogotopspace}{\topmargin}
-\addtolength{\ecv@headerlogotopspace}{2pt}
 \noindent
 \begin{minipage}{0.5\textwidth}
-\noindent\makebox[\ecv@leftcolwidth][l]{\noindent\raisebox{\ecv@headerlogotopspace}[0pt][0pt]{\if@ecvlogo\includegraphics[width=0.6\ecv@logowidth]{europasslogo2013.pdf}\fi}}
+\noindent\makebox[\ecv@leftcolwidth][l]{\noindent\raisebox{-0.68\height}[0pt][0pt]{\if@ecvlogo\includegraphics[width=0.6\ecv@logowidth]{europasslogo2013.pdf}\fi}}
 \hspace*{\ecv@leftcolwidth}\hspace*{\ecv@colsep}\noindent
 \raisebox{\dp\strutbox}{\ecvcoloredtitle}
 \end{minipage}
 }
 }
 
-\newlength{\ecv@headerlogotopspace}
-
 \fancypagestyle{first}{
 \fancyhead[R]{}
 \fancyhead[L]{
-\setlength{\ecv@headerlogotopspace}{\topmargin}
-\addtolength{\ecv@headerlogotopspace}{-0.5\headheight}
-\addtolength{\ecv@headerlogotopspace}{\dp\strutbox}
 \noindent
 \begin{minipage}{0.5\textwidth}
-\noindent\makebox[\ecv@leftcolwidth][l]{\noindent\raisebox{\ecv@headerlogotopspace}[0pt][0pt]{\if@ecvlogo\includegraphics[width=\ecv@logowidth]{europasslogo2013.pdf}\fi}}
+\noindent\makebox[\ecv@leftcolwidth][l]{\noindent\raisebox{-0.52\height}[0pt][0pt]{\if@ecvlogo\includegraphics[width=\ecv@logowidth]{europasslogo2013.pdf}\fi}}
 \hspace*{\ecv@leftcolwidth}\hspace*{\ecv@colsep}\noindent
 \raisebox{\dp\strutbox}{\ecvcoloredtitle}
 \end{minipage}
