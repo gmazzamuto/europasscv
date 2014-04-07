@@ -29,6 +29,19 @@ europecv2013.pdf: europecv2013.tex
 
 class: pictures
 
+package: class documentation
+	mkdir europecv2013
+	cp *_icon.pdf europecv2013
+	cp europasslogo2013.pdf europecv2013
+	cp europecv2013.cls europecv2013
+	cp ecv*.def europecv2013
+	cp europecv2013.tex europecv2013
+	cp europecv2013.pdf europecv2013
+	cp example_en.tex europecv2013
+	tar -cvf europecv2013.tar europecv2013
+	gzip -f europecv2013.tar
+	rm -fr europecv2013
+
 distclean:
 	rm -f *~ *.synctex.gz *.aux *.log *.out *.backup *.toc
 
