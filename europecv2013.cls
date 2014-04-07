@@ -628,7 +628,6 @@
 \newenvironment{ecvitemize}{
 \
 \vspace*{\ecv@itemizeskip}
-\vspace*{-\dp\strutbox}
 \begin{itemize}[leftmargin=*,nolistsep,nosep,topsep=0pt]
 }{
 \end{itemize}
@@ -681,7 +680,7 @@
     \vspace{\ecv@currentskip}
   \fi
 
-  \setlength\ecv@itemizeskip{-1ex}\addtolength{\ecv@itemizeskip}{-\dp\strutbox}
+  \setlength\ecv@itemizeskip{-\ht\strutbox}\addtolength{\ecv@itemizeskip}{-2\dp\strutbox}
 
   \begin{tabular}{@{}p{\ecv@leftcolwidth}@{\extracolsep{\ecv@colsep}}P{\ecv@rightcolwidth}@{}}
   \if@ecvdebug\cellcolor{yellow!25}\fi \raggedleft #2 & \if@ecvdebug\cellcolor{blue!25}\fi #3
@@ -714,7 +713,10 @@
 }
 }
 
-\newcommand\ecvblueitem[3][\if@ecvitemskip 1.3\bigskipamount\else 0pt \fi]{\ecvitem[#1]{\textcolor{ecvsectioncolor}{#2}}{\setlength\ecv@itemizeskip{-\bigskipamount}\addtolength{\ecv@itemizeskip}{\dp\strutbox} #3}}
+\newcommand\ecvblueitem[3][\if@ecvitemskip 1.3\bigskipamount\else 0pt \fi]{\ecvitem[#1]{\textcolor{ecvsectioncolor}{#2}}{
+% \setlength\ecv@itemizeskip{-1.3\bigskipamount}\addtolength{\ecv@itemizeskip}{0.5\dp\strutbox}
+ #3}
+}
 
 \newcommand{\ecvbigitem}[3][\bigskipamount]{
   \ecvitem[#1]{\ecvsectionstyle{#2}}{\ecvlargenormalstyle{#3}}
