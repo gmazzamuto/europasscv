@@ -659,6 +659,12 @@
 \newcommand{\ecv@secondarg}{}
 \newcommand{\ecv@thirdarg}{}
 
+
+\newcolumntype{P}[1]{>{%
+  \setlength{\parskip}{\ecv@itemskip}
+  \setlength{\baselineskip}{1.5\ht\strutbox}
+  }p{#1}
+}
 \newcommand\ecvitem[3][\ecv@itemskip]{%
   \if@ecvdebug
     \renewcommand{\ecv@secondarg}{#2}
@@ -677,7 +683,7 @@
 
   \setlength\ecv@itemizeskip{-1ex}\addtolength{\ecv@itemizeskip}{-\dp\strutbox}
 
-  \begin{tabular}{@{}p{\ecv@leftcolwidth}@{\extracolsep{\ecv@colsep}}p{\ecv@rightcolwidth}@{}}
+  \begin{tabular}{@{}p{\ecv@leftcolwidth}@{\extracolsep{\ecv@colsep}}P{\ecv@rightcolwidth}@{}}
   \if@ecvdebug\cellcolor{yellow!25}\fi \raggedleft #2 & \if@ecvdebug\cellcolor{blue!25}\fi #3
   \end{tabular}
   \@ecvitemskiptrue
