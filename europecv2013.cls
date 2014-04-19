@@ -436,7 +436,6 @@
 \ifx\@empty\ecv@address\else
     \raisebox{-2\lineskip}{\includegraphics[width=0.4cm]{address_icon.pdf}}\hspace{0.2mm} {\fontseries{m}\selectfont \ecv@address} \newline
 \fi
-\noindent
 \ifx\@empty\ecv@mobile
   \ifx\@empty\ecv@telephone\else
       \raisebox{-2\lineskip}{\includegraphics[width=0.4cm]{telephone_icon.pdf}}\hspace{0.2mm} {\fontseries{m}\selectfont \ecv@telephone} \newline
@@ -456,7 +455,6 @@
 \ifx\@empty\ecv@im\else
     \raisebox{-2\lineskip}{\includegraphics[width=0.4cm]{im_icon.pdf}} \hspace{0.2mm}{\fontseries{m}\selectfont \ecv@im}
 \fi
-
 \raisebox{-\medskipamount}{
   \ifx\@empty\ecv@gender\else
       \if@ecvpineedspipe\else \hspace{-1ex}\fi
