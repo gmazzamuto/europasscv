@@ -392,19 +392,22 @@
 \def\ecv@im{}
 \newif\if@ecvIMalreadyprovided\@ecvIMalreadyprovidedfalse
 \newcommand*{\ecvim}[2]{\if@ecvIMalreadyprovided \g@addto@macro\ecv@im{\quad} \fi \g@addto@macro\ecv@im{\ecvhighlight{#1} #2} \@ecvIMalreadyprovidedtrue}
-\newcommand*{\ecvnationality}[1]{\def\ecv@nationality{#1}}
-\newcommand*{\ecvdateofbirth}[1]{\def\ecv@birth{#1}}
-\newcommand*{\ecvgender}[1]{\def\ecv@gender{#1}}
+\newif\if@ecvpiextrafields\@ecvpiextrafieldsfalse
+\newcommand*{\ecvnationality}[1]{\def\ecv@nationality{#1}\@ecvpiextrafieldstrue}
+\newcommand*{\ecvdateofbirth}[1]{\def\ecv@birth{#1}\@ecvpiextrafieldstrue}
+\newcommand*{\ecvgender}[1]{\def\ecv@gender{#1}\@ecvpiextrafieldstrue}
 % Personal picture
 \newcommand*{\ecvdrawpicture}{}
 \newcommand*{\ecvbeforepicture}[1]{\def\ecv@beforepic{#1}}
 \newcommand*{\ecvafterpicture}[1]{\def\ecv@afterpic{#1}}
-\newcommand*\ecvpicture{%
+\newif\if@ecvpicture\@ecvpicturefalse
+\newcommand*\ecvpicture{%\@e
 \@ifnextchar[\ecv@picture{\ecv@picture[]}}
 \def\ecv@picture[#1]#2{%
 \def\ecvarg{#2}
 \ifx\@empty\ecvarg\renewcommand*{\ecvdrawpicture}{}\else
 \renewcommand*{\ecvdrawpicture}{\includegraphics[#1]{#2}}
+\@ecvpicturetrue
 \fi}
 % The following must be used inside \ecvbeforepicture
 % or \ecvafterpicture
@@ -430,7 +433,7 @@
 \providecommand{\ecvpersonalinfo}[1][0pt]{%
 \ecvitem[#1]{\ecvsectionstyle{\ecv@infosectionkey}}{
 \begin{doublespacing}
-\begin{tabular}[t]{@{}p{0.7\ecv@rightcolwidth}@{}p{0.3\ecv@rightcolwidth}@{}}
+\begin{tabular}[t]{@{}p{\if@ecvpicture 0.7\ecv@rightcolwidth \else \ecv@rightcolwidth\fi}@{}p{\if@ecvpicture 0.3\ecv@rightcolwidth \else 0pt\fi}@{}}
 \raggedright
 {\ecvLargenormalstyle{\ecv@name}} \newline
 \ifx\@empty\ecv@address\else
@@ -453,9 +456,8 @@
     \raisebox{-2\lineskip}{\includegraphics[width=0.4cm]{website_icon.pdf}}\hspace{0.2mm} {\fontseries{m}\selectfont \setul{.5pt}{.4pt}\href{\ecv@homepage}{\ul{\mbox{\ecv@homepage}}}} \newline
 \fi
 \ifx\@empty\ecv@im\else
-    \raisebox{-2\lineskip}{\includegraphics[width=0.4cm]{im_icon.pdf}} \hspace{0.2mm}{\fontseries{m}\selectfont \ecv@im}
+    \raisebox{-2\lineskip}{\includegraphics[width=0.4cm]{im_icon.pdf}} \hspace{0.2mm}{\fontseries{m}\selectfont \ecv@im} \newline
 \fi
-\raisebox{-\medskipamount}{
   \ifx\@empty\ecv@gender\else
       \if@ecvpineedspipe\else \hspace{-1ex}\fi
       \fontseries{m}\selectfont \ecvhighlight{~\if@ecvpineedspipe | \fi \ecv@genderkey} \ecv@gender \@ecvpineedspipetrue
@@ -464,11 +466,20 @@
       \if@ecvpineedspipe\else \hspace{-1ex}\fi
       \fontseries{m}\selectfont \ecvhighlight{~\if@ecvpineedspipe | \fi\ecv@birthkey} \ecv@birth \@ecvpineedspipetrue
   \fi
+  \if@ecvpicture
+      \ifx\@empty\ecv@nationality\else
+	    \ifx\@empty\ecv@gender\else
+		\ifx\@empty\ecv@birth\else
+		    \linebreak
+		    \@ecvpineedspipefalse
+		\fi
+	    \fi
+      \fi
+  \fi
   \ifx\@empty\ecv@nationality\else
       \if@ecvpineedspipe\else \hspace{-1ex}\fi
       \fontseries{m}\selectfont \ecvhighlight{~\if@ecvpineedspipe | \fi \ecv@nationalitykey}~\ecv@nationality \@ecvpineedspipetrue
   \fi
-}
 & 
 \Large \vspace{-\baselineskip}
 \raisebox{-\height}{\ecvdrawpicture}
