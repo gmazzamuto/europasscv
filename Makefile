@@ -30,15 +30,15 @@ europecv2013.pdf: europecv2013.tex
 class: pictures
 
 package: class documentation
-	mkdir europecv2013
+	mkdir -p europecv2013/example
 	cp *_icon.pdf europecv2013
 	cp europasslogo2013.pdf europecv2013
 	cp europecv2013.cls europecv2013
 	cp ecv*.def europecv2013
 	cp europecv2013.tex europecv2013
 	cp europecv2013.pdf europecv2013
-	cp example_en.tex europecv2013
-	cp example_en.pdf europecv2013
+	cp example_en.tex europecv2013/example
+	cp example_en.pdf europecv2013/example
 	cp README europecv2013
 	tar -cvf europecv2013.tar europecv2013
 	gzip -f europecv2013.tar
