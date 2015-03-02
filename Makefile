@@ -39,6 +39,7 @@ package: class documentation
 	cp europecv2013.pdf europecv2013
 	cp example_en.tex europecv2013
 	cp example_en.pdf europecv2013
+	cp README europecv2013
 	tar -cvf europecv2013.tar europecv2013
 	gzip -f europecv2013.tar
 	rm -fr europecv2013
