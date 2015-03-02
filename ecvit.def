@@ -36,6 +36,7 @@
 \def\ecv@cefprofkey{\ecv@utf{Utente avanzato}}
 \def\ecv@europeanunionkey{\ecv@utf{Unione Europea}}
 
+% Width of language columns
 \def\ecv@langcola{0.15}
 \def\ecv@langcolb{0.15}
 \def\ecv@langcolc{0.2}
