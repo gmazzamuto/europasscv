@@ -284,8 +284,7 @@
 \ProcessOptions\relax
 
 \LoadClass{article}
-% \RequirePackage{ucs}
-\RequirePackage[utf8x]{inputenc}
+\RequirePackage[utf8]{inputenc}
 \RequirePackage{array}
 \RequirePackage{fancyhdr} % For page numbering
 \RequirePackage{xcolor}
