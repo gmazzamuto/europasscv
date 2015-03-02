@@ -21,9 +21,13 @@ icons: $(ICONS_SVG) $(ICONS_PDF)
 %_icon.pdf : %_icon.ps
 	ps2pdf $<
 
-documentation: class europecv2013.pdf
+documentation: class europecv2013.pdf example_en.pdf
 
 europecv2013.pdf: europecv2013.tex
+	pdflatex $<
+	pdflatex $<
+
+example_en.pdf: example_en.tex
 	pdflatex $<
 	pdflatex $<
 
