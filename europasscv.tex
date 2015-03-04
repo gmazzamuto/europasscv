@@ -14,7 +14,7 @@
         \href{mailto:gmazzamuto+ctan@gmail.com}{\texttt{gmazzamuto+ctan@gmail.com}}\\}
 \title{\small Documentation of the \LaTeX\ class\\
 		\Large \textbf{\texttt{europasscv.cls}}\\
-		\small \vspace{0.2cm} Version 0.1, 2015-03-02
+		\small \vspace{0.2cm} Version 0.1, 2015-03-05
 }
 
 \newcommand{\bs}{\textbackslash}
@@ -26,7 +26,7 @@
 
 
 \begin{abstract}
-This paper describes how to use europasscv.cls, a \LaTeX\ document class for typesetting a curriculum vitae according to the Europass initiative of the European Commission, 2013 version. This is an unofficial implementation of that format.
+This paper describes how to use europasscv.cls, a \LaTeX\ document class for typesetting a curriculum vitae according to the Europass initiative of the European Commission. This is an unofficial implementation of that format, following the major restylings that came out in 2013.
 
 \end{abstract}
 
@@ -37,7 +37,7 @@ This paper describes how to use europasscv.cls, a \LaTeX\ document class for typ
 \section{Introduction}
 This class is an unofficial \LaTeX\ implementation of the the \emph{Europass~CV\/}, the standard model for curriculum vitae as recommended by the European Commission. The Europass~CV replaces the European CV, launched in~2002. In 2013 a major revision of the Europass~CV came out, featuring a neater, more compact and somewhat fancier layout. This class is an implementation of the 2013 version of that layout and is based on the \textsf{europecv}\footnote{\url{http://ctan.org/pkg/europecv}} class which is an implementation of the previous layout.
 
-The Europass~CV defines both the content and the layout of a curriculum vitae. The \textsf{europasscv} class provides support for the latter, and for the former as far as personal information and spoken languages are concerned. If you want to know how the content of a Europass~CV is structured, refer to the documentation provided by the Europass website.\footnote{\url{https://europass.cedefop.europa.eu/en/documents/curriculum-vitae/templates-instructions}.}
+The Europass~CV defines both the content and the layout of a curriculum vitae. The \textsf{europasscv} class provides support for the latter, and for the former as far as personal information and spoken languages are concerned. If you want to know how the content of a Europass~CV is structured, refer to the documentation provided by the Europass website\footnote{\url{https://europass.cedefop.europa.eu/en/documents/curriculum-vitae/templates-instructions}.}.
 
 This class tries to be as close as possible to the standard model without sacrificing flexibility. Although it is primarily intended for users of the European Union, the class can be used for any kind of curriculum vitae (possibly with the options \texttt{notitle} and \texttt{nologo}, see below), or even for other kinds of documents.
 
@@ -53,7 +53,7 @@ Let's start with a minimal (empty) curriculum vitae:
 \end{document}
 \end{verbatim}
 
-Now you can start writing your CV by entering first of all your personal information and then adding sections and items as described in this section.
+Now you can start writing your CV by entering first of all your personal information and then adding sections and items as described below.
 
 For a complete list of usable class options see section \ref{sec:classOptions}.
 
@@ -222,7 +222,7 @@ You can use these colors wherever you want in your document like this
 There is also a convenience command \texttt{\bs ecvhighlight\{ Some text \}} which typesets text in \texttt{ecvhighlightcolor}.
 
 \section{Copyright and license}
-Europass and the Europass logo are copyright of the European Union.\footnote{See \url{http://europass.cedefop.europa.eu} for more information.} The \texttt{europasscv} class is released under The \LaTeX\ Project Public License version 1.3\footnote{  \url{http://ctan.org/license/lppl1.3}.}.
+Europass and the Europass logo are copyright of the European Union.\footnote{See \url{http://europass.cedefop.europa.eu} for more information.} The \texttt{europasscv} class is released under The \LaTeX\ Project Public License version 1.3.\footnote{  \url{http://ctan.org/license/lppl1.3}.}
 
 \section{Acknowledgements}
 Thanks to \LaTeX\ enthusiast Francesco Biccari whom I had the pleasure to meet at LENS in Sesto Fiorentino and who provided useful comments and suggestions.
