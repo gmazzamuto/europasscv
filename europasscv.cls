@@ -279,7 +279,7 @@
   \PassOptionsToClass{\CurrentOption}{article}%
 } 
 
-\ExecuteOptions{english,hrule,totpages,a4paper} % Default options
+\ExecuteOptions{english,hrule,totpages} % Default options
 
 \ProcessOptions\relax
 
