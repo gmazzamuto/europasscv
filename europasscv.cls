@@ -312,7 +312,7 @@
 
 % Right Footnote to be shown on every page
 \newcommand\ecvfootnote[1]{\def\ecv@cfoot{#1}}
-\ecvfootnote{\textcopyright~\ecv@europeanunionkey, 2002-2013 | http://europass.cedefop.europa.eu }
+\ecvfootnote{\textcopyright~\ecv@europeanunionkey, 2002-2014 | http://europass.cedefop.europa.eu }
 
 
 \AtBeginDocument{%
