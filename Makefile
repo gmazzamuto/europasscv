@@ -35,6 +35,7 @@ class: pictures
 
 package: class documentation
 	mkdir -p europasscv/example
+	cp *.svg europasscv
 	cp *_europass_icon.pdf europasscv
 	cp europasslogo.pdf europasscv
 	cp europasscv.cls europasscv
