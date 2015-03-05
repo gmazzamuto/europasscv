@@ -21,7 +21,6 @@
 
 
 \begin{document}
-
 \maketitle
 
 
@@ -59,13 +58,16 @@ For a complete list of usable class options see section \ref{sec:classOptions}.
 
 \subsection{Personal information}
 \ecvname{Name Surname}
-\ecvdateofbirth{1 January 1970}
-\ecvtelephone[(+555) 555 555]{(+555) 555 555}
+\ecvtelephone[(+555) 340 123]{(+555) 555 555}
 \hypersetup{urlcolor=black}
 \ecvemail{myemailaddress@gmail.com}
 \ecvhomepage{www.myhomepage.com}
 \ecvaddress{rue Wiertz, B-1047 Brussels}
-
+\ecvim{AOL Messenger}{betty.smith}
+\ecvim{Google Talk}{bsmith}
+\ecvdateofbirth{1 January 1970}
+\ecvnationality{English}
+\ecvgender{Female}
 \hspace*{-6cm}
 \ecvLeftColumnWidth{90mm}
 \ecvColSep{10pt}
@@ -74,6 +76,28 @@ For a complete list of usable class options see section \ref{sec:classOptions}.
     \ecvpersonalinfo
   \end{europasscv}
 \end{minipage}
+
+\bigskip
+\noindent
+The \emph{Personal information} section shown above is specified with the commands:
+
+\begin{verbatim}
+\ecvname{Name Surname}
+\ecvaddress{rue Wiertz, B-1047 Brussels}
+\ecvtelephone[(+555) 340 123]{(+555) 555 555}
+\ecvemail{myemailaddress@gmail.com}
+\ecvhomepage{www.myhomepage.com}
+\ecvim{AOL Messenger}{betty.smith}
+\ecvim{Google Talk}{bsmith}
+\ecvdateofbirth{1 January 1970}
+\ecvnationality{English}
+\ecvgender{Female}
+\end{verbatim}
+and typeset with:
+\begin{verbatim}
+\ecvpersonalinfo
+\end{verbatim}
+
 
 \hypersetup{urlcolor=magenta}
 
