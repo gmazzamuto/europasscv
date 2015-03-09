@@ -80,7 +80,6 @@ For a complete list of usable class options see section \ref{sec:classOptions}.
 \bigskip
 \noindent
 The \emph{Personal information} section shown above is specified with the commands:
-
 \begin{verbatim}
 \ecvname{Name Surname}
 \ecvaddress{rue Wiertz, B-1047 Brussels}
@@ -93,11 +92,14 @@ The \emph{Personal information} section shown above is specified with the comman
 \ecvnationality{English}
 \ecvgender{Female}
 \end{verbatim}
-and typeset with:
-\begin{verbatim}
-\ecvpersonalinfo
-\end{verbatim}
-
+and then typeset inside the \texttt{europasscv} environment with:
+\begin{description}
+\item[\texttt{\bs ecvpersonalinfo}]
+\end{description}
+A photo can be added with the command:
+\begin{description}
+\item[\texttt{\bs ecvpicture[\textit{width}]\{\textit{filename}\}}]
+\end{description}
 
 \hypersetup{urlcolor=magenta}
 
