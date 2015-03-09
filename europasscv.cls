@@ -458,11 +458,11 @@
     \raisebox{-2\lineskip}{\includegraphics[width=0.4cm]{im_europass_icon.pdf}} \hspace{0.2mm}{\fontseries{m}\selectfont \ecv@im} \newline
 \fi
   \ifx\@empty\ecv@gender\else
-      \if@ecvpineedspipe\else \hspace{-1ex}\fi
+      \if@ecvpineedspipe\else \hspace*{-0.5ex}\fi
       \fontseries{m}\selectfont \ecvhighlight{~\if@ecvpineedspipe | \fi \ecv@genderkey} \ecv@gender \@ecvpineedspipetrue
   \fi
   \ifx\@empty\ecv@birth\else
-      \if@ecvpineedspipe\else \hspace{-1ex}\fi
+      \if@ecvpineedspipe\else \hspace*{-0.5ex}\fi
       \fontseries{m}\selectfont \ecvhighlight{~\if@ecvpineedspipe | \fi\ecv@birthkey} \ecv@birth \@ecvpineedspipetrue
   \fi
   \if@ecvpicture
@@ -476,7 +476,7 @@
       \fi
   \fi
   \ifx\@empty\ecv@nationality\else
-      \if@ecvpineedspipe\else \hspace{-1ex}\fi
+      \if@ecvpineedspipe\else \hspace*{-0.5ex}\fi
       \fontseries{m}\selectfont \ecvhighlight{~\if@ecvpineedspipe | \fi \ecv@nationalitykey}~\ecv@nationality \@ecvpineedspipetrue
   \fi
 & 
