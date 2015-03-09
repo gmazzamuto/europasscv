@@ -1,0 +1,45 @@
+%!TEX encoding = UTF-8 Unicode
+%
+%
+\ProvidesFile{ecven.def}[europecv German definitions]
+% Personal information
+\def\ecv@infosectionkey{\ecv@utf{Angaben zur Person}}
+\def\ecv@namekey{\ecv@utf{Nachname(n) / Vorname(n)}}
+\def\ecv@addresskey{\ecv@utf{Adresse}}
+\def\ecv@telkey{\ecv@utf{Telefon}}
+\def\ecv@mobilekey{\ecv@utf{Mobil}}
+\def\ecv@faxkey{\ecv@utf{Telefax}}
+\def\ecv@emailkey{\ecv@utf{E-mail}}
+\def\ecv@nationalitykey{\ecv@utf{Staatsangehörigkeit}}
+\def\ecv@birthkey{\ecv@utf{Geburtsdatum}}
+\def\ecv@genderkey{\ecv@utf{Geschlecht}}
+% Footer
+\def\ecv@pagekey{\ecv@utf{Seite}}
+\def\ecv@cvofkey{\ecv@utf{Lebenslauf von}}
+% Language table
+\def\ecv@mothertonguekey{\ecv@utf{Muttersprache}}
+\def\ecv@otherlanguageskey{\ecv@utf{Andere Sprachen}}
+\def\ecv@assesskey{\ecv@utf{Selbstbeurteilung}}
+\def\ecv@levelkey{\ecv@utf{Europäische Kompetenzstufe}}
+\def\ecv@understandkey{\ecv@utf{Verstehen}}
+\def\ecv@speakkey{\ecv@utf{Sprechen}}
+\def\ecv@writekey{\ecv@utf{Schreiben}}
+\def\ecv@listenkey{\ecv@utf{Hören}}
+\def\ecv@readkey{\ecv@utf{Lesen}}
+\def\ecv@interactkey{\ecv@utf{An Gesprächen teilnehmen}}
+\def\ecv@productkey{\ecv@utf{Zusammenhängendes Sprechen}}
+\def\ecv@langshortdesckey{\ecv@utf{Levels: A1/A2: Elementare Sprachverwendung - B1/B2: selbständige Sprachverwendung - C1/C2: Kompetente Sprachverwendung}}
+\def\ecv@langfooterkey{\ecv@utf{Gemeinsamer Europäischer Referenzrahmen für Sprachen}}
+\def\ecv@langlinkkey{\ecv@utf{https://europass.cedefop.europa.eu/de/documents/european-skills-passport/language-passport}}
+\def\ecv@cefbasickey{\ecv@utf{Elementare Sprachverwendung}}
+\def\ecv@cefindepkey{\ecv@utf{Selbständige Sprachverwendung}}
+\def\ecv@cefprofkey{\ecv@utf{Kompetente Sprachverwendung}}
+\def\ecv@europeanunionkey{\ecv@utf{Europäische Union}}
+
+% Width of language columns
+\def\ecv@langcola{0.15}
+\def\ecv@langcolb{0.15}
+\def\ecv@langcolc{0.25}
+\def\ecv@langcold{0.25}
+\def\ecv@langcole{0.2}
+
