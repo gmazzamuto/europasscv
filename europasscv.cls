@@ -662,6 +662,7 @@
 \newlength{\ecv@currentskip}
 
 \newif\if@ecvlastitemwassection\@ecvlastitemwassectionfalse
+\newif\if@ecvitemcommand\@ecvitemcommandtrue
 
 \newcommand{\ecv@secondarg}{}
 \newcommand{\ecv@thirdarg}{}
@@ -688,6 +689,12 @@
     \vspace{\ecv@currentskip}
   \fi
 
+  \if@ecvitemcommand
+    \if@ecvlastitemwassection
+      \vspace{\smallskipamount}
+    \fi
+  \fi
+
   \setlength\ecv@itemizeskip{-\ht\strutbox}\addtolength{\ecv@itemizeskip}{-2\dp\strutbox}
 
   \begin{tabular}{@{}p{\ecv@leftcolwidth}@{\extracolsep{\ecv@colsep}}P{\ecv@rightcolwidth}@{}}
@@ -695,11 +702,13 @@
   \end{tabular}
   \@ecvitemskiptrue
   \@ecvlastitemwassectionfalse
+  \@ecvitemcommandtrue
 } 
 
 \newlength{\ecv@sectionrulelength}
 
 \newcommand{\ecvsection}[2][1.3\bigskipamount]{%
+  \@ecvitemcommandfalse
   \setlength{\ecv@sectionrulelength}{\ecv@rightcolwidth}
   \addtolength{\ecv@sectionrulelength}{-7pt}
   \ecvitem[#1]{\ecvsectionstyle{#2}}
@@ -711,6 +720,7 @@
 }
 
 \newcommand\ecvtitle[3][\if@ecvitemskip 1.3\bigskipamount \else 0pt \fi]{%
+  \@ecvitemcommandfalse
   \ecvitem[#1]{\small \ecvbluenormalstyle{#2}}{\ecvtitlestyle{#3}}
 }
 
