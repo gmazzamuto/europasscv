@@ -349,7 +349,7 @@
 \fancyhead[L]{
 \noindent
 \begin{minipage}{0.5\textwidth}
-\noindent\makebox[\ecv@leftcolwidth][l]{\noindent\raisebox{-0.68\height}[0pt][0pt]{\if@ecvlogo\includegraphics[width=0.6\ecv@logowidth]{europasslogo.pdf}\fi}}
+\noindent\makebox[\ecv@leftcolwidth][l]{\noindent\raisebox{-0.68\height}[0pt][0pt]{\if@ecvlogo\includegraphics[width=0.6\ecv@logowidth]{europasslogo2013.pdf}\fi}}
 \hspace*{\ecv@leftcolwidth}\hspace*{\ecv@colsep}\noindent
 \raisebox{\dp\strutbox}{\ecvcoloredtitle}
 \end{minipage}
@@ -361,7 +361,7 @@
 \fancyhead[L]{
 \noindent
 \begin{minipage}{0.5\textwidth}
-\noindent\makebox[\ecv@leftcolwidth][l]{\noindent\raisebox{-0.52\height}[0pt][0pt]{\if@ecvlogo\includegraphics[width=\ecv@logowidth]{europasslogo.pdf}\fi}}
+\noindent\makebox[\ecv@leftcolwidth][l]{\noindent\raisebox{-0.52\height}[0pt][0pt]{\if@ecvlogo\includegraphics[width=\ecv@logowidth]{europasslogo2013.pdf}\fi}}
 \hspace*{\ecv@leftcolwidth}\hspace*{\ecv@colsep}\noindent
 \raisebox{\dp\strutbox}{\ecvcoloredtitle}
 \end{minipage}

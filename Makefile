@@ -3,9 +3,9 @@ ICONS_PDF=$(ICONS_SVG:.svg=.pdf)
 
 all: class documentation
 
-pictures: icons europasslogo.pdf
+pictures: icons europasslogo2013.pdf
 
-europasslogo.pdf: europasslogo.svg
+europasslogo2013.pdf: europasslogo2013.svg
 	inkscape $< --export-area-drawing --export-pdf $@
 
 # convert from pdf to ps then back to pdf to avoid the pdftex warning "PDF
@@ -37,7 +37,7 @@ package: class documentation
 	mkdir -p europasscv/example
 	cp *.svg europasscv
 	cp *_europass_icon.pdf europasscv
-	cp europasslogo.pdf europasscv
+	cp europasslogo2013.pdf europasscv
 	cp europasscv.cls europasscv
 	cp europasscv*.def europasscv
 	cp europasscv.tex europasscv
