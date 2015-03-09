@@ -51,7 +51,7 @@ package: class documentation
 	rm -fr europasscv
 
 distclean:
-	rm -f *~ *.synctex.gz *.aux *.log *.out *.backup *.toc
+	rm -f *~ *.synctex.gz *.aux *.log *.out *.backup *.toc *.temp
 
 clean: distclean
 	rm -f *.pdf
