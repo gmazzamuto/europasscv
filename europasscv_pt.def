@@ -1,0 +1,44 @@
+%!TEX encoding = UTF-8 Unicode
+%
+%
+\ProvidesFile{ecvpt.def}[europecv Portuguese definitions]
+% Personal information
+\def\ecv@infosectionkey{\ecv@utf{Informa\c{c}\~ao pessoal}}
+\def\ecv@namekey{\ecv@utf{Nome(s) Apelido(s)}}
+\def\ecv@addresskey{\ecv@utf{Morada(s)}}
+\def\ecv@telkey{\ecv@utf{Telefone(s)}}
+\def\ecv@mobilekey{\ecv@utf{Telem\'ovel}}
+\def\ecv@faxkey{\ecv@utf{Fax(es)}}
+\def\ecv@emailkey{\ecv@utf{Correio(s) electr\'onico(s)}}
+\def\ecv@nationalitykey{\ecv@utf{Nacionalidade(s)}}
+\def\ecv@birthkey{\ecv@utf{Data de nascimento}}
+\def\ecv@genderkey{\ecv@utf{Sexo}}
+% Footer
+\def\ecv@pagekey{\ecv@utf{P\'agina}}
+\def\ecv@cvofkey{\ecv@utf{Curriculum vit\ae\ de}}
+% Language table
+\def\ecv@mothertonguekey{\ecv@utf{L\'ingua(s) materna(s)}}
+\def\ecv@otherlanguageskey{\ecv@utf{Outras l\'inguas}}
+\def\ecv@assesskey{\ecv@utf{Auto-avalia\c{c}\~ao}}
+\def\ecv@levelkey{\ecv@utf{N\'ivel  europeu}}
+\def\ecv@understandkey{\ecv@utf{Compreender}}
+\def\ecv@speakkey{\ecv@utf{Falar}}
+\def\ecv@writekey{\ecv@utf{Escrever}}
+\def\ecv@listenkey{\ecv@utf{Compreens\~ao oral}}
+\def\ecv@readkey{\ecv@utf{Leitura}}
+\def\ecv@interactkey{\ecv@utf{Interac\c{c}\~ao oral}}
+\def\ecv@productkey{\ecv@utf{Produ\c{c}\~ao oral}}
+\def\ecv@langshortdesckey{\ecv@utf{N\'iveis: A1/A2: Utilizador b\'asico - B1/B2: Utilizador independente - C1/C2: Utilizador avan\c{c}ado}}
+\def\ecv@langfooterkey{\ecv@utf{N\'ivel do Quadro Europeu Comum de Refer\^encia (CECR)}}
+\def\ecv@langlinkkey{\ecv@utf{http://europass.cedefop.europa.eu/pt/resources/european-language-levels-cefr}}
+\def\ecv@cefbasickey{\ecv@utf{Utilizador b\'asico}}
+\def\ecv@cefindepkey{\ecv@utf{Utilizador independente}}
+\def\ecv@cefprofkey{\ecv@utf{Utilizador avan\c{c}ado}}
+\def\ecv@europeanunionkey{\ecv@utf{Uni\~ao Europeia}}
+
+% Width of language columns
+\def\ecv@langcola{0.22}
+\def\ecv@langcolb{0.22}
+\def\ecv@langcolc{0.19}
+\def\ecv@langcold{0.19}
+\def\ecv@langcole{0.18}
