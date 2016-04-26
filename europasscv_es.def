@@ -1,0 +1,46 @@
+%!TEX encoding = UTF-8 Unicode
+%
+%
+\ProvidesFile{europasscv_es.def}[europecv Spanish definitions]
+\def\ecv@currvitaekey{\ecv@utf{Curr\'{i}culum vitae}}
+% Personal information
+\def\ecv@infosectionkey{\ecv@utf{Informaci\'{o}n personal}}
+\def\ecv@namekey{\ecv@utf{Nombre(s) y apellido(s)}}
+\def\ecv@addresskey{\ecv@utf{Direcci\'{o}n}}
+\def\ecv@telkey{\ecv@utf{Tel\'{e}fono}}
+\def\ecv@mobilekey{\ecv@utf{M\'{o}vil}}
+\def\ecv@faxkey{\ecv@utf{Fax}}
+\def\ecv@emailkey{\ecv@utf{E-mail}}
+\def\ecv@nationalitykey{\ecv@utf{Nacionalidad}}
+\def\ecv@birthkey{\ecv@utf{Fecha de nacimiento}}
+\def\ecv@genderkey{\ecv@utf{Sexo}}
+% Footer
+\def\ecv@pagekey{\ecv@utf{P\'{a}gina}}
+\def\ecv@cvofkey{\ecv@utf{Curr\'{i}culum vit\ae\ de}}
+% Language table
+\def\ecv@mothertonguekey{\ecv@utf{Lengua materna}}
+\def\ecv@otherlanguageskey{\ecv@utf{Otros idiomas}}
+\def\ecv@assesskey{\ecv@utf{Autoevaluaci\'{o}n}}
+\def\ecv@levelkey{\ecv@utf{Nivel europeo}}
+\def\ecv@understandkey{\ecv@utf{Comprender}}
+\def\ecv@speakkey{\ecv@utf{Hablar}}
+\def\ecv@writekey{\ecv@utf{Expresi\'{o}n escrita}}
+\def\ecv@listenkey{\ecv@utf{Comprensi\'{o}n auditiva}}
+\def\ecv@readkey{\ecv@utf{Comprensi\'{o}n de lectura}}
+\def\ecv@interactkey{\ecv@utf{Interacci\'{o}n oral}}
+\def\ecv@productkey{\ecv@utf{Expresi\'{o}n oral}}
+\def\ecv@langshortdesckey{\ecv@utf{Niveles: A1/A2: Usuario b\'{a}sico - B1/B2: Usuario independiente - C1/C2: Usuario competente}}
+\def\ecv@langfooterkey{\ecv@utf{Marco com\'{u}n Europeo de referencia para las lenguas}}
+\def\ecv@langlinkkey{\ecv@utf{http://europass.cedefop.europa.eu/es/resources/european-language-levels-cefr}}
+\def\ecv@cefbasickey{\ecv@utf{Usuario b\'{a}sico}}
+\def\ecv@cefindepkey{\ecv@utf{Usuario independiente}}
+\def\ecv@cefprofkey{\ecv@utf{Usuario competente}}
+\def\ecv@europeanunionkey{\ecv@utf{Uni\'{o}n Europea}}
+
+% Width of language columns
+\def\ecv@langcola{0.15}
+\def\ecv@langcolb{0.15}
+\def\ecv@langcolc{0.25}
+\def\ecv@langcold{0.25}
+\def\ecv@langcole{0.2}
+
