@@ -131,7 +131,8 @@ Use the following simple commands to add items and sections to your CV:\\
     }
     \ecvblueitem{blue left text}{ecvblueitem}
     \ecvtitlelevel{apr 2012 -- apr 2014}{ecvtitlelevel}{ISCED 6}
-    \ecvitem{}{ecvitem}
+    \ecvitem{ecvitem}{Item description}
+    \ecvitem{ecvitem}{\ecvhighlightcell{highlighted cell}}
   \end{europasscv}
 \end{minipage}
 
@@ -147,6 +148,15 @@ Use the following simple commands to add items and sections to your CV:\\
 If you want to highlight some text using the highlight color of the Europass CV palette (section \ref{sec:colors}), you may find this convenience command useful:
 \begin{description}
  \item[\texttt{\bs ecvhighlight\{\textit{some text}\}}]
+\end{description}
+
+To hihghlight the background of a cell, use this command instead:
+\begin{description}
+ \item[\texttt{\bs ecvhighlightcell\{\textit{some text}\}}]
+\end{description}
+For example:
+\begin{description}
+ \item[\texttt{\bs ecvitem\{\textit{left}\}\{\texttt{\bs ecvhighlightcell\{\textit{some text}\}}}]
 \end{description}
 
 Finally, if you want to put an itemize list in one CV entry, use the \texttt{ecvitemize} environment for a better alignment with the left text:
@@ -235,6 +245,7 @@ The following colors are defined in the package:
     \colrow{ecvrulecolor}\\
     \colrow{ecvsectioncolor}\\
     \colrow{ecvhighlightcolor}\\
+    \colrow{ecvhighlightcellcolor}\\
     \colrow{ecvtablebordercolor}\\
     \colrow{ecvlanglinkcolor}\\
     \colrow{ecvtextcolor}\\
