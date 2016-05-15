@@ -1,6 +1,9 @@
 ICONS_SVG=$(wildcard *_europass_icon.svg)
 ICONS_PDF=$(ICONS_SVG:.svg=.pdf)
 
+INSTALL = install -m 644
+INSTALLDIR = install -d
+
 all: class documentation
 
 pictures: icons europasslogo2013.pdf
@@ -49,6 +52,21 @@ package: class documentation
 	tar -cvf europasscv.tar europasscv
 	gzip -f europasscv.tar
 	rm -fr europasscv
+
+tds: class documentation
+	$(INSTALLDIR) tds/tex/latex/europasscv
+	$(INSTALL) *_europass_icon.pdf tds/tex/latex/europasscv
+	$(INSTALL) europasslogo2013.pdf tds/tex/latex/europasscv
+	$(INSTALL) europasscv.cls tds/tex/latex/europasscv
+	$(INSTALL) europasscv*.def tds/tex/latex/europasscv
+	$(INSTALLDIR)  tds/doc/latex/europasscv/example
+	$(INSTALL) europasscv_en.pdf tds/doc/latex/europasscv/example
+	$(INSTALL) europasscv_en.tex tds/doc/latex/europasscv/example
+	$(INSTALL) README tds/doc/latex/europasscv
+	$(INSTALL) europasscv.pdf tds/doc/latex/europasscv
+	$(INSTALL) europasscv.tex tds/doc/latex/europasscv
+	cd tds && zip -r europasscv.tds.zip * && mv europasscv.tds.zip ..
+	rm -fr tds
 
 distclean:
 	rm -f *~ *.synctex.gz *.aux *.log *.out *.backup *.toc *.temp
