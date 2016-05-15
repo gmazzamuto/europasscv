@@ -545,10 +545,10 @@
 
 \newcommand*{\ecvlanguagefooter}[1][0pt]{
 \nopagebreak[4]
-\ecvitem[0.5\dp\strutbox]{}{\textcolor{ecvsectioncolor}{\ecv@langshortdesckey}}
+\ecvitem[0.5\dp\strutbox]{}{\footnotesize \textcolor{ecvsectioncolor}{\ecv@langshortdesckey}}
 \nopagebreak[4]
 % \vspace*{-0.5\dp\strutbox}
-\ecvitem[-0.5\dp\strutbox]{}{\setulcolor{ecvlanglinkcolor}\setul{.5pt}{.4pt}\href{\ecv@langlinkkey}{\ul{\mbox{\textcolor{ecvlanglinkcolor}{\ecv@langfooterkey}}}}}
+\ecvitem[-0.5\dp\strutbox]{}{\footnotesize \setulcolor{ecvlanglinkcolor}\setul{.5pt}{.4pt}\href{\ecv@langlinkkey}{\ul{\mbox{\textcolor{ecvlanglinkcolor}{\ecv@langfooterkey}}}}}
 \renewcommand{\arraystretch}{0}
 }
 
