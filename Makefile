@@ -50,7 +50,6 @@ package: class documentation tds
 	$(INSTALL) README europasscv
 	$(INSTALL) Makefile europasscv/Makefile.europasscv
 	$(INSTALL) Makefile europasscv/Makefile.europasscv
-	$(INSTALL) europasscv.tds.zip europasscv
 	tar -cvf europasscv.tar europasscv europasscv.tds.zip
 	gzip -f europasscv.tar
 	rm -fr europasscv
