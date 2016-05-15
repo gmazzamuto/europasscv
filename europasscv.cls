@@ -531,7 +531,7 @@
     \setlength{\ecv@langtablewidth}{\ecv@rightcolwidth}
     \addtolength{\ecv@langtablewidth}{-4\arrayrulewidth}
     \arrayrulecolor{ecvtablebordercolor}
-    \renewcommand{\arraystretch}{1.8}
+    \renewcommand{\arraystretch}{1.5}
     \begin{tabular}[t]{p{\ecv@langcola\ecv@rightcolwidth}p{\ecv@langcolb\ecv@rightcolwidth}p{\ecv@langcolc\ecv@rightcolwidth}p{\ecv@langcold\ecv@rightcolwidth}p{\ecv@langcole\ecv@rightcolwidth}}
       \centering{\raisebox{-\arrayrulewidth}{#3}} &\centering{\raisebox{-\arrayrulewidth}{#4}} &\centering{\raisebox{-\arrayrulewidth}{#5}} &\centering{\raisebox{-\arrayrulewidth}{#6}} &\centering{\raisebox{-\arrayrulewidth}{#7}} \tabularnewline
       \hline
