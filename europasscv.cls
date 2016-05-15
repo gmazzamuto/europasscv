@@ -549,7 +549,7 @@
     \arrayrulecolor{ecvtablebordercolor}
     \renewcommand{\arraystretch}{1.4}
     \begin{tabular}[t]{p{\ecv@rightcolwidth}}
-       \centering #1 \cellcolor{gray!15}\tabularnewline
+       \centering #1 \cellcolor{ecvhighlightcellcolor}\tabularnewline
       \hline
     \end{tabular}
   }
@@ -760,13 +760,6 @@
 }
 
 \newcommand{\ecvhighlightcell}[1]{\vspace{-4\dp\strutbox}\hspace{0.2cm}\parbox{0.95\ecv@rightcolwidth}{\vspace*{0.3cm} #1\vspace{0.1cm}} \cellcolor{ecvhighlightcellcolor}}
-% \newcommand{\ecvhighlightcell}[1]{
-% % \renewcommand{\arraystretch}{1.5} % Default value: 1
-% \begin{tabular}{P{\ecv@rightcolwidth}@{}}
-%  #1\cellcolor{ecvhighlightcellcolor}
-% \end{tabular}
-% 
-% }
 
 \ecvRuleWidth{0pt}
 
@@ -775,6 +768,6 @@
 \definecolor{ecvsectioncolor}{HTML}{0e4194}
 \definecolor{ecvhighlightcolor}{HTML}{1593cb}
 \definecolor{ecvtablebordercolor}{HTML}{c6c6c6}
-\definecolor{ecvhighlightcellcolor}{HTML}{cccccc}
+\definecolor{ecvhighlightcellcolor}{HTML}{ebebeb}
 \definecolor{ecvlanglinkcolor}{HTML}{000080}
 \definecolor{ecvtextcolor}{HTML}{3e3a38}
