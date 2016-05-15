@@ -36,22 +36,25 @@ europasscv_en.pdf: europasscv_en.tex
 
 class: pictures
 
-package: class documentation
-	mkdir -p europasscv/example
-	cp *.svg europasscv
-	cp *_europass_icon.pdf europasscv
-	cp europasslogo2013.pdf europasscv
-	cp europasscv.cls europasscv
-	cp europasscv*.def europasscv
-	cp europasscv.tex europasscv
-	cp europasscv.pdf europasscv
-	cp europasscv_en.tex europasscv/example
-	cp europasscv_en.pdf europasscv/example
-	cp README europasscv
-	cp Makefile europasscv/Makefile.europasscv
-	tar -cvf europasscv.tar europasscv
+package: class documentation tds
+	$(INSTALLDIR) europasscv/example
+	$(INSTALL) *.svg europasscv
+	$(INSTALL) *_europass_icon.pdf europasscv
+	$(INSTALL) europasslogo2013.pdf europasscv
+	$(INSTALL) europasscv.cls europasscv
+	$(INSTALL) europasscv*.def europasscv
+	$(INSTALL) europasscv.tex europasscv
+	$(INSTALL) europasscv.pdf europasscv
+	$(INSTALL) europasscv_en.tex europasscv/example
+	$(INSTALL) europasscv_en.pdf europasscv/example
+	$(INSTALL) README europasscv
+	$(INSTALL) Makefile europasscv/Makefile.europasscv
+	$(INSTALL) Makefile europasscv/Makefile.europasscv
+	$(INSTALL) europasscv.tds.zip europasscv
+	tar -cvf europasscv.tar europasscv europasscv.tds.zip
 	gzip -f europasscv.tar
 	rm -fr europasscv
+	rm -fr europasscv.tds.zip
 
 tds: class documentation
 	$(INSTALLDIR) tds/tex/latex/europasscv
