@@ -28,7 +28,7 @@
 \def\ecv@readkey{\ecv@utf{Bralno razumevanje}}
 \def\ecv@interactkey{\ecv@utf{Govorno sporazumevanje}}
 \def\ecv@productkey{\ecv@utf{Govorno sporo{\v c}anje}}
-\def\ecv@langshortdesckey{\ecv@utf{Stopnja: A1/A2: Osnovni uporabnik - B1/B2: Samostojni uporabnik - C1/C2: Usposobljeni uporabnik}}
+\def\ecv@langshortdesckey{\ecv@utf{Stopnja: A1/A2: Osnovni uporabnik -- B1/B2: Samostojni uporabnik -- C1/C2: Usposobljeni uporabnik}}
 \def\ecv@langfooterkey{\ecv@utf{Skupni evropski jezikovni okvir}}
 \def\ecv@langlinkkey{\ecv@utf{http://europass.cedefop.europa.eu/sl/resources/european-language-levels-cefr}}
 \def\ecv@cefbasickey{\ecv@utf{Osnovni uporabnik}}

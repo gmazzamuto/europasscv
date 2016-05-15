@@ -28,7 +28,7 @@
 \def\ecv@readkey{\ecv@utf{Lesen}}
 \def\ecv@interactkey{\ecv@utf{An Gesprächen teilnehmen}}
 \def\ecv@productkey{\ecv@utf{Zusammenhängendes Sprechen}}
-\def\ecv@langshortdesckey{\ecv@utf{Levels: A1/A2: Elementare Sprachverwendung - B1/B2: selbständige Sprachverwendung - C1/C2: Kompetente Sprachverwendung}}
+\def\ecv@langshortdesckey{\ecv@utf{Levels: A1/A2: Elementare Sprachverwendung -- B1/B2: selbständige Sprachverwendung -- C1/C2: Kompetente Sprachverwendung}}
 \def\ecv@langfooterkey{\ecv@utf{Gemeinsamer Europäischer Referenzrahmen für Sprachen}}
 \def\ecv@langlinkkey{\ecv@utf{https://europass.cedefop.europa.eu/de/documents/european-skills-passport/language-passport}}
 \def\ecv@cefbasickey{\ecv@utf{Elementare Sprachverwendung}}

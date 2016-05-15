@@ -28,7 +28,7 @@
 \def\ecv@readkey{\ecv@utf{Leitura}}
 \def\ecv@interactkey{\ecv@utf{Interac\c{c}\~ao oral}}
 \def\ecv@productkey{\ecv@utf{Produ\c{c}\~ao oral}}
-\def\ecv@langshortdesckey{\ecv@utf{N\'iveis: A1/A2: Utilizador b\'asico - B1/B2: Utilizador independente - C1/C2: Utilizador avan\c{c}ado}}
+\def\ecv@langshortdesckey{\ecv@utf{N\'iveis: A1/A2: Utilizador b\'asico -- B1/B2: Utilizador independente -- C1/C2: Utilizador avan\c{c}ado}}
 \def\ecv@langfooterkey{\ecv@utf{N\'ivel do Quadro Europeu Comum de Refer\^encia (CECR)}}
 \def\ecv@langlinkkey{\ecv@utf{http://europass.cedefop.europa.eu/pt/resources/european-language-levels-cefr}}
 \def\ecv@cefbasickey{\ecv@utf{Utilizador b\'asico}}
