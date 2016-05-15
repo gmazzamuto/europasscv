@@ -498,8 +498,8 @@
 \newlength\ecv@langouterborderwidth
 \newlength\ecv@langinnerborderwidth
 
-\setlength{\ecv@langouterborderwidth}{0.04cm}
-\setlength{\ecv@langinnerborderwidth}{0.02cm}
+\setlength{\ecv@langouterborderwidth}{0.05cm}
+\setlength{\ecv@langinnerborderwidth}{0.03cm}
 
 
 \newif\if@ecvfirstlangrow\@ecvfirstlangrowfalse
@@ -540,7 +540,24 @@
   \@ecvfirstlangrowfalse
 }
 
+\newcommand*\ecvlanguagecertificate[1]{
+%   \vspace*{-\dp\strutbox}
+  \setlength{\arrayrulewidth}{\ecv@langouterborderwidth}
+  \ecvitem[-0.7\dp\strutbox]{}{
+    \setlength{\ecv@langtablewidth}{\ecv@rightcolwidth}
+    \addtolength{\ecv@langtablewidth}{-4\arrayrulewidth}
+    \arrayrulecolor{ecvtablebordercolor}
+    \renewcommand{\arraystretch}{1.4}
+    \begin{tabular}[t]{p{\ecv@rightcolwidth}}
+       \centering #1 \cellcolor{gray!15}\tabularnewline
+      \hline
+    \end{tabular}
+  }
+  \@ecvfirstlangrowfalse
+}
+
 \newcommand*\ecvlanguage[7][0pt]{\ecvlangrow[#1]{#2}{#3}{#4}{#5}{#6}{#7}{\ecv@langinnerborderwidth}}
+% \newcommand*\ecvlanguagecertificate[1]{\ecvitem[-0.7mm]{ciao}{\centering \raisebox{-1mm}{#1} \cellcolor{green!25} \hrule height \ecv@langouterborderwidth }}
 \newcommand*\ecvlastlanguage[7][0pt]{\ecvlangrow[#1]{#2}{#3}{#4}{#5}{#6}{#7}{\ecv@langouterborderwidth}}
 
 \newcommand*{\ecvlanguagefooter}[1][0pt]{
