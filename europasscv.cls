@@ -8,7 +8,7 @@
 % See  http://www.latex-project.org/lppl.txt
 % for the details of that license
 \NeedsTeXFormat{LaTeX2e}
-\ProvidesClass{europasscv}[2016/04/26 Europass curriculum vitae class, 2013 version]
+\ProvidesClass{europasscv}[2016/05/15 Europass curriculum vitae class, 2013 version]
 
 % CV models and instructions:
 %   http://europass.cedefop.eu.int/htm/index.htm
