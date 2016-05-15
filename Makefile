@@ -76,3 +76,5 @@ distclean:
 
 clean: distclean
 	rm -f *.pdf
+
+.PHONY: all clean distclean tds package class documentation pictures
