@@ -742,11 +742,11 @@
   \ecvitem[#1]{\small \ecvbluenormalstyle{#2}}{\ecvtitlestyle{#3}}
 }
 
-\newcommand{\ecvtitlelevel}[4][\if@ecvitemskip 1.3\bigskipamount \else 0pt \fi]{\ecvtitle[#1]{#2}{
-  \begin{tabular}[t]{@{}p{0.8\ecv@rightcolwidth}@{}p{0.2\ecv@rightcolwidth}@{}}
-   #3 & \if@ecvdebug\cellcolor{green!25}\fi \raggedleft \ecvhighlight{\small #4}
-  \end{tabular} \nolinebreak[4]
-}
+\newcommand{\ecvtitlelevel}[4][\if@ecvitemskip 1.3\bigskipamount \else 0pt \fi]{
+    \ecvtitle[#1]{#2}{
+        #3 \if@ecvdebug\cellcolor{green!25}\fi \hfill \ecvhighlight{\small #4}
+        \nolinebreak[4]
+    }
 }
 
 \newcommand\ecvblueitem[3][\if@ecvitemskip 1.3\bigskipamount\else 0pt \fi]{\ecvitem[#1]{\textcolor{ecvsectioncolor}{#2}}{
