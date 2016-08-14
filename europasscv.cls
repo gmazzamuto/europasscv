@@ -322,7 +322,7 @@
 \ecvColSep{10pt}
 
 % Set layout
-
+\newlength{\difflength}
 \if@ecvnodocument\else
     \newgeometry{body={18.5cm,24cm}, vratio={4:3}}
 \fancyfoot{}
@@ -347,25 +347,25 @@
 }
 
 \fancyhead[L]{
-\noindent
-\begin{minipage}{0.5\textwidth}
-\noindent\makebox[\ecv@leftcolwidth][l]{\noindent\raisebox{-0.68\height}[0pt][0pt]{\if@ecvlogo\includegraphics[width=0.6\ecv@logowidth]{europasslogo2013.pdf}\fi}}
-\hspace*{\ecv@leftcolwidth}\hspace*{\ecv@colsep}\noindent
-\raisebox{\dp\strutbox}{\ecvcoloredtitle}
-\end{minipage}
-}
+  \setlength{\difflength}{\ecv@leftcolwidth}
+  \addtolength{\difflength}{-0.6\ecv@logowidth}
+  \noindent
+  \begin{minipage}{0.5\textwidth}
+    \noindent\makebox[\ecv@leftcolwidth][l]{\noindent\raisebox{-6.5pt}[0pt][0pt]{\if@ecvlogo\includegraphics[width=0.6\ecv@logowidth]{europasslogo2013.pdf}\else \hspace{\ecv@logowidth}\fi}\hspace{\difflength}\hspace{\ecv@colsep}\ecvcoloredtitle}
+  \end{minipage}
+  }
 }
 
 \fancypagestyle{first}{
 \fancyhead[R]{}
 \fancyhead[L]{
-\noindent
-\begin{minipage}{0.5\textwidth}
-\noindent\makebox[\ecv@leftcolwidth][l]{\noindent\raisebox{-0.52\height}[0pt][0pt]{\if@ecvlogo\includegraphics[width=\ecv@logowidth]{europasslogo2013.pdf}\fi}}
-\hspace*{\ecv@leftcolwidth}\hspace*{\ecv@colsep}\noindent
-\raisebox{\dp\strutbox}{\ecvcoloredtitle}
-\end{minipage}
-}
+  \setlength{\difflength}{\ecv@leftcolwidth}
+  \addtolength{\difflength}{-\ecv@logowidth}
+  \noindent
+  \begin{minipage}{0.5\textwidth}
+    \noindent\makebox[\ecv@leftcolwidth][l]{\noindent\raisebox{-10.5pt}[0pt][0pt]{\if@ecvlogo\includegraphics[width=\ecv@logowidth]{europasslogo2013.pdf}\else \hspace{\ecv@logowidth}\fi}\hspace{\difflength}\hspace{\ecv@colsep}\ecvcoloredtitle}
+  \end{minipage}
+  }
 }
 
 \thispagestyle{first}
@@ -698,7 +698,12 @@
     \message{[europasscv] typesetting ^^J}
     \message{[europasscv] \meaning\ecv@secondarg^^J}
     \message{[europasscv] \meaning\ecv@thirdarg^^J}
-    \message{[europasscv] ecvitemskip = \if@ecvitemskip true, skipping \the\ecv@currentskip \else false\fi}
+    \message{[europasscv] ecvitemskip = \if@ecvitemskip true, skipping \the\ecv@currentskip \else false\fi^^J}
+    \message{[europasscv] leftcolwidth = \the\ecv@leftcolwidth^^J}
+%     \message{[europasscv] tabcolsep = \the\tabcolsep^^J}
+    \message{[europasscv] ecv@colsep = \the\ecv@colsep^^J}
+    \message{[europasscv] rightcolwidth = \the\ecv@rightcolwidth^^J}
+    \message{[europasscv] textwidth = \the\textwidth^^J}
   \fi
 
   \if@ecvitemskip
