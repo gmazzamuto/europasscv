@@ -594,20 +594,13 @@
 \newlength\ecv@leftcolwidth
 \newlength\ecv@rightcolwidth
 \newlength\ecv@extrarowheight
-\newlength\ecv@leftboxwidth
-\newlength\ecv@rightboxwidth
 \newcommand*{\ecvRuleWidth}[1]{\setlength\ecv@rulewidth{#1}}
-\newcommand*{\ecvColSep}[1]{%
-  \setlength\ecv@colsep{#1}
-  \addtolength{\ecv@rightcolwidth}{-\ecv@colsep}
-  \addtolength{\ecv@rightboxwidth}{-\ecv@colsep}
-  }
-\newcommand*{\ecvLeftColumnWidth}[1]{\setlength\ecv@leftcolwidth{#1}%
-             \setlength{\ecv@rightcolwidth}{\textwidth}
-            \addtolength{\ecv@rightcolwidth}{-\ecv@leftcolwidth}
-            \addtolength{\ecv@rightcolwidth}{-\ecv@rulewidth}
-	    \setlength{\ecv@rightboxwidth}{\ecv@rightcolwidth}
-	    \setlength{\ecv@leftboxwidth}{\ecv@leftcolwidth}
+\newcommand*{\ecvColSep}[1]{\setlength\ecv@colsep{#1}}
+\newcommand*{\ecvLeftColumnWidth}[1]{
+    \setlength\ecv@leftcolwidth{#1}
+    \setlength{\ecv@rightcolwidth}{\textwidth}
+    \addtolength{\ecv@rightcolwidth}{-\ecv@leftcolwidth}
+    \addtolength{\ecv@rightcolwidth}{-\ecv@colsep}
 }
 \newcommand*{\ecvExtraRowHeight}[1]{\setlength\ecv@extrarowheight{#1}}
 \newcommand*{\ecvNoHorRule}{\def\ecv@hrule{}}
