@@ -690,6 +690,7 @@
   \setlength{\baselineskip}{1.5\ht\strutbox}
   }p{#1}
 }
+\newcolumntype{R}[1]{>{\raggedleft}p{#1}}
 \newcommand\ecvitem[3][\ecv@itemskip]{%
   \if@ecvdebug
     \renewcommand{\ecv@secondarg}{#2}
@@ -719,9 +720,11 @@
 
   \setlength\ecv@itemizeskip{-\ht\strutbox}\addtolength{\ecv@itemizeskip}{-2\dp\strutbox}
 
-  \begin{tabular}{@{}p{\ecv@leftcolwidth}@{\extracolsep{\ecv@colsep}}P{\ecv@rightcolwidth}@{}}
-  \if@ecvdebug\cellcolor{yellow!25}\fi \raggedleft #2 & \if@ecvdebug\cellcolor{blue!25}\fi #3
+  \noindent\begin{tabular}{@{}R{\ecv@leftcolwidth}@{\hspace{\ecv@colsep}}P{\ecv@rightcolwidth}@{}}
+  \if@ecvdebug\cellcolor{yellow!25}\fi #2 & \if@ecvdebug\cellcolor{blue!25}\fi #3
   \end{tabular}
+  % do not delete the blank line below
+
   \@ecvitemskiptrue
   \@ecvlastitemwassectionfalse
   \@ecvitemcommandtrue
@@ -729,7 +732,7 @@
 
 \newlength{\ecv@sectionrulelength}
 
-\newcommand{\ecvsection}[2][1.3\bigskipamount]{%
+\newcommand{\ecvsection}[2][\bigskipamount]{%
   \@ecvitemcommandfalse
   \setlength{\ecv@sectionrulelength}{\ecv@rightcolwidth}
   \addtolength{\ecv@sectionrulelength}{-7pt}
@@ -758,9 +761,9 @@
  #3}
 }
 
-\newcommand{\ecvbigitem}[3][\bigskipamount]{
+\newcommand{\ecvbigitem}[3][0.8\bigskipamount]{
   \ecvitem[#1]{\ecvsectionstyle{#2}}{\ecvlargenormalstyle{#3}}
-  \vspace{\bigskipamount}
+  \vspace{0.8\bigskipamount}
   \@ecvitemskipfalse
 }
 
