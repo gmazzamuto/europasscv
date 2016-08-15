@@ -431,6 +431,30 @@
 \ecvpicture{}
 
 
+% see http://tex.stackexchange.com/a/12811
+\def\processlinks#1{%
+    \begingroup
+    \edef\@tempa{#1\space}%
+    \expandafter\endgroup
+    \expandafter\readwords\@tempa\relax
+}
+\def\readwords#1 #2\relax{%
+      \convertstring{#1}%  #1 = substr, #2 = rest of string
+      \begingroup
+      \ifx\relax#2\relax  % is #2 empty?
+         \def\next{\endgroup}% your own end-macro if required
+      \else
+	 \quad
+         \def\next{\endgroup\readwords#2\relax}%
+      \fi
+      \next
+}
+
+\newif\if@processlinks@converttoemail
+\def\convertstring#1{\if@processlinks@converttoemail \toemail{#1} \else \tourl{#1} \fi}
+\def\tourl#1{\setul{.5pt}{.4pt}\href{#1}{\ul{\mbox{#1}}}}
+\def\toemail#1{\setul{.5pt}{.4pt}\href{mailto:#1}{\ul{\mbox{#1}}}}
+
 \newif\if@ecvpineedspipe\@ecvpineedspipefalse
 \providecommand{\ecvpersonalinfo}[1][0pt]{%
   \ecvitem[#1]{ %  left column
@@ -460,10 +484,12 @@
 	  \ecv@faxkey \ecv@fax
       \fi
       \ifx\@empty\ecv@email\else
-	  \raisebox{-2\lineskip}{\includegraphics[width=0.4cm]{mail_europass_icon.pdf}}\hspace{0.2mm} {\fontseries{m}\selectfont \setul{.5pt}{.4pt}\href{mailto:\ecv@email}{\ul{\mbox{\ecv@email}}}} \newline
+	  \@processlinks@converttoemailtrue
+	  \raisebox{-2\lineskip}{\includegraphics[width=0.4cm]{mail_europass_icon.pdf}}\hspace{0.2mm} {\fontseries{m}\selectfont \processlinks{\ecv@email}} \newline
+	  \@processlinks@converttoemailfalse
       \fi
       \ifx\@empty\ecv@homepage\else
-	  \raisebox{-2\lineskip}{\includegraphics[width=0.4cm]{website_europass_icon.pdf}}\hspace{0.2mm} {\fontseries{m}\selectfont \setul{.5pt}{.4pt}\href{\ecv@homepage}{\ul{\mbox{\ecv@homepage}}}} \newline
+	  \raisebox{-2\lineskip}{\includegraphics[width=0.4cm]{website_europass_icon.pdf}}\hspace{0.2mm} {\fontseries{m}\selectfont \processlinks{\ecv@homepage}} \newline
       \fi
       \ifx\@empty\ecv@im\else
 	  \raisebox{-2\lineskip}{\includegraphics[width=0.4cm]{im_europass_icon.pdf}} \hspace{0.2mm}{\fontseries{m}\selectfont \ecv@im} \newline
