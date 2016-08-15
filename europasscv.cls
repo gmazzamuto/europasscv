@@ -396,6 +396,9 @@
 \newcommand*{\ecvdateofbirth}[1]{\def\ecv@birth{#1}\@ecvpiextrafieldstrue}
 \newcommand*{\ecvgender}[1]{\def\ecv@gender{#1}\@ecvpiextrafieldstrue}
 % Personal picture
+\newif\if@ecvpictureright\@ecvpicturerighttrue
+\newif\if@ecvpictureleft
+\newcommand*{\ecvpictureleft}{\@ecvpicturerightfalse \@ecvpicturelefttrue}
 \newcommand*{\ecvdrawpicture}{}
 \newcommand*{\ecvbeforepicture}[1]{\def\ecv@beforepic{#1}}
 \newcommand*{\ecvafterpicture}[1]{\def\ecv@afterpic{#1}}
@@ -430,62 +433,74 @@
 
 \newif\if@ecvpineedspipe\@ecvpineedspipefalse
 \providecommand{\ecvpersonalinfo}[1][0pt]{%
-\ecvitem[#1]{\ecvsectionstyle{\ecv@infosectionkey}}{
-\begin{doublespacing}
-\begin{tabular}[t]{@{}p{\if@ecvpicture 0.7\ecv@rightcolwidth \else \ecv@rightcolwidth\fi}@{}p{\if@ecvpicture 0.3\ecv@rightcolwidth \else 0pt\fi}@{}}
-\raggedright
-{\ecvLargenormalstyle{\ecv@name}} \newline
-\ifx\@empty\ecv@address\else
-    \raisebox{-2\lineskip}{\includegraphics[width=0.4cm]{address_europass_icon.pdf}}\hspace{0.2mm} {\fontseries{m}\selectfont \ecv@address} \newline
-\fi
-\ifx\@empty\ecv@mobile
-  \ifx\@empty\ecv@telephone\else
-      \raisebox{-2\lineskip}{\includegraphics[width=0.4cm]{telephone_europass_icon.pdf}}\hspace{0.2mm} {\fontseries{m}\selectfont \ecv@telephone} \newline
-  \fi
-\else
-  \raisebox{-2\lineskip}{\includegraphics[width=0.4cm]{mobile_europass_icon.pdf}}\hspace{0.2mm} {\fontseries{m}\selectfont \ecv@mobile} \quad \ifx\@empty\ecv@telephone\else  \raisebox{-2\lineskip}{\includegraphics[width=0.4cm]{telephone_europass_icon.pdf}}\hspace{0.2mm} {\fontseries{m}\selectfont \ecv@telephone\ \newline}\fi
-\fi
-\ifx\@empty\ecv@fax\else
-    \ecv@faxkey \ecv@fax 
-\fi
-\ifx\@empty\ecv@email\else
-    \raisebox{-2\lineskip}{\includegraphics[width=0.4cm]{mail_europass_icon.pdf}}\hspace{0.2mm} {\fontseries{m}\selectfont \setul{.5pt}{.4pt}\href{mailto:\ecv@email}{\ul{\mbox{\ecv@email}}}} \newline
-\fi
-\ifx\@empty\ecv@homepage\else
-    \raisebox{-2\lineskip}{\includegraphics[width=0.4cm]{website_europass_icon.pdf}}\hspace{0.2mm} {\fontseries{m}\selectfont \setul{.5pt}{.4pt}\href{\ecv@homepage}{\ul{\mbox{\ecv@homepage}}}} \newline
-\fi
-\ifx\@empty\ecv@im\else
-    \raisebox{-2\lineskip}{\includegraphics[width=0.4cm]{im_europass_icon.pdf}} \hspace{0.2mm}{\fontseries{m}\selectfont \ecv@im} \newline
-\fi
-  \ifx\@empty\ecv@gender\else
-      \if@ecvpineedspipe\else \hspace*{-0.5ex}\fi
-      \fontseries{m}\selectfont \ecvhighlight{~\if@ecvpineedspipe | \fi \ecv@genderkey} \ecv@gender \@ecvpineedspipetrue
-  \fi
-  \ifx\@empty\ecv@birth\else
-      \if@ecvpineedspipe\else \hspace*{-0.5ex}\fi
-      \fontseries{m}\selectfont \ecvhighlight{~\if@ecvpineedspipe | \fi\ecv@birthkey} \ecv@birth \@ecvpineedspipetrue
-  \fi
-  \if@ecvpicture
-      \ifx\@empty\ecv@nationality\else
-	    \ifx\@empty\ecv@gender\else
-		\ifx\@empty\ecv@birth\else
-		    \linebreak
-		    \@ecvpineedspipefalse
-		\fi
-	    \fi
+  \ecvitem[#1]{ %  left column
+    \ecvsectionstyle{\ecv@infosectionkey}
+    \if@ecvpicture
+      \if@ecvpictureleft
+	\raisebox{-\height}{\ecvdrawpicture}
       \fi
-  \fi
-  \ifx\@empty\ecv@nationality\else
-      \if@ecvpineedspipe\else \hspace*{-0.5ex}\fi
-      \fontseries{m}\selectfont \ecvhighlight{~\if@ecvpineedspipe | \fi \ecv@nationalitykey}~\ecv@nationality \@ecvpineedspipetrue
-  \fi
-& 
-\Large \vspace{-\baselineskip}
-\raisebox{-\height}{\ecvdrawpicture}
-\end{tabular}
-\end{doublespacing}
-}
-\ecvspace{\ecv@afterpic}
+    \fi
+    }
+    { %  right column
+    \begin{doublespacing}
+    \begin{tabular}[t]{@{}p{\if@ecvpicture \if@ecvpictureleft \ecv@rightcolwidth \else 0.7\ecv@rightcolwidth \fi \else \ecv@rightcolwidth\fi}@{}p{\if@ecvpicture 0.3\ecv@rightcolwidth \else 0pt\fi}@{}}
+      \raggedright
+      {\ecvLargenormalstyle{\ecv@name}} \newline
+      \ifx\@empty\ecv@address\else
+	  \raisebox{-2\lineskip}{\includegraphics[width=0.4cm]{address_europass_icon.pdf}}\hspace{0.2mm} {\fontseries{m}\selectfont \ecv@address} \newline
+      \fi
+      \ifx\@empty\ecv@mobile
+	\ifx\@empty\ecv@telephone\else
+	    \raisebox{-2\lineskip}{\includegraphics[width=0.4cm]{telephone_europass_icon.pdf}}\hspace{0.2mm} {\fontseries{m}\selectfont \ecv@telephone} \newline
+	\fi
+      \else
+	\raisebox{-2\lineskip}{\includegraphics[width=0.4cm]{mobile_europass_icon.pdf}}\hspace{0.2mm} {\fontseries{m}\selectfont \ecv@mobile} \quad \ifx\@empty\ecv@telephone\else  \raisebox{-2\lineskip}{\includegraphics[width=0.4cm]{telephone_europass_icon.pdf}}\hspace{0.2mm} {\fontseries{m}\selectfont \ecv@telephone\ \newline}\fi
+      \fi
+      \ifx\@empty\ecv@fax\else
+	  \ecv@faxkey \ecv@fax
+      \fi
+      \ifx\@empty\ecv@email\else
+	  \raisebox{-2\lineskip}{\includegraphics[width=0.4cm]{mail_europass_icon.pdf}}\hspace{0.2mm} {\fontseries{m}\selectfont \setul{.5pt}{.4pt}\href{mailto:\ecv@email}{\ul{\mbox{\ecv@email}}}} \newline
+      \fi
+      \ifx\@empty\ecv@homepage\else
+	  \raisebox{-2\lineskip}{\includegraphics[width=0.4cm]{website_europass_icon.pdf}}\hspace{0.2mm} {\fontseries{m}\selectfont \setul{.5pt}{.4pt}\href{\ecv@homepage}{\ul{\mbox{\ecv@homepage}}}} \newline
+      \fi
+      \ifx\@empty\ecv@im\else
+	  \raisebox{-2\lineskip}{\includegraphics[width=0.4cm]{im_europass_icon.pdf}} \hspace{0.2mm}{\fontseries{m}\selectfont \ecv@im} \newline
+      \fi
+	\ifx\@empty\ecv@gender\else
+	    \if@ecvpineedspipe\else \hspace*{-0.5ex}\fi
+	    \fontseries{m}\selectfont \ecvhighlight{~\if@ecvpineedspipe | \fi \ecv@genderkey} \ecv@gender \@ecvpineedspipetrue
+	\fi
+	\ifx\@empty\ecv@birth\else
+	    \if@ecvpineedspipe\else \hspace*{-0.5ex}\fi
+	    \fontseries{m}\selectfont \ecvhighlight{~\if@ecvpineedspipe | \fi\ecv@birthkey} \ecv@birth \@ecvpineedspipetrue
+	\fi
+	\if@ecvpictureright
+	  \if@ecvpicture
+	    \ifx\@empty\ecv@nationality\else
+	      \ifx\@empty\ecv@gender\else
+		\ifx\@empty\ecv@birth\else
+		\linebreak
+		\@ecvpineedspipefalse
+		\fi
+	      \fi
+	    \fi
+	  \fi
+	\fi
+	\ifx\@empty\ecv@nationality\else
+	    \if@ecvpineedspipe\else \hspace*{-0.5ex}\fi
+	    \fontseries{m}\selectfont \ecvhighlight{~\if@ecvpineedspipe | \fi \ecv@nationalitykey}~\ecv@nationality \@ecvpineedspipetrue
+	\fi
+      &
+      \if@ecvpictureright
+	\Large \vspace{-\baselineskip}
+	\raisebox{-\height}{\ecvdrawpicture}
+      \fi
+    \end{tabular}
+    \end{doublespacing}
+  }
+  \ecvspace{\ecv@afterpic}
 }
 
 % Spoken language information
