@@ -1,3 +1,12 @@
+<a name="2016-08-16"></a>
+
+# Version 2016-08-16
+
+* add option to put photo to the left
+* add multiple email addresses and websites in the personal information section
+* fix underfull and overfull hbox warnings
+
+
 <a name="2015-05-15"></a>
 
 # Version 2016-05-15
