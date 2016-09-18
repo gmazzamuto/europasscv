@@ -30,7 +30,7 @@
 \def\ecv@productkey{\ecv@utf{Umiej\k{e}tno\'sci zawodowe}}
 \def\ecv@langshortdesckey{\ecv@utf{Poziomy: A1/A2: Podstawowy -- B1/B2: Samodzielno\'sci -- C1/C2: Bieg\l{}o\'sci}}
 \def\ecv@langfooterkey{\ecv@utf{Europejski system opisu kszta\l{}cenia j\k{e}zykowego (CEF)}}
-\def\ecv@langlinkkey{\ecv@utf{http://europass.cedefop.europa.eu/en/resources/european-language-levels-cefr}}
+\def\ecv@langlinkkey{\ecv@utf{http://europass.cedefop.europa.eu/pl/resources/european-language-levels-cefr}}
 \def\ecv@cefbasickey{\ecv@utf{Podstawowy}}
 \def\ecv@cefindepkey{\ecv@utf{Samodzielno\'sci}}
 \def\ecv@cefprofkey{\ecv@utf{Bieg\l{}o\'sci}}
