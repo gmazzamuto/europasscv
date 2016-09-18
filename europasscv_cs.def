@@ -1,0 +1,45 @@
+%!TEX encoding = UTF-8 Unicode
+%
+% Translation completed on 2016/09/09
+\ProvidesFile{europasscv_cs.def}[europecv Czech definitions]
+\def\ecv@currvitaekey{\ecv@utf{{\v Z}ivotopis}}
+% Personal information
+\def\ecv@infosectionkey{\ecv@utf{Osobn{\'\i} {\'u}daje}}
+\def\ecv@namekey{\ecv@utf{Jm{\'e}no / P{\v r}{\'\i}jmen{\'\i}}}
+\def\ecv@addresskey{\ecv@utf{Adresa}}
+\def\ecv@telkey{\ecv@utf{Telefon}}
+\def\ecv@mobilekey{\ecv@utf{Mobiln{\'\i} telefon}}
+\def\ecv@faxkey{\ecv@utf{Fax}}
+\def\ecv@emailkey{\ecv@utf{E-mail}}
+\def\ecv@nationalitykey{\ecv@utf{St{\'a}tn{\'\i} p{\v r}{\'\i}slu{\v s}nost}}
+\def\ecv@birthkey{\ecv@utf{Datum narozen{\'\i}}}
+\def\ecv@genderkey{\ecv@utf{Pohlav{\'\i}}}
+% Footer
+\def\ecv@pagekey{\ecv@utf{Strana}}
+\def\ecv@cvofkey{\ecv@utf{{\v Z}ivotopis}}
+% Language table
+\def\ecv@mothertonguekey{\ecv@utf{Mate{\v r}sk{\'y} jazyk(y)}}
+\def\ecv@otherlanguageskey{\ecv@utf{Dal{\v s}{\'i} jazyky}}
+\def\ecv@assesskey{\ecv@utf{Sebehodnocen{\'i}}}
+\def\ecv@levelkey{\ecv@utf{Evropsk{\'a} {\'u}rove{\v n}}}
+\def\ecv@understandkey{\ecv@utf{Porozum{\v e}n{\'\i}}}
+\def\ecv@speakkey{\ecv@utf{Mluven{\'\i}}}
+\def\ecv@writekey{\ecv@utf{Psan{\'\i}}}
+\def\ecv@listenkey{\ecv@utf{Poslech}}
+\def\ecv@readkey{\ecv@utf{{\v C}ten{\'\i}}}
+\def\ecv@interactkey{\ecv@utf{{\'U}stn{\'\i} interakce}}
+\def\ecv@productkey{\ecv@utf{Samostatn{\'y} {\'u}stn{\'\i} projev}}
+\def\ecv@langshortdesckey{\ecv@utf{{\'U}rovn{\v e}: A1/A2: U{\v z}ivatel z{\'a}klad{\r u} jazyka -- B1/B2: Samostatn{\'y} u{\v z}ivatel -- C1/C2: Zku{\v s}en{\'y} u{\v z}ivatel}}
+\def\ecv@langfooterkey{\ecv@utf{Spole{\v c}n{\'y} evropsk{\'y} referen{\v c}n{\'\i} r{\'a}mec pro jazyky}}
+\def\ecv@langlinkkey{\ecv@utf{http://europass.cedefop.europa.eu/cs/resources/european-language-levels-cefr}}
+\def\ecv@cefbasickey{\ecv@utf{U{\v z}ivatel z{\'a}klad{\r u} jazyka}}
+\def\ecv@cefindepkey{\ecv@utf{Samostatn{\'y} u{\v z}ivatel}}
+\def\ecv@cefprofkey{\ecv@utf{Zku{\v s}en{\'y} u{\v z}ivatel}}
+\def\ecv@europeanunionkey{\ecv@utf{Evropsk{\'a} unie}}
+
+% Width of language columns
+\def\ecv@langcola{0.15}
+\def\ecv@langcolb{0.15}
+\def\ecv@langcolc{0.25}
+\def\ecv@langcold{0.25}
+\def\ecv@langcole{0.2}
