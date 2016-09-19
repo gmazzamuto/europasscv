@@ -1,7 +1,7 @@
 %!TEX encoding = UTF-8 Unicode
 %
 %
-\ProvidesFile{ecven.def}[europecv German definitions]
+\ProvidesFile{europasscv_de.def}[europasscv German definitions]
 % Personal information
 \def\ecv@infosectionkey{\ecv@utf{Angaben zur Person}}
 \def\ecv@namekey{\ecv@utf{Nachname(n) / Vorname(n)}}

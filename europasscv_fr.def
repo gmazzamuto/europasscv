@@ -1,5 +1,6 @@
 %!TEX encoding = UTF-8 Unicode
 %
+\ProvidesFile{europasscv_fr.def}[europasscv French definitions]
 % Informations personnelles
 \def\ecv@infosectionkey{\ecv@utf{Informations personnelles}}
 \def\ecv@namekey{\ecv@utf{Nom(s) / Pr\'enom(s)}}

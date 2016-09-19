@@ -1,7 +1,7 @@
 %!TEX encoding = UTF-8 Unicode
 %
 % Translation completed on 2016/09/09
-\ProvidesFile{europasscv_cs.def}[europecv Czech definitions]
+\ProvidesFile{europasscv_cs.def}[europasscv Czech definitions]
 \def\ecv@currvitaekey{\ecv@utf{{\v Z}ivotopis}}
 % Personal information
 \def\ecv@infosectionkey{\ecv@utf{Osobn{\'\i} {\'u}daje}}

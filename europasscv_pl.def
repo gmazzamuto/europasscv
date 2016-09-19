@@ -1,7 +1,7 @@
 %!TEX encoding = UTF-8 Unicode
 %
 %
-\ProvidesFile{europasscv_pl.def}[europecv Polish definitions]
+\ProvidesFile{europasscv_pl.def}[europasscv Polish definitions]
 % Personal information
 \def\ecv@infosectionkey{\ecv@utf{Dane osobowe}}
 \def\ecv@namekey{\ecv@utf{Nazwisko / Imi\k{e}}}

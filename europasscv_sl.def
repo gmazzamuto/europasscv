@@ -1,7 +1,7 @@
 %!TEX encoding = UTF-8 Unicode
 %
 %
-\ProvidesFile{ecvsl.def}[europecv Slovenian definitions]
+\ProvidesFile{europasscv_sl.def}[europasscv Slovenian definitions]
 % Personal information
 \def\ecv@infosectionkey{\ecv@utf{Osebni podatki}}
 \def\ecv@namekey{\ecv@utf{Ime~/ Priimek}}

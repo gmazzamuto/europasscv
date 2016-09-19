@@ -1,7 +1,7 @@
 %!TEX encoding = UTF-8 Unicode
 %
 %
-\ProvidesFile{ecvpt.def}[europecv Portuguese definitions]
+\ProvidesFile{europasscv_pt.def}[europasscv Portuguese definitions]
 % Personal information
 \def\ecv@infosectionkey{\ecv@utf{Informa\c{c}\~ao pessoal}}
 \def\ecv@namekey{\ecv@utf{Nome(s) Apelido(s)}}
