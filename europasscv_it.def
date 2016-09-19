@@ -1,7 +1,7 @@
 %!TEX encoding = UTF-8 Unicode
 %
 % 
-\ProvidesFile{ecvit.def}[europecv Italian definitions]
+\ProvidesFile{europasscv_it.def}[europasscv Italian definitions]
 % Personal information
 \def\ecv@infosectionkey{\ecv@utf{Informazioni personali}}
 \def\ecv@namekey{\ecv@utf{Nome e cognome}}

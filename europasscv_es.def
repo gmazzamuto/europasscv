@@ -1,7 +1,7 @@
 %!TEX encoding = UTF-8 Unicode
 %
 %
-\ProvidesFile{europasscv_es.def}[europecv Spanish definitions]
+\ProvidesFile{europasscv_es.def}[europasscv Spanish definitions]
 \def\ecv@currvitaekey{\ecv@utf{Curr\'{i}culum vitae}}
 % Personal information
 \def\ecv@infosectionkey{\ecv@utf{Informaci\'{o}n personal}}
