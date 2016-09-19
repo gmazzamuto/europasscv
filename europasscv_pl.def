@@ -1,7 +1,7 @@
 %!TEX encoding = UTF-8 Unicode
 %
 %
-\ProvidesFile{ecvpl.def}[europecv Polish definitions]
+\ProvidesFile{europasscv_pl.def}[europecv Polish definitions]
 % Personal information
 \def\ecv@infosectionkey{\ecv@utf{Dane osobowe}}
 \def\ecv@namekey{\ecv@utf{Nazwisko / Imi\k{e}}}
@@ -19,15 +19,15 @@
 % Language table
 \def\ecv@mothertonguekey{\ecv@utf{J\k{e}zyk ojczysty}}
 \def\ecv@otherlanguageskey{\ecv@utf{Inne j\k{e}zyki}}
-\def\ecv@assesskey{\ecv@utf{Samodzielne wypowiadanie si\k{e}}}
+\def\ecv@assesskey{\ecv@utf{Samoocena}}
 \def\ecv@levelkey{\ecv@utf{Poziom europejski}}
-\def\ecv@understandkey{\ecv@utf{Porozumiewanie si\k{e}}}
-\def\ecv@speakkey{\ecv@utf{W mowie}}
-\def\ecv@writekey{\ecv@utf{W pi\'smie}}
+\def\ecv@understandkey{\ecv@utf{Rozumienie}}
+\def\ecv@speakkey{\ecv@utf{M\'owienie}}
+\def\ecv@writekey{\ecv@utf{Pisanie}}
 \def\ecv@listenkey{\ecv@utf{S\l{}uchanie}}
-\def\ecv@readkey{\ecv@utf{M\'owienie}}
-\def\ecv@interactkey{\ecv@utf{Umiej\k{e}tno\'sci organizacyjne / kierownicze}}
-\def\ecv@productkey{\ecv@utf{Umiej\k{e}tno\'sci zawodowe}}
+\def\ecv@readkey{\ecv@utf{Czytanie}}
+\def\ecv@interactkey{\ecv@utf{Porozumiewanie si\k{e}}}
+\def\ecv@productkey{\ecv@utf{Samodzielne wypowiadanie si\k{e}}}
 \def\ecv@langshortdesckey{\ecv@utf{Poziomy: A1/A2: Podstawowy -- B1/B2: Samodzielno\'sci -- C1/C2: Bieg\l{}o\'sci}}
 \def\ecv@langfooterkey{\ecv@utf{Europejski system opisu kszta\l{}cenia j\k{e}zykowego (CEF)}}
 \def\ecv@langlinkkey{\ecv@utf{http://europass.cedefop.europa.eu/pl/resources/european-language-levels-cefr}}
