@@ -384,7 +384,7 @@
 \newcommand*{\ecvname}[1]{\def\ecv@name{#1}} % Replaces the above
 \newcommand*{\ecvfootername}[1]{\def\ecv@footername{#1}}
 \newcommand*{\ecvaddress}[1]{\def\ecv@address{#1}}
-\newcommand*{\ecvtelephone}[2][]{\def\ecv@telephone{#2}\def\ecv@mobile{#1}}
+\newcommand*{\ecvtelephone}[3][]{\def\ecv@telephone{#2}\def\ecv@mobile{#1}\def\ecv@workphone{#3}}
 \newcommand*{\ecvfax}[1]{\def\ecv@fax{#1}}
 \newcommand*{\ecvemail}[1]{\def\ecv@email{#1}}
 \newcommand*{\ecvhomepage}[1]{\def\ecv@homepage{#1}}
@@ -421,7 +421,7 @@
 \ecvname{\ecv@lastname\ \ecv@firstname}
 \ecvfootername{\ecv@name}
 \ecvaddress{}
-\ecvtelephone{}
+\ecvtelephone{}{}
 \ecvfax{}
 \ecvemail{}
 \ecvhomepage{}
@@ -456,6 +456,7 @@
 \def\toemail#1{\setul{.5pt}{.4pt}\href{mailto:#1}{\ul{\mbox{#1}}}}
 
 \newif\if@ecvpineedspipe\@ecvpineedspipefalse
+\newif\if@ecvphoneispresent\@ecvphoneispresentfalse
 \providecommand{\ecvpersonalinfo}[1][0pt]{%
   \ecvitem[#1]{ %  left column
     \ecvsectionstyle{\ecv@infosectionkey}
@@ -474,12 +475,20 @@
 	  \raisebox{-2\lineskip}{\includegraphics[width=0.4cm]{address_europass_icon.pdf}}\hspace{0.2mm} {\fontseries{m}\selectfont \ecv@address} \newline
       \fi
       \ifx\@empty\ecv@mobile
-	\ifx\@empty\ecv@telephone\else
-	    \raisebox{-2\lineskip}{\includegraphics[width=0.4cm]{telephone_europass_icon.pdf}}\hspace{0.2mm} {\fontseries{m}\selectfont \ecv@telephone} \newline
-	\fi
-      \else
-	\raisebox{-2\lineskip}{\includegraphics[width=0.4cm]{mobile_europass_icon.pdf}}\hspace{0.2mm} {\fontseries{m}\selectfont \ecv@mobile} \quad \ifx\@empty\ecv@telephone\else  \raisebox{-2\lineskip}{\includegraphics[width=0.4cm]{telephone_europass_icon.pdf}}\hspace{0.2mm} {\fontseries{m}\selectfont \ecv@telephone\ \newline}\fi
+      \else\@ecvphoneispresenttrue
+        \raisebox{-2\lineskip}{\includegraphics[width=0.4cm]{mobile_europass_icon.pdf}}\hspace{0.2mm} {\fontseries{m}\selectfont \ecv@mobile} \quad
       \fi
+	  \ifx\@empty\ecv@telephone
+	  \else\@ecvphoneispresenttrue
+        \raisebox{-2\lineskip}{\includegraphics[width=0.4cm]{telephone_europass_icon.pdf}}\hspace{0.2mm} {\fontseries{m}\selectfont \ecv@telephone} \quad
+      \fi
+      \ifx\@empty\ecv@workphone
+      \else\@ecvphoneispresenttrue
+        \raisebox{-2\lineskip}{\includegraphics[width=0.4cm]{work_europass_icon.pdf}}\hspace{0.2mm} {\fontseries{m}\selectfont \ecv@workphone}
+      \fi
+      \if@ecvphoneispresent
+        \newline
+      \fi          
       \ifx\@empty\ecv@fax\else
 	  \ecv@faxkey \ecv@fax
       \fi
