@@ -35,6 +35,18 @@
 \def\ecv@cefindepkey{\ecv@utf{Utente autonomo}}
 \def\ecv@cefprofkey{\ecv@utf{Utente avanzato}}
 \def\ecv@europeanunionkey{\ecv@utf{Unione Europea}}
+% Digital competences self-assessment grid
+\def\ecv@digitalcompetenceskey{\ecv@utf{Competenze digitali}}
+\def\ecv@informationprocessingkey{\ecv@utf{Elaborazione delle informazioni}}
+\def\ecv@communicationkey{\ecv@utf{Comunicazione}}
+\def\ecv@contentcreationkey{\ecv@utf{Creazione di Contenuti}}
+\def\ecv@safetykey{\ecv@utf{Sicurezza}}
+\def\ecv@problensolvingkey{\ecv@utf{Risoluzione die problemi}}
+\def\ecv@digcompfooterkey{\ecv@utf{Competenze digitali - Scheda per l'autovalutazione}}
+\def\ecv@digcomplinkkey{\ecv@utf{http://europass.cedefop.europa.eu/it/resources/digital-competences}}
+\def\ecv@dcbasickey{\ecv@utf{Utente base}}
+\def\ecv@dcindepkey{\ecv@utf{Utente autonomo}}
+\def\ecv@dcprofkey{\ecv@utf{Utente avanzato}}
 
 % Width of language columns
 \def\ecv@langcola{0.15}
