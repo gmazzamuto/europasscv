@@ -627,7 +627,7 @@
 \newcommand*\ecvCOne{C1}
 \newcommand*\ecvCTwo{C2}
 
-
+\def\ecv@dccol{0.2}
 \newcommand*\ecvdigitalcompetence[5]{%
 	%header
 	\setlength{\arrayrulewidth}{\ecv@langouterborderwidth}
@@ -653,9 +653,9 @@
 	\renewcommand{\arraystretch}{0}
 }
 
-\newcommand*\ecvBasic{\ecv@cefbasickey}
-\newcommand*\ecvIndependent{\ecv@cefindepkey}
-\newcommand*\ecvProficient{\ecv@cefprofkey}
+\newcommand*\ecvBasic{\ecv@dcbasickey}
+\newcommand*\ecvIndependent{\ecv@dcindepkey}
+\newcommand*\ecvProficient{\ecv@dcprofkey}
 
 \def\ecv@kern{\kern0.5pt}
 %\def\ecv@kern{}

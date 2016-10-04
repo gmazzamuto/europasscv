@@ -35,7 +35,8 @@
 \def\ecv@cefindepkey{\ecv@utf{Independent user}}
 \def\ecv@cefprofkey{\ecv@utf{Proficient user}}
 \def\ecv@europeanunionkey{\ecv@utf{European Union}}
-\def\ecv@digitalcompetenceskey{\ecv@utf{Digital competence}}
+% Digital competences self-assessment grid
+\def\ecv@digitalcompetenceskey{\ecv@utf{Digital competences}}
 \def\ecv@informationprocessingkey{\ecv@utf{Information Processing}}
 \def\ecv@communicationkey{\ecv@utf{Communication}}
 \def\ecv@contentcreationkey{\ecv@utf{Content creation}}
@@ -43,6 +44,9 @@
 \def\ecv@problensolvingkey{\ecv@utf{Problem solving}}
 \def\ecv@digcompfooterkey{\ecv@utf{Digital competences - Self-assessment grid}}
 \def\ecv@digcomplinkkey{\ecv@utf{http://europass.cedefop.europa.eu/en/resources/digital-competences}}
+\def\ecv@dcbasickey{\ecv@utf{Basic user}}
+\def\ecv@dcindepkey{\ecv@utf{Independent user}}
+\def\ecv@dcprofkey{\ecv@utf{Proficient user}}
 
 % Width of language columns
 \def\ecv@langcola{0.15}
@@ -50,6 +54,3 @@
 \def\ecv@langcolc{0.25}
 \def\ecv@langcold{0.25}
 \def\ecv@langcole{0.2}
-
-% Width of digital competence columns
-\def\ecv@dccol{0.2}

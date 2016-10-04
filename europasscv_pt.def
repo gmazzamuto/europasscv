@@ -35,6 +35,18 @@
 \def\ecv@cefindepkey{\ecv@utf{Utilizador independente}}
 \def\ecv@cefprofkey{\ecv@utf{Utilizador avan\c{c}ado}}
 \def\ecv@europeanunionkey{\ecv@utf{Uni\~ao Europeia}}
+% Digital competences self-assessment grid
+\def\ecv@digitalcompetenceskey{\ecv@utf{Compet{\^e}ncias digitais}}
+\def\ecv@informationprocessingkey{\ecv@utf{Processamento de informa\c{c}{\~a}o}}
+\def\ecv@communicationkey{\ecv@utf{Comunica\c{c}{\~a}o}}
+\def\ecv@contentcreationkey{\ecv@utf{Cria\c{c}{\~a}o de conte{\'u}dos}}
+\def\ecv@safetykey{\ecv@utf{Seguran\c{c}a}}
+\def\ecv@problensolvingkey{\ecv@utf{Resolu\c{c}{\~a}o de problemas}}
+\def\ecv@digcompfooterkey{\ecv@utf{Compet{\^e}ncias digitais - Grelha de auto-avalia\c{c}{\~a}o}}
+\def\ecv@digcomplinkkey{\ecv@utf{http://europass.cedefop.europa.eu/pt/resources/digital-competences}}
+\def\ecv@dcbasickey{\ecv@utf{Utilizador b{\'a}sico}}
+\def\ecv@dcindepkey{\ecv@utf{Utilizador independente}}
+\def\ecv@dcprofkey{\ecv@utf{Utilizador avan\c{c}ado}}
 
 % Width of language columns
 \def\ecv@langcola{0.22}

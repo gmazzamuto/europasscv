@@ -15,7 +15,7 @@
 % Pied de page
 \def\ecv@pagekey{\ecv@utf{Page}}
 \def\ecv@cvofkey{\ecv@utf{Curriculum vit\ae\ de}}
-% Grille d'Autovaluation des langues
+% Grille d'Autoévaluation des langues
 \def\ecv@mothertonguekey{\ecv@utf{Langue maternelle}}
 \def\ecv@otherlanguageskey{\ecv@utf{Autres langues}}
 \def\ecv@assesskey{\ecv@utf{Auto \'evaluation}}
@@ -28,13 +28,24 @@
 \def\ecv@interactkey{\ecv@utf{Prendre part \`a une conversation}}
 \def\ecv@productkey{\ecv@utf{S'exprimer oralement en continu}}
 \def\ecv@langlinkkey{\ecv@utf{http://europass.cedefop.europa.eu/fr/resources/european-language-levels-cefr}}
-\def\ecv@langfooterkey{\ecv@utf{Cadre européen commun de référence pour les langues}}
+\def\ecv@langfooterkey{\ecv@utf{Cadre europ{\'e}en commun de r{\'e}f{\'e}rence pour les langues}}
 \def\ecv@langshortdesckey{\ecv@utf{Niveaux: A1/A2: utilisateur \'el\'ementaire -- B1/B2: utilisateur ind\'ependant -- C1/C2: utilisateur exp\'eriment\'e}}
 \def\ecv@cefbasickey{\ecv@utf{Utilisateur \'el\'ementaire}}
 \def\ecv@cefindepkey{\ecv@utf{Utilisateur Ind\'ependant}}
 \def\ecv@cefprofkey{\ecv@utf{Utilisateur exp\'eriment\'e}}
-
 \def\ecv@europeanunionkey{\ecv@utf{Union europ\'eenne}}
+% Digital competences self-assessment grid
+\def\ecv@digitalcompetenceskey{\ecv@utf{Comp{\'e}tences num{\'e}riques}}
+\def\ecv@informationprocessingkey{\ecv@utf{Traitement de l'information}}
+\def\ecv@communicationkey{\ecv@utf{Communication}}
+\def\ecv@contentcreationkey{\ecv@utf{Cr{\'e}ation de contenu}}
+\def\ecv@safetykey{\ecv@utf{S{\'e}curit{\'e}}}
+\def\ecv@problensolvingkey{\ecv@utf{R{\'e}solution de probl{\`e}mes}}
+\def\ecv@digcompfooterkey{\ecv@utf{Comp{\'e}tences num{\'e}riques - Grille d'auto{\'e}valuation}}
+\def\ecv@digcomplinkkey{\ecv@utf{http://europass.cedefop.europa.eu/fr/resources/digital-competences}}
+\def\ecv@dcbasickey{\ecv@utf{Utilisateur {\'e}l{\'e}mentaire}}
+\def\ecv@dcindepkey{\ecv@utf{Utilisateur ind{\'e}pendant}}
+\def\ecv@dcprofkey{\ecv@utf{Utilisateur exp{\'e}riment{\'e}}}
 
 % Width of language columns
 \def\ecv@langcola{0.15}

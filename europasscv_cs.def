@@ -36,6 +36,18 @@
 \def\ecv@cefindepkey{\ecv@utf{Samostatn{\'y} u{\v z}ivatel}}
 \def\ecv@cefprofkey{\ecv@utf{Zku{\v s}en{\'y} u{\v z}ivatel}}
 \def\ecv@europeanunionkey{\ecv@utf{Evropsk{\'a} unie}}
+% Digital competences self-assessment grid
+\def\ecv@digitalcompetenceskey{\ecv@utf{Digit{\'a}ln{\'\i} dovednosti}}
+\def\ecv@informationprocessingkey{\ecv@utf{Zpracov{\'a}n{\'\i} informac{\'\i}}}
+\def\ecv@communicationkey{\ecv@utf{Komunikace}}
+\def\ecv@contentcreationkey{\ecv@utf{Vytv{\'a}{\v r}en{\'\i} obsahu}}
+\def\ecv@safetykey{\ecv@utf{Bezpe{\v c}nost}}
+\def\ecv@problensolvingkey{\ecv@utf{{\v R}e{\v s}en{\'\i} probl{\'e}mu}}
+\def\ecv@digcompfooterkey{\ecv@utf{Digit{\'a}ln{\'\i} dovednosti - Stupnice pro sebehodnocen{\'\i}}}
+\def\ecv@digcomplinkkey{\ecv@utf{http://europass.cedefop.europa.eu/cs/resources/digital-competences}}
+\def\ecv@dcbasickey{\ecv@utf{Z{\'a}kladn{\'\i} u{\v z}ivatel}}
+\def\ecv@dcindepkey{\ecv@utf{Samostatn{\'y} u{\v z}ivatel}}
+\def\ecv@dcprofkey{\ecv@utf{Zku{\v s}en{\'y} u{\v z}ivatel}}
 
 % Width of language columns
 \def\ecv@langcola{0.15}
