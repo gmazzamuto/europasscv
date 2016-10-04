@@ -202,6 +202,37 @@ which is typeset like this:
   \end{europasscv}
 \end{minipage}
 
+\subsection{Digital competences}
+
+This one is another self-assessment grid which allows to present digital competences.
+It is divided into five categories.
+For each of these, there are three competence levels available.
+To create a self-assessment grid, a single command will suffice.
+Additionally, convenient string definitions are provided to describe each level.
+In the following, an example code snippet and the resulting CV entry is presented:
+
+\begin{verbatim}
+\ecvdigitalcompetence
+    {\ecvBasic}
+    {\ecvIndependent}
+    {\ecvProficient}
+    {\ecvIndependent}
+    {\ecvBasic}
+\end{verbatim}
+
+\vspace{0.5cm}
+\hspace*{-6.5cm}
+\begin{minipage}{21cm}
+	\begin{europasscv}
+		\ecvdigitalcompetence
+			{\ecvBasic}
+			{\ecvIndependent}
+			{\ecvProficient}
+			{\ecvIndependent}
+			{\ecvBasic}
+	\end{europasscv}
+\end{minipage}
+
 \section{Advanced usage}
 
 \subsection{Class options}
