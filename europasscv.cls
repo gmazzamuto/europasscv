@@ -8,7 +8,7 @@
 % See  http://www.latex-project.org/lppl.txt
 % for the details of that license
 \NeedsTeXFormat{LaTeX2e}
-\ProvidesClass{europasscv}[2016/08/16 Europass curriculum vitae class, 2013 version]
+\ProvidesClass{europasscv}[2016/10/04 Europass curriculum vitae class, 2013 version]
 
 % CV models and instructions:
 %   http://europass.cedefop.eu.int/htm/index.htm
@@ -626,6 +626,36 @@
 \newcommand*\ecvBTwo{B2}
 \newcommand*\ecvCOne{C1}
 \newcommand*\ecvCTwo{C2}
+
+
+\newcommand*\ecvdigitalcompetence[5]{%
+	%header
+	\setlength{\arrayrulewidth}{\ecv@langouterborderwidth}
+	\ecvblueitem{\ecv@digitalcompetenceskey}{
+		\renewcommand{\arraystretch}{1.5}
+		\setlength{\ecv@langtablewidth}{\ecv@rightcolwidth}
+		\addtolength{\ecv@langtablewidth}{-4\arrayrulewidth}
+		\arrayrulecolor{ecvtablebordercolor}
+		\begin{tabular}[t]{m{\ecv@dccol\ecv@langtablewidth}|m{\ecv@dccol\ecv@langtablewidth}|m{\ecv@dccol\ecv@langtablewidth}|m{\ecv@dccol\ecv@langtablewidth}|m{\ecv@dccol\ecv@langtablewidth}}
+			\firsthline
+			\multicolumn{5}{c}{\ecvsectionstyle{\ecv@assesskey}} \tabularnewline
+			\hline
+			\centering \ecvbluestyle{\ecv@informationprocessingkey}& \centering \ecvbluestyle{\ecv@communicationkey} &\centering \ecvbluestyle{\ecv@contentcreationkey}& \centering \ecvbluestyle{\ecv@safetykey}& \centering \ecvbluestyle{\ecv@problensolvingkey} \tabularnewline
+			\hline
+			\centering{#1} &\centering{#2} &\centering{#3} &\centering{#4} &\centering{#5} \tabularnewline
+			\hline
+		\end{tabular}
+	}
+	
+	%footer
+	\nopagebreak[4]
+	\ecvitem[0.5\dp\strutbox]{}{\footnotesize \setulcolor{ecvlanglinkcolor}\setul{.5pt}{.4pt}\href{\ecv@digcomplinkkey}{\ul{\mbox{\textcolor{ecvlanglinkcolor}{\ecv@digcompfooterkey}}}}}
+	\renewcommand{\arraystretch}{0}
+}
+
+\newcommand*\ecvBasic{\ecv@cefbasickey}
+\newcommand*\ecvIndependent{\ecv@cefindepkey}
+\newcommand*\ecvProficient{\ecv@cefprofkey}
 
 \def\ecv@kern{\kern0.5pt}
 %\def\ecv@kern{}
