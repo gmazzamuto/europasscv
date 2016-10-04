@@ -39,7 +39,7 @@
 \def\ecv@digitalcompetenceskey{\ecv@utf{Digitalne kompetence}}
 \def\ecv@informationprocessingkey{\ecv@utf{Obdelava informacij}}
 \def\ecv@communicationkey{\ecv@utf{Komunikacija}}
-\def\ecv@contentcreationkey{\ecv@utf{Ustvarjanje vsebin}}
+\def\ecv@contentcreationkey{\ecv@utf{Ustvarjanje\\ vsebin}}
 \def\ecv@safetykey{\ecv@utf{Varnost}}
 \def\ecv@problensolvingkey{\ecv@utf{Re{\v s}evanje problemov}}
 \def\ecv@digcompfooterkey{\ecv@utf{Digitalne kompetence - Samoocenjevalna lestvica}}
