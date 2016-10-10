@@ -59,7 +59,9 @@ For a complete list of usable class options see section \ref{sec:classOptions}.
 
 \subsection{Personal information}
 \ecvname{Name Surname}
-\ecvtelephone[(+555) 340 123]{(+555) 555 555}{(+555) 123 456}
+\ecvtelephone{(+555) 555 555}
+\ecvworkphone{(+555) 123 456}
+\ecvmobile{(+555) 340 123}
 \hypersetup{urlcolor=black}
 \ecvemail{smith@kotmail.com another@email.com}
 \ecvhomepage{www.myhomepage.com www.another.com}
@@ -84,7 +86,9 @@ The \emph{Personal information} section shown above is specified with the comman
 \begin{verbatim}
 \ecvname{Name Surname}
 \ecvaddress{rue Wiertz, B-1047 Brussels}
-\ecvtelephone[(+555) 340 123]{(+555) 555 555}{(+555) 123 456}
+\ecvtelephone{(+555) 555 555}
+\ecvmobile{(+555) 340 123}
+\ecvworkphone{(+555) 123 456}
 \ecvemail{smith@kotmail.com another@email.com}
 \ecvhomepage{www.myhomepage.com www.another.com}
 \ecvim{AOL Messenger}{betty.smith}
@@ -295,6 +299,9 @@ You can use these colors wherever you want in your document like this
 \textcolor{colorname}{ Some text }
 \end{verbatim} 
 There is also a convenience command \texttt{\bs ecvhighlight\{ Some text \}} which typesets text in \texttt{ecvhighlightcolor}.
+
+\subsection{Deprecated commands}
+Using \texttt{\textbackslash ecvtelephone[\textit{mobile number}]\{\textit{number}\}} with the optional argument is deprecated. Please use \texttt{\textbackslash ecvmobile\{\textit{number}\}} and \texttt{\textbackslash ecvtelephone\{\textit{number}\}} instead.
 
 \section{Copyright and license}
 Europass and the Europass logo are copyright of the European Union.\footnote{See \url{http://europass.cedefop.europa.eu} for more information.} The \texttt{europasscv} class is released under The \LaTeX\ Project Public License version 1.3.\footnote{\url{http://ctan.org/license/lppl1.3}.}

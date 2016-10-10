@@ -384,7 +384,17 @@
 \newcommand*{\ecvname}[1]{\def\ecv@name{#1}} % Replaces the above
 \newcommand*{\ecvfootername}[1]{\def\ecv@footername{#1}}
 \newcommand*{\ecvaddress}[1]{\def\ecv@address{#1}}
-\newcommand*{\ecvtelephone}[3][]{\def\ecv@telephone{#2}\def\ecv@mobile{#1}\def\ecv@workphone{#3}}
+\newcommand*{\ecvtelephone}[2][]{
+  \def\ecv@telephone{#2}
+  \ifx&#1&%
+    % #1 is empty
+  \else
+    % #1 is nonempty
+    \def\ecv@mobile{#1}
+  \fi
+}
+\newcommand*{\ecvmobile}[1]{\def\ecv@mobile{#1}}
+\newcommand*{\ecvworkphone}[1]{\def\ecv@workphone{#1}}
 \newcommand*{\ecvfax}[1]{\def\ecv@fax{#1}}
 \newcommand*{\ecvemail}[1]{\def\ecv@email{#1}}
 \newcommand*{\ecvhomepage}[1]{\def\ecv@homepage{#1}}
@@ -421,7 +431,9 @@
 \ecvname{\ecv@lastname\ \ecv@firstname}
 \ecvfootername{\ecv@name}
 \ecvaddress{}
-\ecvtelephone{}{}
+\ecvtelephone{}
+\ecvmobile{}
+\ecvworkphone{}
 \ecvfax{}
 \ecvemail{}
 \ecvhomepage{}
