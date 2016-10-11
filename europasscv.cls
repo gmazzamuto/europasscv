@@ -481,7 +481,8 @@
     }
     { %  right column
     \begin{doublespacing}
-    \begin{tabular}[t]{@{}p{\if@ecvpicture \if@ecvpictureleft \ecv@rightcolwidth \else 0.7\ecv@rightcolwidth \fi \else \ecv@rightcolwidth\fi}@{}p{\if@ecvpicture 0.3\ecv@rightcolwidth \else 0pt\fi}@{}}
+    \begin{tabular}[t]{@{}p{\if@ecvpicture \if@ecvpictureleft \ecv@rightcolwidth \else 0.7\ecv@rightcolwidth \fi \else \ecv@rightcolwidth\fi}@{}p{\if@ecvpictureright 0.3\ecv@rightcolwidth \else 0pt\fi}@{}}
+      \if@ecvdebug\cellcolor{green!25}\fi
       \raggedright
       {\ecvLargenormalstyle{\ecv@name}} \newline
       \ifx\@empty\ecv@address\else
@@ -554,6 +555,7 @@
 	\fi
       &
       \if@ecvpictureright
+	\if@ecvdebug\cellcolor{red!25}\fi
 	\Large \vspace{-\baselineskip}
 	\raisebox{-\height}{\ecvdrawpicture}
       \fi
