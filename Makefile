@@ -47,7 +47,7 @@ package: class documentation tds
 	$(INSTALL) europasscv.pdf europasscv
 	$(INSTALL) europasscv_en.tex europasscv/example
 	$(INSTALL) europasscv_en.pdf europasscv/example
-	$(INSTALL) README europasscv
+	$(INSTALL) README.md europasscv
 	$(INSTALL) Makefile europasscv/Makefile.europasscv
 	$(INSTALL) Makefile europasscv/Makefile.europasscv
 	tar -cvf europasscv.tar europasscv europasscv.tds.zip
@@ -64,7 +64,7 @@ tds: class documentation
 	$(INSTALLDIR)  tds/doc/latex/europasscv/example
 	$(INSTALL) europasscv_en.pdf tds/doc/latex/europasscv/example
 	$(INSTALL) europasscv_en.tex tds/doc/latex/europasscv/example
-	$(INSTALL) README tds/doc/latex/europasscv
+	$(INSTALL) README.md tds/doc/latex/europasscv
 	$(INSTALL) europasscv.pdf tds/doc/latex/europasscv
 	$(INSTALL) europasscv.tex tds/doc/latex/europasscv
 	cd tds && zip -r europasscv.tds.zip * && mv europasscv.tds.zip ..
