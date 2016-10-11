@@ -646,16 +646,8 @@
 \renewcommand{\arraystretch}{0}
 }
 
-% See the Common European Framework of Reference for Languages:
-% http://www.coe.int/T/E/Cultural_Co-operation/education/Languages/Language_Policy/Common_Framework_of_Reference/default.asp
-\newcommand*\ecvCEF[2]{%
-%   \setlength\tabcolsep{1mm}
-
-% \begin{tabular}{@{}>{}m{.2\ecv@langparwidth}@{\hspace{1mm}}>{\centering}m{.74\ecv@langparwidth}@{}}
-% #1 & \small{#2}\tabularnewline
-% \end{tabular}
-}
-
+% commands from the old europecv class
+\newcommand*\ecvCEF[2]{}
 \newcommand*\ecvAOne{A1}
 \newcommand*\ecvATwo{A2}
 \newcommand*\ecvBOne{B1}
@@ -663,6 +655,8 @@
 \newcommand*\ecvCOne{C1}
 \newcommand*\ecvCTwo{C2}
 
+
+% Digital competences
 \def\ecv@dccol{0.2}
 \newcommand*\ecvdigitalcompetence[5]{%
 	%header
@@ -692,6 +686,7 @@
 \newcommand*\ecvBasic{\ecv@dcbasickey}
 \newcommand*\ecvIndependent{\ecv@dcindepkey}
 \newcommand*\ecvProficient{\ecv@dcprofkey}
+
 
 \def\ecv@kern{\kern0.5pt}
 %\def\ecv@kern{}
@@ -801,7 +796,6 @@
     \message{[europasscv] \meaning\ecv@thirdarg^^J}
     \message{[europasscv] ecvitemskip = \if@ecvitemskip true, skipping \the\ecv@currentskip \else false\fi^^J}
     \message{[europasscv] leftcolwidth = \the\ecv@leftcolwidth^^J}
-%     \message{[europasscv] tabcolsep = \the\tabcolsep^^J}
     \message{[europasscv] ecv@colsep = \the\ecv@colsep^^J}
     \message{[europasscv] rightcolwidth = \the\ecv@rightcolwidth^^J}
     \message{[europasscv] textwidth = \the\textwidth^^J}
@@ -856,9 +850,8 @@
     }
 }
 
-\newcommand\ecvblueitem[3][\if@ecvitemskip 1.3\bigskipamount\else 0pt \fi]{\ecvitem[#1]{\textcolor{ecvsectioncolor}{#2}}{
-% \setlength\ecv@itemizeskip{-1.3\bigskipamount}\addtolength{\ecv@itemizeskip}{0.5\dp\strutbox}
- #3}
+\newcommand\ecvblueitem[3][\if@ecvitemskip 1.3\bigskipamount\else 0pt \fi]{
+  \ecvitem[#1]{\textcolor{ecvsectioncolor}{#2}}{#3}
 }
 
 \newcommand{\ecvbigitem}[3][0.8\bigskipamount]{
