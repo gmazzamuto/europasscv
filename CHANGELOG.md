@@ -11,8 +11,8 @@
 
 # Version 2016-05-15
 
-* new command \ecvlanguagecertificate
-* new command \ecvhighlightcell
+* new command `\ecvlanguagecertificate`
+* new command `\ecvhighlightcell`
 * add Slovenian and French definition files
 
 
@@ -30,7 +30,7 @@
 * add definitions for German (hopefully more languages to come soon)
 * update documentation
 * fix alignment in personal information
-* fix spacing of an \ecvitem following an \ecvsection
+* fix spacing of an `\ecvitem` following an `\ecvsection`
 * fix file name conflicts
 
 
