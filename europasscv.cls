@@ -406,9 +406,10 @@
 \newcommand*{\ecvdateofbirth}[1]{\def\ecv@birth{#1}\@ecvpiextrafieldstrue}
 \newcommand*{\ecvgender}[1]{\def\ecv@gender{#1}\@ecvpiextrafieldstrue}
 % Personal picture
-\newif\if@ecvpictureright\@ecvpicturerighttrue
-\newif\if@ecvpictureleft
+\newif\if@ecvpictureright\@ecvpicturerightfalse
+\newif\if@ecvpictureleft\@ecvpicturelefttrue
 \newcommand*{\ecvpictureleft}{\@ecvpicturerightfalse \@ecvpicturelefttrue}
+\newcommand*{\ecvpictureright}{\@ecvpicturerighttrue \@ecvpictureleftfalse}
 \newcommand*{\ecvdrawpicture}{}
 \newcommand*{\ecvbeforepicture}[1]{\def\ecv@beforepic{#1}}
 \newcommand*{\ecvafterpicture}[1]{\def\ecv@afterpic{#1}}
