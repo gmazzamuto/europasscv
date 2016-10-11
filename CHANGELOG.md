@@ -1,3 +1,13 @@
+<a name="2016-10-12"></a>
+
+# Version 2016-10-12
+
+* add table for self-assessment of digital competences
+* add commands for mobile and work phone
+* add Czech and Polish definition files
+* photo position now defaults to left
+
+
 <a name="2016-08-16"></a>
 
 # Version 2016-08-16
