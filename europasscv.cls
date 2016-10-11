@@ -495,7 +495,19 @@
         \raisebox{-2\lineskip}{\includegraphics[width=0.4cm]{telephone_europass_icon.pdf}}\hspace{0.2mm} {\fontseries{m}\selectfont \ecv@telephone} \quad
       \fi
       \ifx\@empty\ecv@workphone
-      \else\@ecvphoneispresenttrue
+	\else
+	  \@ecvphoneispresenttrue
+	  \ifx\@empty\ecv@mobile
+	    \else
+	      \ifx\@empty\ecv@telephone
+		\else
+		  \if@ecvpicture
+		    \if@ecvpictureright
+		      \newline
+		    \fi
+		  \fi
+	      \fi
+	  \fi
         \raisebox{-2\lineskip}{\includegraphics[width=0.4cm]{work_europass_icon.pdf}}\hspace{0.2mm} {\fontseries{m}\selectfont \ecv@workphone}
       \fi
       \if@ecvphoneispresent
