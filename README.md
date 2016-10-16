@@ -23,11 +23,13 @@ Please install the `europasscv` package through the package manager of your TeX
 distribution or download it from [CTAN](https://www.ctan.org/pkg/europasscv).
 
 ## How to use
-Please refer to the [documentation](http://mirrors.ctan.org/macros/latex/contrib/europasscv/europasscv.pdf)
+Please refer to the
+[documentation](http://mirrors.ctan.org/macros/latex/contrib/europasscv/europasscv.pdf)
 for instructions on how to use the class.
 
 ## Development
-Source packages and trees available on github come with a `Makefile` that is
-needed to convert svg images into pdfs. Please run `make` to build pdf icons,
+Source packages and trees available on
+[github](https://github.com/gmazzamuto/europasscv) come with a `Makefile` that
+is needed to convert svg images into pdfs. Please run `make` to build pdf icons,
 examples and documentation. You need to have `inkscape` installed on your system
 in order to convert the icons.
