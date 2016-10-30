@@ -37,9 +37,9 @@
 \def\ecv@europeanunionkey{\ecv@utf{Europeiska unionen}}
 % Digital competences self-assessment grid
 \def\ecv@digitalcompetenceskey{\ecv@utf{Digital färdighet}}
-\def\ecv@informationprocessingkey{\ecv@utf{Informationsbehandling}}
+\def\ecv@informationprocessingkey{\ecv@utf{In\-for\-ma\-tions\-be\-hand\-ling}}
 \def\ecv@communicationkey{\ecv@utf{Kommunikation}}
-\def\ecv@contentcreationkey{\ecv@utf{Innehållsproduktion}}
+\def\ecv@contentcreationkey{\ecv@utf{In\-ne\-hålls\-pro\-duk\-tion}}
 \def\ecv@safetykey{\ecv@utf{Säkerhet}}
 \def\ecv@problensolvingkey{\ecv@utf{Problemlösning}}
 \def\ecv@digcompfooterkey{\ecv@utf{Digitala färdigheter - Skala för självbedömning}}
