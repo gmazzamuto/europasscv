@@ -30,7 +30,7 @@
 \def\ecv@productkey{\ecv@utf{Muntlig produktion}}
 \def\ecv@langshortdesckey{\ecv@utf{Nivåer: A1/A2: Nybörjare -- B1/B2: Självständig användare -- C1/C2: Avancerad användare}}
 \def\ecv@langfooterkey{\ecv@utf{Gemensam europeisk referensram för språk}}
-\def\ecv@langlinkkey{\ecv@utf{http://europass.cedefop.europa.eu/en/resources/european-language-levels-cefr}}
+\def\ecv@langlinkkey{\ecv@utf{http://europass.cedefop.europa.eu/sv/resources/european-language-levels-cefr}}
 \def\ecv@cefbasickey{\ecv@utf{Nybörjare}}
 \def\ecv@cefindepkey{\ecv@utf{Självständig användare}}
 \def\ecv@cefprofkey{\ecv@utf{Avancerad användare}}
@@ -43,7 +43,7 @@
 \def\ecv@safetykey{\ecv@utf{Säkerhet}}
 \def\ecv@problensolvingkey{\ecv@utf{Problemlösning}}
 \def\ecv@digcompfooterkey{\ecv@utf{Digitala färdigheter - Skala för självbedömning}}
-\def\ecv@digcomplinkkey{\ecv@utf{http://europass.cedefop.europa.eu/en/resources/digital-competences}}
+\def\ecv@digcomplinkkey{\ecv@utf{http://europass.cedefop.europa.eu/sv/resources/digital-competences}}
 \def\ecv@dcbasickey{\ecv@utf{Nybörjare}}
 \def\ecv@dcindepkey{\ecv@utf{Självständig användare}}
 \def\ecv@dcprofkey{\ecv@utf{Avancerad användare}}
