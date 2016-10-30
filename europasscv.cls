@@ -634,7 +634,6 @@
 }
 
 \newcommand*\ecvlanguage[7][0pt]{\ecvlangrow[#1]{#2}{#3}{#4}{#5}{#6}{#7}{\ecv@langinnerborderwidth}}
-% \newcommand*\ecvlanguagecertificate[1]{\ecvitem[-0.7mm]{ciao}{\centering \raisebox{-1mm}{#1} \cellcolor{green!25} \hrule height \ecv@langouterborderwidth }}
 \newcommand*\ecvlastlanguage[7][0pt]{\ecvlangrow[#1]{#2}{#3}{#4}{#5}{#6}{#7}{\ecv@langouterborderwidth}}
 
 \newcommand*{\ecvlanguagefooter}[1][0pt]{
