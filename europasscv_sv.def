@@ -1,0 +1,56 @@
+%!TEX encoding = UTF-8 Unicode
+%
+%
+\ProvidesFile{europasscv_sv.def}[europasscv Swedish definitions]
+% Personal information
+\def\ecv@infosectionkey{\ecv@utf{Personlig information}}
+\def\ecv@namekey{\ecv@utf{Förnamn Efternamn}}
+\def\ecv@addresskey{\ecv@utf{Adress}}
+\def\ecv@telkey{\ecv@utf{Telefonnummer}}
+\def\ecv@mobilekey{\ecv@utf{Mobiltelefonnummer}}
+\def\ecv@faxkey{\ecv@utf{Fax}}
+\def\ecv@emailkey{\ecv@utf{E-postadress}}
+\def\ecv@nationalitykey{\ecv@utf{Nationalitet}}
+\def\ecv@birthkey{\ecv@utf{Födelsedatum}}
+\def\ecv@genderkey{\ecv@utf{Kön}}
+% Footer
+\def\ecv@pagekey{\ecv@utf{Sida}}
+\def\ecv@cvofkey{\ecv@utf{Curriculum vit\ae\ of}}
+% Language table
+\def\ecv@mothertonguekey{\ecv@utf{Modersmål}}
+\def\ecv@otherlanguageskey{\ecv@utf{Andra språk}}
+\def\ecv@assesskey{\ecv@utf{Självbedömning}}
+\def\ecv@levelkey{\ecv@utf{Europeisk nivå}}
+\def\ecv@understandkey{\ecv@utf{Förståelse}}
+\def\ecv@speakkey{\ecv@utf{Tala}}
+\def\ecv@writekey{\ecv@utf{Skriftlig färdighet}}
+\def\ecv@listenkey{\ecv@utf{Hörförståelse}}
+\def\ecv@readkey{\ecv@utf{Läsförståelse}}
+\def\ecv@interactkey{\ecv@utf{Samtal/muntlig interaktion}}
+\def\ecv@productkey{\ecv@utf{Muntlig produktion}}
+\def\ecv@langshortdesckey{\ecv@utf{Nivåer: A1/A2: Nybörjare -- B1/B2: Självständig användare -- C1/C2: Avancerad användare}}
+\def\ecv@langfooterkey{\ecv@utf{Gemensam europeisk referensram för språk}}
+\def\ecv@langlinkkey{\ecv@utf{http://europass.cedefop.europa.eu/en/resources/european-language-levels-cefr}}
+\def\ecv@cefbasickey{\ecv@utf{Nybörjare}}
+\def\ecv@cefindepkey{\ecv@utf{Självständig användare}}
+\def\ecv@cefprofkey{\ecv@utf{Avancerad användare}}
+\def\ecv@europeanunionkey{\ecv@utf{Europeiska unionen}}
+% Digital competences self-assessment grid
+\def\ecv@digitalcompetenceskey{\ecv@utf{Digital färdighet}}
+\def\ecv@informationprocessingkey{\ecv@utf{Informationsbehandling}}
+\def\ecv@communicationkey{\ecv@utf{Kommunikation}}
+\def\ecv@contentcreationkey{\ecv@utf{Innehållsproduktion}}
+\def\ecv@safetykey{\ecv@utf{Säkerhet}}
+\def\ecv@problensolvingkey{\ecv@utf{Problemlösning}}
+\def\ecv@digcompfooterkey{\ecv@utf{Digitala färdigheter - Skala för självbedömning}}
+\def\ecv@digcomplinkkey{\ecv@utf{http://europass.cedefop.europa.eu/en/resources/digital-competences}}
+\def\ecv@dcbasickey{\ecv@utf{Nybörjare}}
+\def\ecv@dcindepkey{\ecv@utf{Självständig användare}}
+\def\ecv@dcprofkey{\ecv@utf{Avancerad användare}}
+
+% Width of language columns
+\def\ecv@langcola{0.15}
+\def\ecv@langcolb{0.15}
+\def\ecv@langcolc{0.25}
+\def\ecv@langcold{0.25}
+\def\ecv@langcole{0.2}
