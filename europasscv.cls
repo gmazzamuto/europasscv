@@ -374,10 +374,10 @@
 \fi % End \if@ecvnodocument
 } % End \AtBeginDocument
 
-% Thanks to Roman Bertle for suggesting the following:
 \renewcommand{\labelitemi}{\normalfont\bfseries \textendash}
-\renewcommand{\labelitemii}{\textasteriskcentered}
-\renewcommand{\labelitemiii}{\textperiodcentered}
+\renewcommand{\labelitemii}{\textbullet}
+\renewcommand{\labelitemiii}{\normalfont\bfseries \textendash}
+\renewcommand{\labelitemiv}{\textbullet}
 
 \newcommand*{\ecvfirstname}[1]{\def\ecv@firstname{#1}} % Deprecated
 \newcommand*{\ecvlastname}[1]{\def\ecv@lastname{#1}} % Deprecated
@@ -744,13 +744,23 @@
 \color{\ecv@textcolor}
 }
 
+
+\newif\if@ecvinsideEcvItemize\@ecvinsideEcvItemizefalse
 \newenvironment{ecvitemize}{
+\if@ecvinsideEcvItemize
+\else
 \
 \vspace*{\ecv@itemizeskip}
+\@ecvinsideEcvItemizetrue
+\fi
 \begin{itemize}[leftmargin=*,nolistsep,nosep,topsep=0pt]
 }{
 \end{itemize}
+\if@ecvinsideEcvItemize
+\else
 \ \vspace{-0.8\baselineskip}
+\@ecvinsideEcvItemizefalse
+\fi
 }
 
 

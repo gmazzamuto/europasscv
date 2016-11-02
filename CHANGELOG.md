@@ -2,6 +2,7 @@
 
 # Version ... (upcoming)
 
+* fix nesting of ecvitemize
 * add Swedish def file
 
 
