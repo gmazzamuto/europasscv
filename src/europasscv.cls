@@ -236,7 +236,13 @@
 \ProcessOptions\relax
 
 \LoadClass{article}
-\RequirePackage[utf8]{inputenc}
+\RequirePackage{iftex}
+\ifPDFTeX
+  \RequirePackage[utf8]{inputenc}
+  \RequirePackage[T1]{fontenc}
+\else
+  \usepackage{fontspec}
+\fi
 \RequirePackage{array}
 \RequirePackage{fancyhdr} % For page numbering
 \RequirePackage{xcolor}
@@ -250,12 +256,20 @@
 \RequirePackage{colortbl}
 \RequirePackage{graphicx}
 \if@ecvdebug \RequirePackage{showframe} \fi
-\RequirePackage[T1]{fontenc}
 
 
 \newcommand{\selectecvfont}{\ifPDFTeX\fontfamily{\ecv@font}\selectfont\fi}
 \newcommand*{\ecvfont}[1]{\def\ecv@font{#1}}
+\ifPDFTeX
   \ecvfont{phv}
+\else
+  \ifx\@empty\ecv@narrow
+    \setmainfont{TeX Gyre Heros Cn}
+  \else
+    \setmainfont{TeX Gyre Heros}
+  \fi
+\fi
+
 \def\ecv@totpages{}
 \newcommand*{\ecvpage}[1]{\def\ecv@page{#1}}
 \ecvpage{\ecv@pagekey~\thepage\ecv@totpages}
@@ -691,7 +705,9 @@
   \addtolength{\ecv@langparwidth}{-2\tabcolsep}
   \addtolength{\ecv@langparwidth}{-2\arrayrulewidth}
 
- \fontfamily{\ecv@font} \ifx\@empty\ecv@narrow \fontseries{mc} \else \fontseries{m} \fi
+ \ifPDFTeX
+   \fontfamily{\ecv@font} \ifx\@empty\ecv@narrow \fontseries{mc} \else \fontseries{m} \fi
+ \fi
  \if@ecvbigfont\else \fontsize{9}{10.8} \fi \selectfont
 
 \setlength\baselineskip{0pt}
