@@ -242,7 +242,6 @@
 \RequirePackage{xcolor}
 \RequirePackage{url}
 \RequirePackage{soul}
-\RequirePackage{tabu}
 \RequirePackage{setspace}
 \RequirePackage{geometry}
 \RequirePackage{textcomp} % For copyright symbol
