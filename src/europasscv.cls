@@ -10,11 +10,6 @@
 \NeedsTeXFormat{LaTeX2e}
 \ProvidesClass{europasscv}[2016/10/12 The new Europass curriculum vitae class]
 
-% CV models and instructions:
-%   http://europass.cedefop.eu.int/htm/index.htm
-% Recommendations:
-%   http://europa.eu.int/scadplus/leg/en/cha/c11057.htm
-
 \newcommand\ecv@utf[1]{#1}
 
 % Set language
@@ -225,16 +220,6 @@
 \DeclareOption{maccyr}{\AtEndOfClass{\inputencoding{maccyr}}}
 \DeclareOption{macukr}{\AtEndOfClass{\inputencoding{macukr}}}
 
-% Set font
-\DeclareOption{helvetica}{%                       
-  \renewcommand{\rmdefault}{phv}
-  \renewcommand{\sfdefault}{phv}
-}
-\DeclareOption{arial}{%                       
-  \renewcommand{\rmdefault}{ma1} % (this font is NOT installed by default!)
-  \renewcommand{\sfdefault}{ma1}
-}
-
 \DeclareOption{narrow}{
  \def\ecv@narrow{}
 }
@@ -251,7 +236,7 @@
 
 \def\ecv@currvitaekey{}
 \newcommand{\ecvcurrvitae}{\ifx\@empty\ecv@currvitaekey Curriculum vitae \else \ecv@currvitaekey \fi}
-\newcommand{\ecvcoloredtitle}{\fontfamily{phv}\fontseries{m}\selectfont \textcolor{ecvhighlightcolor}{\ecvcurrvitae}}
+\newcommand{\ecvcoloredtitle}{\selectecvfont \textcolor{ecvhighlightcolor}{\ecvcurrvitae}}
 
 % Europass logo
 \newif\if@ecvlogo\@ecvlogotrue
@@ -302,6 +287,9 @@
 \RequirePackage[T1]{fontenc}
 
 
+\newcommand{\selectecvfont}{\ifPDFTeX\fontfamily{\ecv@font}\selectfont\fi}
+\newcommand*{\ecvfont}[1]{\def\ecv@font{#1}}
+  \ecvfont{phv}
 \def\ecv@totpages{}
 \newcommand*{\ecvpage}[1]{\def\ecv@page{#1}}
 \ecvpage{\ecv@pagekey~\thepage\ecv@totpages}
@@ -328,13 +316,13 @@
 \fancyfoot{}
 \fancyfoot[L]{\begin{minipage}{\ecv@leftcolwidth}
 \begin{flushleft}
-\footnotesize\textcolor{ecvhighlightcolor}{\fontfamily{phv}\fontseries{m}\selectfont\ecv@lfoot}\end{flushleft}
-\end{minipage}\hspace*{\ecv@colsep}\footnotesize\textcolor{ecvhighlightcolor}{\fontfamily{phv}\fontseries{m}\selectfont\ecv@cfoot}
+\footnotesize\textcolor{ecvhighlightcolor}{\selectecvfont\ecv@lfoot}\end{flushleft}
+\end{minipage}\hspace*{\ecv@colsep}\footnotesize\textcolor{ecvhighlightcolor}{\selectecvfont\ecv@cfoot}
 }
 
 \fancyfoot[R]{\begin{minipage}{\ecv@rightcolwidth}
 \begin{flushright}
-\footnotesize\textcolor{ecvhighlightcolor}{\fontfamily{phv}\fontseries{m}\selectfont\ecv@page}\end{flushright}
+\footnotesize\textcolor{ecvhighlightcolor}{\selectecvfont\ecv@page}\end{flushright}
 \end{minipage}}
 
 \fancypagestyle{ecvfancy}{
@@ -343,7 +331,7 @@
 \fancyhead{}
  
 \fancyhead[R]{
-\raggedleft \fontfamily{phv}\fontseries{m}\selectfont \textcolor{ecvhighlightcolor}{\ecv@name}
+\raggedleft \selectecvfont \textcolor{ecvhighlightcolor}{\ecv@name}
 }
 
 \fancyhead[L]{
@@ -737,8 +725,8 @@
   \addtolength{\ecv@langparwidth}{-2\tabcolsep}
   \addtolength{\ecv@langparwidth}{-2\arrayrulewidth}
 
-\fontfamily{phv} \ifx\@empty\ecv@narrow \fontseries{mc} \else \fontseries{m} \fi
-\if@ecvbigfont\else \fontsize{9}{10.8} \fi \selectfont
+ \fontfamily{\ecv@font} \ifx\@empty\ecv@narrow \fontseries{mc} \else \fontseries{m} \fi
+ \if@ecvbigfont\else \fontsize{9}{10.8} \fi \selectfont
 
 \setlength\baselineskip{0pt}
 \color{\ecv@textcolor}
@@ -765,11 +753,11 @@
 
 
 % styles
-\newcommand{\ecvsectionstyle}[1]{\textcolor{ecvsectioncolor}{\fontfamily{phv}\fontseries{m}\selectfont \MakeUppercase{\expandafter{#1}}}}
-\newcommand{\ecvbluenormalstyle}[1]{\fontfamily{phv}\fontseries{m}\selectfont\textcolor{ecvsectioncolor}{#1}}
+\newcommand{\ecvsectionstyle}[1]{\textcolor{ecvsectioncolor}{\MakeUppercase{\expandafter{#1}}}}
+\newcommand{\ecvbluenormalstyle}[1]{\textcolor{ecvsectioncolor}{#1}}
 \newcommand{\ecvtitlestyle}[1]{\large{\ecvbluenormalstyle{#1}}}
-\newcommand{\ecvlargenormalstyle}[1]{\large \fontfamily{phv}\fontseries{m}\selectfont #1}
-\newcommand{\ecvLargenormalstyle}[1]{\Large \fontfamily{phv}\fontseries{m}\selectfont #1}
+\newcommand{\ecvlargenormalstyle}[1]{\large #1}
+\newcommand{\ecvLargenormalstyle}[1]{\Large #1}
 \newcommand{\ecvhighlight}[1]{\textcolor{ecvhighlightcolor}{#1}}
 \newcommand{\ecvbluestyle}[1]{\textcolor{ecvsectioncolor}{#1}}
 
