@@ -719,6 +719,7 @@
 \newenvironment{ecvitemize}{
 \if@ecvinsideEcvItemize
 \else
+\ifhmode \newline \else \fi
 \
 \vspace*{\ecv@itemizeskip}
 \@ecvinsideEcvItemizetrue

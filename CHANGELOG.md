@@ -2,6 +2,7 @@
 
 # Version ... (upcoming)
 
+* Insert \newline at beginning of `ecvitemize` if needed
 * fix nesting of ecvitemize
 * add Swedish def file
 
