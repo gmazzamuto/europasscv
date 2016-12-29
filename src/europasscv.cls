@@ -170,8 +170,11 @@
 }
 \DeclareOption{greek}{%
   \AtEndOfPackage{%
-     \InputIfFileExists{europasscv_gr.def}{}{%
-    \ClassWarningNoLine{europasscv}{Greek definition file 'europasscv_gr.def' not found}}%
+    \InputIfFileExists{europasscv_el.def}{}{%
+    \ClassWarningNoLine{europasscv}{Greek definition file 'europasscv_el.def' not found}}%
+    \ifPDFTeX
+      \PackageError{europasscv}{Please run XeLaTeX or LuaLaTeX for greek language support}{}
+    \fi
   }%
 }
 \DeclareOption{galician}{%

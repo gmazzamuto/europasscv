@@ -1,0 +1,48 @@
+%!TEX encoding = UTF-8 Unicode
+%
+% WARNING: Requires XeLaTeX or LuaLaTeX
+%
+\ProvidesFile{europasscv_el.def}[europasscv Greek definitions]
+% Personal information
+\def\ecv@infosectionkey{\ecv@utf{Προσωπικεσ πληροφοριεσ}}
+\def\ecv@nationalitykey{\ecv@utf{Εθνικότητα}}
+\def\ecv@birthkey{\ecv@utf{Ημερομηνία Γέννησης}}
+\def\ecv@genderkey{\ecv@utf{Φύλο}}
+% Footer
+\def\ecv@pagekey{\ecv@utf{Σελίδα}}
+\def\ecv@currvitaekey{\ecv@utf{Βιογραφικό σημείωμα}}
+% Language table
+\def\ecv@mothertonguekey{\ecv@utf{Μητρική γλώσσα}}
+\def\ecv@otherlanguageskey{\ecv@utf{Λοιπές γλώσσες}}
+\def\ecv@assesskey{\ecv@utf{Αυτοαξιολόγηση}}
+\def\ecv@understandkey{\ecv@utf{Κατανόηση}}
+\def\ecv@speakkey{\ecv@utf{Ομιλία}}
+\def\ecv@writekey{\ecv@utf{Γραφη}}
+\def\ecv@listenkey{\ecv@utf{Προφορική}}
+\def\ecv@readkey{\ecv@utf{Γραπτή (ανάγνωση)}}
+\def\ecv@interactkey{\ecv@utf{Επικοινωνία}}
+\def\ecv@productkey{\ecv@utf{Προφορική έκφραση}}
+\def\ecv@langshortdesckey{\ecv@utf{Επίπεδα: Α1/A2: Βασικός χρήστης - Β1/B2: Ανεξάρτητος χρήστης - C1/C2: Έμπειρος χρήστης}}
+\def\ecv@langfooterkey{\ecv@utf{Κοινό Ευρωπαϊκό Πλαίσιο Αναφοράς για Γλώσσες}}
+\def\ecv@langlinkkey{\ecv@utf{http://europass.cedefop.europa.eu/el/resources/european-language-levels-cefr}}
+
+% Digital competences self-assessment grid
+\def\ecv@digitalcompetenceskey{\ecv@utf{Ψηφιακή δεξιότητα}}
+\def\ecv@informationprocessingkey{\ecv@utf{Επεξεργασία δεδομένων}}
+\def\ecv@communicationkey{\ecv@utf{Επικοινωνία}}
+\def\ecv@contentcreationkey{\ecv@utf{Δημιουργία Περιεχομένου}}
+\def\ecv@safetykey{\ecv@utf{Ασφάλεια}}
+\def\ecv@problensolvingkey{\ecv@utf{Επίλυση προβλημάτων}}
+\def\ecv@digcompfooterkey{\ecv@utf{Ψηφιακές δεξιότητες - Πίνακας αυτοαξιολόγησης}}
+\def\ecv@digcomplinkkey{\ecv@utf{http://europass.cedefop.europa.eu/el/resources/digital-competences}}
+\def\ecv@dcbasickey{\ecv@utf{Βασικός χρήστης}}
+\def\ecv@dcindepkey{\ecv@utf{Ανεξάρτητος χρήστης}}
+\def\ecv@dcprofkey{\ecv@utf{\textasciiacute Eμπειρος χρήστης}}
+
+% Width of language columns
+\def\ecv@langcola{0.15}
+\def\ecv@langcolb{0.28}
+\def\ecv@langcolc{0.18}
+\def\ecv@langcold{0.28}
+\def\ecv@langcole{0.11}
+
