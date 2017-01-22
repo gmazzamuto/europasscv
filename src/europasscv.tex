@@ -13,12 +13,12 @@
 
 % \usepackage{showframe}
 
-\author{\small Giacomo Mazzamuto\\
-        \href{mailto:gmazzamuto+ctan@gmail.com}{\texttt{gmazzamuto+ctan@gmail.com}}\\}
-\title{\small Documentation of the \LaTeX\ class\\
-		\Large \textbf{\texttt{europasscv.cls}}\\
-		\small{\href{https://github.com/gmazzamuto/europasscv}{\texttt{https://github.com/gmazzamuto/europasscv}}}\\
-		\small \vspace{0.2cm} Version 2016-10-12
+\author{Giacomo Mazzamuto\\
+        {\href{mailto:gmazzamuto+ctan@gmail.com}{\texttt{gmazzamuto+ctan@gmail.com}}}\\}
+\title{ Documentation of the \LaTeX\ class\\
+		\Large{\textbf{\texttt{europasscv.cls}}}\\
+		\normalsize{\href{https://github.com/gmazzamuto/europasscv}{\texttt{https://github.com/gmazzamuto/europasscv}}}\\
+		\vspace{0.2cm} Version 2016-10-12
 }
 
 \newcommand{\bs}{\textbackslash}
@@ -26,27 +26,21 @@
 
 \begin{document}
 \maketitle
-
+\clearpage
 
 \begin{abstract}
-This paper describes how to use europasscv.cls, a \LaTeX\ document class for typesetting a curriculum vitae according to the Europass initiative of the European Commission. This is an unofficial implementation of that format, implementing the major style updates that came out in 2013.
+This paper describes how to use europasscv.cls, a \LaTeX\ document class for typesetting a curriculum vitae according to the Europass initiative of the European Commission. This is an unofficial implementation of that format, featuring the major style updates that came out in 2013.
 
 \end{abstract}
 
-\enlargethispage{\baselineskip}
-
 \tableofcontents
-
-\clearpage
 
 \section{Introduction}
 This class is an unofficial \LaTeX\ implementation of the the \emph{Europass~CV\/}, the standard model for curriculum vitae as recommended by the European Commission. The Europass~CV replaces the European CV, launched in~2002. In 2013 a major revision of the Europass~CV came out, featuring a neater, more compact and somewhat fancier layout. This class is an implementation of the 2013 version of that layout and is based on the \textsf{europecv}\footnote{\url{http://ctan.org/pkg/europecv}} class (which is an implementation of the previous layout).
 
 The Europass~CV defines both the content and the layout of a curriculum vitae. The \textsf{europasscv} class provides support for the latter, and for the former as far as personal information, spoken languages and digital competences are concerned. If you want to know how the content of a Europass~CV is structured, refer to the documentation provided by the Europass website\footnote{\url{https://europass.cedefop.europa.eu/en/documents/curriculum-vitae/templates-instructions}.}.
 
-This class tries to be as close as possible to the standard model without sacrificing flexibility. Although it is primarily intended for users of the European Union, the class can be used for any kind of curriculum vitae (possibly with the options \texttt{notitle} and \texttt{nologo}, see below), or even for other kinds of documents.
-
-The main differences compared to the official model are the use of Helvetica (which should be in any standard \LaTeX\ distribution) instead of Arial, and the use of vector images instead of low-resolution bitmaps.
+This class tries to be as close as possible to the standard model without sacrificing flexibility. Although it is primarily intended for users in the European Union, the class can be used for any kind of curriculum vitae (possibly with the options \texttt{notitle} and \texttt{nologo}, see below), or even for other kinds of documents.
 
 \section{Tutorial}
 Let's start with a minimal (empty) curriculum vitae:
@@ -61,6 +55,8 @@ Let's start with a minimal (empty) curriculum vitae:
 Now you can start writing your CV by entering first of all your personal information and then adding sections and items as described below.
 
 For a complete list of usable class options see section \ref{sec:classOptions}.
+
+% \enlargethispage{2\baselineskip}
 
 \subsection{Personal information}
 \ecvname{Name Surname}
@@ -272,6 +268,16 @@ The following language options are currently supported:
 \texttt{english}, \texttt{czech}, \texttt{french}, \texttt{german}, \texttt{greek}\footnote{Requires \XeLaTeX or \LuaLaTeX.}, \texttt{italian}, \texttt{polish}, \texttt{portuguese}, \texttt{slovenian}, \texttt{spanish}.
 
 If you need a different language, you must create a new \texttt{.def} file and add the corresponding \texttt{\textbackslash DeclareOption} in the class file. Please contribute your \texttt{.def} files so that they can be included in future updates. The \texttt{.def} files in the \texttt{europecv}\footnote{\url{http://ctan.org/pkg/europecv}} package are a good starting point.
+
+\subsubsection{Fonts}
+When using \LaTeX, the default font is \texttt{phv} or Helvetica. To override, use the \texttt{\bs ecvfont} command:
+\begin{verbatim}
+ \ecvfont{lmr}
+\end{verbatim}
+When using \XeLaTeX\ or \LuaLaTeX, the default font is TeX Gyre Heros. To override, use:
+\begin{verbatim}
+ \setmainfont{TeX Gyre Pagella}
+\end{verbatim}
 
 \subsubsection{Debugging}
 If you are editing the class file you may find the \texttt{debug} option useful: if this option is specified, debug messages are printed on the terminal, the boxes making up the structure of the CV are highlighted with background colors, and the package \texttt{showframe} is loaded.
