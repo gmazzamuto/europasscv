@@ -27,12 +27,10 @@ icons: $(ICONS_SVG) $(ICONS_PDF)
 documentation: class europasscv.pdf europasscv_en.pdf
 
 europasscv.pdf: europasscv.tex
-	pdflatex $<
-	pdflatex $<
+	latexmk -pdf $<
 
 europasscv_en.pdf: europasscv_en.tex
-	pdflatex $<
-	pdflatex $<
+	latexmk -pdf $<
 
 class: pictures
 
