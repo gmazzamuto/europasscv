@@ -1,10 +1,12 @@
-<a name="upcoming"></a>
+<a name="2017-01-22"></a>
 
-# Version ... (upcoming)
+# Version 2017-01-22
 
-* Insert \newline at beginning of `ecvitemize` if needed
+* add support for newer engines: XeLaTeX and LuaLaTeX
+* add def files for Swedish and Greek
+* new command \ecvfont
+* insert \newline at beginning of `ecvitemize` if needed
 * fix nesting of ecvitemize
-* add Swedish def file
 
 
 <a name="2016-10-12"></a>
