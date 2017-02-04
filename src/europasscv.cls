@@ -719,24 +719,27 @@
 
 
 \newif\if@ecvinsideEcvItemize\@ecvinsideEcvItemizefalse
-\newenvironment{ecvitemize}{
-\if@ecvinsideEcvItemize
-\else
-\ifhmode \newline \else \fi
-\
-\vspace*{\ecv@itemizeskip}
-\@ecvinsideEcvItemizetrue
-\fi
-\begin{itemize}[leftmargin=*,nolistsep,nosep,topsep=0pt]
-}{
-\end{itemize}
-\if@ecvinsideEcvItemize
-\else
-\ \vspace{-0.8\baselineskip}
-\@ecvinsideEcvItemizefalse
-\fi
+\newcommand{\newecvitemize}[2]{
+  \newenvironment{#1}[1][leftmargin=*,nolistsep,nosep,topsep=0pt]{
+  \if@ecvinsideEcvItemize
+  \else
+  \ifhmode \newline \else \fi
+  \
+  \vspace*{\ecv@itemizeskip}
+  \@ecvinsideEcvItemizetrue
+  \fi
+  \begin{#2}[##1]
+  }{
+  \end{#2}
+  \if@ecvinsideEcvItemize
+  \else
+  \ \vspace{-0.8\baselineskip}
+  \@ecvinsideEcvItemizefalse
+  \fi
+  }
 }
-
+\newecvitemize{ecvitemize}{itemize}
+\newecvitemize{ecvenumerate}{enumerate}
 
 % styles
 \newcommand{\ecvsectionstyle}[1]{\textcolor{ecvsectioncolor}{\MakeUppercase{\expandafter{#1}}}}
