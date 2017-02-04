@@ -720,22 +720,16 @@
 
 \newif\if@ecvinsideEcvItemize\@ecvinsideEcvItemizefalse
 \newcommand{\newecvitemize}[2]{
-  \newenvironment{#1}[1][leftmargin=*,nolistsep,nosep,topsep=0pt]{
+  \newenvironment{#1}[1][leftmargin=*,nolistsep,nosep,topsep=0.1\baselineskip]{
   \if@ecvinsideEcvItemize
   \else
   \ifhmode \newline \else \fi
-  \
-  \vspace*{\ecv@itemizeskip}
+  \vspace*{-\baselineskip}
   \@ecvinsideEcvItemizetrue
   \fi
   \begin{#2}[##1]
   }{
   \end{#2}
-  \if@ecvinsideEcvItemize
-  \else
-  \ \vspace{-0.8\baselineskip}
-  \@ecvinsideEcvItemizefalse
-  \fi
   }
 }
 \newecvitemize{ecvitemize}{itemize}
