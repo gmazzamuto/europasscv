@@ -2,6 +2,7 @@
 
 # Version ... (upcoming)
 
+* add def file for Hungarian
 * new environment ecvenumerate
 
 
