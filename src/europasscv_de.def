@@ -55,3 +55,10 @@
 \def\ecv@langcold{0.25}
 \def\ecv@langcole{0.2}
 
+% Width of digital competences columns
+\def\ecv@dcompcola{0.24}
+\def\ecv@dcompcolb{0.19}
+\def\ecv@dcompcolc{0.19}
+\def\ecv@dcompcold{0.19}
+\def\ecv@dcompcole{0.19}
+
