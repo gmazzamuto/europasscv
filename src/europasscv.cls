@@ -12,6 +12,12 @@
 
 \newcommand\ecv@utf[1]{#1}
 
+\def\ecv@dcompcola{0.2}
+\def\ecv@dcompcolb{0.2}
+\def\ecv@dcompcolc{0.2}
+\def\ecv@dcompcold{0.2}
+\def\ecv@dcompcole{0.2}
+
 % Set language
 \DeclareOption{english}{%
   \AtEndOfPackage{%
@@ -636,7 +642,7 @@
 		\setlength{\ecv@langtablewidth}{\ecv@rightcolwidth}
 		\addtolength{\ecv@langtablewidth}{-4\arrayrulewidth}
 		\arrayrulecolor{ecvtablebordercolor}
-		\begin{tabular}[t]{m{\ecv@dccol\ecv@langtablewidth}|m{\ecv@dccol\ecv@langtablewidth}|m{\ecv@dccol\ecv@langtablewidth}|m{\ecv@dccol\ecv@langtablewidth}|m{\ecv@dccol\ecv@langtablewidth}}
+		\begin{tabular}[t]{m{\ecv@dcompcola\ecv@langtablewidth}|m{\ecv@dcompcolb\ecv@langtablewidth}|m{\ecv@dcompcolc\ecv@langtablewidth}|m{\ecv@dcompcold\ecv@langtablewidth}|m{\ecv@dcompcole\ecv@langtablewidth}}
 			\firsthline
 			\multicolumn{5}{c}{\ecvsectionstyle{\ecv@assesskey}} \tabularnewline
 			\hline
