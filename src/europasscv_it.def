@@ -39,7 +39,7 @@
 \def\ecv@digitalcompetenceskey{\ecv@utf{Competenze digitali}}
 \def\ecv@informationprocessingkey{\ecv@utf{Elaborazione delle informazioni}}
 \def\ecv@communicationkey{\ecv@utf{Comunicazione}}
-\def\ecv@contentcreationkey{\ecv@utf{Creazione di Contenuti}}
+\def\ecv@contentcreationkey{\ecv@utf{Creazione di contenuti}}
 \def\ecv@safetykey{\ecv@utf{Sicurezza}}
 \def\ecv@problensolvingkey{\ecv@utf{Risoluzione di problemi}}
 \def\ecv@digcompfooterkey{\ecv@utf{Competenze digitali - Scheda per l'autovalutazione}}
