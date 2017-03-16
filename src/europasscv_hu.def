@@ -1,0 +1,56 @@
+%!TEX encoding = UTF-8 Unicode
+%
+%
+\ProvidesFile{europasscv_hu.def}[europasscv Hungarian definitions]
+% Personal information
+\def\ecv@infosectionkey{\ecv@utf{Személyi adatok}}
+\def\ecv@namekey{\ecv@utf{Vezetéknév/Utónév}}
+\def\ecv@addresskey{\ecv@utf{Cím}}
+\def\ecv@telkey{\ecv@utf{Telefonszám}}
+\def\ecv@mobilekey{\ecv@utf{Mobil}}
+\def\ecv@faxkey{\ecv@utf{Fax}}
+\def\ecv@emailkey{\ecv@utf{E-mail}}
+\def\ecv@nationalitykey{\ecv@utf{Állampolgárság}}
+\def\ecv@birthkey{\ecv@utf{Születési dátum}}
+\def\ecv@genderkey{\ecv@utf{Neme}}
+% Footer
+\def\ecv@pagekey{\ecv@utf{Oldal}}
+\def\ecv@cvofkey{\ecv@utf{Önéletrajza}}
+% Language table
+\def\ecv@mothertonguekey{\ecv@utf{Anyanyelve}}
+\def\ecv@otherlanguageskey{\ecv@utf{Egyéb nyelvek}}
+\def\ecv@assesskey{\ecv@utf{Önértékelés}}
+\def\ecv@levelkey{\ecv@utf{Európai szint}}
+\def\ecv@understandkey{\ecv@utf{Szövegértés}}
+\def\ecv@speakkey{\ecv@utf{Beszéd}}
+\def\ecv@writekey{\ecv@utf{Írás}}
+\def\ecv@listenkey{\ecv@utf{Hallás utáni értés}}
+\def\ecv@readkey{\ecv@utf{Olvasás}}
+\def\ecv@interactkey{\ecv@utf{Társalgás}}
+\def\ecv@productkey{\ecv@utf{Folyamatos beszéd}}
+\def\ecv@langshortdesckey{\ecv@utf{Szintek: A1/A2: Alapszintű felhasználó -- B1/B2: Önálló felhasználó -- C1/C2: Mesterfokú felhasználó}}
+\def\ecv@langfooterkey{\ecv@utf{Közös Európai Nyelvi Referenciakeret}}
+\def\ecv@langlinkkey{\ecv@utf{http://europass.cedefop.europa.eu/hu/resources/european-language-levels-cefr}}
+\def\ecv@cefbasickey{\ecv@utf{Alapszintű felhasználó}}
+\def\ecv@cefindepkey{\ecv@utf{Önálló felhasználó}}
+\def\ecv@cefprofkey{\ecv@utf{Mesterfokú felhasználó}}
+\def\ecv@europeanunionkey{\ecv@utf{Európai Unió}}
+% Digital competences self-assessment grid
+\def\ecv@digitalcompetenceskey{\ecv@utf{Digitális készségek}}
+\def\ecv@informationprocessingkey{\ecv@utf{Információ-feldolgozása}}
+\def\ecv@communicationkey{\ecv@utf{Kommunikáció}}
+\def\ecv@contentcreationkey{\ecv@utf{Tartalom létrehozása}}
+\def\ecv@safetykey{\ecv@utf{Biztonság}}
+\def\ecv@problensolvingkey{\ecv@utf{Problémamegoldás}}
+\def\ecv@digcompfooterkey{\ecv@utf{Digitális készségek - Önértékelő táblázat}}
+\def\ecv@digcomplinkkey{\ecv@utf{http://europass.cedefop.europa.eu/hu/resources/digital-competences}}
+\def\ecv@dcbasickey{\ecv@utf{Alapszintű felhasználó}}
+\def\ecv@dcindepkey{\ecv@utf{Önálló felhasználó}}
+\def\ecv@dcprofkey{\ecv@utf{Mesterfokú felhasználó}}
+
+% Width of language columns
+\def\ecv@langcola{0.15}
+\def\ecv@langcolb{0.15}
+\def\ecv@langcolc{0.25}
+\def\ecv@langcold{0.25}
+\def\ecv@langcole{0.2}
