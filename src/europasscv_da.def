@@ -1,0 +1,63 @@
+%!TEX encoding = UTF-8 Unicode
+%
+%
+\ProvidesFile{europasscv_da.def}[europasscv Danish definitions]
+% Personal information
+\def\ecv@infosectionkey{\ecv@utf{Personlig information}}
+\def\ecv@namekey{\ecv@utf{Efternavn(e), fornavn(e) og mellemnavn(e)}}
+\def\ecv@addresskey{\ecv@utf{Adresse}}
+\def\ecv@telkey{\ecv@utf{Telefon}}
+\def\ecv@mobilekey{\ecv@utf{Mobil}}
+\def\ecv@faxkey{\ecv@utf{Fax}}
+\def\ecv@emailkey{\ecv@utf{E-mail-adresse}}
+\def\ecv@nationalitykey{\ecv@utf{Nationalitet}}
+\def\ecv@birthkey{\ecv@utf{F\o dseldato}}
+\def\ecv@genderkey{\ecv@utf{K\o n}}
+% Footer
+\def\ecv@pagekey{\ecv@utf{Side}}
+\def\ecv@cvofkey{\ecv@utf{Curriculum vit\ae\ for}}
+% Language table
+\def\ecv@mothertonguekey{\ecv@utf{Modersm\aa l}}
+\def\ecv@otherlanguageskey{\ecv@utf{Andre sprog}}
+\def\ecv@assesskey{\ecv@utf{Selvevaluering}}
+\def\ecv@levelkey{\ecv@utf{Europ\ae isk niveau}}
+\def\ecv@understandkey{\ecv@utf{Forst\AA}}
+\def\ecv@speakkey{\ecv@utf{Tale}}
+\def\ecv@writekey{\ecv@utf{Skrive}}
+\def\ecv@listenkey{\ecv@utf{Lytte}}
+\def\ecv@readkey{\ecv@utf{L\ae se}}
+\def\ecv@interactkey{\ecv@utf{Samtale}}
+\def\ecv@productkey{\ecv@utf{Redeg\o re}}
+\def\ecv@langshortdesckey{\ecv@utf{Niveauer: A1/A2: Sprogbruger med basiskundskaber -- B1/B2: Selvst\ae ndig sprogbruger -- C1/C2: Kompetent sprogbruger}}
+\def\ecv@langfooterkey{\ecv@utf{Europ\ae iske Referencerammes (CEF) niveau}}
+\def\ecv@langlinkkey{\ecv@utf{http://europass.cedefop.europa.eu/da/resources/european-language-levels-cefr}}
+\def\ecv@cefbasickey{\ecv@utf{Sprogbruger med basiskundskaber}}
+\def\ecv@cefindepkey{\ecv@utf{Selvst\ae ndig sprogbruger}}
+\def\ecv@cefprofkey{\ecv@utf{Kompetent sprogbruger}}
+\def\ecv@europeanunionkey{\ecv@utf{Den Europ\ae iske union}}
+% Digital competences self-assessment grid
+\def\ecv@digitalcompetenceskey{\ecv@utf{Digital kompetence}}
+\def\ecv@informationprocessingkey{\ecv@utf{In\-for\-ma\-tions\-be\-hand\-ling}}
+\def\ecv@communicationkey{\ecv@utf{Kommunikation}}
+\def\ecv@contentcreationkey{\ecv@utf{Ind\-holds\-pro\-duk\-tion}}
+\def\ecv@safetykey{\ecv@utf{Sikkerhed}}
+\def\ecv@problensolvingkey{\ecv@utf{Probleml\o sning}}
+\def\ecv@digcompfooterkey{\ecv@utf{Digitale kompetencer - Selvevalueringsskala}}
+\def\ecv@digcomplinkkey{\ecv@utf{http://europass.cedefop.europa.eu/da/resources/digital-competences}}
+\def\ecv@dcbasickey{\ecv@utf{Basisbruger}}
+\def\ecv@dcindepkey{\ecv@utf{Selvst\ae ndig bruger}}
+\def\ecv@dcprofkey{\ecv@utf{Kompetent\\ bruger}}
+
+% Width of language columns
+\def\ecv@langcola{0.15}
+\def\ecv@langcolb{0.15}
+\def\ecv@langcolc{0.25}
+\def\ecv@langcold{0.25}
+\def\ecv@langcole{0.2}
+
+% Width of digital competences columns
+\def\ecv@dcompcola{0.21}
+\def\ecv@dcompcolb{0.21}
+\def\ecv@dcompcolc{0.16}
+\def\ecv@dcompcold{0.21}
+\def\ecv@dcompcole{0.21}

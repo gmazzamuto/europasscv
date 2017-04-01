@@ -2,7 +2,7 @@
 
 # Version ... (upcoming)
 
-* add def file for Hungarian
+* add def files for Hungarian and Danish
 * new environment ecvenumerate
 
 
