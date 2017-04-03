@@ -816,11 +816,10 @@
 
   \setlength\ecv@itemizeskip{-\ht\strutbox}\addtolength{\ecv@itemizeskip}{-2\dp\strutbox}
 
-  \noindent\begin{tabular}{@{}R{\ecv@leftcolwidth}@{\hspace{\ecv@colsep}}P{\ecv@rightcolwidth}@{}}
+  \begin{tabular}{@{}R{\ecv@leftcolwidth}@{\hspace{\ecv@colsep}}P{\ecv@rightcolwidth}@{}}
   \if@ecvdebug\cellcolor{yellow!25}\fi #2 & \if@ecvdebug\cellcolor{blue!25}\fi #3
   \end{tabular}
-  % do not delete the blank line below
-
+  \par
   \@ecvoverrideskipfalse
   \@ecvitemcommandtrue
 } 
