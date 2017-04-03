@@ -264,6 +264,7 @@
 \RequirePackage[hidelinks]{hyperref}
 \RequirePackage{colortbl}
 \RequirePackage{graphicx}
+\RequirePackage{xparse}
 \if@ecvdebug \RequirePackage{showframe} \fi
 
 
@@ -543,8 +544,10 @@
 }
 
 % Spoken language information
-\newcommand*\ecvmothertongue[2][0pt]{%
-\ecvblueitem[#1]{\ecv@mothertonguekey}{#2}
+\NewDocumentCommand\ecvmothertongue{om}{%
+  \@ecvitemcommandfalse
+  \ecvupdatecurrentskip{#1}{0pt}
+  \ecvblueitem{\ecv@mothertonguekey}{#2}
 }
 
 \newlength\ecv@langparwidth
@@ -752,14 +755,31 @@
 
 
 % sectioning commands
-\newif\if@ecvitemskip\@ecvitemskipfalse
+\newcommand{\ecvupdatecurrentskip}[2]{
+% #1: value to be tested
+% #2: default value
+\if@ecvdebug
+  \message{^^J##################^^J}
+  \message{[europasscv] ecvupdatecurrentskip #1 #2, override \if@ecvoverrideskip true \else false \fi^^J}
+\fi
+
+\IfNoValueTF{#1}
+  {\if@ecvoverrideskip\else\setlength{\ecv@currentskip}{#2}\fi}
+  {\setlength{\ecv@currentskip}{#1}}
+
+\if@ecvdebug
+  \message{[europasscv] set \the\ecv@currentskip}
+  \message{^^J##################^^J}
+\fi
+}
+
+\newif\if@ecvoverrideskip\@ecvoverrideskipfalse
 \newlength{\ecv@itemskip}
 \newlength{\ecv@itemizeskip}
 \setlength\ecv@itemskip{2.8pt}
 
 \newlength{\ecv@currentskip}
 
-\newif\if@ecvlastitemwassection\@ecvlastitemwassectionfalse
 \newif\if@ecvitemcommand\@ecvitemcommandtrue
 
 \newcommand{\ecv@secondarg}{}
@@ -772,7 +792,8 @@
   }p{#1}
 }
 \newcolumntype{R}[1]{>{\raggedleft}p{#1}}
-\newcommand\ecvitem[3][\ecv@itemskip]{%
+
+\NewDocumentCommand\ecvitem{o+m+m}{%
   \if@ecvdebug
     \renewcommand{\ecv@secondarg}{#2}
     \renewcommand{\ecv@thirdarg}{#3}
@@ -780,23 +801,18 @@
     \message{[europasscv] typesetting ^^J}
     \message{[europasscv] \meaning\ecv@secondarg^^J}
     \message{[europasscv] \meaning\ecv@thirdarg^^J}
-    \message{[europasscv] ecvitemskip = \if@ecvitemskip true, skipping \the\ecv@currentskip \else false\fi^^J}
+    \message{[europasscv] currentskip = \the\ecv@currentskip^^J}
     \message{[europasscv] leftcolwidth = \the\ecv@leftcolwidth^^J}
     \message{[europasscv] ecv@colsep = \the\ecv@colsep^^J}
     \message{[europasscv] rightcolwidth = \the\ecv@rightcolwidth^^J}
     \message{[europasscv] textwidth = \the\textwidth^^J}
   \fi
 
-  \if@ecvitemskip
-    \setlength{\ecv@currentskip}{#1}
-    \vspace{\ecv@currentskip}
+  \if@ecvitemcommand
+    \ecvupdatecurrentskip{#1}{\ecv@itemskip}
   \fi
 
-  \if@ecvitemcommand
-    \if@ecvlastitemwassection
-      \vspace{\smallskipamount}
-    \fi
-  \fi
+  \vspace{\ecv@currentskip}
 
   \setlength\ecv@itemizeskip{-\ht\strutbox}\addtolength{\ecv@itemizeskip}{-2\dp\strutbox}
 
@@ -805,45 +821,51 @@
   \end{tabular}
   % do not delete the blank line below
 
-  \@ecvitemskiptrue
-  \@ecvlastitemwassectionfalse
+  \@ecvoverrideskipfalse
   \@ecvitemcommandtrue
 } 
 
 \newlength{\ecv@sectionrulelength}
 
-\newcommand{\ecvsection}[2][\bigskipamount]{%
+\NewDocumentCommand\ecvsection{o+m}{%
   \@ecvitemcommandfalse
+  \ecvupdatecurrentskip{#1}{\bigskipamount}
   \setlength{\ecv@sectionrulelength}{\ecv@rightcolwidth}
   \addtolength{\ecv@sectionrulelength}{-7pt}
-  \ecvitem[#1]{\ecvsectionstyle{#2}}
-              {\textcolor{ecvrulecolor}{\noindent\rule{\ecv@sectionrulelength}{1pt}\rule{7pt}{8pt}}}
+  \ecvitem{\ecvsectionstyle{#2}}
+          {\textcolor{ecvrulecolor}{\noindent\rule{\ecv@sectionrulelength}{1pt}\rule{7pt}{8pt}}}
   \nopagebreak
-  \@ecvitemskipfalse
-  \@ecvlastitemwassectiontrue
-  \vspace*{\medskipamount}
+  \@ecvoverrideskiptrue
+  \setlength{\ecv@currentskip}{\medskipamount}
 }
 
-\newcommand\ecvtitle[3][\if@ecvitemskip 1.3\bigskipamount \else 0pt \fi]{%
+\NewDocumentCommand\ecvtitle{o+m+m}{%
   \@ecvitemcommandfalse
-  \ecvitem[#1]{\small \ecvbluenormalstyle{#2}}{\ecvtitlestyle{#3}}
+  \ecvupdatecurrentskip{#1}{1.3\bigskipamount}
+  \ecvitem{\small \ecvbluenormalstyle{#2}}{\ecvtitlestyle{#3}}
 }
 
-\newcommand{\ecvtitlelevel}[4][\if@ecvitemskip 1.3\bigskipamount \else 0pt \fi]{
-    \ecvtitle[#1]{#2}{
+\NewDocumentCommand\ecvtitlelevel{o+m+m+m}{
+  \@ecvitemcommandfalse
+  \ecvupdatecurrentskip{#1}{1.3\bigskipamount}
+    \ecvtitle{#2}{
         #3 \if@ecvdebug\cellcolor{green!25}\fi \hfill \ecvhighlight{\small #4}
         \nolinebreak[4]
     }
 }
 
-\newcommand\ecvblueitem[3][\if@ecvitemskip 1.3\bigskipamount\else 0pt \fi]{
-  \ecvitem[#1]{\textcolor{ecvsectioncolor}{#2}}{#3}
+\NewDocumentCommand\ecvblueitem{o+m+m}{
+  \@ecvitemcommandfalse
+  \ecvupdatecurrentskip{#1}{1.3\bigskipamount}
+  \ecvitem{\textcolor{ecvsectioncolor}{#2}}{#3}
 }
 
-\newcommand{\ecvbigitem}[3][0.8\bigskipamount]{
-  \ecvitem[#1]{\ecvsectionstyle{#2}}{\ecvlargenormalstyle{#3}}
-  \vspace{0.8\bigskipamount}
-  \@ecvitemskipfalse
+\NewDocumentCommand\ecvbigitem{o+m+m}{%
+  \@ecvitemcommandfalse
+  \ecvupdatecurrentskip{#1}{0.8\bigskipamount}
+  \ecvitem{\ecvsectionstyle{#2}}{\ecvlargenormalstyle{#3}}
+  \@ecvoverrideskiptrue
+  \setlength{\ecv@currentskip}{0.8\bigskipamount}
 }
 
 \newcommand{\ecvhighlightcell}[1]{\vspace{-4\dp\strutbox}\hspace{0.2cm}\parbox{0.95\ecv@rightcolwidth}{\vspace*{0.3cm} #1\vspace{0.1cm}} \cellcolor{ecvhighlightcellcolor}}
