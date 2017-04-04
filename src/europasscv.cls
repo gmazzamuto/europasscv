@@ -220,12 +220,14 @@
 \DeclareOption{notitle}{\def\ecv@notitle{}}
 
 % Page numbering
-\DeclareOption{totpages}{%
-  \AtEndOfPackage{\RequirePackage{totpages}%
-  \def\ecv@totpages{~/~\ref{TotPages}}
-  %\ecvpage{\ecv@pagekey~\thepage~/~\ref{TotPages}}%
-  }%
+\AtEndOfPackage{\RequirePackage{totpages}}
+\def\ecv@totpages{~/~\ref{TotPages}}
+\DeclareOption{nototpages}{
+  \def\ecv@totpages{}
 }
+
+\newcommand*{\ecvpage}[1]{\def\ecv@page{#1}}
+\ecvpage{\ecv@pagekey~\thepage\ecv@totpages}
 
 \newif\if@ecvnodocument\@ecvnodocumentfalse
 \DeclareOption{nodocument}{%
@@ -240,7 +242,7 @@
   \PassOptionsToClass{\CurrentOption}{article}%
 } 
 
-\ExecuteOptions{english,hrule,totpages} % Default options
+\ExecuteOptions{english,hrule} % Default options
 
 \ProcessOptions\relax
 
@@ -279,10 +281,6 @@
     \setmainfont{TeX Gyre Heros}
   \fi
 \fi
-
-\def\ecv@totpages{}
-\newcommand*{\ecvpage}[1]{\def\ecv@page{#1}}
-\ecvpage{\ecv@pagekey~\thepage\ecv@totpages}
 
 \def\ecv@lfoot{%
   \footnotesize{\@date}
