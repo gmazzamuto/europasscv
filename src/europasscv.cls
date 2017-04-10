@@ -387,8 +387,6 @@
 \newcommand*{\ecvpictureleft}{\@ecvpicturerightfalse \@ecvpicturelefttrue}
 \newcommand*{\ecvpictureright}{\@ecvpicturerighttrue \@ecvpictureleftfalse}
 \newcommand*{\ecvdrawpicture}{}
-\newcommand*{\ecvbeforepicture}[1]{\def\ecv@beforepic{#1}}
-\newcommand*{\ecvafterpicture}[1]{\def\ecv@afterpic{#1}}
 \newif\if@ecvpicture\@ecvpicturefalse
 \newcommand*\ecvpicture{%\@e
 \@ifnextchar[\ecv@picture{\ecv@picture[]}}
@@ -398,11 +396,6 @@
 \renewcommand*{\ecvdrawpicture}{\includegraphics[#1]{#2}}
 \@ecvpicturetrue
 \fi}
-% The following must be used inside \ecvbeforepicture
-% or \ecvafterpicture
-\newcommand*{\ecvspace}[1]{\vspace{#1}}
-\ecvbeforepicture{\raggedleft}
-\ecvafterpicture{0pt}
 \ecvfirstname{}
 \ecvlastname{}
 \ecvname{\ecv@lastname\ \ecv@firstname}
@@ -538,7 +531,6 @@
     \end{tabular}
     \end{doublespacing}
   }
-  \ecvspace{\ecv@afterpic}
 }
 
 % Spoken language information
