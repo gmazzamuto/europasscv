@@ -730,19 +730,18 @@
 \color{\ecv@textcolor}
 }
 
-
 \newif\if@ecvinsideEcvItemize\@ecvinsideEcvItemizefalse
 \newcommand{\newecvitemize}[2]{
-  \newenvironment{#1}[1][leftmargin=*,nolistsep,nosep,topsep=0.1\baselineskip]{
-  \if@ecvinsideEcvItemize
-  \else
-  \ifhmode \newline \else \fi
-  \vspace*{-\baselineskip}
+  \newenvironment{#1}[1][leftmargin=*, nosep]{
+  \par
+  \begin{minipage}[t]{\linewidth}
+  \if@ecvinsideEcvItemize \vspace*{-0.5\baselineskip} \fi
   \@ecvinsideEcvItemizetrue
-  \fi
-  \begin{#2}[##1]
+    \begin{#2}[##1]
   }{
-  \end{#2}
+    \end{#2}
+  \end{minipage}
+  \@ecvinsideEcvItemizefalse
   }
 }
 \newecvitemize{ecvitemize}{itemize}
