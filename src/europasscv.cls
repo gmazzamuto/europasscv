@@ -384,21 +384,23 @@
 \newcommand*{\ecvnationality}[1]{\def\ecv@nationality{#1}\@ecvpiextrafieldstrue}
 \newcommand*{\ecvdateofbirth}[1]{\def\ecv@birth{#1}\@ecvpiextrafieldstrue}
 \newcommand*{\ecvgender}[1]{\def\ecv@gender{#1}\@ecvpiextrafieldstrue}
+
 % Personal picture
-\newif\if@ecvpictureright\@ecvpicturerightfalse
-\newif\if@ecvpictureleft\@ecvpicturelefttrue
-\newcommand*{\ecvpictureleft}{\@ecvpicturerightfalse \@ecvpicturelefttrue}
-\newcommand*{\ecvpictureright}{\@ecvpicturerighttrue \@ecvpictureleftfalse}
-\newcommand*{\ecvdrawpicture}{}
 \newif\if@ecvpicture\@ecvpicturefalse
-\newcommand*\ecvpicture{%\@e
-\@ifnextchar[\ecv@picture{\ecv@picture[]}}
-\def\ecv@picture[#1]#2{%
-\def\ecvarg{#2}
-\ifx\@empty\ecvarg\renewcommand*{\ecvdrawpicture}{}\else
-\renewcommand*{\ecvdrawpicture}{\includegraphics[#1]{#2}}
-\@ecvpicturetrue
-\fi}
+\newif\if@ecvpictureright\@ecvpicturerightfalse
+\newif\if@ecvpictureleft\@ecvpictureleftfalse
+\NewDocumentCommand{\ecvpictureleft}{O{,} m}{
+  \@ecvpicturelefttrue \@ecvpicturetrue
+  \def\ecv@pictureleftoptions{#1}
+  \def\ecv@pictureleftfile{#2}
+}
+\NewDocumentCommand{\ecvpictureright}{O{,} m}{
+  \@ecvpicturerighttrue \@ecvpicturetrue
+  \def\ecv@picturerightoptions{#1}
+  \def\ecv@picturerightfile{#2}
+}
+\newcommand{\ecvpicture}[2][]{\ecvpictureleft[#1]{#2}}
+
 \ecvfirstname{}
 \ecvlastname{}
 \ecvname{\ecv@lastname\ \ecv@firstname}
@@ -415,8 +417,6 @@
 \ecvnationality{}
 \ecvdateofbirth{}
 \ecvgender{}
-\ecvpicture{}
-
 
 % see http://tex.stackexchange.com/a/12811
 \def\processlinks#1{%
@@ -452,13 +452,13 @@
     \ecvsectionstyle{\ecv@infosectionkey}
     \if@ecvpicture
       \if@ecvpictureleft
-	\raisebox{-\height}{\ecvdrawpicture}
+	\raisebox{-\height}{\expandafter\includegraphics\expandafter[\ecv@pictureleftoptions]{\ecv@pictureleftfile}}
       \fi
     \fi
     }
     { %  right column
     \begin{doublespacing}
-    \begin{tabular}[t]{@{}p{\if@ecvpicture \if@ecvpictureleft \ecv@rightcolwidth \else 0.7\ecv@rightcolwidth \fi \else \ecv@rightcolwidth\fi}@{}p{\if@ecvpictureright 0.3\ecv@rightcolwidth \else 0pt\fi}@{}}
+    \begin{tabular}[t]{@{}p{\if@ecvpicture \if@ecvpictureright 0.7\ecv@rightcolwidth \else \ecv@rightcolwidth \fi \else \ecv@rightcolwidth\fi}@{}p{\if@ecvpictureright 0.3\ecv@rightcolwidth \else 0pt\fi}@{}}
       \if@ecvdebug\cellcolor{green!25}\fi
       \raggedright
       {\ecvLargenormalstyle{\ecv@name}} \newline
@@ -540,7 +540,7 @@
       \if@ecvpictureright
 	\if@ecvdebug\cellcolor{red!25}\fi
 	\Large \vspace{-\baselineskip}
-	\raisebox{-\height}{\ecvdrawpicture}
+	\raisebox{-\height}{\expandafter\includegraphics\expandafter[\ecv@picturerightoptions]{\ecv@picturerightfile}}
       \fi
     \end{tabular}
     \end{doublespacing}

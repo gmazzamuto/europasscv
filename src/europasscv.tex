@@ -106,14 +106,12 @@ and then typeset inside the \texttt{europasscv} environment with:
 \begin{description}
 \item[\texttt{\bs ecvpersonalinfo}]
 \end{description}
-A photo can be added with the command:
+Photos can be added with the following commands:
 \begin{description}
-\item[\texttt{\bs ecvpicture[\textit{options}]\{\textit{filename}\}}]
+\item[\texttt{\bs ecvpictureleft[\textit{options}]\{\textit{filename}\}}]
+\item[\texttt{\bs ecvpictureright[\textit{options}]\{\textit{filename}\}}]
 \end{description}
-The provided options are passed to \texttt{\bs includegraphics}. By default, the photo is placed to the left. To place it to the right, add the following command:
-\begin{description}
-\item[\texttt{\bs ecvpictureright}]
-\end{description}
+where options are passed to \texttt{\bs includegraphics}. The command \texttt{\bs ecvpicture} is an alias for \texttt{\bs ecvpictureleft}.
 
 \hypersetup{urlcolor=magenta}
 
@@ -131,8 +129,7 @@ Use the following simple commands to add items and sections to your CV:\\
 
     \ecvsection{ecvsection}
     \ecvtitle{apr 2012 -- apr 2014}{ecvtitle}
-    \ecvitem{}{ecvitem: this is the standard CV item}
-    \ecvitem{}{ecvitem with some \ecvhighlight{highlighted} text}
+    \ecvitem{}{ecvitem: this is the standard CV item. This is some \ecvhighlight{highlighted} text.}
     \ecvitem{ecvitemize}{
     \begin{ecvitemize}
 	\item this is a list item
@@ -143,7 +140,7 @@ Use the following simple commands to add items and sections to your CV:\\
 	    \end{ecvitemize}
     \end{ecvitemize}
     }
-    \ecvblueitem[-5pt]{blue left text}{ecvblueitem}
+    \ecvblueitem{blue left text}{ecvblueitem}
     \ecvtitlelevel{apr 2012 -- apr 2014}{ecvtitlelevel}{ISCED 6}
     \ecvitem{ecvitem}{Item description}
     \ecvitem{ecvitem}{\ecvhighlightcell{highlighted cell}}
@@ -181,6 +178,7 @@ Finally, if you want to put lists in one CV entry, use the \texttt{ecvitemize} a
   \end{ecvitemize}
 }
 \end{verbatim}
+\enlargethispage{\baselineskip}
 
 
 \subsection{Language skills}
