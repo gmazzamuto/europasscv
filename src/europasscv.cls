@@ -374,6 +374,7 @@
 \newcommand*{\ecvfax}[1]{\def\ecv@fax{#1}}
 \newcommand*{\ecvemail}[1]{\def\ecv@email{#1}}
 \newcommand*{\ecvhomepage}[1]{\def\ecv@homepage{#1}}
+\newcommand*{\ecvgithubpage}[1]{\def\ecv@githubpage{#1}}
 \def\ecv@im{}
 \newif\if@ecvIMalreadyprovided\@ecvIMalreadyprovidedfalse
 \newcommand*{\ecvim}[2]{\if@ecvIMalreadyprovided \g@addto@macro\ecv@im{\quad} \fi \g@addto@macro\ecv@im{\ecvhighlight{#1} #2} \@ecvIMalreadyprovidedtrue}
@@ -407,6 +408,7 @@
 \ecvfax{}
 \ecvemail{}
 \ecvhomepage{}
+\ecvgithubpage{}
 \ecvnationality{}
 \ecvdateofbirth{}
 \ecvgender{}
@@ -494,6 +496,9 @@
       \fi
       \ifx\@empty\ecv@homepage\else
 	  \raisebox{-2\lineskip}{\includegraphics[width=0.4cm]{website_europass_icon.pdf}}\hspace{0.2mm} {\fontseries{m}\selectfont \processlinks{\ecv@homepage}} \newline
+      \fi
+	  \ifx\@empty\ecv@githubpage\else
+	  \raisebox{-2\lineskip}{\includegraphics[width=0.4cm]{github_icon.pdf}}\hspace{0.2mm} {\fontseries{m}\selectfont \processlinks{\ecv@githubpage}} \newline
       \fi
       \ifx\@empty\ecv@im\else
 	  \raisebox{-2\lineskip}{\includegraphics[width=0.4cm]{im_europass_icon.pdf}} \hspace{0.2mm}{\fontseries{m}\selectfont \ecv@im} \newline
