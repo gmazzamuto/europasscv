@@ -267,6 +267,7 @@
 \RequirePackage{colortbl}
 \RequirePackage{graphicx}
 \RequirePackage{xparse}
+\RequirePackage{substr}
 \if@ecvdebug \RequirePackage{showframe} \fi
 
 
@@ -438,7 +439,10 @@
 
 \newif\if@processlinks@converttoemail
 \def\convertstring#1{\if@processlinks@converttoemail \toemail{#1} \else \tourl{#1} \fi}
-\def\tourl#1{\setul{.5pt}{.4pt}\href{#1}{\ul{\mbox{#1}}}}
+\newcommand{\tourl}[1]{%
+\IfSubStringInString{://}{#1}{\def\temp{#1}}{\def\temp{http://#1}}%
+\setul{.5pt}{.4pt}\href{\temp}{\ul{\mbox{#1}}}%
+}
 \def\toemail#1{\setul{.5pt}{.4pt}\href{mailto:#1}{\ul{\mbox{#1}}}}
 
 \newif\if@ecvpineedspipe\@ecvpineedspipefalse
