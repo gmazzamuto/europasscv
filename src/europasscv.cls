@@ -735,9 +735,9 @@
   \newenvironment{#1}[1][leftmargin=*, nosep]{
   \par
   \begin{minipage}[t]{\linewidth}
-  \if@ecvinsideEcvItemize \vspace*{-0.5\baselineskip} \fi
   \@ecvinsideEcvItemizetrue
     \begin{#2}[##1]
+  \if@ecvinsideEcvItemize \vspace*{-0.5\baselineskip} \fi
   }{
     \end{#2}
   \end{minipage}
