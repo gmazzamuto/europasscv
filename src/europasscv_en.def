@@ -28,8 +28,8 @@
 \def\ecv@readkey{\ecv@utf{Reading}}
 \def\ecv@interactkey{\ecv@utf{Spoken interaction}}
 \def\ecv@productkey{\ecv@utf{Spoken production}}
-\def\ecv@langshortdesckey{\ecv@utf{Levels: A1/A2: Basic user -- B1/B2: Independent user -- C1/C2: Proficient user}}
-\def\ecv@langfooterkey{\ecv@utf{Common European Framework of Reference (CEF) level}}
+\def\ecv@langshortdesckey{\ecv@utf{Levels: A1 and A2: Basic user -- B1 and B2: Independent user -- C1 and C2: Proficient user}}
+\def\ecv@langfooterkey{\ecv@utf{Common European Framework of Reference for Languages}}
 \def\ecv@langlinkkey{\ecv@utf{http://europass.cedefop.europa.eu/en/resources/european-language-levels-cefr}}
 \def\ecv@cefbasickey{\ecv@utf{Basic user}}
 \def\ecv@cefindepkey{\ecv@utf{Independent user}}

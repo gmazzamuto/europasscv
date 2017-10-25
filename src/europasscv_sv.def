@@ -28,7 +28,7 @@
 \def\ecv@readkey{\ecv@utf{Läsförståelse}}
 \def\ecv@interactkey{\ecv@utf{Samtal/muntlig interaktion}}
 \def\ecv@productkey{\ecv@utf{Muntlig produktion}}
-\def\ecv@langshortdesckey{\ecv@utf{Nivåer: A1/A2: Nybörjare -- B1/B2: Självständig användare -- C1/C2: Avancerad användare}}
+\def\ecv@langshortdesckey{\ecv@utf{\scriptsize Nivåer: A1 och A2: Användare på nybörjarnivå - B1 och B2: Självständig användare - C1 och C2: Avancerad användare}}
 \def\ecv@langfooterkey{\ecv@utf{Gemensam europeisk referensram för språk}}
 \def\ecv@langlinkkey{\ecv@utf{http://europass.cedefop.europa.eu/sv/resources/european-language-levels-cefr}}
 \def\ecv@cefbasickey{\ecv@utf{Nybörjare}}
@@ -49,8 +49,8 @@
 \def\ecv@dcprofkey{\ecv@utf{Avancerad användare}}
 
 % Width of language columns
-\def\ecv@langcola{0.15}
-\def\ecv@langcolb{0.15}
-\def\ecv@langcolc{0.25}
-\def\ecv@langcold{0.25}
+\def\ecv@langcola{0.18}
+\def\ecv@langcolb{0.18}
+\def\ecv@langcolc{0.22}
+\def\ecv@langcold{0.22}
 \def\ecv@langcole{0.2}
