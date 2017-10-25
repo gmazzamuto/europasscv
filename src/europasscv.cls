@@ -740,7 +740,7 @@
     \begin{#2}[##1]
   }{
     \end{#2}
-  \end{minipage}
+  \end{minipage}%
   \@ecvinsideEcvItemizefalse
   }
 }
