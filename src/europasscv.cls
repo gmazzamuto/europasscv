@@ -572,7 +572,7 @@
     \setlength{\ecv@langtablewidth}{\ecv@rightcolwidth}
     \addtolength{\ecv@langtablewidth}{-4\arrayrulewidth}
     \arrayrulecolor{ecvtablebordercolor}
-    \begin{tabular}[t]{p{\ecv@langcola\ecv@langtablewidth}|p{\ecv@langcolb\ecv@langtablewidth}|p{\ecv@langcolc\ecv@langtablewidth}|p{\ecv@langcold\ecv@langtablewidth}|p{\ecv@langcole\ecv@langtablewidth}}
+    \begin{tabular}[t]{m{\ecv@langcola\ecv@langtablewidth}|m{\ecv@langcolb\ecv@langtablewidth}|m{\ecv@langcolc\ecv@langtablewidth}|m{\ecv@langcold\ecv@langtablewidth}|m{\ecv@langcole\ecv@langtablewidth}}
       \firsthline
       \multicolumn{2}{c|}{\ecvsectionstyle{\ecv@understandkey}} & \multicolumn{2}{c|}{\ecvsectionstyle{\ecv@speakkey}} & \centering \ecvsectionstyle{\ecv@writekey}\tabularnewline
       \hline
