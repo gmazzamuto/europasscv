@@ -1,7 +1,13 @@
-<a name="upcoming"></a>
+<a name="2017-11-19"></a>
 
-# Version ... (upcoming)
+# Version 2017-11-19
 
+* fix spacing in language table
+* add LinkedIn and GitHub icons in personal information
+* allow to have two pictures (both left and right)
+* new class option nototpages
+* fix item spacing
+* fix notitle option
 * add def files for Hungarian and Danish
 * new environment ecvenumerate
 
