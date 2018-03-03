@@ -662,6 +662,9 @@
 	
 	%footer
 	\nopagebreak[4]
+	\ecvitem[0.5\dp\strutbox]{}{\footnotesize \textcolor{ecvsectioncolor}{\ecv@digcompshortdesckey}}
+	\nopagebreak[4]
+	% \vspace*{-0.5\dp\strutbox}
 	\ecvitem[0.5\dp\strutbox]{}{\footnotesize \setulcolor{ecvlanglinkcolor}\setul{.5pt}{.4pt}\href{\ecv@digcomplinkkey}{\ul{\mbox{\textcolor{ecvlanglinkcolor}{\ecv@digcompfooterkey}}}}}
 	\renewcommand{\arraystretch}{0}
 }
