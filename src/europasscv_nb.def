@@ -42,6 +42,7 @@
 \def\ecv@contentcreationkey{\ecv@utf{Inn\-holds\-pro\-duk\-sjon}}
 \def\ecv@safetykey{\ecv@utf{Sikkerhet}}
 \def\ecv@problensolvingkey{\ecv@utf{Problemløsning}}
+\def\ecv@digcompshortdesckey{\ecv@utf{Nivåer: A: Basisbruker -- B: Selvstendig bruker -- C: Dyktig bruker}}
 \def\ecv@digcompfooterkey{\ecv@utf{Digital kompetanse -- Egenvurderingsmatrise}}
 \def\ecv@digcomplinkkey{\ecv@utf{https://europass.cedefop.europa.eu/nb/resources/digital-competences}}
 \def\ecv@dcbasickey{\ecv@utf{Basisbruker}}
