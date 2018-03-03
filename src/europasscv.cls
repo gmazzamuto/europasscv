@@ -84,7 +84,7 @@
 \DeclareOption{norsk}{%
   \AtEndOfPackage{%
     \InputIfFileExists{europasscv_nb.def}{}{%
-    \ClassWarningNoLine{europasscv}{Norwegian definition file 'europasscv_nb.def' not found}}%
+    \ClassWarningNoLine{europasscv}{Norwegian (Bokmål) definition file 'europasscv_nb.def' not found}}%
   }%
 }
 \DeclareOption{dutch}{%
