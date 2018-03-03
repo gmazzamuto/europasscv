@@ -1,7 +1,7 @@
 %!TEX encoding = UTF-8 Unicode
 %
 %
-\ProvidesFile{europasscv_nb.def}[europasscv Norwegian definitions]
+\ProvidesFile{europasscv_nb.def}[europasscv Norwegian (Bokmål) definitions]
 % Personal information
 \def\ecv@infosectionkey{\ecv@utf{Personlige opplysninger}}
 \def\ecv@namekey{\ecv@utf{Fornavn Etternavn}}
