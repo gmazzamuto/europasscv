@@ -42,6 +42,7 @@
 \def\ecv@contentcreationkey{\ecv@utf{Content creation}}
 \def\ecv@safetykey{\ecv@utf{Safety}}
 \def\ecv@problensolvingkey{\ecv@utf{Problem solving}}
+\def\ecv@digcompshortdesckey{\ecv@utf{Levels: A: Basic user -- B: Independent user -- C: Proficient user}}
 \def\ecv@digcompfooterkey{\ecv@utf{Digital competences - Self-assessment grid}}
 \def\ecv@digcomplinkkey{\ecv@utf{http://europass.cedefop.europa.eu/en/resources/digital-competences}}
 \def\ecv@dcbasickey{\ecv@utf{Basic user}}
