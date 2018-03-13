@@ -21,12 +21,12 @@
 \def\ecv@otherlanguageskey{\ecv@utf{Andre språk}}
 \def\ecv@assesskey{\ecv@utf{Egenvurdering}}
 \def\ecv@levelkey{\ecv@utf{Europeisk nivå}}
-\def\ecv@understandkey{\ecv@utf{Forstå}}
-\def\ecv@speakkey{\ecv@utf{Tale}}
+\def\ecv@understandkey{\ecv@utf{Forståelse}}
+\def\ecv@speakkey{\ecv@utf{Muntlig}}
 \def\ecv@writekey{\ecv@utf{Skrift}}
 \def\ecv@listenkey{\ecv@utf{Lytting}}
 \def\ecv@readkey{\ecv@utf{Lesing}}
-\def\ecv@interactkey{\ecv@utf{Interaksjon}}
+\def\ecv@interactkey{\ecv@utf{Muntlig interaksjon}}
 \def\ecv@productkey{\ecv@utf{Muntlig produksjon}}
 \def\ecv@langshortdesckey{\ecv@utf{Nivåer: A1/A2: Basisbruker -- B1/B2: Selvstendig bruker -- C1/C2: Avansert bruker}}
 \def\ecv@langfooterkey{\ecv@utf{Felles europeisk rammeverk for språk}}
@@ -36,10 +36,10 @@
 \def\ecv@cefprofkey{\ecv@utf{Avansert bruker}}
 \def\ecv@europeanunionkey{\ecv@utf{Den europeiske unionen}}
 % Digital competences self-assessment grid
-\def\ecv@digitalcompetenceskey{\ecv@utf{Digital kompatense}}
-\def\ecv@informationprocessingkey{\ecv@utf{In\-for\-ma\-sjons\-be\-hand\-ling}}
-\def\ecv@communicationkey{\ecv@utf{Kommunikation}}
-\def\ecv@contentcreationkey{\ecv@utf{Inn\-holds\-pro\-duk\-sjon}}
+\def\ecv@digitalcompetenceskey{\ecv@utf{Digital kompetanse}}
+\def\ecv@informationprocessingkey{\ecv@utf{Informasjons\-behandling}}
+\def\ecv@communicationkey{\ecv@utf{Kommunikasjon}}
+\def\ecv@contentcreationkey{\ecv@utf{Innholds\-produksjon}}
 \def\ecv@safetykey{\ecv@utf{Sikkerhet}}
 \def\ecv@problensolvingkey{\ecv@utf{Problemløsning}}
 \def\ecv@digcompfooterkey{\ecv@utf{Digital kompetanse -- Egenvurderingsmatrise}}
@@ -56,9 +56,9 @@
 \def\ecv@langcole{0.2}
 
 % Width of digital competences columns
-\def\ecv@dcompcola{0.21}
-\def\ecv@dcompcolb{0.21}
-\def\ecv@dcompcolc{0.16}
-\def\ecv@dcompcold{0.21}
-\def\ecv@dcompcole{0.21}
+\def\ecv@dcompcola{0.20}
+\def\ecv@dcompcolb{0.20}
+\def\ecv@dcompcolc{0.20}
+\def\ecv@dcompcold{0.20}
+\def\ecv@dcompcole{0.20}
 
