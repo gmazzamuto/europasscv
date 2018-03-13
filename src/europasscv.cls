@@ -81,10 +81,10 @@
     \ClassWarningNoLine{europasscv}{Swedish definition file 'europasscv_sv.def' not found}}%
   }%
 }
-\DeclareOption{norwegian}{%
+\DeclareOption{norsk}{%
   \AtEndOfPackage{%
-    \InputIfFileExists{europasscv_no.def}{}{%
-    \ClassWarningNoLine{europasscv}{Norwegian definition file 'europasscv_no.def' not found}}%
+    \InputIfFileExists{europasscv_nb.def}{}{%
+    \ClassWarningNoLine{europasscv}{Norwegian (Bokmål) definition file 'europasscv_nb.def' not found}}%
   }%
 }
 \DeclareOption{dutch}{%

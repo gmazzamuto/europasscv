@@ -1,0 +1,64 @@
+%!TEX encoding = UTF-8 Unicode
+%
+%
+\ProvidesFile{europasscv_nb.def}[europasscv Norwegian (Bokmål) definitions]
+% Personal information
+\def\ecv@infosectionkey{\ecv@utf{Personlige opplysninger}}
+\def\ecv@namekey{\ecv@utf{Fornavn Etternavn}}
+\def\ecv@addresskey{\ecv@utf{Adresse}}
+\def\ecv@telkey{\ecv@utf{Telefon}}
+\def\ecv@mobilekey{\ecv@utf{Mobil}}
+\def\ecv@faxkey{\ecv@utf{Fax}}
+\def\ecv@emailkey{\ecv@utf{E-postadresse}}
+\def\ecv@nationalitykey{\ecv@utf{Nasjonalitet}}
+\def\ecv@birthkey{\ecv@utf{Fødselsdato}}
+\def\ecv@genderkey{\ecv@utf{Kjønn}}
+% Footer
+\def\ecv@pagekey{\ecv@utf{Side}}
+\def\ecv@cvofkey{\ecv@utf{CV for}}
+% Language table
+\def\ecv@mothertonguekey{\ecv@utf{Morsmål}}
+\def\ecv@otherlanguageskey{\ecv@utf{Andre språk}}
+\def\ecv@assesskey{\ecv@utf{Egenvurdering}}
+\def\ecv@levelkey{\ecv@utf{Europeisk nivå}}
+\def\ecv@understandkey{\ecv@utf{Forstå}}
+\def\ecv@speakkey{\ecv@utf{Tale}}
+\def\ecv@writekey{\ecv@utf{Skrift}}
+\def\ecv@listenkey{\ecv@utf{Lytting}}
+\def\ecv@readkey{\ecv@utf{Lesing}}
+\def\ecv@interactkey{\ecv@utf{Interaksjon}}
+\def\ecv@productkey{\ecv@utf{Muntlig produksjon}}
+\def\ecv@langshortdesckey{\ecv@utf{Nivåer: A1/A2: Basisbruker -- B1/B2: Selvstendig bruker -- C1/C2: Avansert bruker}}
+\def\ecv@langfooterkey{\ecv@utf{Felles europeisk rammeverk for språk}}
+\def\ecv@langlinkkey{\ecv@utf{https://europass.cedefop.europa.eu/nb/resources/european-language-levels-cefr}}
+\def\ecv@cefbasickey{\ecv@utf{Basisbruker}}
+\def\ecv@cefindepkey{\ecv@utf{Selvstendig bruker}}
+\def\ecv@cefprofkey{\ecv@utf{Avansert bruker}}
+\def\ecv@europeanunionkey{\ecv@utf{Den europeiske unionen}}
+% Digital competences self-assessment grid
+\def\ecv@digitalcompetenceskey{\ecv@utf{Digital kompatense}}
+\def\ecv@informationprocessingkey{\ecv@utf{In\-for\-ma\-sjons\-be\-hand\-ling}}
+\def\ecv@communicationkey{\ecv@utf{Kommunikation}}
+\def\ecv@contentcreationkey{\ecv@utf{Inn\-holds\-pro\-duk\-sjon}}
+\def\ecv@safetykey{\ecv@utf{Sikkerhet}}
+\def\ecv@problensolvingkey{\ecv@utf{Problemløsning}}
+\def\ecv@digcompfooterkey{\ecv@utf{Digital kompetanse -- Egenvurderingsmatrise}}
+\def\ecv@digcomplinkkey{\ecv@utf{https://europass.cedefop.europa.eu/nb/resources/digital-competences}}
+\def\ecv@dcbasickey{\ecv@utf{Basisbruker}}
+\def\ecv@dcindepkey{\ecv@utf{Selvstendig bruker}}
+\def\ecv@dcprofkey{\ecv@utf{Dyktig bruker}}
+
+% Width of language columns
+\def\ecv@langcola{0.15}
+\def\ecv@langcolb{0.15}
+\def\ecv@langcolc{0.25}
+\def\ecv@langcold{0.25}
+\def\ecv@langcole{0.2}
+
+% Width of digital competences columns
+\def\ecv@dcompcola{0.21}
+\def\ecv@dcompcolb{0.21}
+\def\ecv@dcompcolc{0.16}
+\def\ecv@dcompcold{0.21}
+\def\ecv@dcompcole{0.21}
+
