@@ -1,0 +1,58 @@
+%!TEX encoding = UTF-8 Unicode
+%
+%
+\ProvidesFile{europasscv_ca.def}[europasscv Catalan definitions]
+\def\ecv@currvitaekey{\ecv@utf{Curr\'{i}culum vitae}}
+% Personal information
+\def\ecv@infosectionkey{\ecv@utf{Informaci\'{o} personal}}
+\def\ecv@namekey{\ecv@utf{Nom y Cognoms}}
+\def\ecv@addresskey{\ecv@utf{Direcci\'{o}}}
+\def\ecv@telkey{\ecv@utf{Tel\`{e}fono}}
+\def\ecv@mobilekey{\ecv@utf{M\`{o}vil}}
+\def\ecv@faxkey{\ecv@utf{Fax}}
+\def\ecv@emailkey{\ecv@utf{E-mail}}
+\def\ecv@nationalitykey{\ecv@utf{Nacionalitat}}
+\def\ecv@birthkey{\ecv@utf{Data de naixement}}
+\def\ecv@genderkey{\ecv@utf{Sexe}}
+% Footer
+\def\ecv@pagekey{\ecv@utf{P\`{a}gina}}
+\def\ecv@cvofkey{\ecv@utf{Curr\'{i}culum vit\ae\ de}}
+% Language table
+\def\ecv@mothertonguekey{\ecv@utf{Llengua materna}}
+\def\ecv@otherlanguageskey{\ecv@utf{Altres idiomes}}
+\def\ecv@assesskey{\ecv@utf{Autoevaluaci\'{o}}}
+\def\ecv@levelkey{\ecv@utf{Nivell europeu}}
+\def\ecv@understandkey{\ecv@utf{Comprensi\'{o}}}
+\def\ecv@speakkey{\ecv@utf{Pronunciaci\'{o}}}
+\def\ecv@writekey{\ecv@utf{Expresi\'{o} escrita}}
+\def\ecv@listenkey{\ecv@utf{Comprensi\'{o} auditiva}}
+\def\ecv@readkey{\ecv@utf{Comprensi\'{o} de lectura}}
+\def\ecv@interactkey{\ecv@utf{Interacci\'{o} oral}}
+\def\ecv@productkey{\ecv@utf{Expresi\'{o} oral}}
+\def\ecv@langshortdesckey{\ecv@utf{Niveles: A1/A2: Usuari b\'{a}sic -- B1/B2: Usuari independient -- C1/C2: Usuari competent}}
+\def\ecv@langfooterkey{\ecv@utf{Marc com\'{u} Europeu de refer\`{e}ncia per idiomes}}
+\def\ecv@langlinkkey{\ecv@utf{http://europass.cedefop.europa.eu/es/resources/european-language-levels-cefr}}
+\def\ecv@cefbasickey{\ecv@utf{Usuari b\'{a}sic}}
+\def\ecv@cefindepkey{\ecv@utf{Usuari independient}}
+\def\ecv@cefprofkey{\ecv@utf{Usuari competent}}
+\def\ecv@europeanunionkey{\ecv@utf{Uni\'{o} Europea}}
+% Digital competences self-assessment grid
+\def\ecv@digitalcompetenceskey{\ecv@utf{Competencies digitals}}
+\def\ecv@informationprocessingkey{\ecv@utf{Tractament de la informaci{\'o}}}
+\def\ecv@communicationkey{\ecv@utf{Comunicaci{\'o}}}
+\def\ecv@contentcreationkey{\ecv@utf{Creaci{\'o} del contingut}}
+\def\ecv@safetykey{\ecv@utf{Seguretat}}
+\def\ecv@problensolvingkey{\ecv@utf{Resoluci{\'o} de problemes}}
+\def\ecv@digcompfooterkey{\ecv@utf{Competencies digitals - Taula de auto evaluaci{\'o}}}
+\def\ecv@digcomplinkkey{\ecv@utf{http://europass.cedefop.europa.eu/es/resources/digital-competences}}
+\def\ecv@dcbasickey{\ecv@utf{Usuari b{\'a}sic}}
+\def\ecv@dcindepkey{\ecv@utf{Usuari independient}}
+\def\ecv@dcprofkey{\ecv@utf{Usuari competent}}
+
+% Width of language columns
+\def\ecv@langcola{0.15}
+\def\ecv@langcolb{0.15}
+\def\ecv@langcolc{0.25}
+\def\ecv@langcold{0.25}
+\def\ecv@langcole{0.2}
+
