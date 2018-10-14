@@ -376,6 +376,7 @@
 \newcommand*{\ecvemail}[1]{\def\ecv@email{#1}}
 \newcommand*{\ecvhomepage}[1]{\def\ecv@homepage{#1}}
 \newcommand*{\ecvgithubpage}[1]{\def\ecv@githubpage{#1}}
+\newcommand*{\ecvgitlabpage}[1]{\def\ecv@gitlabpage{#1}}
 \newcommand*{\ecvlinkedinpage}[1]{\def\ecv@linkedinpage{#1}}
 \def\ecv@im{}
 \newif\if@ecvIMalreadyprovided\@ecvIMalreadyprovidedfalse
@@ -413,6 +414,7 @@
 \ecvemail{}
 \ecvhomepage{}
 \ecvgithubpage{}
+\ecvgitlabpage{}
 \ecvlinkedinpage{}
 \ecvnationality{}
 \ecvdateofbirth{}
@@ -518,6 +520,9 @@
       \fi
 	  \ifx\@empty\ecv@githubpage\else
         \raisebox{-2\lineskip}{\includegraphics[width=0.4cm]{github_europass_icon.pdf}}\hspace{0.2mm} {\fontseries{m}\selectfont \processlinks{\ecv@githubpage}} \newline
+	  \fi
+	  \ifx\@empty\ecv@gitlabpage\else
+	  \raisebox{-2\lineskip}{\includegraphics[width=0.4cm]{gitlab_europass_icon.pdf}}\hspace{0.2mm} {\fontseries{m}\selectfont \processlinks{\ecv@gitlabpage}} \newline
 	  \fi
 	  \ifx\@empty\ecv@linkedinpage\else
         \raisebox{-2\lineskip}{\includegraphics[width=0.4cm]{linkedin_europass_icon.pdf}}\hspace{0.2mm} {\fontseries{m}\selectfont \processlinks{\ecv@linkedinpage}} \newline
