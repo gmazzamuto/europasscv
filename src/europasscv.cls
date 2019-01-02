@@ -479,61 +479,62 @@
       \raggedright
       {\ecvLargenormalstyle{\ecv@name}} \newline
       \ifx\@empty\ecv@address\else
-	  \raisebox{-2\lineskip}{\includegraphics[width=0.4cm]{address_europass_icon.pdf}}\hspace{0.2mm} {\fontseries{m}\selectfont \ecv@address} \newline
+        \raisebox{-2\lineskip}{\includegraphics[width=0.4cm]{address_europass_icon.pdf}}\hspace{0.2mm} {\fontseries{m}\selectfont \ecv@address} \newline
       \fi
-      \ifx\@empty\ecv@mobile
-      \else\@ecvphoneispresenttrue
+      \ifx\@empty\ecv@mobile\else
+        \@ecvphoneispresenttrue
         \raisebox{-2\lineskip}{\includegraphics[width=0.4cm]{mobile_europass_icon.pdf}}\hspace{0.2mm} {\fontseries{m}\selectfont \ecv@mobile} \quad
       \fi
-	  \ifx\@empty\ecv@telephone
-	  \else\@ecvphoneispresenttrue
+	  \ifx\@empty\ecv@telephone\else
+        \@ecvphoneispresenttrue
         \raisebox{-2\lineskip}{\includegraphics[width=0.4cm]{telephone_europass_icon.pdf}}\hspace{0.2mm} {\fontseries{m}\selectfont \ecv@telephone} \quad
       \fi
-      \ifx\@empty\ecv@workphone
-	\else
-	  \@ecvphoneispresenttrue
-	  \ifx\@empty\ecv@mobile
-	    \else
-	      \ifx\@empty\ecv@telephone
-		\else
-		  \if@ecvpicture
-		    \if@ecvpictureright
-		      \newline
-		    \fi
-		  \fi
-	      \fi
-	  \fi
+      \ifx\@empty\ecv@workphone\else
+        \@ecvphoneispresenttrue
+        \ifx\@empty\ecv@mobile\else
+            \ifx\@empty\ecv@telephone\else
+                \if@ecvpicture
+                    \if@ecvpictureright
+                        \newline
+                    \fi
+                \fi
+            \fi
+        \fi
         \raisebox{-2\lineskip}{\includegraphics[width=0.4cm]{work_europass_icon.pdf}}\hspace{0.2mm} {\fontseries{m}\selectfont \ecv@workphone}
       \fi
       \if@ecvphoneispresent
         \newline
       \fi          
       \ifx\@empty\ecv@fax\else
-	  \ecv@faxkey \ecv@fax
+        \ecv@faxkey \ecv@fax
       \fi
       \ifx\@empty\ecv@email\else
-	  \@processlinks@converttoemailtrue
-	  \raisebox{-2\lineskip}{\includegraphics[width=0.4cm]{mail_europass_icon.pdf}}\hspace{0.2mm} {\fontseries{m}\selectfont \processlinks{\ecv@email}} \newline
-	  \@processlinks@converttoemailfalse
+        \@processlinks@converttoemailtrue
+        \raisebox{-2\lineskip}{\includegraphics[width=0.4cm]{mail_europass_icon.pdf}}\hspace{0.2mm} {\fontseries{m}\selectfont \processlinks{\ecv@email}} \newline
+        \@processlinks@converttoemailfalse
       \fi
-      \ifx\@empty\ecv@homepage\else
-	  \raisebox{-2\lineskip}{\includegraphics[width=0.4cm]{website_europass_icon.pdf}}\hspace{0.2mm} {\fontseries{m}\selectfont \processlinks{\ecv@homepage}} \newline
+        \ifx\@empty\ecv@homepage\else
+        \raisebox{-2\lineskip}{\includegraphics[width=0.4cm]{website_europass_icon.pdf}}\hspace{0.2mm} {\fontseries{m}\selectfont \processlinks{\ecv@homepage}} \newline
       \fi
 	  \ifx\@empty\ecv@githubpage\else
-	  \raisebox{-2\lineskip}{\includegraphics[width=0.4cm]{github_europass_icon.pdf}}\hspace{0.2mm} {\fontseries{m}\selectfont \processlinks{\ecv@githubpage}} \newline
+        \raisebox{-2\lineskip}{\includegraphics[width=0.4cm]{github_europass_icon.pdf}}\hspace{0.2mm} {\fontseries{m}\selectfont \processlinks{\ecv@githubpage}} \newline
 	  \fi
 	  \ifx\@empty\ecv@linkedinpage\else
-	  \raisebox{-2\lineskip}{\includegraphics[width=0.4cm]{linkedin_europass_icon.pdf}}\hspace{0.2mm} {\fontseries{m}\selectfont \processlinks{\ecv@linkedinpage}} \newline
+        \raisebox{-2\lineskip}{\includegraphics[width=0.4cm]{linkedin_europass_icon.pdf}}\hspace{0.2mm} {\fontseries{m}\selectfont \processlinks{\ecv@linkedinpage}} \newline
 	  \fi
       \ifx\@empty\ecv@im\else
-	  \raisebox{-2\lineskip}{\includegraphics[width=0.4cm]{im_europass_icon.pdf}} \hspace{0.2mm}{\fontseries{m}\selectfont \ecv@im} \newline
+        \raisebox{-2\lineskip}{\includegraphics[width=0.4cm]{im_europass_icon.pdf}} \hspace{0.2mm}{\fontseries{m}\selectfont \ecv@im} \newline
       \fi
 	\ifx\@empty\ecv@gender\else
-	    \if@ecvpineedspipe\else \hspace*{-0.5ex}\fi
+	    \if@ecvpineedspipe\else
+            \hspace*{-0.5ex}
+        \fi
 	    \fontseries{m}\selectfont \ecvhighlight{~\if@ecvpineedspipe | \fi \ecv@genderkey} \ecv@gender \@ecvpineedspipetrue
 	\fi
 	\ifx\@empty\ecv@birth\else
-	    \if@ecvpineedspipe\else \hspace*{-0.5ex}\fi
+	    \if@ecvpineedspipe\else
+            \hspace*{-0.5ex}
+        \fi
 	    \fontseries{m}\selectfont \ecvhighlight{~\if@ecvpineedspipe | \fi\ecv@birthkey} \ecv@birth \@ecvpineedspipetrue
 	\fi
 	\if@ecvpictureright
