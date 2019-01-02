@@ -447,6 +447,8 @@
 
 \newif\if@ecvpineedspipe\@ecvpineedspipefalse
 \newif\if@ecvphoneispresent\@ecvphoneispresentfalse
+\newlength{\ecv@pileftcolwidth}
+\newlength{\ecv@pirightcolwidth}
 \providecommand{\ecvpersonalinfo}[1][0pt]{%
   \ecvitem[#1]{ %  left column
     \ecvsectionstyle{\ecv@infosectionkey}
@@ -457,8 +459,22 @@
     \fi
     }
     { %  right column
+    \if@ecvpicture
+        \if@ecvpictureright
+            \setlength{\ecv@pileftcolwidth}{0.7\ecv@rightcolwidth}
+        \else
+            \setlength{\ecv@pileftcolwidth}{\ecv@rightcolwidth}
+        \fi
+    \else
+        \setlength{\ecv@pileftcolwidth}{\ecv@rightcolwidth}
+    \fi
+    \if@ecvpictureright
+        \setlength{\ecv@pirightcolwidth}{0.3\ecv@rightcolwidth}
+    \else
+        \setlength{\ecv@pirightcolwidth}{0pt}
+    \fi
     \begin{doublespacing}
-    \begin{tabular}[t]{@{}p{\if@ecvpicture \if@ecvpictureright 0.7\ecv@rightcolwidth \else \ecv@rightcolwidth \fi \else \ecv@rightcolwidth\fi}@{}p{\if@ecvpictureright 0.3\ecv@rightcolwidth \else 0pt\fi}@{}}
+    \begin{tabular}[t]{@{}p{\ecv@pileftcolwidth}@{}p{\ecv@pirightcolwidth}@{}}
       \if@ecvdebug\cellcolor{green!25}\fi
       \raggedright
       {\ecvLargenormalstyle{\ecv@name}} \newline
