@@ -13,3 +13,5 @@
 *.fls
 *.fdb_latexmk
 *.tar.gz
+.directory
+
