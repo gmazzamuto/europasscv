@@ -268,6 +268,7 @@
 \RequirePackage{graphicx}
 \RequirePackage{xparse}
 \RequirePackage{substr}
+\RequirePackage{longtable}
 \if@ecvdebug \RequirePackage{showframe} \fi
 
 
@@ -458,22 +459,22 @@
       \fi
     \fi
     }
-    { %  right column
-    \if@ecvpicture
-        \if@ecvpictureright
-            \setlength{\ecv@pileftcolwidth}{0.7\ecv@rightcolwidth}
-        \else
-            \setlength{\ecv@pileftcolwidth}{\ecv@rightcolwidth}
-        \fi
-    \else
-        \setlength{\ecv@pileftcolwidth}{\ecv@rightcolwidth}
-    \fi
-    \if@ecvpictureright
-        \setlength{\ecv@pirightcolwidth}{0.3\ecv@rightcolwidth}
-    \else
-        \setlength{\ecv@pirightcolwidth}{0pt}
-    \fi
-    \begin{doublespacing}
+    {%  right column
+    \if@ecvpicture%
+        \if@ecvpictureright%
+            \setlength{\ecv@pileftcolwidth}{0.7\ecv@rightcolwidth}%
+        \else%
+            \setlength{\ecv@pileftcolwidth}{\ecv@rightcolwidth}%
+        \fi%
+    \else%
+        \setlength{\ecv@pileftcolwidth}{\ecv@rightcolwidth}%
+    \fi%
+    \if@ecvpictureright%
+        \setlength{\ecv@pirightcolwidth}{0.3\ecv@rightcolwidth}%
+    \else%
+        \setlength{\ecv@pirightcolwidth}{0pt}%
+    \fi%
+    \begin{doublespacing}%
     \begin{tabular}[t]{@{}p{\ecv@pileftcolwidth}@{}p{\ecv@pirightcolwidth}@{}}
       \if@ecvdebug\cellcolor{green!25}\fi
       \raggedright
@@ -583,55 +584,54 @@
 \newif\if@ecvfirstlangrow\@ecvfirstlangrowfalse
 
 \providecommand{\ecvlanguageheader}[1][0pt]{%
-  \setlength{\arrayrulewidth}{\ecv@langouterborderwidth}
-  \ecvblueitem{\ecv@otherlanguageskey}{
-    \renewcommand{\arraystretch}{1.5}
-    \setlength{\ecv@langtablewidth}{\ecv@rightcolwidth}
-    \addtolength{\ecv@langtablewidth}{-4\arrayrulewidth}
-    \arrayrulecolor{ecvtablebordercolor}
-    \begin{tabular}[t]{m{\ecv@langcola\ecv@langtablewidth}|m{\ecv@langcolb\ecv@langtablewidth}|m{\ecv@langcolc\ecv@langtablewidth}|m{\ecv@langcold\ecv@langtablewidth}|m{\ecv@langcole\ecv@langtablewidth}}
-      \firsthline
-      \multicolumn{2}{c|}{\ecvsectionstyle{\ecv@understandkey}} & \multicolumn{2}{c|}{\ecvsectionstyle{\ecv@speakkey}} & \centering \ecvsectionstyle{\ecv@writekey}\tabularnewline
-      \hline
-      \centering \ecvbluestyle{\ecv@listenkey}& \centering \ecvbluestyle{\ecv@readkey} &\centering \ecvbluestyle{\ecv@interactkey}& \centering
-      \ecvbluestyle{\ecv@productkey}&\tabularnewline
-      \hline
-    \end{tabular}
-  }
-  \@ecvfirstlangrowtrue
+  \setlength{\arrayrulewidth}{\ecv@langouterborderwidth}%
+  \ecvblueitem{\ecv@otherlanguageskey}{%
+    \renewcommand{\arraystretch}{1.5}%
+    \setlength{\ecv@langtablewidth}{\ecv@rightcolwidth}%
+    \addtolength{\ecv@langtablewidth}{-4\arrayrulewidth}%
+    \arrayrulecolor{ecvtablebordercolor}%
+    \begin{tabular}[t]{m{\ecv@langcola\ecv@langtablewidth}|m{\ecv@langcolb\ecv@langtablewidth}|m{\ecv@langcolc\ecv@langtablewidth}|m{\ecv@langcold\ecv@langtablewidth}|m{\ecv@langcole\ecv@langtablewidth}}%
+      \firsthline%
+      \multicolumn{2}{c|}{\ecvsectionstyle{\ecv@understandkey}} & \multicolumn{2}{c|}{\ecvsectionstyle{\ecv@speakkey}} & \centering \ecvsectionstyle{\ecv@writekey}\tabularnewline%
+      \hline%
+      \centering \ecvbluestyle{\ecv@listenkey}& \centering \ecvbluestyle{\ecv@readkey} &\centering \ecvbluestyle{\ecv@interactkey}& \centering%
+      \ecvbluestyle{\ecv@productkey}&\tabularnewline%
+      \hline%
+    \end{tabular}%
+  }%
+  \@ecvfirstlangrowtrue%
 }
   
   
-\newcommand*\ecvlangrow[8][-\dp\strutbox]{
-  \vspace*{-\dp\strutbox}
-  \setlength{\arrayrulewidth}{#8}
-  \ecvitem[#1]{\raisebox{\if@ecvfirstlangrow -\arrayrulewidth \else -0.5\arrayrulewidth \fi}{#2}}{
-    \setlength{\ecv@langtablewidth}{\ecv@rightcolwidth}
-    \addtolength{\ecv@langtablewidth}{-4\arrayrulewidth}
-    \arrayrulecolor{ecvtablebordercolor}
-    \renewcommand{\arraystretch}{1.5}
-    \begin{tabular}[t]{p{\ecv@langcola\ecv@rightcolwidth}p{\ecv@langcolb\ecv@rightcolwidth}p{\ecv@langcolc\ecv@rightcolwidth}p{\ecv@langcold\ecv@rightcolwidth}p{\ecv@langcole\ecv@rightcolwidth}}
-      \centering{\raisebox{-\arrayrulewidth}{#3}} &\centering{\raisebox{-\arrayrulewidth}{#4}} &\centering{\raisebox{-\arrayrulewidth}{#5}} &\centering{\raisebox{-\arrayrulewidth}{#6}} &\centering{\raisebox{-\arrayrulewidth}{#7}} \tabularnewline
-      \hline
-    \end{tabular}
-  }
-  \@ecvfirstlangrowfalse
+\newcommand*\ecvlangrow[8][-\dp\strutbox]{%
+  \vspace*{-\dp\strutbox}%
+  \setlength{\arrayrulewidth}{#8}%
+  \ecvitem[#1]{\raisebox{\if@ecvfirstlangrow -\arrayrulewidth \else -0.5\arrayrulewidth \fi}{#2}}{%
+    \setlength{\ecv@langtablewidth}{\ecv@rightcolwidth}%
+    \addtolength{\ecv@langtablewidth}{-4\arrayrulewidth}%
+    \arrayrulecolor{ecvtablebordercolor}%
+    \renewcommand{\arraystretch}{1.5}%
+    \begin{tabular}[t]{p{\ecv@langcola\ecv@rightcolwidth}p{\ecv@langcolb\ecv@rightcolwidth}p{\ecv@langcolc\ecv@rightcolwidth}p{\ecv@langcold\ecv@rightcolwidth}p{\ecv@langcole\ecv@rightcolwidth}}%
+      \centering{\raisebox{-\arrayrulewidth}{#3}} &\centering{\raisebox{-\arrayrulewidth}{#4}} &\centering{\raisebox{-\arrayrulewidth}{#5}} &\centering{\raisebox{-\arrayrulewidth}{#6}} &\centering{\raisebox{-\arrayrulewidth}{#7}} \tabularnewline%
+      \hline%
+    \end{tabular}%
+  }%
+  \@ecvfirstlangrowfalse%
 }
 
-\newcommand*\ecvlanguagecertificate[1]{
-%   \vspace*{-\dp\strutbox}
-  \setlength{\arrayrulewidth}{\ecv@langouterborderwidth}
-  \ecvitem[-0.7\dp\strutbox]{}{
-    \setlength{\ecv@langtablewidth}{\ecv@rightcolwidth}
-    \addtolength{\ecv@langtablewidth}{-4\arrayrulewidth}
-    \arrayrulecolor{ecvtablebordercolor}
-    \renewcommand{\arraystretch}{1.4}
-    \begin{tabular}[t]{p{\ecv@rightcolwidth}}
-       \centering #1 \cellcolor{ecvhighlightcellcolor}\tabularnewline
-      \hline
-    \end{tabular}
-  }
-  \@ecvfirstlangrowfalse
+\newcommand*\ecvlanguagecertificate[1]{%
+  \setlength{\arrayrulewidth}{\ecv@langouterborderwidth}%
+  \ecvitem[-0.7\dp\strutbox]{}{%
+    \setlength{\ecv@langtablewidth}{\ecv@rightcolwidth}%
+    \addtolength{\ecv@langtablewidth}{-4\arrayrulewidth}%
+    \arrayrulecolor{ecvtablebordercolor}%
+    \renewcommand{\arraystretch}{1.4}%
+    \begin{tabular}[t]{p{\ecv@rightcolwidth}}%
+       \centering #1 \cellcolor{ecvhighlightcellcolor}\tabularnewline%
+      \hline%
+    \end{tabular}%
+  }%
+  \@ecvfirstlangrowfalse%
 }
 
 \newcommand*\ecvlanguage[7][0pt]{\ecvlangrow[#1]{#2}{#3}{#4}{#5}{#6}{#7}{\ecv@langinnerborderwidth}}
@@ -659,28 +659,28 @@
 % Digital competences
 \def\ecv@dccol{0.2}
 \newcommand*\ecvdigitalcompetence[5]{%
-	%header
-	\setlength{\arrayrulewidth}{\ecv@langouterborderwidth}
-	\ecvblueitem{\ecv@digitalcompetenceskey}{
-		\renewcommand{\arraystretch}{1.5}
-		\setlength{\ecv@langtablewidth}{\ecv@rightcolwidth}
-		\addtolength{\ecv@langtablewidth}{-4\arrayrulewidth}
-		\arrayrulecolor{ecvtablebordercolor}
-		\begin{tabular}[t]{m{\ecv@dcompcola\ecv@langtablewidth}|m{\ecv@dcompcolb\ecv@langtablewidth}|m{\ecv@dcompcolc\ecv@langtablewidth}|m{\ecv@dcompcold\ecv@langtablewidth}|m{\ecv@dcompcole\ecv@langtablewidth}}
-			\firsthline
-			\multicolumn{5}{c}{\ecvsectionstyle{\ecv@assesskey}} \tabularnewline
-			\hline
-			\centering \ecvbluestyle{\ecv@informationprocessingkey}& \centering \ecvbluestyle{\ecv@communicationkey} &\centering \ecvbluestyle{\ecv@contentcreationkey}& \centering \ecvbluestyle{\ecv@safetykey}& \centering \ecvbluestyle{\ecv@problensolvingkey} \tabularnewline
-			\hline
-			\centering{#1} &\centering{#2} &\centering{#3} &\centering{#4} &\centering{#5} \tabularnewline
-			\hline
-		\end{tabular}
-	}
-	
+	%header%
+	\setlength{\arrayrulewidth}{\ecv@langouterborderwidth}%
+	\ecvblueitem{\ecv@digitalcompetenceskey}{%
+		\renewcommand{\arraystretch}{1.5}%
+		\setlength{\ecv@langtablewidth}{\ecv@rightcolwidth}%
+		\addtolength{\ecv@langtablewidth}{-4\arrayrulewidth}%
+		\arrayrulecolor{ecvtablebordercolor}%
+		\begin{tabular}[t]{m{\ecv@dcompcola\ecv@langtablewidth}|m{\ecv@dcompcolb\ecv@langtablewidth}|m{\ecv@dcompcolc\ecv@langtablewidth}|m{\ecv@dcompcold\ecv@langtablewidth}|m{\ecv@dcompcole\ecv@langtablewidth}}%
+			\firsthline%
+			\multicolumn{5}{c}{\ecvsectionstyle{\ecv@assesskey}} \tabularnewline%
+			\hline%
+			\centering \ecvbluestyle{\ecv@informationprocessingkey}& \centering \ecvbluestyle{\ecv@communicationkey} &\centering \ecvbluestyle{\ecv@contentcreationkey}& \centering \ecvbluestyle{\ecv@safetykey}& \centering \ecvbluestyle{\ecv@problensolvingkey} \tabularnewline%
+			\hline%
+			\centering{#1} &\centering{#2} &\centering{#3} &\centering{#4} &\centering{#5} \tabularnewline%
+			\hline%
+		\end{tabular}%
+	}%
+	%
 	%footer
-	\nopagebreak[4]
-	\ecvitem[0.5\dp\strutbox]{}{\footnotesize \setulcolor{ecvlanglinkcolor}\setul{.5pt}{.4pt}\href{\ecv@digcomplinkkey}{\ul{\mbox{\textcolor{ecvlanglinkcolor}{\ecv@digcompfooterkey}}}}}
-	\renewcommand{\arraystretch}{0}
+	\nopagebreak[4]%
+	\ecvitem[0.5\dp\strutbox]{}{\footnotesize \setulcolor{ecvlanglinkcolor}\setul{.5pt}{.4pt}\href{\ecv@digcomplinkkey}{\ul{\mbox{\textcolor{ecvlanglinkcolor}{\ecv@digcompfooterkey}}}}}%
+	\renewcommand{\arraystretch}{0}%
 }
 
 \newcommand*\ecvBasic{\ecv@dcbasickey}
@@ -747,19 +747,17 @@
 \color{\ecv@textcolor}
 }
 
-\newif\if@ecvinsideEcvItemize\@ecvinsideEcvItemizefalse
-\newcommand{\newecvitemize}[2]{
-  \newenvironment{#1}[1][leftmargin=*, nosep]{
-  \par
-  \begin{minipage}[t]{\linewidth}
-  \if@ecvinsideEcvItemize \vspace*{-0.5\baselineskip} \fi
-  \@ecvinsideEcvItemizetrue
-    \begin{#2}[##1]
-  }{
-    \end{#2}
+\newcommand{\newecvitemize}[2]{%
+  \newenvironment{#1}[1][labelindent=0pt, nosep, leftmargin=*]{%
+  \unpenalty\unskip\unpenalty
+  \ifnum \@itemdepth >0 \par \else \fi%
+  \begin{minipage}[t]{\linewidth}%
+    \begin{#2}[##1]%
+  }{%
+    \end{#2}%
+  \ifnum \@itemdepth >0 \smallskip \fi%
   \end{minipage}%
-  \@ecvinsideEcvItemizefalse
-  }
+  }%
 }
 \newecvitemize{ecvitemize}{itemize}
 \newecvitemize{ecvenumerate}{enumerate}
@@ -836,9 +834,14 @@
 
   \setlength\ecv@itemizeskip{-\ht\strutbox}\addtolength{\ecv@itemizeskip}{-2\dp\strutbox}
 
-  \begin{tabular}{@{}R{\ecv@leftcolwidth}@{\hspace{\ecv@colsep}}P{\ecv@rightcolwidth}@{}}
+  \setlength{\LTpre}{0pt}
+  \setlength{\LTpost}{0pt}
+  \setlength{\LTleft}{0pt}
+  \setlength{\LTright}{0pt}
+
+  \begin{longtable}{@{}R{\ecv@leftcolwidth}@{\hspace{\ecv@colsep}}p{\ecv@rightcolwidth}@{}}
   \if@ecvdebug\cellcolor{yellow!25}\fi #2 & \if@ecvdebug\cellcolor{blue!25}\fi #3
-  \end{tabular}
+  \end{longtable}
   \par
   \@ecvoverrideskipfalse
   \@ecvitemcommandtrue
