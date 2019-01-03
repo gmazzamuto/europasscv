@@ -220,8 +220,8 @@
 \DeclareOption{notitle}{\def\ecv@notitle{}}
 
 % Page numbering
-\AtEndOfPackage{\RequirePackage{totpages}}
-\def\ecv@totpages{~/~\ref{TotPages}}
+\AtEndOfPackage{\RequirePackage{lastpage}}
+\def\ecv@totpages{~/~\pageref{LastPage}}
 \DeclareOption{nototpages}{
   \def\ecv@totpages{}
 }
