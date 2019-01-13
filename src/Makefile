@@ -71,7 +71,7 @@ tds: class documentation
 	rm -fr tds
 
 distclean:
-	rm -f *~ *.synctex.gz *.aux *.log *.out *.backup *.toc *.temp
+	rm -f *~ *.synctex.gz *.aux *.log *.out *.backup *.toc *.temp *.bbl *.bcf *.blg *.fls *.run.xml *.fdb_latexmk
 
 clean: distclean
 	rm -f *.pdf
