@@ -24,7 +24,7 @@ distribution or download it from [CTAN](https://www.ctan.org/pkg/europasscv).
 
 ## How to use
 Please refer to the
-[documentation](http://mirrors.ctan.org/macros/latex/contrib/europasscv/europasscv.pdf)
+[documentation](https://www.devrandom.it/software/europasscv/)
 for instructions on how to use the class.
 
 ## Development

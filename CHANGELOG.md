@@ -1,3 +1,14 @@
+<a name="2019-01-14"></a>
+
+# Version 2019-01-14
+
+* fixes following TexLive 2018 upgrade
+* add icons for Gitlab and ORCID
+* add support for bibliography
+* Portuguese: follow Portuguese Language Orthographic Agreement of 1990
+* add def files for Norwegian (Bokmål) and Catalan
+
+
 <a name="2017-11-19"></a>
 
 # Version 2017-11-19
