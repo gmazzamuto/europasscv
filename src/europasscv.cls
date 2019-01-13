@@ -268,6 +268,7 @@
 \RequirePackage{graphicx}
 \RequirePackage{xparse}
 \RequirePackage{substr}
+\RequirePackage{keyval}
 \if@ecvdebug \RequirePackage{showframe} \fi
 
 
@@ -378,6 +379,13 @@
 \newcommand*{\ecvgithubpage}[1]{\def\ecv@githubpage{#1}}
 \newcommand*{\ecvgitlabpage}[1]{\def\ecv@gitlabpage{#1}}
 \newcommand*{\ecvlinkedinpage}[1]{\def\ecv@linkedinpage{#1}}
+
+\newif\if@ecvorcidlink\@ecvorcidlinkfalse
+\define@key{ecvorcid}{link}[true]{\@ecvorcidlinktrue}
+\newif\if@ecvorcidlabel\@ecvorcidlabelfalse
+\define@key{ecvorcid}{label}[true]{\@ecvorcidlabeltrue}
+\newcommand*{\ecvorcid}[2][]{\setkeys{ecvorcid}{#1}\def\ecv@orcid{#2}}
+
 \def\ecv@im{}
 \newif\if@ecvIMalreadyprovided\@ecvIMalreadyprovidedfalse
 \newcommand*{\ecvim}[2]{\if@ecvIMalreadyprovided \g@addto@macro\ecv@im{\quad} \fi \g@addto@macro\ecv@im{\ecvhighlight{#1} #2} \@ecvIMalreadyprovidedtrue}
@@ -416,6 +424,7 @@
 \ecvgithubpage{}
 \ecvgitlabpage{}
 \ecvlinkedinpage{}
+\ecvorcid{}
 \ecvnationality{}
 \ecvdateofbirth{}
 \ecvgender{}
@@ -526,6 +535,9 @@
 	  \fi
 	  \ifx\@empty\ecv@linkedinpage\else
         \raisebox{-2\lineskip}{\includegraphics[width=0.4cm]{linkedin_europass_icon.pdf}}\hspace{0.2mm} {\fontseries{m}\selectfont \processlinks{\ecv@linkedinpage}} \newline
+	  \fi
+	  \ifx\@empty\ecv@orcid\else
+        \raisebox{-2\lineskip}{\includegraphics[width=0.4cm]{orcid_europass_icon.pdf}}\hspace{0.2mm} {\fontseries{m}\selectfont\if@ecvorcidlabel\ecvhighlight{ORCID}~\fi\if@ecvorcidlink\setulcolor{\ecv@textcolor}\setul{.5pt}{.4pt}\href{https://orcid.org/\ecv@orcid}{\ul{\mbox{\ecv@orcid}}}\else\ecv@orcid\fi} \newline
 	  \fi
       \ifx\@empty\ecv@im\else
         \raisebox{-2\lineskip}{\includegraphics[width=0.4cm]{im_europass_icon.pdf}} \hspace{0.2mm}{\fontseries{m}\selectfont \ecv@im} \newline
