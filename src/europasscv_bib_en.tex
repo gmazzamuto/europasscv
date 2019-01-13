@@ -1,0 +1,127 @@
+% !TEX encoding = UTF-8
+% !TEX program = pdflatex
+% !TEX spellcheck = en_GB
+
+\documentclass[english,a4paper]{europasscv}
+\usepackage[english]{babel}
+
+\usepackage[backend=biber,autolang=hyphen,sorting=none,style=numeric,maxbibnames=99,doi=false,isbn=false,maxcitenames=2]{biblatex}
+\usepackage{csquotes}
+\usepackage{europasscv-bibliography}
+
+\bibliography{europasscv_example}
+% in the bibliography, mark all occurrences in bold:
+\ecvbibhighlight{Smith}{Katie}{K.}
+
+\ecvname{Katie Smith}
+\ecvaddress{12 Strawberry Hill, Dublin 8 Éire/Ireland}
+\ecvmobile{+353 555 123 555}
+\ecvtelephone{+353 127 6689}
+\ecvworkphone{+353 999 888 777}
+\ecvemail{smith@kotmail.com another@email.com}
+\ecvhomepage{www.myhomepage.com www.another-homepage.com}
+% \ecvgithubpage{www.github.com/smith}
+% \ecvlinkedinpage{www.linkedin.com/in/katie-smith}
+\ecvim{AOL Messenger}{katie.smith}
+\ecvim{Google Talk}{ksmith}
+
+\ecvdateofbirth{1 March 1975}
+\ecvnationality{Irish}
+\ecvgender{Female}
+
+% \ecvpicture[width=3.8cm]{picture.jpg}
+
+% \date{}
+
+\begin{document}
+  \begin{europasscv}
+
+  \ecvpersonalinfo
+  \ecvbigitem{Job applied for}{European project manager}
+
+  \ecvsection{Work experience}
+  
+  \ecvtitle{August 2002 -- Present}{Independent consultant}
+  \ecvitem{}{National Youth Council of Ireland\newline 3 Montague Street, Dublin 2, D02 V327, Ireland}
+  \ecvitem{}{Evaluation of European Commission youth training support measures for youth national agencies and young people}
+   
+  \ecvtitle{March 2002 -- July 2002}{Internship}
+  \ecvitem{}{European Commission, Youth Unit, DG Education and Culture \newline 200, Rue de la Loi, 1049 Brussels (Belgium)}
+  \ecvitem{}{
+  \begin{ecvitemize}
+      \item evaluating youth training programmes and the partnership between the Council of Europe and European Commission
+      \item organizing and running a 2 day workshop on non-formal education for Action 5 large scale projects focusing on quality, assessment and recognition
+      \item contributing to the steering sroup on training and developing action plans on training for the next 3 years. Working on the Users Guide for training and the support measures
+  \end{ecvitemize}
+  }
+  \ecvitem{}{\ecvhighlight{Business or sector}\quad European institution}
+  
+  \ecvtitle{Oct 2001 -- Feb 2002}{Researcher / Independent Consultant}
+  \ecvitem{}{Council of Europe, Budapest (Hungary)}
+  \ecvitem{}{Working in a research team carrying out in-depth qualitative evaluation of the 2 year Advanced Training of Trainers in Europe using participant observations, in-depth interviews and focus groups. Work carried out in training courses in Strasbourg, Slovenia and Budapest.}
+  
+  
+  \ecvsection{Education and training}
+  
+  \ecvtitlelevel{1997--2001}{PhD - Thesis Title: ``Young People in the Construction of the Virtual University'', Empirical research on e-learning}{ISCED~6}
+  \ecvitem{}{Trinity College Dublin, The University of Dublin, Ireland
+
+  This is a citation to my PhD Thesis \cite{smith_phd}.}
+  
+  \ecvtitle{1993--1997}{Bachelor of Science in Sociology and Psychology}
+  \ecvitem{}{Trinity College Dublin, The University of Dublin, Ireland}
+  \ecvitem{}{
+      \begin{ecvitemize}
+	\item sociology of risk
+	\item sociology of scientific knowledge / information society
+	\item anthropology
+	\item E-learning and Psychology
+	\item research methods
+      \end{ecvitemize}
+  }
+  
+  \pagebreak
+  
+  \ecvsection{Personal skills}
+  \ecvmothertongue{English}
+  \ecvlanguageheader
+  \ecvlanguage{French}{C1}{C2}{B2}{C1}{C2}
+  \ecvlanguagecertificate{Diplôme d'études en langue française (DELF) B1}
+  \ecvlastlanguage{German}{A2}{A2}{A2}{A2}{A2}
+  \ecvlanguagefooter
+   
+  \ecvblueitem{Communication skills}{
+  \begin{ecvitemize}
+    \item team work: I have worked in various types of teams from research teams to national league hockey. For 2 years I coached my university hockey team
+    \item mediating skills: I work on the borders between young people, youth trainers, youth policy and researchers, for example running a 3 day workshop at CoE Symposium ``Youth Actor of Social Change'', and my continued work on youth training programmes 
+    \item intercultural skills: I am experienced at working in a European dimension such as being a rapporteur at the CoE Budapest ``youth against violence seminar'' and working with refugees.
+  \end{ecvitemize}
+  }
+  
+  \ecvblueitem{Organisational / managerial skills}{
+  \begin{ecvitemize}
+    \item whilst working for a Brussels based refugee NGO ``Convivial'' I organized a ``Civil Dialogue'' between refugees and civil servants at the European Commission 20th June 2002
+    \item during my PhD I organised a seminar series on research methods
+  \end{ecvitemize}
+  }
+
+  \ecvdigitalcompetence{\ecvBasic}{\ecvIndependent}{\ecvProficient}{\ecvIndependent}{\ecvBasic}
+  
+  \ecvblueitem{Computer skills}{
+  \begin{ecvitemize}
+    \item competent with most Microsoft Office programmes
+    \item experience with HTML
+  \end{ecvitemize}
+  }
+  
+  \ecvblueitem{Other skills}{Creating pieces of Art and visiting Modern Art galleries. Enjoy all sports particularly hockey, football and running. Love to travel and experience different cultures.}
+
+  \ecvblueitem{Driving licence}{A, B}
+  
+  \nocite{*}
+  \renewcommand{\section}[2]{\ecvsection{#2}}
+  \printbibtabular[title=Publications]
+
+\end{europasscv}
+  
+\end{document}

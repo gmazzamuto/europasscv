@@ -1,0 +1,46 @@
+\ProvidesPackage{europasscv-bibliography}
+  [Additional macros for bibliography support in europasscv]
+
+\RequirePackage{biblatex-ext-tabular}
+\RequirePackage{longtable}
+
+\newrobustcmd*{\defecvbibtabulartwocolumn}[5]{%
+  \long\csdef{extblxtab@env@#1}{#2}%
+  \long\csdef{extblxtab@endenv@#1}{#3}%
+  \long\csdef{extblxtab@tabrow@format@#1}{%
+    \if@ecvdebug\cellcolor{yellow!25}\fi\anchorlang{#4} & \if@ecvdebug\cellcolor{blue!25}\fi \driver{#5}\\
+  }%
+}
+
+\defecvbibtabulartwocolumn{bibtabular}
+  {\setlength{\LTpre}{\medskipamount}%
+   \setlength{\LTpost}{\medskipamount}%
+   \renewcommand*{\arraystretch}{1.2}%
+\begin{longtable}[t]{@{}R{\ecv@leftcolwidth}@{\hspace{\ecv@colsep}}p{\ecv@rightcolwidth}@{}}}%
+  {\end{longtable}}
+  {\selectecvfont\printtext[labelalphawidth]{%
+        \printfield{labelprefix}%
+        \printfield{labelalpha}%
+        \printfield{extraalpha}}%
+   \printtext[labelnumberwidth]{%
+        \printfield{labelprefix}%
+        \printfield{labelnumber}}}{\selectecvfont}
+
+\newcommand*{\ecvbibhighlight}[3]{%
+  \def\lastname{#1}%
+  \def\firstname{#2}%
+  \def\firstinit{#3}}
+\ecvbibhighlight{}{}{}
+
+% Patch new definitions
+\renewcommand{\mkbibnamegiven}[1]{%
+  \ifboolexpr{ ( test {\ifdefequal{\firstname}{\namepartgiven}} or test {\ifdefequal{\firstinit}{\namepartgiven}} ) and test {\ifdefequal{\lastname}{\namepartfamily}} }
+  {\mkbibbold{#1}}{#1}%
+}
+
+\renewcommand{\mkbibnamefamily}[1]{%
+  \ifboolexpr{ ( test {\ifdefequal{\firstname}{\namepartgiven}} or test {\ifdefequal{\firstinit}{\namepartgiven}} ) and test {\ifdefequal{\lastname}{\namepartfamily}} }
+  {\mkbibbold{#1}}{#1}%
+}
+
+\endinput

@@ -241,6 +241,22 @@ In the following, an example code snippet and the resulting CV entry is presente
 \end{minipage}
 
 \section{Advanced usage}
+\subsection{Bibliography}
+Printing bibliography using \texttt{biblatex} is supported. Please refer to the provided source file for a working example of how to integrate \texttt{biblatex} with \texttt{europasscv}. Basically, in your preamble you need to use the \texttt{biblatex} package followed by
+\begin{verbatim}
+\usepackage{europasscv-bibliography}
+\end{verbatim}
+and then you can specify the bibliography source file as usual.
+
+To print the bibliography, use the following commands:
+\begin{verbatim}
+  \renewcommand{\section}[2]{\ecvsection{#2}}
+  \printbibtabular[title=Publications]
+\end{verbatim}
+where the first command is used to specify which kind of heading you want to use for the bibliography section. Finally, the following commands are defined in the \texttt{europasscv-bibliography} package:
+\begin{description}
+ \item[\texttt{\bs ecvbibhighlight\{\textit{last name}\}\{\textit{first name}\}\{\textit{first name initial}\}}] mark the given name to be highlighted in bold in the bibliography
+\end{description}
 
 \subsection{Class options}
 \label{sec:classOptions}

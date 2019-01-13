@@ -24,13 +24,12 @@ icons: $(ICONS_SVG) $(ICONS_PDF)
 %_europass_icon.pdf : %_europass_icon.ps
 	ps2pdf $<
 
-documentation: class europasscv.pdf europasscv_en.pdf
+documentation: class europasscv.pdf examples
 
-europasscv.pdf: europasscv.tex
+%.pdf: %.tex
 	latexmk -pdf $<
 
-europasscv_en.pdf: europasscv_en.tex
-	latexmk -pdf $<
+examples: europasscv_en.pdf europasscv_bib_en.pdf
 
 class: pictures
 
@@ -40,11 +39,13 @@ package: class documentation tds
 	$(INSTALL) *_europass_icon.pdf europasscv
 	$(INSTALL) europasslogo2013.pdf europasscv
 	$(INSTALL) europasscv.cls europasscv
+	$(INSTALL) europasscv-bibliography.sty europasscv
 	$(INSTALL) europasscv*.def europasscv
 	$(INSTALL) europasscv.tex europasscv
 	$(INSTALL) europasscv.pdf europasscv
-	$(INSTALL) europasscv_en.tex europasscv/example
-	$(INSTALL) europasscv_en.pdf europasscv/example
+	$(INSTALL) europasscv_*en.tex europasscv/example
+	$(INSTALL) europasscv_*en.pdf europasscv/example
+	$(INSTALL) europasscv_example.bib europasscv/example
 	$(INSTALL) ../README.md europasscv
 	$(INSTALL) ../CHANGELOG.md europasscv
 	$(INSTALL) Makefile europasscv/Makefile.europasscv
@@ -59,10 +60,12 @@ tds: class documentation
 	$(INSTALL) *_europass_icon.pdf tds/tex/latex/europasscv
 	$(INSTALL) europasslogo2013.pdf tds/tex/latex/europasscv
 	$(INSTALL) europasscv.cls tds/tex/latex/europasscv
+	$(INSTALL) europasscv-bibliography.sty tds/tex/latex/europasscv
 	$(INSTALL) europasscv*.def tds/tex/latex/europasscv
 	$(INSTALLDIR)  tds/doc/latex/europasscv/example
-	$(INSTALL) europasscv_en.pdf tds/doc/latex/europasscv/example
-	$(INSTALL) europasscv_en.tex tds/doc/latex/europasscv/example
+	$(INSTALL) europasscv_*en.pdf tds/doc/latex/europasscv/example
+	$(INSTALL) europasscv_*en.tex tds/doc/latex/europasscv/example
+	$(INSTALL) europasscv_example.bib tds/doc/latex/europasscv/example
 	$(INSTALL) ../README.md tds/doc/latex/europasscv
 	$(INSTALL) ../CHANGELOG.md tds/doc/latex/europasscv
 	$(INSTALL) europasscv.pdf tds/doc/latex/europasscv
@@ -76,4 +79,4 @@ distclean:
 clean: distclean
 	rm -f *.pdf
 
-.PHONY: all clean distclean tds package class documentation pictures
+.PHONY: all clean distclean tds package class documentation examples pictures
