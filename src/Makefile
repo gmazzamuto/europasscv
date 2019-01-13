@@ -49,7 +49,7 @@ package: class documentation tds
 	$(INSTALL) ../CHANGELOG.md europasscv
 	$(INSTALL) Makefile europasscv/Makefile.europasscv
 	$(INSTALL) Makefile europasscv/Makefile.europasscv
-	tar -cvf europasscv.tar europasscv europasscv.tds.zip
+	tar -cvf europasscv.tar --owner=0 --group=0 europasscv europasscv.tds.zip
 	gzip -f europasscv.tar
 	rm -fr europasscv
 	rm -fr europasscv.tds.zip
