@@ -352,9 +352,9 @@
 \fi % End \if@ecvnodocument
 } % End \AtBeginDocument
 
-\renewcommand{\labelitemi}{\normalfont\bfseries \textendash}
+\renewcommand{\labelitemi}{\textendash}
 \renewcommand{\labelitemii}{\textbullet}
-\renewcommand{\labelitemiii}{\normalfont\bfseries \textendash}
+\renewcommand{\labelitemiii}{\textendash}
 \renewcommand{\labelitemiv}{\textbullet}
 
 \newcommand*{\ecvfirstname}[1]{\def\ecv@firstname{#1}} % Deprecated
