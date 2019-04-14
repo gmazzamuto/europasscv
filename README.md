@@ -1,6 +1,8 @@
 # europasscv
 Unofficial class for the new version of the Europass curriculum vitae
 
+[![Donate][donate-btn]][donate-url]
+
 This class is an unofficial LaTeX implementation of the Europass CV, the
 standard model for curriculum vitae as recommended by the European Commission.
 
@@ -33,3 +35,6 @@ Source packages and trees available on
 is needed to convert svg images into pdfs. Please run `make` to build pdf icons,
 examples and documentation. You need to have `inkscape` installed on your system
 in order to convert the icons.
+
+[donate-btn]: https://www.paypalobjects.com/en_US/i/btn/btn_donate_LG.gif
+[donate-url]: https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=H94QELJUXWFWA&source=url
