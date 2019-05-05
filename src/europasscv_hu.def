@@ -18,7 +18,7 @@
 \def\ecv@cvofkey{\ecv@utf{Önéletrajza}}
 % Language table
 \def\ecv@mothertonguekey{\ecv@utf{Anyanyelve}}
-\def\ecv@otherlanguageskey{\ecv@utf{Egyéb nyelvek}}
+\def\ecv@otherlanguageskey{\ecv@utf{Idegen nyelvek}}
 \def\ecv@assesskey{\ecv@utf{Önértékelés}}
 \def\ecv@levelkey{\ecv@utf{Európai szint}}
 \def\ecv@understandkey{\ecv@utf{Szövegértés}}
