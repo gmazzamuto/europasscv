@@ -109,9 +109,6 @@
   \AtEndOfPackage{%
     \InputIfFileExists{europasscv_hu.def}{}{%
     \ClassWarningNoLine{europasscv}{Hungarian definition file 'europasscv_hu.def' not found}}%
-    \ecvpage{\thepage\ifx\@empty\ecv@totpages.\else\ecv@totpages\fi~\ecv@pagekey}
-    \def\ecv@lfoot{%
-  \footnotesize\textrm{\ecv@page~- \textrm{\ecv@footername} \ecv@cvofkey}}%
   }%
 }
 \DeclareOption{estonian}{%
