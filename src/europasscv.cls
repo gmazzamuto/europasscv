@@ -266,6 +266,7 @@
 \RequirePackage{xparse}
 \RequirePackage{substr}
 \RequirePackage{keyval}
+\RequirePackage{xstring}
 \if@ecvdebug \RequirePackage{showframe} \fi
 
 
@@ -445,11 +446,20 @@
       \next
 }
 
+% substitute underscores in links with \_
+% https://tex.stackexchange.com/a/282707
+\newcommand{\makesub}[1]{%
+  \saveexpandmode\noexpandarg
+  \StrSubstitute{#1}{_}{\_}[\tempsub]%
+  \restoreexpandmode
+}
+
 \newif\if@processlinks@converttoemail
 \def\convertstring#1{\if@processlinks@converttoemail \toemail{#1} \else \tourl{#1} \fi}
 \newcommand{\tourl}[1]{%
 \IfSubStringInString{://}{#1}{\def\temp{#1}}{\def\temp{http://#1}}%
-\setul{.5pt}{.4pt}\href{\temp}{\ul{\mbox{#1}}}%
+\makesub{#1}%
+\setul{.5pt}{.4pt}\href{\temp}{\ul{\mbox{\tempsub}}}%
 }
 \def\toemail#1{\setul{.5pt}{.4pt}\href{mailto:#1}{\ul{\mbox{#1}}}}
 
