@@ -374,6 +374,7 @@
 \newcommand*{\ecvfax}[1]{\def\ecv@fax{#1}}
 \newcommand*{\ecvemail}[1]{\def\ecv@email{#1}}
 \newcommand*{\ecvhomepage}[1]{\def\ecv@homepage{#1}}
+\newcommand*{\ecvgitpage}[1]{\def\ecv@gitpage{#1}}
 \newcommand*{\ecvgithubpage}[1]{\def\ecv@githubpage{#1}}
 \newcommand*{\ecvgitlabpage}[1]{\def\ecv@gitlabpage{#1}}
 \newcommand*{\ecvlinkedinpage}[1]{\def\ecv@linkedinpage{#1}}
@@ -419,6 +420,7 @@
 \ecvfax{}
 \ecvemail{}
 \ecvhomepage{}
+\ecvgitpage{}
 \ecvgithubpage{}
 \ecvgitlabpage{}
 \ecvlinkedinpage{}
@@ -533,6 +535,9 @@
       \fi
         \ifx\@empty\ecv@homepage\else
         \raisebox{-2\lineskip}{\includegraphics[width=0.4cm]{website_europass_icon.pdf}}\hspace{0.2mm} {\fontseries{m}\selectfont \processlinks{\ecv@homepage}} \newline
+      \fi
+      \ifx\@empty\ecv@gitpage\else
+        \raisebox{-2\lineskip}{\includegraphics[width=0.4cm]{git_europass_icon.pdf}}\hspace{0.2mm} {\fontseries{m}\selectfont \processlinks{\ecv@gitpage}} \newline
       \fi
 	  \ifx\@empty\ecv@githubpage\else
         \raisebox{-2\lineskip}{\includegraphics[width=0.4cm]{github_europass_icon.pdf}}\hspace{0.2mm} {\fontseries{m}\selectfont \processlinks{\ecv@githubpage}} \newline
