@@ -1,0 +1,56 @@
+%!TEX encoding = UTF-8 Unicode
+%
+%
+\ProvidesFile{europasscv_ro.def}[europasscv Romanian definitions]
+% Personal information
+\def\ecv@infosectionkey{\ecv@utf{Informaţii personale}}
+\def\ecv@namekey{\ecv@utf{Nume / Prenume}}
+\def\ecv@addresskey{\ecv@utf{Adresă}}
+\def\ecv@telkey{\ecv@utf{Telefon}}
+\def\ecv@mobilekey{\ecv@utf{Mobil}}
+\def\ecv@faxkey{\ecv@utf{Fax}}
+\def\ecv@emailkey{\ecv@utf{Email}}
+\def\ecv@nationalitykey{\ecv@utf{Naţionalitate(-tăţi)}}
+\def\ecv@birthkey{\ecv@utf{Data naşterii}}
+\def\ecv@genderkey{\ecv@utf{Gen}}
+% Footer
+\def\ecv@pagekey{\ecv@utf{Pagina}}
+\def\ecv@cvofkey{\ecv@utf{Curriculum vit\ae\ al}}
+% Language table
+\def\ecv@mothertonguekey{\ecv@utf{Limba maternă}}
+\def\ecv@otherlanguageskey{\ecv@utf{Alte limbi}}
+\def\ecv@assesskey{\ecv@utf{Auto-evaluare}}
+\def\ecv@levelkey{\ecv@utf{Nivel european}}
+\def\ecv@understandkey{\ecv@utf{Înţelegere}}
+\def\ecv@speakkey{\ecv@utf{Vorbire}}
+\def\ecv@writekey{\ecv@utf{Scriere}}
+\def\ecv@listenkey{\ecv@utf{Ascultare}}
+\def\ecv@readkey{\ecv@utf{Citire}}
+\def\ecv@interactkey{\ecv@utf{Participare la conversaţie}}
+\def\ecv@productkey{\ecv@utf{Discurs oral}}
+\def\ecv@langshortdesckey{\ecv@utf{Niveluri: A1/A2: Utilizator elementar -- B1/B2: Utilizator independent -- C1/C2: Utilizator experimentat}}
+\def\ecv@langfooterkey{\ecv@utf{Cadrul European Comun de Referinţă pentru Limbi Străine}}
+\def\ecv@langlinkkey{\ecv@utf{https://europass.cedefop.europa.eu/ro/resources/european-language-levels-cefr}}
+\def\ecv@cefbasickey{\ecv@utf{Utilizator elementar}}
+\def\ecv@cefindepkey{\ecv@utf{Utilizator indepenent}}
+\def\ecv@cefprofkey{\ecv@utf{Utilizator expert}}
+\def\ecv@europeanunionkey{\ecv@utf{Uniunea Europeană}}
+% Digital competences self-assessment grid
+\def\ecv@digitalcompetenceskey{\ecv@utf{Competenţă digitală}}
+\def\ecv@informationprocessingkey{\ecv@utf{Procesarea informaţiei}}
+\def\ecv@communicationkey{\ecv@utf{Comunicare}}
+\def\ecv@contentcreationkey{\ecv@utf{Creare de conţinut}}
+\def\ecv@safetykey{\ecv@utf{Securitate}}
+\def\ecv@problensolvingkey{\ecv@utf{Rezolvarea de probleme}}
+\def\ecv@digcompfooterkey{\ecv@utf{Competenţe digitale - Grilă de auto-evaluare}}
+\def\ecv@digcomplinkkey{\ecv@utf{http://europass.cedefop.europa.eu/ro/resources/digital-competences}}
+\def\ecv@dcbasickey{\ecv@utf{Utilizator elementar}}
+\def\ecv@dcindepkey{\ecv@utf{Utilizator independent}}
+\def\ecv@dcprofkey{\ecv@utf{Utilizator experimentat}}
+
+% Width of language columns
+\def\ecv@langcola{0.15}
+\def\ecv@langcolb{0.15}
+\def\ecv@langcolc{0.25}
+\def\ecv@langcold{0.25}
+\def\ecv@langcole{0.2}
