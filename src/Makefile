@@ -9,16 +9,16 @@ all: class documentation
 pictures: icons europasslogo2013.pdf
 
 europasslogo2013.pdf: europasslogo2013.svg
-	inkscape $< --export-area-drawing --export-pdf $@
+	inkscape $< --export-area-drawing --export-type="pdf" --export-filename="$@"
 
 # convert from pdf to ps then back to pdf to avoid the pdftex warning "PDF
 # inclusion: multiple pdfs with page group included in a single page"
 icons: $(ICONS_SVG) $(ICONS_PDF)
 
-%_europass_icon.pdf.temp : %_europass_icon.svg
-	inkscape $< --export-area-page --export-pdf $@
+%_europass_icon.temp.pdf: %_europass_icon.svg
+	inkscape $< --export-area-page --export-type="pdf" --export-filename="$@"
 
-%_europass_icon.ps : %_europass_icon.pdf.temp
+%_europass_icon.ps : %_europass_icon.temp.pdf
 	pdf2ps $< $@
 
 %_europass_icon.pdf : %_europass_icon.ps
