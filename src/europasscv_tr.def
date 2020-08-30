@@ -1,0 +1,59 @@
+%!TEX encoding = UTF-8 Unicode
+%
+%
+\ProvidesFile{europasscv_tr.def}[europasscv Turkish definitions]
+
+\def\ecv@currvitaekey{\ecv@utf{Özgeçmiş}}
+% Personal information
+\def\ecv@infosectionkey{\ecv@utf{Kişisel Bilgiler}}
+\def\ecv@namekey{\ecv@utf{Soyad / Ad}}
+\def\ecv@addresskey{\ecv@utf{Adres}}
+\def\ecv@telkey{\ecv@utf{Telefon}}
+\def\ecv@mobilekey{\ecv@utf{Cep Telefonu}}
+\def\ecv@faxkey{\ecv@utf{Faks}}
+\def\ecv@emailkey{\ecv@utf{Eposta}}
+\def\ecv@nationalitykey{\ecv@utf{Uyruk}}
+\def\ecv@birthkey{\ecv@utf{Doğum Tarihi}}
+\def\ecv@genderkey{\ecv@utf{Cinsiyet}}
+% Footer
+\def\ecv@pagekey{\ecv@utf{Sayfa}}
+\def\ecv@cvofkey{\ecv@utf{Özgeçmiş}}
+% Language table
+\def\ecv@mothertonguekey{\ecv@utf{Ana dil(ler)}}
+\def\ecv@otherlanguageskey{\ecv@utf{Yabancı diller}}
+\def\ecv@assesskey{\ecv@utf{Kişisel Değerlendirme}}
+\def\ecv@levelkey{\ecv@utf{European level}}
+\def\ecv@understandkey{\ecv@utf{Anlama}}
+\def\ecv@speakkey{\ecv@utf{Konuşma}}
+\def\ecv@writekey{\ecv@utf{Yazılı Anlatım}}
+\def\ecv@listenkey{\ecv@utf{Dinleme}}
+\def\ecv@readkey{\ecv@utf{Okuma}}
+\def\ecv@interactkey{\ecv@utf{Karşılıklı Konuşma}}
+\def\ecv@productkey{\ecv@utf{Sözlü Anlatım}}
+\def\ecv@langshortdesckey{\ecv@utf{Seviyeler: A1/A2 Temel Seviye Kullanıcı -- B1/B2: Orta Seviye Kullanıcı -- C1/C2: İleri Seviye Kullanıcı}}
+\def\ecv@langfooterkey{\ecv@utf{Avrupa Dilleri Öğretimi Ortak Çerçeve Programı}}
+\def\ecv@langlinkkey{\ecv@utf{http://europass.cedefop.europa.eu/en/resources/european-language-levels-cefr}}
+\def\ecv@cefbasickey{\ecv@utf{Temel Seviye Kullanıcı}}
+\def\ecv@cefindepkey{\ecv@utf{Orta Seviye Kullanıcı}}
+\def\ecv@cefprofkey{\ecv@utf{İleri Seviye Kullanıcı}}
+\def\ecv@europeanunionkey{\ecv@utf{Avrupa Birliği}}
+% Digital competences self-assessment grid
+\def\ecv@digitalcompetenceskey{\ecv@utf{Dijital becerileri}}
+\def\ecv@informationprocessingkey{\ecv@utf{Bilgi işlem}}
+\def\ecv@communicationkey{\ecv@utf{İletişim}}
+\def\ecv@contentcreationkey{\ecv@utf{İçerik oluşturma}}
+\def\ecv@safetykey{\ecv@utf{Güvenlik}}
+\def\ecv@problensolvingkey{\ecv@utf{Problem çözme}}
+\def\ecv@digcompfooterdesckey{\ecv@utf{Seviyeler: Temel Seviye Kullanıcı -- Orta Seviye Kullanıcı -- İleri Seviye Kullanıcı}}
+\def\ecv@digcompfooterkey{\ecv@utf{Dijital becerileri - Kişisel Değerlendirme Tablosu}}
+\def\ecv@digcomplinkkey{\ecv@utf{http://europass.cedefop.europa.eu/en/resources/digital-competences}}
+\def\ecv@dcbasickey{\ecv@utf{Temel Seviye Kullanıcı}}
+\def\ecv@dcindepkey{\ecv@utf{Orta Seviye Kullanıcı}}
+\def\ecv@dcprofkey{\ecv@utf{İleri Seviye Kullanıcı}}
+
+% Width of language columns
+\def\ecv@langcola{0.15}
+\def\ecv@langcolb{0.15}
+\def\ecv@langcolc{0.25}
+\def\ecv@langcold{0.25}
+\def\ecv@langcole{0.2}
