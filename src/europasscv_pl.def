@@ -30,7 +30,7 @@
 \def\ecv@productkey{\ecv@utf{Samodzielne wypowiadanie si\k{e}}}
 \def\ecv@langshortdesckey{\ecv@utf{Poziomy: A1/A2: Podstawowy -- B1/B2: Samodzielno\'sci -- C1/C2: Bieg\l{}o\'sci}}
 \def\ecv@langfooterkey{\ecv@utf{Europejski system opisu kszta\l{}cenia j\k{e}zykowego (CEF)}}
-\def\ecv@langlinkkey{\ecv@utf{http://europass.cedefop.europa.eu/pl/resources/european-language-levels-cefr}}
+\def\ecv@langlinkkey{\ecv@utf{https://europass.cedefop.europa.eu/pl/resources/european-language-levels-cefr}}
 \def\ecv@cefbasickey{\ecv@utf{Podstawowy}}
 \def\ecv@cefindepkey{\ecv@utf{Samodzielno\'sci}}
 \def\ecv@cefprofkey{\ecv@utf{Bieg\l{}o\'sci}}
@@ -43,7 +43,7 @@
 \def\ecv@safetykey{\ecv@utf{Bezpiecze{\'n}stwo}}
 \def\ecv@problensolvingkey{\ecv@utf{Rozwiązywanie problem{\'o}w}}
 \def\ecv@digcompfooterkey{\ecv@utf{Umiej{\k{e}}tno{\'s}ci cyfrowe - Tabela samooceny}}
-\def\ecv@digcomplinkkey{\ecv@utf{http://europass.cedefop.europa.eu/pl/resources/digital-competences}}
+\def\ecv@digcomplinkkey{\ecv@utf{https://europass.cedefop.europa.eu/pl/resources/digital-competences}}
 \def\ecv@dcbasickey{\ecv@utf{Poziom podstawowy}}
 \def\ecv@dcindepkey{\ecv@utf{Poziom samodzielno{\'s}ci}}
 \def\ecv@dcprofkey{\ecv@utf{Poziom bieg\l{}o{\'s}ci}}

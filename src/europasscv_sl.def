@@ -30,7 +30,7 @@
 \def\ecv@productkey{\ecv@utf{Govorno sporo{\v c}anje}}
 \def\ecv@langshortdesckey{\ecv@utf{Stopnja: A1/A2: Osnovni uporabnik -- B1/B2: Samostojni uporabnik -- C1/C2: Usposobljeni uporabnik}}
 \def\ecv@langfooterkey{\ecv@utf{Skupni evropski jezikovni okvir}}
-\def\ecv@langlinkkey{\ecv@utf{http://europass.cedefop.europa.eu/sl/resources/european-language-levels-cefr}}
+\def\ecv@langlinkkey{\ecv@utf{https://europass.cedefop.europa.eu/sl/resources/european-language-levels-cefr}}
 \def\ecv@cefbasickey{\ecv@utf{Osnovni uporabnik}}
 \def\ecv@cefindepkey{\ecv@utf{Samostojni uporabnik}}
 \def\ecv@cefprofkey{\ecv@utf{Usposobljeni uporabnik}}
@@ -43,7 +43,7 @@
 \def\ecv@safetykey{\ecv@utf{Varnost}}
 \def\ecv@problensolvingkey{\ecv@utf{Re{\v s}evanje problemov}}
 \def\ecv@digcompfooterkey{\ecv@utf{Digitalne kompetence - Samoocenjevalna lestvica}}
-\def\ecv@digcomplinkkey{\ecv@utf{http://europass.cedefop.europa.eu/sl/resources/digital-competences}}
+\def\ecv@digcomplinkkey{\ecv@utf{https://europass.cedefop.europa.eu/sl/resources/digital-competences}}
 \def\ecv@dcbasickey{\ecv@utf{Osnovni uporabnik}}
 \def\ecv@dcindepkey{\ecv@utf{Samostojni uporabnik}}
 \def\ecv@dcprofkey{\ecv@utf{Usposobljeni uporabnik}}

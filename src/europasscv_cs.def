@@ -31,7 +31,7 @@
 \def\ecv@productkey{\ecv@utf{Samostatn{\'y} {\'u}stn{\'\i} projev}}
 \def\ecv@langshortdesckey{\ecv@utf{{\'U}rovn{\v e}: A1/A2: U{\v z}ivatel z{\'a}klad{\r u} jazyka -- B1/B2: Samostatn{\'y} u{\v z}ivatel -- C1/C2: Zku{\v s}en{\'y} u{\v z}ivatel}}
 \def\ecv@langfooterkey{\ecv@utf{Spole{\v c}n{\'y} evropsk{\'y} referen{\v c}n{\'\i} r{\'a}mec pro jazyky}}
-\def\ecv@langlinkkey{\ecv@utf{http://europass.cedefop.europa.eu/cs/resources/european-language-levels-cefr}}
+\def\ecv@langlinkkey{\ecv@utf{https://europass.cedefop.europa.eu/cs/resources/european-language-levels-cefr}}
 \def\ecv@cefbasickey{\ecv@utf{U{\v z}ivatel z{\'a}klad{\r u} jazyka}}
 \def\ecv@cefindepkey{\ecv@utf{Samostatn{\'y} u{\v z}ivatel}}
 \def\ecv@cefprofkey{\ecv@utf{Zku{\v s}en{\'y} u{\v z}ivatel}}
@@ -44,7 +44,7 @@
 \def\ecv@safetykey{\ecv@utf{Bezpe{\v c}nost}}
 \def\ecv@problensolvingkey{\ecv@utf{{\v R}e{\v s}en{\'\i} probl{\'e}mu}}
 \def\ecv@digcompfooterkey{\ecv@utf{Digit{\'a}ln{\'\i} dovednosti - Stupnice pro sebehodnocen{\'\i}}}
-\def\ecv@digcomplinkkey{\ecv@utf{http://europass.cedefop.europa.eu/cs/resources/digital-competences}}
+\def\ecv@digcomplinkkey{\ecv@utf{https://europass.cedefop.europa.eu/cs/resources/digital-competences}}
 \def\ecv@dcbasickey{\ecv@utf{Z{\'a}kladn{\'\i} u{\v z}ivatel}}
 \def\ecv@dcindepkey{\ecv@utf{Samostatn{\'y} u{\v z}ivatel}}
 \def\ecv@dcprofkey{\ecv@utf{Zku{\v s}en{\'y} u{\v z}ivatel}}

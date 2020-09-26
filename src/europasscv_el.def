@@ -24,7 +24,7 @@
 \def\ecv@productkey{\ecv@utf{Προφορική έκφραση}}
 \def\ecv@langshortdesckey{\ecv@utf{Επίπεδα: Α1/A2: Βασικός χρήστης - Β1/B2: Ανεξάρτητος χρήστης - C1/C2: Έμπειρος χρήστης}}
 \def\ecv@langfooterkey{\ecv@utf{Κοινό Ευρωπαϊκό Πλαίσιο Αναφοράς για Γλώσσες}}
-\def\ecv@langlinkkey{\ecv@utf{http://europass.cedefop.europa.eu/el/resources/european-language-levels-cefr}}
+\def\ecv@langlinkkey{\ecv@utf{https://europass.cedefop.europa.eu/el/resources/european-language-levels-cefr}}
 
 % Digital competences self-assessment grid
 \def\ecv@digitalcompetenceskey{\ecv@utf{Ψηφιακή δεξιότητα}}
@@ -34,7 +34,7 @@
 \def\ecv@safetykey{\ecv@utf{Ασφάλεια}}
 \def\ecv@problensolvingkey{\ecv@utf{Επίλυση προβλημάτων}}
 \def\ecv@digcompfooterkey{\ecv@utf{Ψηφιακές δεξιότητες - Πίνακας αυτοαξιολόγησης}}
-\def\ecv@digcomplinkkey{\ecv@utf{http://europass.cedefop.europa.eu/el/resources/digital-competences}}
+\def\ecv@digcomplinkkey{\ecv@utf{https://europass.cedefop.europa.eu/el/resources/digital-competences}}
 \def\ecv@dcbasickey{\ecv@utf{Βασικός χρήστης}}
 \def\ecv@dcindepkey{\ecv@utf{Ανεξάρτητος χρήστης}}
 \def\ecv@dcprofkey{\ecv@utf{\textasciiacute Eμπειρος χρήστης}}

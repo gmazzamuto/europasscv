@@ -30,7 +30,7 @@
 \def\ecv@productkey{\ecv@utf{Produ\c{c}\~ao oral}}
 \def\ecv@langshortdesckey{\ecv@utf{N\'iveis: A1 e A2: Utilizador b\'asico -- B1 e B2: Utilizador independente -- C1 e C2: Utilizador avan\c{c}ado}}
 \def\ecv@langfooterkey{\ecv@utf{Quadro Europeu Comum de Refer\^encia para as L\'inguas }}
-\def\ecv@langlinkkey{\ecv@utf{http://europass.cedefop.europa.eu/pt/resources/european-language-levels-cefr}}
+\def\ecv@langlinkkey{\ecv@utf{https://europass.cedefop.europa.eu/pt/resources/european-language-levels-cefr}}
 \def\ecv@cefbasickey{\ecv@utf{Utilizador b\'asico}}
 \def\ecv@cefindepkey{\ecv@utf{Utilizador independente}}
 \def\ecv@cefprofkey{\ecv@utf{Utilizador avan\c{c}ado}}
@@ -43,7 +43,7 @@
 \def\ecv@safetykey{\ecv@utf{Seguran\c{c}a}}
 \def\ecv@problensolvingkey{\ecv@utf{Resolu\c{c}{\~a}o de problemas}}
 \def\ecv@digcompfooterkey{\ecv@utf{Compet{\^e}ncias digitais - Grelha de autoavalia\c{c}{\~a}o}}
-\def\ecv@digcomplinkkey{\ecv@utf{http://europass.cedefop.europa.eu/pt/resources/digital-competences}}
+\def\ecv@digcomplinkkey{\ecv@utf{https://europass.cedefop.europa.eu/pt/resources/digital-competences}}
 \def\ecv@dcbasickey{\ecv@utf{Utilizador b{\'a}sico}}
 \def\ecv@dcindepkey{\ecv@utf{Utilizador independente}}
 \def\ecv@dcprofkey{\ecv@utf{Utilizador avan\c{c}ado}}

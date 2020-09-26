@@ -30,7 +30,7 @@
 \def\ecv@productkey{\ecv@utf{Spoken production}}
 \def\ecv@langshortdesckey{\ecv@utf{Levels: A1 and A2: Basic user -- B1 and B2: Independent user -- C1 and C2: Proficient user}}
 \def\ecv@langfooterkey{\ecv@utf{Common European Framework of Reference for Languages}}
-\def\ecv@langlinkkey{\ecv@utf{http://europass.cedefop.europa.eu/en/resources/european-language-levels-cefr}}
+\def\ecv@langlinkkey{\ecv@utf{https://europass.cedefop.europa.eu/en/resources/european-language-levels-cefr}}
 \def\ecv@cefbasickey{\ecv@utf{Basic user}}
 \def\ecv@cefindepkey{\ecv@utf{Independent user}}
 \def\ecv@cefprofkey{\ecv@utf{Proficient user}}
@@ -43,7 +43,7 @@
 \def\ecv@safetykey{\ecv@utf{Safety}}
 \def\ecv@problensolvingkey{\ecv@utf{Problem solving}}
 \def\ecv@digcompfooterkey{\ecv@utf{Digital competences - Self-assessment grid}}
-\def\ecv@digcomplinkkey{\ecv@utf{http://europass.cedefop.europa.eu/en/resources/digital-competences}}
+\def\ecv@digcomplinkkey{\ecv@utf{https://europass.cedefop.europa.eu/en/resources/digital-competences}}
 \def\ecv@dcbasickey{\ecv@utf{Basic user}}
 \def\ecv@dcindepkey{\ecv@utf{Independent user}}
 \def\ecv@dcprofkey{\ecv@utf{Proficient user}}

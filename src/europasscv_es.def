@@ -31,7 +31,7 @@
 \def\ecv@productkey{\ecv@utf{Expresi\'{o}n oral}}
 \def\ecv@langshortdesckey{\ecv@utf{Niveles: A1/A2: Usuario b\'{a}sico -- B1/B2: Usuario independiente -- C1/C2: Usuario competente}}
 \def\ecv@langfooterkey{\ecv@utf{Marco com\'{u}n Europeo de referencia para las lenguas}}
-\def\ecv@langlinkkey{\ecv@utf{http://europass.cedefop.europa.eu/es/resources/european-language-levels-cefr}}
+\def\ecv@langlinkkey{\ecv@utf{https://europass.cedefop.europa.eu/es/resources/european-language-levels-cefr}}
 \def\ecv@cefbasickey{\ecv@utf{Usuario b\'{a}sico}}
 \def\ecv@cefindepkey{\ecv@utf{Usuario independiente}}
 \def\ecv@cefprofkey{\ecv@utf{Usuario competente}}
@@ -44,7 +44,7 @@
 \def\ecv@safetykey{\ecv@utf{Seguridad}}
 \def\ecv@problensolvingkey{\ecv@utf{Resoluci{\'o}n de problemas}}
 \def\ecv@digcompfooterkey{\ecv@utf{Competencias digitales - Tabla de auto evaluaci{\'o}n}}
-\def\ecv@digcomplinkkey{\ecv@utf{http://europass.cedefop.europa.eu/es/resources/digital-competences}}
+\def\ecv@digcomplinkkey{\ecv@utf{https://europass.cedefop.europa.eu/es/resources/digital-competences}}
 \def\ecv@dcbasickey{\ecv@utf{Usuario b{\'a}sico}}
 \def\ecv@dcindepkey{\ecv@utf{Usuario independiente}}
 \def\ecv@dcprofkey{\ecv@utf{Usuario competente}}
