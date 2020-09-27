@@ -1,0 +1,56 @@
+%!TEX encoding = UTF-8 Unicode
+%
+%
+\ProvidesFile{europasscv_sk.def}[europasscv Slovak definitions]
+% Personal information
+\def\ecv@infosectionkey{\ecv@utf{Osobné údaje}}
+\def\ecv@namekey{\ecv@utf{Priezvisko(á) / Meno(á)}}
+\def\ecv@addresskey{\ecv@utf{Adresa(y)}}
+\def\ecv@telkey{\ecv@utf{Telefón(y)}}
+\def\ecv@mobilekey{\ecv@utf{Mobil}}
+\def\ecv@faxkey{\ecv@utf{Fax(y)}}
+\def\ecv@emailkey{\ecv@utf{E-mail(y)}}
+\def\ecv@nationalitykey{\ecv@utf{Štátna(e) príslušnosť(ti)}}
+\def\ecv@birthkey{\ecv@utf{Dátum narodenia}}
+\def\ecv@genderkey{\ecv@utf{Pohlavie}}
+% Footer
+\def\ecv@pagekey{\ecv@utf{Strana}}
+\def\ecv@cvofkey{\ecv@utf{Životopis}}
+% Language table
+\def\ecv@mothertonguekey{\ecv@utf{Materinský(é) jazyk(y)}}
+\def\ecv@otherlanguageskey{\ecv@utf{Ďalší(ie) jazyk(y)}}
+\def\ecv@assesskey{\ecv@utf{Sebahodnotenie}}
+\def\ecv@levelkey{\ecv@utf{Európska úroveň }}
+\def\ecv@understandkey{\ecv@utf{Porozumenie}}
+\def\ecv@speakkey{\ecv@utf{Hovorenie}}
+\def\ecv@writekey{\ecv@utf{Písanie}}
+\def\ecv@listenkey{\ecv@utf{Počúvanie}}
+\def\ecv@readkey{\ecv@utf{Čítanie}}
+\def\ecv@interactkey{\ecv@utf{Ústna interakcia}}
+\def\ecv@productkey{\ecv@utf{Samostatný ústny prejav}}
+\def\ecv@langshortdesckey{\ecv@utf{Úrovne: A1 and A2: Používateľ základného jazyka -- B1 and B2: Samostatný používateľ -- C1 and C2: Skúsený používateľ}}
+\def\ecv@langfooterkey{\ecv@utf{Úroveň podľa Spoločného európskeho referenčného rámca }}
+\def\ecv@langlinkkey{\ecv@utf{http://europass.cedefop.europa.eu/sk/resources/european-language-levels-cefr}}
+\def\ecv@cefbasickey{\ecv@utf{Používateľ základného jazyka}}
+\def\ecv@cefindepkey{\ecv@utf{Samostatný používateľ}}
+\def\ecv@cefprofkey{\ecv@utf{Skúsený používateľ}}
+\def\ecv@europeanunionkey{\ecv@utf{Európska únia}}
+% Digital competences self-assessment grid
+\def\ecv@digitalcompetenceskey{\ecv@utf{Digitálne zručnosti}}
+\def\ecv@informationprocessingkey{\ecv@utf{Spracovanie infomácií}}
+\def\ecv@communicationkey{\ecv@utf{Komunikácia}}
+\def\ecv@contentcreationkey{\ecv@utf{Tvorba obsahu}}
+\def\ecv@safetykey{\ecv@utf{Bezpečnosť}}
+\def\ecv@problensolvingkey{\ecv@utf{Riešenie problémov}}
+\def\ecv@digcompfooterkey{\ecv@utf{Digitálne zručnosti - Sebahodnotenie}}
+\def\ecv@digcomplinkkey{\ecv@utf{http://europass.cedefop.europa.eu/sk/resources/digital-competences}}
+\def\ecv@dcbasickey{\ecv@utf{Základný používateľ}}
+\def\ecv@dcindepkey{\ecv@utf{Samostatný používateľ}}
+\def\ecv@dcprofkey{\ecv@utf{Skúsený používateľ}}
+
+% Width of language columns
+\def\ecv@langcola{0.15}
+\def\ecv@langcolb{0.15}
+\def\ecv@langcolc{0.25}
+\def\ecv@langcold{0.25}
+\def\ecv@langcole{0.2}
