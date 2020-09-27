@@ -11,6 +11,9 @@ revision of the Europass CV came out, featuring a neater, more compact and
 somewhat fancier layout. This class is an implementation of the 2013 version of
 that layout.
 
+:warning: | At the moment this class does not implement the newest europass layouts that were launched in 2020.
+:---: | :---
+
 The Europass CV defines both the content and the layout of a curriculum vitae.
 The `europasscv` class provides support for the latter, and for the former as
 far as personal information, spoken languages and digital competences are
