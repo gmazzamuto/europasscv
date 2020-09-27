@@ -192,6 +192,12 @@
     \ClassWarningNoLine{europasscv}{Serbian definition file 'europasscv_sr.def' not found}}%
   }%
 }
+\DeclareOption{turkish}{%
+  \AtEndOfPackage{%
+    \InputIfFileExists{europasscv_tr.def}{}{%
+    \ClassWarningNoLine{europasscv}{Turkish definition file 'europasscv_tr.def' not found}}%
+  }%
+}
 
 \DeclareOption{narrow}{
  \def\ecv@narrow{}
