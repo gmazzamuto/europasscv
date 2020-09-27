@@ -29,9 +29,9 @@
 
 * add support for newer engines: XeLaTeX and LuaLaTeX
 * add def files for Swedish and Greek
-* new command \ecvfont
-* insert \newline at beginning of `ecvitemize` if needed
-* fix nesting of ecvitemize
+* new command `\ecvfont`
+* insert `\newline` at beginning of `ecvitemize` if needed
+* fix nesting of `ecvitemize`
 
 
 <a name="2016-10-12"></a>
