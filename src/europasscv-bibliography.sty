@@ -27,20 +27,32 @@
         \printfield{labelnumber}}}{\selectecvfont}
 
 \newcommand*{\ecvbibhighlight}[3]{%
-  \def\lastname{#1}%
-  \def\firstname{#2}%
-  \def\firstinit{#3}}
+  \edef\lastname{#1}%
+  \edef\firstname{#2}%
+  \edef\firstinit{#3}}
 \ecvbibhighlight{}{}{}
 
 % Patch new definitions
+\makeatletter
 \renewcommand{\mkbibnamegiven}[1]{%
-  \ifboolexpr{ ( test {\ifdefequal{\firstname}{\namepartgiven}} or test {\ifdefequal{\firstinit}{\namepartgiven}} ) and test {\ifdefequal{\lastname}{\namepartfamily}} }
-  {\mkbibbold{#1}}{#1}%
+  \begingroup
+    \def\bibnamedelima{ }%
+    \def\bibnamedelimi{ }%
+    \def~{ }%
+    \edef\adn@tmp@lastname{\lastname}%
+    \edef\adn@tmp@firstname{\firstname}%
+    \edef\adn@tmp@firstinit{\firstinit}%
+    \edef\adn@tmp@namepartfamily{\namepartfamily}%
+    \edef\adn@tmp@namepartgiven{\namepartgiven}%
+    \ifboolexpr{ ( test {\ifcsequal{adn@tmp@firstname}{adn@tmp@namepartgiven}} or test {\ifcsequal{adn@tmp@firstinit}{adn@tmp@namepartgiven}} ) and test {\ifcsequal{adn@tmp@lastname}{adn@tmp@namepartfamily}} }
+    {\mkbibbold{#1}}
+    {#1}%
+  \endgroup
 }
+\makeatother
 
 \renewcommand{\mkbibnamefamily}[1]{%
-  \ifboolexpr{ ( test {\ifdefequal{\firstname}{\namepartgiven}} or test {\ifdefequal{\firstinit}{\namepartgiven}} ) and test {\ifdefequal{\lastname}{\namepartfamily}} }
-  {\mkbibbold{#1}}{#1}%
+  \mkbibnamegiven{#1}
 }
 
 \endinput
