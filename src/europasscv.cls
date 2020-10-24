@@ -2,7 +2,8 @@
 %
 % Europass curriculum vitae class
 % Author: Giacomo Mazzamuto
-% based on the europecv class by Nicola Vitacolonna (http://ctan.org/pkg/europecv)
+% based on the europecv class by Nicola Vitacolonna (https://ctan.org/pkg/europecv)
+% cover letter based on coverletter2013.cls by Roberto Leinardi (https://github.com/leinardi/europecv2013)
 
 % This material is subject to the LaTeX Project Public License Version 1.3.
 % See  http://www.latex-project.org/lppl.txt
@@ -273,6 +274,7 @@
 \RequirePackage{substr}
 \RequirePackage{keyval}
 \RequirePackage{xstring}
+\RequirePackage{xifthen}
 \if@ecvdebug \RequirePackage{showframe} \fi
 
 
@@ -927,3 +929,73 @@
 \definecolor{ecvhighlightcellcolor}{HTML}{ebebeb}
 \definecolor{ecvlanglinkcolor}{HTML}{000080}
 \definecolor{ecvtextcolor}{HTML}{3e3a38}
+
+
+\providecommand{\eclpersonalinfo}[1][0pt]{%
+\clearpage
+\begin{huge}\ecv@name\end{huge}\par\bigskip
+\ifx\@empty\ecv@address
+\else
+	\includegraphics[width=0.4cm]{address_europass_icon.pdf}\ecv@address\par\smallskip
+\fi
+\ifx\@empty\ecv@mobile
+\else
+	\raisebox{-2\lineskip}{\includegraphics[width=0.4cm]{mobile_europass_icon.pdf}}\hspace{0.2mm} {\fontseries{m}\selectfont \ecv@mobile}\quad
+	\ifx\@empty\ecv@telephone
+	\else
+        \raisebox{-2\lineskip}{\includegraphics[width=0.4cm]{telephone_europass_icon.pdf}}\hspace{0.2mm} {\fontseries{m}\selectfont \ecv@mobile}\quad
+	\fi
+\fi
+\ifx\@empty\ecv@email
+\else
+        \@processlinks@converttoemailtrue
+        \raisebox{-2\lineskip}{\includegraphics[width=0.4cm]{mail_europass_icon.pdf}}\hspace{0.2mm} {\fontseries{m}\selectfont \processlinks{\ecv@email}} \quad
+        \@processlinks@converttoemailfalse
+\fi
+\ifx\@empty\ecv@linkedinpage
+\else
+        \raisebox{-2\lineskip}{\includegraphics[width=0.4cm]{linkedin_europass_icon.pdf}}\hspace{0.2mm} {\fontseries{m}\selectfont \processlinks{\ecv@linkedinpage}}\quad
+\fi
+\par\vspace{5pt}
+\textcolor{ecvrulecolor}{\hrulefill}\par\vspace{#1}
+}
+
+% Text bullet
+% \newcommand{\eclbullet}{\raisebox{.35ex}[0cm][0cm]{\tiny\textbullet}}
+
+% Icon size
+\newlength\ecl@iconwidth
+\newcommand*{\eclIconwidth}[1]{\setlength\ecl@iconwidth{#1}}
+\eclIconwidth{4.2mm}
+
+\newcommand\ecladdressee[5][10pt]{%
+\begin{flushright}
+#2\par
+#3\par
+#4\par
+#5\par
+\vspace{#1}
+\end{flushright}}
+
+\newcommand\eclcitydatesubject[4][0pt]{%
+#2, #3\par
+#4\vspace{#1}\par\bigskip}
+
+\newcommand\eclopeningsalutation[2][0pt]{%
+#2,\vspace{#1}\par\bigskip}
+
+\newcommand\eclmaincontent[4][0pt]{%
+#2\par
+#3\par
+#4\vspace{#1}\par\bigskip}
+
+\newcommand\eclclosingsalutation[2][0pt]{%
+\par\bigskip#2,\vspace{#1}\par\bigskip}
+
+\NewDocumentCommand{\eclsignature}{O{}O{\ecv@name}}{%
+\hspace{0.4\textwidth}#2\par
+\hspace{0.4\textwidth}\ifthenelse{\isempty{#1}}{}{\includegraphics{#1}\par}%
+}
+
+\newcommand\eclitem[2][0pt]{%
+#2\vspace{#1}\par}

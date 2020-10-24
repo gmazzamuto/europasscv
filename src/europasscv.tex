@@ -246,6 +246,38 @@ In the following, an example code snippet and the resulting CV entry is presente
 	\end{europasscv}
 \end{minipage}
 
+\subsection{Cover letter}
+The package provides some convenience commands to typeset an accompanying cover letter in the same style of the CV. These commands start with \texttt{\bs ecl} and are analogous to those seen previously. Here follows a simple example on how to produce a cover letter; please refer to the full example available on GitHub.
+\begin{verbatim}
+    \thispagestyle{empty}
+    \eclpersonalinfo
+
+    \ecladdressee{Contact person}
+                 {Name of organization}
+                 {Address of organization}
+                 {City}
+
+    \eclcitydatesubject{City}
+                       {\today}
+                       {Subject of this cover letter}
+
+    \eclopeningsalutation{Dear Sir}
+    \eclmaincontent
+    {Opening salutation.\bigskip}
+
+    {This is the main content.}
+
+    {Closing salutation.}
+
+    \eclclosingsalutation{Yours sincerely}
+
+    \eclsignature
+%     \eclsignature[signature.jpg]
+%     \eclsignature[signature.jpg][Dr. Katie Smith]
+
+    \pagebreak \setcounter{page}{1}
+\end{verbatim}
+
 \section{Advanced usage}
 \subsection{Bibliography}
 Printing bibliography using \texttt{biblatex} is supported. Please refer to the provided source file for a working example of how to integrate \texttt{biblatex} with \texttt{europasscv}. Basically, in your preamble you need to use the \texttt{biblatex} package followed by
