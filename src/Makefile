@@ -1,4 +1,4 @@
-ICONS_SVG=$(wildcard *_europass_icon.svg)
+ICONS_SVG=$(wildcard icons/*_europass_icon.svg)
 ICONS_PDF=$(ICONS_SVG:.svg=.pdf)
 
 INSTALL = install -m 644
@@ -22,7 +22,7 @@ icons: $(ICONS_SVG) $(ICONS_PDF)
 	pdf2ps $< $@
 
 %_europass_icon.pdf : %_europass_icon.ps
-	ps2pdf $<
+	ps2pdf $< $@
 
 documentation: class europasscv.pdf examples
 
@@ -35,12 +35,13 @@ class: pictures
 
 package: class documentation tds
 	$(INSTALLDIR) europasscv/example
-	$(INSTALL) *.svg europasscv
-	$(INSTALL) *_europass_icon.pdf europasscv
+	$(INSTALLDIR) europasscv/icons
+	$(INSTALL) icons/*_europass_icon.pdf europasscv/icons
 	$(INSTALL) europasslogo2013.pdf europasscv
 	$(INSTALL) europasscv.cls europasscv
 	$(INSTALL) europasscv-bibliography.sty europasscv
-	$(INSTALL) europasscv*.def europasscv
+	$(INSTALLDIR) europasscv/def
+	$(INSTALL) def/*.def europasscv/def
 	$(INSTALL) europasscv.tex europasscv
 	$(INSTALL) europasscv.pdf europasscv
 	$(INSTALL) europasscv_*en.tex europasscv/example
@@ -57,12 +58,14 @@ package: class documentation tds
 
 tds: class documentation
 	$(INSTALLDIR) tds/tex/latex/europasscv
-	$(INSTALL) *_europass_icon.pdf tds/tex/latex/europasscv
+	$(INSTALLDIR) tds/tex/latex/europasscv/icons
+	$(INSTALL) icons/*_europass_icon.pdf tds/tex/latex/europasscv/icons
 	$(INSTALL) europasslogo2013.pdf tds/tex/latex/europasscv
 	$(INSTALL) europasscv.cls tds/tex/latex/europasscv
 	$(INSTALL) europasscv-bibliography.sty tds/tex/latex/europasscv
-	$(INSTALL) europasscv*.def tds/tex/latex/europasscv
-	$(INSTALLDIR)  tds/doc/latex/europasscv/example
+	$(INSTALLDIR) tds/tex/latex/europasscv/def
+	$(INSTALL) def/*.def tds/tex/latex/europasscv/def
+	$(INSTALLDIR) tds/doc/latex/europasscv/example
 	$(INSTALL) europasscv_*en.pdf tds/doc/latex/europasscv/example
 	$(INSTALL) europasscv_*en.tex tds/doc/latex/europasscv/example
 	$(INSTALL) europasscv_example.bib tds/doc/latex/europasscv/example
@@ -78,5 +81,6 @@ distclean:
 
 clean: distclean
 	rm -f *.pdf
+	rm -f icons/*.pdf
 
 .PHONY: all clean distclean tds package class documentation examples pictures

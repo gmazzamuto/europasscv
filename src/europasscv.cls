@@ -22,7 +22,7 @@
 % Set language
 \DeclareOption{english}{%
   \AtEndOfPackage{%
-    \InputIfFileExists{europasscv_en.def}{}{%
+    \InputIfFileExists{def/europasscv_en.def}{}{%
     \ClassError{europasscv}{English definition file 'europasscv_en.def' not found}%
      {The file should be inside the europasscv folder.\MessageBreak
     Try to re-install the europasscv class.}}%
@@ -30,151 +30,151 @@
 }
 \DeclareOption{italian}{%
   \AtEndOfPackage{%
-    \InputIfFileExists{europasscv_it.def}{}{%
+    \InputIfFileExists{def/europasscv_it.def}{}{%
     \ClassWarningNoLine{europasscv}{Italian definition file 'europasscv_it.def' not found}}%
   }%
 }
 \DeclareOption{spanish}{%
   \AtEndOfPackage{%
-    \InputIfFileExists{europasscv_es.def}{}{%
+    \InputIfFileExists{def/europasscv_es.def}{}{%
     \ClassWarningNoLine{europasscv}{Spanish definition file 'europasscv_es.def' not found}}%
   }%
 }
 \DeclareOption{french}{%
   \AtEndOfPackage{%
-    \InputIfFileExists{europasscv_fr.def}{}{%
+    \InputIfFileExists{def/europasscv_fr.def}{}{%
     \ClassWarningNoLine{europasscv}{French definition file 'europasscv_fr.def' not found}}%
   }%
 }
 \DeclareOption{danish}{%
   \AtEndOfPackage{%
-    \InputIfFileExists{europasscv_da.def}{}{%
+    \InputIfFileExists{def/europasscv_da.def}{}{%
     \ClassWarningNoLine{europasscv}{Danish definition file 'europasscv_da.def' not found}}%
   }%
 }
 \DeclareOption{german}{%
   \AtEndOfPackage{%
-    \InputIfFileExists{europasscv_de.def}{}{%
+    \InputIfFileExists{def/europasscv_de.def}{}{%
     \ClassWarningNoLine{europasscv}{German definition file 'europasscv_de.def' not found}}%
   }%
 }
 \DeclareOption{finnish}{%
   \AtEndOfPackage{%
-    \InputIfFileExists{europasscv_fi.def}{}{%
+    \InputIfFileExists{def/europasscv_fi.def}{}{%
     \ClassWarningNoLine{europasscv}{Finnish definition file 'europasscv_fi.def' not found}}%
   }%
 }
 \DeclareOption{portuges}{%
   \AtEndOfPackage{%
-    \InputIfFileExists{europasscv_pt.def}{}{%
+    \InputIfFileExists{def/europasscv_pt.def}{}{%
     \ClassWarningNoLine{europasscv}{Portuguese definition file 'europasscv_pt.def' not found}}%
   }%
 }
 \DeclareOption{portuguese}{%
   \AtEndOfPackage{%
-    \InputIfFileExists{europasscv_pt.def}{}{%
+    \InputIfFileExists{def/europasscv_pt.def}{}{%
     \ClassWarningNoLine{europasscv}{Portuguese definition file 'europasscv_pt.def' not found}}%
   }%
 }
 \DeclareOption{swedish}{%
   \AtEndOfPackage{%
-    \InputIfFileExists{europasscv_sv.def}{}{%
+    \InputIfFileExists{def/europasscv_sv.def}{}{%
     \ClassWarningNoLine{europasscv}{Swedish definition file 'europasscv_sv.def' not found}}%
   }%
 }
 \DeclareOption{norsk}{%
   \AtEndOfPackage{%
-    \InputIfFileExists{europasscv_nb.def}{}{%
+    \InputIfFileExists{def/europasscv_nb.def}{}{%
     \ClassWarningNoLine{europasscv}{Norwegian (Bokmål) definition file 'europasscv_nb.def' not found}}%
   }%
 }
 \DeclareOption{dutch}{%
   \AtEndOfPackage{%
-    \InputIfFileExists{europasscv_nl.def}{}{%
+    \InputIfFileExists{def/europasscv_nl.def}{}{%
     \ClassWarningNoLine{europasscv}{Dutch definition file 'europasscv_nl.def' not found}}%
   }%
 }
 \DeclareOption{catalan}{%
   \AtEndOfPackage{%
-    \InputIfFileExists{europasscv_ca.def}{}{%
+    \InputIfFileExists{def/europasscv_ca.def}{}{%
     \ClassWarningNoLine{europasscv}{Catalan definition file 'europasscv_ca.def' not found}}%
   }%
 }
 \DeclareOption{polish}{%
   \AtEndOfPackage{%
-    \InputIfFileExists{europasscv_pl.def}{}{%
+    \InputIfFileExists{def/europasscv_pl.def}{}{%
     \ClassWarningNoLine{europasscv}{Polish definition file 'europasscv_pl.def' not found}}%
   }%
 }
 \DeclareOption{hungarian}{%
   \AtEndOfPackage{%
-    \InputIfFileExists{europasscv_hu.def}{}{%
+    \InputIfFileExists{def/europasscv_hu.def}{}{%
     \ClassWarningNoLine{europasscv}{Hungarian definition file 'europasscv_hu.def' not found}}%
   }%
 }
 \DeclareOption{estonian}{%
   \AtEndOfPackage{%
-    \InputIfFileExists{europasscv_et.def}{}{%
+    \InputIfFileExists{def/europasscv_et.def}{}{%
     \ClassWarningNoLine{europasscv}{Estonian definition file 'europasscv_et.def' not found}}%
   }%
 }
 \DeclareOption{icelandic}{%
   \AtEndOfPackage{%
-    \InputIfFileExists{europasscv_is.def}{}{%
+    \InputIfFileExists{def/europasscv_is.def}{}{%
     \ClassWarningNoLine{europasscv}{Icelandic definition file 'europasscv_is.def' not found}}%
   }%
 }
 \DeclareOption{lithuanian}{%
   \AtEndOfPackage{%
-    \InputIfFileExists{europasscv_lt.def}{}{%
+    \InputIfFileExists{def/europasscv_lt.def}{}{%
     \ClassWarningNoLine{europasscv}{Lithuanian definition file 'europasscv_lt.def' not found}}%
   }%
 }
 \DeclareOption{czech}{%
   \AtEndOfPackage{%
-    \InputIfFileExists{europasscv_cs.def}{}{%
+    \InputIfFileExists{def/europasscv_cs.def}{}{%
     \ClassWarningNoLine{europasscv}{Czech definition file 'europasscv_cs.def' not found}}%
   }%
 }
 \DeclareOption{slovak}{%
   \AtEndOfPackage{%
-    \InputIfFileExists{europasscv_sk.def}{}{%
+    \InputIfFileExists{def/europasscv_sk.def}{}{%
     \ClassWarningNoLine{europasscv}{Slovak definition file 'europasscv_sk.def' not found}}%
   }%
 }
 \DeclareOption{latvian}{%
   \AtEndOfPackage{%
-    \InputIfFileExists{europasscv_lv.def}{}{%
+    \InputIfFileExists{def/europasscv_lv.def}{}{%
     \ClassWarningNoLine{europasscv}{Latvian definition file 'europasscv_lv.def' not found}}%
   }%
 }
 \DeclareOption{slovenian}{%
   \AtEndOfPackage{%
-    \InputIfFileExists{europasscv_sl.def}{}{%
+    \InputIfFileExists{def/europasscv_sl.def}{}{%
     \ClassWarningNoLine{europasscv}{Slovenian definition file 'europasscv_sl.def' not found}}%
   }%
 }
 \DeclareOption{romanian}{%
   \AtEndOfPackage{%
-    \InputIfFileExists{europasscv_ro.def}{}{%
+    \InputIfFileExists{def/europasscv_ro.def}{}{%
     \ClassWarningNoLine{europasscv}{Romanian definition file 'europasscv_ro.def' not found}}%
   }%
 }
 \DeclareOption{maltese}{%
   \AtEndOfPackage{%
-    \InputIfFileExists{europasscv_mt.def}{}{%
+    \InputIfFileExists{def/europasscv_mt.def}{}{%
     \ClassWarningNoLine{europasscv}{Maltese definition file 'europasscv_mt.def' not found}}%
   }%
 }
 \DeclareOption{bulgarian}{%
   \AtEndOfPackage{%
-      \InputIfFileExists{europasscv_bg.def}{}{%
+      \InputIfFileExists{def/europasscv_bg.def}{}{%
       \ClassWarningNoLine{europasscv}{Bulgarian definition file 'europasscv_bg.def' not found}}%
   }%
 }
 \DeclareOption{greek}{%
   \AtEndOfPackage{%
-    \InputIfFileExists{europasscv_el.def}{}{%
+    \InputIfFileExists{def/europasscv_el.def}{}{%
     \ClassWarningNoLine{europasscv}{Greek definition file 'europasscv_el.def' not found}}%
     \ifPDFTeX
       \PackageError{europasscv}{Please run XeLaTeX or LuaLaTeX for greek language support}{}
@@ -183,19 +183,19 @@
 }
 \DeclareOption{galician}{%
   \AtEndOfPackage{%
-     \InputIfFileExists{europasscv_gl.def}{}{%
+     \InputIfFileExists{def/europasscv_gl.def}{}{%
     \ClassWarningNoLine{europasscv}{Galician definition file 'europasscv_gl.def' not found}}%
   }%
 }
 \DeclareOption{serbian}{%
   \AtEndOfPackage{%
-     \InputIfFileExists{europasscv_sr.def}{}{%
+     \InputIfFileExists{def/europasscv_sr.def}{}{%
     \ClassWarningNoLine{europasscv}{Serbian definition file 'europasscv_sr.def' not found}}%
   }%
 }
 \DeclareOption{turkish}{%
   \AtEndOfPackage{%
-    \InputIfFileExists{europasscv_tr.def}{}{%
+    \InputIfFileExists{def/europasscv_tr.def}{}{%
     \ClassWarningNoLine{europasscv}{Turkish definition file 'europasscv_tr.def' not found}}%
   }%
 }
@@ -507,15 +507,15 @@
       \raggedright
       {\ecvLargenormalstyle{\ecv@name}} \newline
       \ifx\@empty\ecv@address\else
-        \raisebox{-2\lineskip}{\includegraphics[width=0.4cm]{address_europass_icon.pdf}}\hspace{0.2mm} {\fontseries{m}\selectfont \ecv@address} \newline
+        \raisebox{-2\lineskip}{\includegraphics[width=0.4cm]{icons/address_europass_icon.pdf}}\hspace{0.2mm} {\fontseries{m}\selectfont \ecv@address} \newline
       \fi
       \ifx\@empty\ecv@mobile\else
         \@ecvphoneispresenttrue
-        \raisebox{-2\lineskip}{\includegraphics[width=0.4cm]{mobile_europass_icon.pdf}}\hspace{0.2mm} {\fontseries{m}\selectfont \ecv@mobile} \quad
+        \raisebox{-2\lineskip}{\includegraphics[width=0.4cm]{icons/mobile_europass_icon.pdf}}\hspace{0.2mm} {\fontseries{m}\selectfont \ecv@mobile} \quad
       \fi
 	  \ifx\@empty\ecv@telephone\else
         \@ecvphoneispresenttrue
-        \raisebox{-2\lineskip}{\includegraphics[width=0.4cm]{telephone_europass_icon.pdf}}\hspace{0.2mm} {\fontseries{m}\selectfont \ecv@telephone} \quad
+        \raisebox{-2\lineskip}{\includegraphics[width=0.4cm]{icons/telephone_europass_icon.pdf}}\hspace{0.2mm} {\fontseries{m}\selectfont \ecv@telephone} \quad
       \fi
       \ifx\@empty\ecv@workphone\else
         \@ecvphoneispresenttrue
@@ -528,7 +528,7 @@
                 \fi
             \fi
         \fi
-        \raisebox{-2\lineskip}{\includegraphics[width=0.4cm]{work_europass_icon.pdf}}\hspace{0.2mm} {\fontseries{m}\selectfont \ecv@workphone}
+        \raisebox{-2\lineskip}{\includegraphics[width=0.4cm]{icons/work_europass_icon.pdf}}\hspace{0.2mm} {\fontseries{m}\selectfont \ecv@workphone}
       \fi
       \if@ecvphoneispresent
         \newline
@@ -538,29 +538,29 @@
       \fi
       \ifx\@empty\ecv@email\else
         \@processlinks@converttoemailtrue
-        \raisebox{-2\lineskip}{\includegraphics[width=0.4cm]{mail_europass_icon.pdf}}\hspace{0.2mm} {\fontseries{m}\selectfont \processlinks{\ecv@email}} \newline
+        \raisebox{-2\lineskip}{\includegraphics[width=0.4cm]{icons/mail_europass_icon.pdf}}\hspace{0.2mm} {\fontseries{m}\selectfont \processlinks{\ecv@email}} \newline
         \@processlinks@converttoemailfalse
       \fi
         \ifx\@empty\ecv@homepage\else
-        \raisebox{-2\lineskip}{\includegraphics[width=0.4cm]{website_europass_icon.pdf}}\hspace{0.2mm} {\fontseries{m}\selectfont \processlinks{\ecv@homepage}} \newline
+        \raisebox{-2\lineskip}{\includegraphics[width=0.4cm]{icons/website_europass_icon.pdf}}\hspace{0.2mm} {\fontseries{m}\selectfont \processlinks{\ecv@homepage}} \newline
       \fi
       \ifx\@empty\ecv@gitpage\else
-        \raisebox{-2\lineskip}{\includegraphics[width=0.4cm]{git_europass_icon.pdf}}\hspace{0.2mm} {\fontseries{m}\selectfont \processlinks{\ecv@gitpage}} \newline
+        \raisebox{-2\lineskip}{\includegraphics[width=0.4cm]{icons/git_europass_icon.pdf}}\hspace{0.2mm} {\fontseries{m}\selectfont \processlinks{\ecv@gitpage}} \newline
       \fi
 	  \ifx\@empty\ecv@githubpage\else
-        \raisebox{-2\lineskip}{\includegraphics[width=0.4cm]{github_europass_icon.pdf}}\hspace{0.2mm} {\fontseries{m}\selectfont \processlinks{\ecv@githubpage}} \newline
+        \raisebox{-2\lineskip}{\includegraphics[width=0.4cm]{icons/github_europass_icon.pdf}}\hspace{0.2mm} {\fontseries{m}\selectfont \processlinks{\ecv@githubpage}} \newline
 	  \fi
 	  \ifx\@empty\ecv@gitlabpage\else
-	  \raisebox{-2\lineskip}{\includegraphics[width=0.4cm]{gitlab_europass_icon.pdf}}\hspace{0.2mm} {\fontseries{m}\selectfont \processlinks{\ecv@gitlabpage}} \newline
+	  \raisebox{-2\lineskip}{\includegraphics[width=0.4cm]{icons/gitlab_europass_icon.pdf}}\hspace{0.2mm} {\fontseries{m}\selectfont \processlinks{\ecv@gitlabpage}} \newline
 	  \fi
 	  \ifx\@empty\ecv@linkedinpage\else
-        \raisebox{-2\lineskip}{\includegraphics[width=0.4cm]{linkedin_europass_icon.pdf}}\hspace{0.2mm} {\fontseries{m}\selectfont \processlinks{\ecv@linkedinpage}} \newline
+        \raisebox{-2\lineskip}{\includegraphics[width=0.4cm]{icons/linkedin_europass_icon.pdf}}\hspace{0.2mm} {\fontseries{m}\selectfont \processlinks{\ecv@linkedinpage}} \newline
 	  \fi
 	  \ifx\@empty\ecv@orcid\else
-        \raisebox{-2\lineskip}{\includegraphics[width=0.4cm]{orcid_europass_icon.pdf}}\hspace{0.2mm} {\fontseries{m}\selectfont\if@ecvorcidlabel\ecvhighlight{ORCID}~\fi\if@ecvorcidlink\setulcolor{\ecv@textcolor}\setul{.5pt}{.4pt}\href{https://orcid.org/\ecv@orcid}{\ul{\mbox{\ecv@orcid}}}\else\ecv@orcid\fi} \newline
+        \raisebox{-2\lineskip}{\includegraphics[width=0.4cm]{icons/orcid_europass_icon.pdf}}\hspace{0.2mm} {\fontseries{m}\selectfont\if@ecvorcidlabel\ecvhighlight{ORCID}~\fi\if@ecvorcidlink\setulcolor{\ecv@textcolor}\setul{.5pt}{.4pt}\href{https://orcid.org/\ecv@orcid}{\ul{\mbox{\ecv@orcid}}}\else\ecv@orcid\fi} \newline
 	  \fi
       \ifx\@empty\ecv@im\else
-        \raisebox{-2\lineskip}{\includegraphics[width=0.4cm]{im_europass_icon.pdf}} \hspace{0.2mm}{\fontseries{m}\selectfont \ecv@im} \newline
+        \raisebox{-2\lineskip}{\includegraphics[width=0.4cm]{icons/im_europass_icon.pdf}} \hspace{0.2mm}{\fontseries{m}\selectfont \ecv@im} \newline
       \fi
 	\ifx\@empty\ecv@gender\else
 	    \fontseries{m}\selectfont \ecvhighlight{\if@ecvpineedspipe ~| \fi \ecv@genderkey} \ecv@gender \@ecvpineedspipetrue
@@ -936,25 +936,25 @@
 \begin{huge}\ecv@name\end{huge}\par\bigskip
 \ifx\@empty\ecv@address
 \else
-	\includegraphics[width=0.4cm]{address_europass_icon.pdf}\ecv@address\par\smallskip
+	\includegraphics[width=0.4cm]{icons/address_europass_icon.pdf}\ecv@address\par\smallskip
 \fi
 \ifx\@empty\ecv@mobile
 \else
-	\raisebox{-2\lineskip}{\includegraphics[width=0.4cm]{mobile_europass_icon.pdf}}\hspace{0.2mm} {\fontseries{m}\selectfont \ecv@mobile}\quad
+	\raisebox{-2\lineskip}{\includegraphics[width=0.4cm]{icons/mobile_europass_icon.pdf}}\hspace{0.2mm} {\fontseries{m}\selectfont \ecv@mobile}\quad
 	\ifx\@empty\ecv@telephone
 	\else
-        \raisebox{-2\lineskip}{\includegraphics[width=0.4cm]{telephone_europass_icon.pdf}}\hspace{0.2mm} {\fontseries{m}\selectfont \ecv@mobile}\quad
+        \raisebox{-2\lineskip}{\includegraphics[width=0.4cm]{icons/telephone_europass_icon.pdf}}\hspace{0.2mm} {\fontseries{m}\selectfont \ecv@mobile}\quad
 	\fi
 \fi
 \ifx\@empty\ecv@email
 \else
         \@processlinks@converttoemailtrue
-        \raisebox{-2\lineskip}{\includegraphics[width=0.4cm]{mail_europass_icon.pdf}}\hspace{0.2mm} {\fontseries{m}\selectfont \processlinks{\ecv@email}} \quad
+        \raisebox{-2\lineskip}{\includegraphics[width=0.4cm]{icons/mail_europass_icon.pdf}}\hspace{0.2mm} {\fontseries{m}\selectfont \processlinks{\ecv@email}} \quad
         \@processlinks@converttoemailfalse
 \fi
 \ifx\@empty\ecv@linkedinpage
 \else
-        \raisebox{-2\lineskip}{\includegraphics[width=0.4cm]{linkedin_europass_icon.pdf}}\hspace{0.2mm} {\fontseries{m}\selectfont \processlinks{\ecv@linkedinpage}}\quad
+        \raisebox{-2\lineskip}{\includegraphics[width=0.4cm]{icons/linkedin_europass_icon.pdf}}\hspace{0.2mm} {\fontseries{m}\selectfont \processlinks{\ecv@linkedinpage}}\quad
 \fi
 \par\vspace{5pt}
 \textcolor{ecvrulecolor}{\hrulefill}\par\vspace{#1}
