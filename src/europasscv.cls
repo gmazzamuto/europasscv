@@ -930,7 +930,7 @@
 \definecolor{ecvlanglinkcolor}{HTML}{000080}
 \definecolor{ecvtextcolor}{HTML}{3e3a38}
 
-
+% cover letter
 \providecommand{\eclpersonalinfo}[1][0pt]{%
 \clearpage
 \begin{huge}\ecv@name\end{huge}\par\bigskip
