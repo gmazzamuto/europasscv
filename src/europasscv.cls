@@ -9,7 +9,7 @@
 % See  http://www.latex-project.org/lppl.txt
 % for the details of that license
 \NeedsTeXFormat{LaTeX2e}
-\ProvidesClass{europasscv}[2019/01/14 The new Europass curriculum vitae class]
+\ProvidesClass{europasscv}[2020-10-31 The Europass curriculum vitae class (2013 version)]
 
 \newcommand\ecv@utf[1]{#1}
 

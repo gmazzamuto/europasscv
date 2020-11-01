@@ -1,3 +1,16 @@
+<a name="2020-10-31"></a>
+
+# Version 2020-10-31
+
+* fix bibliography highlighting with names containing spaces
+* add commands to typeset an accompanying cover letter
+* add def files for Romanian, Slovak and Turkish
+* add Git icon
+* fix underscores in URLs
+* fix dash thickness in `ecvitemize`
+* use https in links
+
+
 <a name="2019-01-14"></a>
 
 # Version 2019-01-14
