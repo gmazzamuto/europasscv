@@ -120,10 +120,18 @@
   \ecvblueitem{Other skills}{Creating pieces of Art and visiting Modern Art galleries. Enjoy all sports particularly hockey, football and running. Love to travel and experience different cultures.}
 
   \ecvblueitem{Driving licence}{A, B}
-  
-  \nocite{*}
-  \renewcommand{\section}[2]{\ecvsection{#2}}
-  \printbibtabular[title=Publications]
+
+  \begin{refsection}
+    \nocite{smith_phd}
+    \renewcommand{\section}[2]{\ecvsection{#2}}
+    \printbibtabular[title=Thesis]
+  \end{refsection}
+
+  \begin{refsection}
+    \nocite{*}
+    \renewcommand{\section}[2]{\ecvsection{#2}}
+    \printbibtabular[title=Articles,type=article]
+  \end{refsection}
 
 \end{europasscv}
   
