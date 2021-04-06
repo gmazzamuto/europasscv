@@ -34,6 +34,7 @@ examples: europasscv_en.pdf europasscv_bib_en.pdf
 class: pictures
 
 package: class documentation tds
+	git diff --exit-code || (echo "Please commit or stash changes\n" && false)
 	$(INSTALLDIR) europasscv/example
 	$(INSTALLDIR) europasscv/icons
 	$(INSTALL) icons/*_europass_icon.pdf europasscv/icons
