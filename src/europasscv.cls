@@ -943,7 +943,7 @@
 	\raisebox{-2\lineskip}{\includegraphics[width=0.4cm]{icons/mobile_europass_icon.pdf}}\hspace{0.2mm} {\fontseries{m}\selectfont \ecv@mobile}\quad
 	\ifx\@empty\ecv@telephone
 	\else
-        \raisebox{-2\lineskip}{\includegraphics[width=0.4cm]{icons/telephone_europass_icon.pdf}}\hspace{0.2mm} {\fontseries{m}\selectfont \ecv@mobile}\quad
+        \raisebox{-2\lineskip}{\includegraphics[width=0.4cm]{icons/telephone_europass_icon.pdf}}\hspace{0.2mm} {\fontseries{m}\selectfont \ecv@telephone}\quad
 	\fi
 \fi
 \ifx\@empty\ecv@email
