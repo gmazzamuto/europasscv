@@ -386,6 +386,7 @@
 \newcommand*{\ecvgithubpage}[1]{\def\ecv@githubpage{#1}}
 \newcommand*{\ecvgitlabpage}[1]{\def\ecv@gitlabpage{#1}}
 \newcommand*{\ecvlinkedinpage}[1]{\def\ecv@linkedinpage{#1}}
+\newcommand*{\ecvscholarpage}[1]{\def\ecv@scholarpage{#1}}
 
 \newif\if@ecvorcidlink\@ecvorcidlinkfalse
 \define@key{ecvorcid}{link}[true]{\@ecvorcidlinktrue}
@@ -555,6 +556,9 @@
 	  \fi
 	  \ifx\@empty\ecv@linkedinpage\else
         \raisebox{-2\lineskip}{\includegraphics[width=0.4cm]{icons/linkedin_europass_icon.pdf}}\hspace{0.2mm} {\fontseries{m}\selectfont \processlinks{\ecv@linkedinpage}} \newline
+	  \fi
+	  \ifx\@empty\ecv@scholarpage\else
+        \raisebox{-2\lineskip}{\includegraphics[width=0.4cm]{icons/scholar_europass_icon.pdf}}\hspace{0.2mm} {\fontseries{m}\selectfont \processlinks{\ecv@scholarpage}} \newline
 	  \fi
 	  \ifx\@empty\ecv@orcid\else
         \raisebox{-2\lineskip}{\includegraphics[width=0.4cm]{icons/orcid_europass_icon.pdf}}\hspace{0.2mm} {\fontseries{m}\selectfont\if@ecvorcidlabel\ecvhighlight{ORCID}~\fi\if@ecvorcidlink\setulcolor{\ecv@textcolor}\setul{.5pt}{.4pt}\href{https://orcid.org/\ecv@orcid}{\ul{\mbox{\ecv@orcid}}}\else\ecv@orcid\fi} \newline
@@ -951,6 +955,10 @@
         \@processlinks@converttoemailtrue
         \raisebox{-2\lineskip}{\includegraphics[width=0.4cm]{icons/mail_europass_icon.pdf}}\hspace{0.2mm} {\fontseries{m}\selectfont \processlinks{\ecv@email}} \quad
         \@processlinks@converttoemailfalse
+\fi
+\ifx\@empty\ecv@scholarpage
+\else
+	\includegraphics[width=0.4cm]{icons/scholar_europass_icon.pdf}\hspace{0.2mm} {\fontseries{m}\selectfont \processlinks{\ecv@scholarpage}} \quad
 \fi
 \ifx\@empty\ecv@linkedinpage
 \else
