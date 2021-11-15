@@ -440,6 +440,7 @@
 \ecvgithubpage{}
 \ecvgitlabpage{}
 \ecvlinkedinpage{}
+\ecvscholarpage{}
 \ecvorcid{}
 \ecvnationality{}
 \ecvdateofbirth{}
