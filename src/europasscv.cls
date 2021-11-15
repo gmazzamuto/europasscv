@@ -278,7 +278,14 @@
 \if@ecvdebug \RequirePackage{showframe} \fi
 
 
-\newcommand{\selectecvfont}{\ifPDFTeX\fontfamily{\ecv@font}\selectfont\fi}
+\newcommand{\selectecvfont}{%
+% IMPORTANT: do not add spaces between commands (they show up in bibliography)
+\ifPDFTeX%
+   \fontfamily{\ecv@font}\ifx\@empty\ecv@narrow\fontseries{mc}\else\fontseries{m}\fi%
+ \fi%
+ \if@ecvbigfont\else\fontsize{9}{10.8}\fi
+ \selectfont%
+}
 \newcommand*{\ecvfont}[1]{\def\ecv@font{#1}}
 \ifPDFTeX
   \ecvfont{phv}
@@ -768,10 +775,7 @@
   \addtolength{\ecv@langparwidth}{-2\tabcolsep}
   \addtolength{\ecv@langparwidth}{-2\arrayrulewidth}
 
- \ifPDFTeX
-   \fontfamily{\ecv@font} \ifx\@empty\ecv@narrow \fontseries{mc} \else \fontseries{m} \fi
- \fi
- \if@ecvbigfont\else \fontsize{9}{10.8} \fi \selectfont
+  \selectecvfont
 
 \setlength\baselineskip{0pt}
 \color{\ecv@textcolor}
