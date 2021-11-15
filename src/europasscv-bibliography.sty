@@ -16,15 +16,9 @@
   {\setlength{\LTpre}{\medskipamount}%
    \setlength{\LTpost}{\medskipamount}%
    \renewcommand*{\arraystretch}{1.2}%
-\begin{longtable}[t]{@{}R{\ecv@leftcolwidth}@{\hspace{\ecv@colsep}}p{\ecv@rightcolwidth}@{}}}%
+\selectecvfont\begin{longtable}[t]{@{}R{\ecv@leftcolwidth}@{\hspace{\ecv@colsep}}p{\ecv@rightcolwidth}@{}}}%
   {\end{longtable}}
-  {\selectecvfont\printtext[labelalphawidth]{%
-        \printfield{labelprefix}%
-        \printfield{labelalpha}%
-        \printfield{extraalpha}}%
-   \printtext[labelnumberwidth]{%
-        \printfield{labelprefix}%
-        \printfield{labelnumber}}}{\selectecvfont}
+  {\cite{\thefield{entrykey}}}{}
 
 \newcommand*{\ecvbibhighlight}[3]{%
   \edef\lastname{#1}%
