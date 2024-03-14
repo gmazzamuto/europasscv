@@ -1,0 +1,56 @@
+%!TEX encoding = UTF-8 Unicode
+%
+%
+\ProvidesFile{europasscv_nl.def}[europasscv Dutch definitions]
+% Personal information
+\def\ecv@infosectionkey{\ecv@utf{Persoonlijke informatie}}
+\def\ecv@namekey{\ecv@utf{Achternaam / Voornaam}}
+\def\ecv@addresskey{\ecv@utf{Adres}}
+\def\ecv@telkey{\ecv@utf{Telefoon}}
+\def\ecv@mobilekey{\ecv@utf{Mobiel}}
+\def\ecv@faxkey{\ecv@utf{Fax(en)}}
+\def\ecv@emailkey{\ecv@utf{Email}}
+\def\ecv@nationalitykey{\ecv@utf{Nationaliteit}}
+\def\ecv@birthkey{\ecv@utf{Geboortedatum}}
+\def\ecv@genderkey{\ecv@utf{Geslacht}}
+% Footer
+\def\ecv@pagekey{\ecv@utf{Pagina}}
+\def\ecv@cvofkey{\ecv@utf{Curriculum vit\ae\ van}}
+% Language table
+\def\ecv@mothertonguekey{\ecv@utf{Moedertaal}}
+\def\ecv@otherlanguageskey{\ecv@utf{Andere talen}}
+\def\ecv@assesskey{\ecv@utf{Zelfevaluatie}}
+\def\ecv@levelkey{\ecv@utf{Europees niveau}}
+\def\ecv@understandkey{\ecv@utf{Begrijpen}}
+\def\ecv@speakkey{\ecv@utf{Spreken}}
+\def\ecv@writekey{\ecv@utf{Schrijven}}
+\def\ecv@listenkey{\ecv@utf{Luisteren}}
+\def\ecv@readkey{\ecv@utf{Lezen}}
+\def\ecv@interactkey{\ecv@utf{Interactie}}
+\def\ecv@productkey{\ecv@utf{Productie}}
+\def\ecv@langshortdesckey{\ecv@utf{Niveaus: A1 en A2: basisgebruiker -- B1 en B2: onafhankelijke gebruiker -- C1 en C2: vaardige gebruiker}}
+\def\ecv@langfooterkey{\ecv@utf{Europees Referentiekader voor Talen}}
+\def\ecv@langlinkkey{\ecv@utf{https://europa.eu/europass/nl/common-european-framework-reference-language-skills}}
+\def\ecv@cefbasickey{\ecv@utf{Basisgebruiker}}
+\def\ecv@cefindepkey{\ecv@utf{Onafhankelijke gebruiker}}
+\def\ecv@cefprofkey{\ecv@utf{Vaardig gebruiker}}
+\def\ecv@europeanunionkey{\ecv@utf{Europese Unie}}
+% Digital competences self-assessment grid
+\def\ecv@digitalcompetenceskey{\ecv@utf{Digitale vaardigheden}}
+\def\ecv@informationprocessingkey{\ecv@utf{Informatieverwerking}}
+\def\ecv@communicationkey{\ecv@utf{Communicatie}}
+\def\ecv@contentcreationkey{\ecv@utf{Content creatie}}
+\def\ecv@safetykey{\ecv@utf{Veiligheid}}
+\def\ecv@problensolvingkey{\ecv@utf{Probleemoplossend}}
+\def\ecv@digcompfooterkey{\ecv@utf{Digitale vaardigheden - Zelfevaluatietabel}}
+\def\ecv@digcomplinkkey{\ecv@utf{https://europa.eu/europass/nl/how-describe-my-digital-skills}}
+\def\ecv@dcbasickey{\ecv@utf{Basisgebruiker}}
+\def\ecv@dcindepkey{\ecv@utf{Onafhankelijk gebruiker}}
+\def\ecv@dcprofkey{\ecv@utf{Vaardig gebruiker}}
+
+% Width of language columns
+\def\ecv@langcola{0.15}
+\def\ecv@langcolb{0.15}
+\def\ecv@langcolc{0.25}
+\def\ecv@langcold{0.25}
+\def\ecv@langcole{0.2}
